@@ -50,8 +50,14 @@
     <Compile Include="Model\Keyboard.cs" />
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="ServiceData\ButtonData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
+    <Compile Include="ServiceData\KeyboardData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
+    <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="View\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\BAJunior.exe.config" />
+    <None Include="bin\Debug\BAJunior.vshost.exe.config" />
+    <None Include="bin\Debug\BAJunior.vshost.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,9 +94,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="ServiceMétier\" />
     <Folder Include="View\Forms\admin\" />
     <Folder Include="View\Forms\user\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BAJunior.vshost.exe" />
+    <Content Include="obj\Debug\BAJunior.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
