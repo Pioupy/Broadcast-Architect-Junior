@@ -13,7 +13,8 @@ namespace BAJunior.Model
         private bool m_admin;
 
         // [Getter/Setter] String m_login
-        public String getLogin() {
+        public String getLogin()
+        {
             return this.m_login;
         }
         public void setLogin(String login)
@@ -32,10 +33,12 @@ namespace BAJunior.Model
         }
 
         // [Getter/Setter] Boolean m_admin
-        public bool isAdmin() {
+        public bool isAdmin()
+        {
             return this.m_admin;
         }
-        public void setAdmin(bool admin) {
+        public void setAdmin(bool admin)
+        {
             this.m_admin = admin;
         }
     }

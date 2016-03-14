@@ -8,5 +8,6 @@ namespace BAJunior.ServiceData
 {
     class KeyboardData
     {
+
     }
 }

@@ -50,8 +50,11 @@
     <Compile Include="Model\Keyboard.cs" />
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ServiceData\ButtonData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
+    <Compile Include="ServiceData\KeyboardData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
+    <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="View\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
