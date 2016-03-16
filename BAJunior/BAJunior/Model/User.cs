@@ -8,35 +8,35 @@ namespace BAJunior.Model
 {
     class User
     {
-        private String m_login;
-        private String m_password;
-        private bool m_admin;
+        private String _login;
+        private String _password;
+        private bool _admin;
 
         // [Getter/Setter] String m_login
         public String getLogin() {
-            return this.m_login;
+            return this._login;
         }
         public void setLogin(String login)
         {
-            this.m_login = login;
+            this._login = login;
         }
 
         // [Getter/Setter] String m_password
         public String getPassword()
         {
-            return this.m_password;
+            return this._password;
         }
         public void setPassword(String password)
         {
-            this.m_password = password;
+            this._password = password;
         }
 
         // [Getter/Setter] Boolean m_admin
         public bool isAdmin() {
-            return this.m_admin;
+            return this._admin;
         }
         public void setAdmin(bool admin) {
-            this.m_admin = admin;
+            this._admin = admin;
         }
     }
 }
