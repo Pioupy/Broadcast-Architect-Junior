@@ -8,7 +8,30 @@ namespace BAJunior.Model
 {
     class Keyboard
     {
+        private int m_idKeyboard;
         private String m_name;
+
+        //Default constructor
+        public Keyboard(String name)
+        {
+            m_name = name;
+        }
+        //Constructor with ID
+        public Keyboard(int id, String name)
+        {
+            m_idKeyboard = id;
+            m_name = name;
+        }
+        // [Getter/Setter] Int m_idKeyboard
+        public int getId()
+        {
+            return this.m_idKeyboard;
+        }
+        public void setId(int id)
+        {
+            this.m_idKeyboard = id;
+        }
+
         // [Getter/Setter] String m_name
         public String getName()
         {

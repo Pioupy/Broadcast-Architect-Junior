@@ -8,10 +8,35 @@ namespace BAJunior.Model
 {
     class User
     {
+        private int m_idUser;
         private String m_login;
         private String m_password;
         private bool m_admin;
 
+        //Default constructor
+        public User(String login, string password, bool isAdmin)
+        {
+            m_login = login;
+            m_password = password;
+            m_admin = isAdmin;
+        }
+        //Constructor with ID
+        public User(int id, String login, string password, bool isAdmin)
+        {
+            m_idUser = id;
+            m_login = login;
+            m_password = password;
+            m_admin = isAdmin;
+        }
+        // [Getter/Setter] Int m_idUSer
+        public int getId()
+        {
+            return this.m_idUser;
+        }
+        public void setId(int id)
+        {
+            this.m_idUser = id;
+        }
         // [Getter/Setter] String m_login
         public String getLogin()
         {

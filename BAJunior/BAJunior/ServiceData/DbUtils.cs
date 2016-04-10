@@ -53,7 +53,7 @@ namespace BAJunior.ServiceData
         }
         public void checkConnection()
         {
-
+            //a faire
         }
         public void closeConnectionDatabase()
         {
@@ -63,10 +63,22 @@ namespace BAJunior.ServiceData
         public int executeQuery(string pSql)
         {
             //string sql = "create table highscores (name varchar(20), score int)";
-            openConnectionDatabase();
-            SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
-            int result = command.ExecuteNonQuery();
-            closeConnectionDatabase();
+            int result = -1;//vérif valeur nagatif
+            try
+            {
+                openConnectionDatabase();
+                SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
+                result = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                _log.Error("error :" + e.Message);
+            }
+            finally
+            {
+                closeConnectionDatabase();
+            }
+            
             return result;
         }
         public DataTable executeReader(string pSql)
@@ -80,11 +92,15 @@ namespace BAJunior.ServiceData
                 SQLiteDataReader reader = command.ExecuteReader();
                 dt.Load(reader);
                 reader.Close();
-                closeConnectionDatabase();
+                
             }
             catch (Exception e)
             {
                 _log.Error("error :" + e.Message);
+            }
+            finally
+            {
+                closeConnectionDatabase();
             }
             return dt;
         }

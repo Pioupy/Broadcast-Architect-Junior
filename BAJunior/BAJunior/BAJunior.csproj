@@ -80,9 +80,13 @@
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Model\SetCommand.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ServiceData\CommandData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
+    <Compile Include="ServiceData\JointPCData.cs" />
     <Compile Include="ServiceData\KeyboardData.cs" />
+    <Compile Include="ServiceData\ParamData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
+    <Compile Include="ServiceData\SetCommandData.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="View\Forms\Form1.cs">
       <SubType>Form</SubType>
