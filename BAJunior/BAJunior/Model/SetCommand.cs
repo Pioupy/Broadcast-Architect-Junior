@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Keyboard
+    class SetCommand
     {
         private String m_name;
         // [Getter/Setter] String m_name

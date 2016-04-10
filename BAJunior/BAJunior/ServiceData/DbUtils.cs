@@ -1,45 +1,105 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using log4net;
+using log4net.Config;
+using System;
+using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace BAJunior.ServiceData
 {
     /// <summary>
     /// Méthodes génériques pour la Base de données (initialisation de connection etc) 
     /// </summary>
+    /// 
     class DbUtils
     {
-        string nameDatabase = "MyDatabase.sqlite";
+        // On définit une variable logger static qui référence l'instance du logger nommé Program
+        private static readonly ILog _log = LogManager.GetLogger(typeof(DbUtils));
         private SQLiteConnection m_dbConnection;
-        public void CreateDatabase(string pNameDatebase)
+        private string m_nameDatabase;
+        private int m_versionDataBase;
+        public DbUtils()
         {
-            SQLiteConnection.CreateFile(pNameDatebase);
+            // On charge la configuration de base qui log dans la console
+            BasicConfigurator.Configure();
+            m_nameDatabase = "MyDatabaseTest.sqlite";
+            m_versionDataBase = 3;
         }
-        public void OpenConnectionDatabase(string pNameDatabase)//pNameDatebase uitliser !!
+        public DbUtils(string pNameDatabase, int pVersion)
         {
-            m_dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
-            m_dbConnection.Open();
+            // On charge la configuration de base qui log dans la console
+            BasicConfigurator.Configure();
+            m_nameDatabase = pNameDatabase;
+            m_versionDataBase = pVersion;
         }
-        public void CloseConnectionDatabase()
+        public void createDatabase()
         {
-            m_dbConnection.Close();
-        }
-        public Boolean ExecuteQuery(string pSql)
-        {
-            //string sql = "create table highscores (name varchar(20), score int)";
-            SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
-            int row = command.ExecuteNonQuery();
-            if (row > 0)
+            // tester existance fichier
+            if (!File.Exists(m_nameDatabase))
             {
-                return true;
+                SQLiteConnection.CreateFile(m_nameDatabase);
+                _log.Info("Base de données créée");
             }
             else
             {
-                return false;
+                _log.Warn("Base de données DEJA créée");
             }
+        }
+        public void openConnectionDatabase()//pNameDatebase uitliser !!
+        {
+            m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";");
+            m_dbConnection.Open();
+            _log.Info("Ouverture de la connexion à la base de données");
+        }
+        public void checkConnection()
+        {
+
+        }
+        public void closeConnectionDatabase()
+        {
+            m_dbConnection.Close();
+            _log.Info("Fermeture de la connexion à la base de données");
+        }
+        public int executeQuery(string pSql)
+        {
+            //string sql = "create table highscores (name varchar(20), score int)";
+            openConnectionDatabase();
+            SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
+            int result = command.ExecuteNonQuery();
+            closeConnectionDatabase();
+            return result;
+        }
+        public DataTable executeReader(string pSql)
+        {
+            //string sql = "create table highscores (name varchar(20), score int)";
+            DataTable dt = new DataTable();
+            try
+            {
+                openConnectionDatabase();
+                SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
+                SQLiteDataReader reader = command.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+                closeConnectionDatabase();
+            }
+            catch (Exception e)
+            {
+                _log.Error("error :" + e.Message);
+            }
+            return dt;
+        }
+        public string executeScalar(string pSql)
+        {
+            //string sql = "create table highscores (name varchar(20), score int)";
+            openConnectionDatabase();
+            SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
+            object result = command.ExecuteScalar();
+            closeConnectionDatabase();
+            if (result != null)
+            {
+                return result.ToString();
+            }
+            return "";
         }
     }
 }
