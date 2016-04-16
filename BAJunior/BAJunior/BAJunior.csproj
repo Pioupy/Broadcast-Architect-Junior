@@ -89,6 +89,12 @@
     <Compile Include="ServiceData\SetCommandData.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
+    <Compile Include="View\Forms\admin\A_Gest1Btn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\admin\A_Gest1Btn.Designer.cs">
+      <DependentUpon>A_Gest1Btn.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
+      <DependentUpon>A_Gest1Btn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="View\Forms\admin\" />
     <Folder Include="View\Forms\user\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
