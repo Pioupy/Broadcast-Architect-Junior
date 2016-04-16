@@ -88,6 +88,7 @@
     <Compile Include="ServiceData\ProfilData.cs" />
     <Compile Include="ServiceData\SetCommandData.cs" />
     <Compile Include="ServiceData\UserData.cs" />
+    <Compile Include="ServiceMétier\FileTools.cs" />
     <Compile Include="View\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,7 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="ServiceMétier\" />
     <Folder Include="View\Forms\admin\" />
     <Folder Include="View\Forms\user\" />
   </ItemGroup>

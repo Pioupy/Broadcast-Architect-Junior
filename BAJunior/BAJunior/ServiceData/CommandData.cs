@@ -59,7 +59,7 @@ namespace BAJunior.ServiceData
         }
         public void delete(Command pCommand)
         {
-            string requete = "DELETE FROM Command WHERE IDCommand = '" + pUpCommandser.getId() + "'; ";
+            string requete = "DELETE FROM Command WHERE IDCommand = '" + pCommand.getId() + "'; ";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
