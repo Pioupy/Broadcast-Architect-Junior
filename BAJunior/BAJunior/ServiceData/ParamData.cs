@@ -7,29 +7,29 @@ using BAJunior.Model;
 
 namespace BAJunior.ServiceData
 {
-    class ProfilData
+    class ParamData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(ProfilData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(ParamData));
         private static DbUtils m_dbUtils;
-        public ProfilData()
+        public ParamData()
         {
             // On charge la configuration de base qui log dans la console
             BasicConfigurator.Configure();
             m_dbUtils = new DbUtils();
         }
-        public void create(Profil pProfil)
+        public void create(Param pParam)
         {
-            string requete = "insert into Profil (Name, Status, IDUser, IDKeyboard) values ('" + pProfil.getName() + "','" + pProfil.getStatus() + "','" + pProfil.getIdUser() + "','" + pProfil.getIdKeyboard() + "')";
+            string requete = "insert into Param (Name, IDSetCommand, IDCommand) values ('" + pParam.getName() + "','" + pParam.getIdSetCommand() + "','" + pParam.getIdCommand() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Profil has been created.");
+                    _log.Info("Param has been created.");
                 }
                 else
                 {
-                    _log.Warn("Profil has not been created.");
+                    _log.Warn("Param has not been created.");
                 }
             }
             catch (Exception fail)
@@ -38,18 +38,18 @@ namespace BAJunior.ServiceData
             }
 
         }
-        public void update(Profil pProfil)
+        public void update(Param pParam)
         {
-            string requete = "UPDATE Profil SET Name = '" + pProfil.getName() + "', Status = '" + pProfil.getStatus() + "', IDUser = '" + pProfil.getIdUser() + "', IDKeyboard = '" + pProfil.getIdKeyboard() + "' WHERE IDProfl = '" + pProfil.getId() + "';";
+            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', IDSetCommand = '" + pParam.getIdSetCommand() + "', IDCommand = '" + pParam.getIdCommand() + "' WHERE IDParam = '" + pParam.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Profil has been updated.");
+                    _log.Info("Param has been updated.");
                 }
                 else
                 {
-                    _log.Warn("Profil has not been updated.");
+                    _log.Warn("Param has not been updated.");
                 }
             }
             catch (Exception fail)
@@ -57,18 +57,18 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public void delete(Profil pProfil)
+        public void delete(Param pParam)
         {
-            string requete = "DELETE FROM Profil WHERE IDProdil = '" + pProfil.getId() + "'; ";
+            string requete = "DELETE FROM Param WHERE IDParam = '" + pParam.getId() + "'; ";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Profil has been deleted");
+                    _log.Info("Param has been deleted");
                 }
                 else
                 {
-                    _log.Warn("Profil has not been deleted");
+                    _log.Warn("Param has not been deleted");
                 }
             }
             catch (Exception fail)
@@ -76,10 +76,10 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public Profil read(int id)
+        public Param read(int id)
         {
-            Profil profil = null;
-            string requete = "SELECT * from Profil WHERE IDUser = '" + id + "' order by IDUser asc;";
+            Param param = null;
+            string requete = "SELECT * from Param WHERE IDParam = '" + id + "' order by IDParam asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -88,22 +88,21 @@ namespace BAJunior.ServiceData
                 {
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
                     string name = r["Name"].ToString();
-                    string status = r["Status"].ToString();
-                    int idUser = Convert.ToInt32(r["IDUser"]);
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
-                    profil = new Profil(idProfil, name, status, idUser, idKeyboard);
+                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    param = new Param(idProfil, name, idSetCommand, idCommand);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return profil;
+            return param;
         }
-        public List<Profil> readAll()
+        public List<Param> readAll()
         {
-            List<Profil> profilList = new List<Profil>();
-            string requete = "SELECT * from Profil order by IDProfil asc";
+            List<Param> paramList = new List<Param>();
+            string requete = "SELECT * from Param order by IDParam asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -112,18 +111,17 @@ namespace BAJunior.ServiceData
                 {
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
                     string name = r["Name"].ToString();
-                    string status = r["Status"].ToString();
-                    int idUser = Convert.ToInt32(r["IDUser"]);
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
-                    Profil profil = new Profil(idProfil, name, status, idUser, idKeyboard);
-                    profilList.Add(profil);
+                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    Param param = new Param(idProfil, name, idSetCommand, idCommand);
+                    paramList.Add(param);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return profilList;
+            return paramList;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using log4net;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using log4net;
 using log4net.Config;
 using System;
 using System.Data;
@@ -7,29 +10,29 @@ using BAJunior.Model;
 
 namespace BAJunior.ServiceData
 {
-    class KeyboardData
+    class SetCommandData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(UserData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(SetCommandData));
         private static DbUtils m_dbUtils;
-        public KeyboardData()
+        public SetCommandData()
         {
             // On charge la configuration de base qui log dans la console
             BasicConfigurator.Configure();
             m_dbUtils = new DbUtils();
         }
-        public void create(Keyboard pKeyboard)
+        public void create(SetCommand pSetCommand)
         {
-            string requete = "insert into Keyboard (Name) values ('" + pKeyboard.getName() + "')";
+            string requete = "insert into SetCommand (Name) values ('" + pSetCommand.getName() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been created.");
+                    _log.Info("SetCommand has been created.");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been created.");
+                    _log.Warn("SetCommand has not been created.");
                 }
             }
             catch (Exception fail)
@@ -38,18 +41,18 @@ namespace BAJunior.ServiceData
             }
 
         }
-        public void update(Keyboard pKeyboard)
+        public void update(SetCommand pSetCommand)
         {
-            string requete = "UPDATE Keyboard SET Name = '" + pKeyboard.getName() + "' WHERE IDKeyboard = '" + pKeyboard.getId() + "';";
+            string requete = "UPDATE SetCommand SET Name = '" + pSetCommand.getName() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been updated.");
+                    _log.Info("SetCommand has been updated.");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been updated.");
+                    _log.Warn("SetCommand has not been updated.");
                 }
             }
             catch (Exception fail)
@@ -57,18 +60,18 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public void delete(Keyboard pKeyboard)
+        public void delete(SetCommand pSetCommand)
         {
-            string requete = "DELETE FROM Keyboard WHERE IDKeyboard = '" + pKeyboard.getId() + "'; ";
+            string requete = "DELETE FROM SetCommand WHERE IDSetCommand = '" + pSetCommand.getId() + "'; ";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been deleted");
+                    _log.Info("SetCommand has been deleted");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been deleted");
+                    _log.Warn("SetCommand has not been deleted");
                 }
             }
             catch (Exception fail)
@@ -76,48 +79,48 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public Keyboard read(int id)
+        public SetCommand read(int id)
         {
-            Keyboard keyboard = null;
-            string requete = "SELECT * from Keyboard WHERE IDKeyboard = '" + id + "' order by IDKeyboard asc;";
+            SetCommand setCommand = null;
+            string requete = "SELECT * from SetCommand WHERE IDSetCommand = '" + id + "' order by IDSetCommand asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
                     string name = r["Name"].ToString();
-                    keyboard = new Keyboard(idKeyboard, name);
+                    setCommand = new SetCommand(idSetCommand, name);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return keyboard;
+            return setCommand;
         }
-        public List<Keyboard> readAll()
+        public List<SetCommand> readAll()
         {
-            List<Keyboard> KeyboardList = new List<Keyboard>();
-            string requete = "SELECT * from User order by IDUser asc";
+            List<SetCommand> setCommandList = new List<SetCommand>();
+            string requete = "SELECT * from SetCommand order by IDSetCommand asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
                     string name = r["Name"].ToString();
-                    Keyboard keyboard = new Keyboard(idKeyboard, name);
-                    KeyboardList.Add(keyboard);
+                    SetCommand setCommand = new SetCommand(idSetCommand, name);
+                    setCommandList.Add(setCommand);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return KeyboardList;
+            return setCommandList;
         }
     }
 }
