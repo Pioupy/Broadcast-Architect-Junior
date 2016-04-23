@@ -13,21 +13,22 @@ namespace BAJunior.Model
         private String m_status;
         private int m_idUser;
         private int m_idKeyboard;
+
         //Default constructor
-        public Profil(String name, String status, int isUser, int idKeyboard)
+        public Profil(String name, String status, int idUser, int idKeyboard)
         {
             m_name = name;
             m_status = status;
-            m_idUser = isUser;
+            m_idUser = idUser;
             m_idKeyboard = idKeyboard;
         }
         //Constructor with ID
-        public Profil(int id, String name, String status, int isUser, int idKeyboard)
+        public Profil(int id, String name, String status, int idUser, int idKeyboard)
         {
             m_idProfil = id;
             m_name = name;
             m_status = status;
-            m_idUser = isUser;
+            m_idUser = idUser;
             m_idKeyboard = idKeyboard;
         }
         // [Getter/Setter] Int m_idProfil

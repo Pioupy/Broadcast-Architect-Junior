@@ -10,7 +10,7 @@ namespace BAJunior.ServiceData
     class JointPCData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(UserData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(JointPCData));
         private static DbUtils m_dbUtils;
         public JointPCData()
         {
@@ -20,7 +20,7 @@ namespace BAJunior.ServiceData
         }
         public void create(JointPC pJointPC)
         {
-            string requete = "insert into JointPC (BtnKeyboard, IDProfil, IDCommand) values ('" + pJointPC.getBtnKeyboard() + "','" + pJointPC.getIdProfil() + "','" + pJointPC.getIdCommand() + "')";
+            string requete = "insert into JointPC (IDParam, IDCommand) values ('" + pJointPC.getIdParam() + "','" + pJointPC.getIdCommand() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -40,7 +40,7 @@ namespace BAJunior.ServiceData
         }
         public void update(JointPC pJointPC)
         {
-            string requete = "UPDATE JointPC SET BtnKeyboard = '" + pJointPC.getBtnKeyboard() + "', IDProfil = '" + pJointPC.getIdProfil() + "', IDCommand = '" + pJointPC.getIdCommand() + "' WHERE IDJointPC = '" + pJointPC.getId() + "';";
+            string requete = "UPDATE JointPC SET IDParam = '" + pJointPC.getIdParam() + "', IDCommand = '" + pJointPC.getIdCommand() + "' WHERE IDJointPC = '" + pJointPC.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -79,7 +79,7 @@ namespace BAJunior.ServiceData
         public JointPC read(int id)
         {
             JointPC jointPC = null;
-            string requete = "SELECT * from JointPC WHERE IDUser = '" + id + "' order by IDUser asc;";
+            string requete = "SELECT * from JointPC WHERE IDJointPC = '" + id + "' order by IDJointPC asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -87,10 +87,9 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idJointPC = Convert.ToInt32(r["IDJointPC"]);
-                    string btnKeyboard = r["BtnKeyboard"].ToString();
-                    int idProfil = Convert.ToInt32(r["IDProfil"]);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
                     int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    jointPC = new JointPC(idJointPC, btnKeyboard, idProfil, idCommand);
+                    jointPC = new JointPC(idJointPC, idParam, idCommand);
                 }
             }
             catch (Exception fail)
@@ -102,7 +101,7 @@ namespace BAJunior.ServiceData
         public List<JointPC> readAll()
         {
             List<JointPC> jointPCList = new List<JointPC>();
-            string requete = "SELECT * from JointPC order by IDUser asc";
+            string requete = "SELECT * from JointPC order by IDJointPC asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -110,10 +109,9 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idJointPC = Convert.ToInt32(r["IDJointPC"]);
-                    string btnKeyboard = r["BtnKeyboard"].ToString();
-                    int idProfil = Convert.ToInt32(r["IDProfil"]);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
                     int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    JointPC jointPC = new JointPC(idJointPC, btnKeyboard, idProfil, idCommand);
+                    JointPC jointPC = new JointPC(idJointPC, idParam, idCommand);
                     jointPCList.Add(jointPC);
                 }
             }
