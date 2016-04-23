@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BAJunior
+namespace BAJunior.View.Forms
 {
-    public partial class Form1 : Form
+    public partial class Connection : Form
     {
-        public Form1()
+        public Connection()
         {
             InitializeComponent();
         }

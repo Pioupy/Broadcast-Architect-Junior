@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using BAJunior.View.Forms;
 
 namespace BAJunior
 {
@@ -13,7 +14,7 @@ namespace BAJunior
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Connection());
         }
     }
 }
