@@ -49,7 +49,7 @@ namespace BAJunior.ServiceData
         {
             m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";");
             m_dbConnection.Open();
-            _log.Info("Ouverture de la connexion à la base de données");
+            //_log.Info("Ouverture de la connexion à la base de données");
         }
         public void checkConnection()
         {
@@ -58,7 +58,7 @@ namespace BAJunior.ServiceData
         public void closeConnectionDatabase()
         {
             m_dbConnection.Close();
-            _log.Info("Fermeture de la connexion à la base de données");
+            //_log.Info("Fermeture de la connexion à la base de données");
         }
         public int executeQuery(string pSql)
         {

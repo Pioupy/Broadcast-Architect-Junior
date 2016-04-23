@@ -20,8 +20,8 @@ namespace BAJunior.ServiceData
         }
         public void create(User pUser)
         {
-            bool isAdmin = pUser.isAdmin() ? true : false;
-            string requete = "insert into User (User, Password, Status) values ('" + pUser.getLogin() + "','" + pUser.getPassword() + "','" + isAdmin + "')";
+            bool isAdmin = pUser.getIsAdmin() ? true : false;
+            string requete = "insert into User (Login, Password, IsAdmin) values ('" + pUser.getLogin() + "','" + pUser.getPassword() + "','" + isAdmin + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -41,8 +41,8 @@ namespace BAJunior.ServiceData
         }
         public void update(User pUser)
         {
-            bool isAdmin = pUser.isAdmin() ? true : false;
-            string requete = "UPDATE User SET User = '" + pUser.getLogin() + "', Password = '" + pUser.getPassword() + "', Status = '" + isAdmin + "' WHERE IDUser = '" + pUser.getId() + "';";
+            bool isAdmin = pUser.getIsAdmin() ? true : false;
+            string requete = "UPDATE User SET Login = '" + pUser.getLogin() + "', Password = '" + pUser.getPassword() + "', IsAdmin = '" + isAdmin + "' WHERE IDUser = '" + pUser.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -89,9 +89,9 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idUser = Convert.ToInt32(r["IDUser"]);
-                    string userName = r["User"].ToString();
+                    string userName = r["Login"].ToString();
                     string password = r["Password"].ToString();
-                    bool isAdmin = Convert.ToBoolean(r["Status"].ToString());
+                    bool isAdmin = Convert.ToBoolean(r["IsAdmin"].ToString());
                     user = new User(idUser, userName, password, isAdmin);
                 }
             }
@@ -112,9 +112,9 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idUser = Convert.ToInt32(r["IDUser"]);
-                    string userName = r["User"].ToString();
+                    string userName = r["Login"].ToString();
                     string password = r["Password"].ToString();
-                    bool isAdmin = Convert.ToBoolean(r["Status"].ToString());
+                    bool isAdmin = Convert.ToBoolean(r["IsAdmin"].ToString());
                     User user = new User(idUser, userName, password, isAdmin);
                     userList.Add(user);
                 }
