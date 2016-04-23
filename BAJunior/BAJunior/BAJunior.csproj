@@ -73,23 +73,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Connection.cs" />
+    <Compile Include="Model\Application.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Command.cs" />
     <Compile Include="Model\JointPC.cs" />
     <Compile Include="Model\Keyboard.cs" />
     <Compile Include="Model\Param.cs" />
     <Compile Include="Model\Profil.cs" />
-    <Compile Include="Model\SetCommand.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="ServiceData\ApplicationData.cs" />
+    <Compile Include="ServiceData\CategoryData.cs" />
     <Compile Include="ServiceData\CommandData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
+    <Compile Include="ServiceData\InitDB.cs" />
     <Compile Include="ServiceData\JointPCData.cs" />
     <Compile Include="ServiceData\KeyboardData.cs" />
     <Compile Include="ServiceData\ParamData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
-    <Compile Include="ServiceData\SetCommandData.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
     <Compile Include="View\Forms\admin\Administrator.cs">
@@ -175,6 +179,9 @@
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,7 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Controller\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
