@@ -32,43 +32,19 @@ namespace BAJunior.ServiceData
             }
             if (test == true)
             {
-                testUser();
-            }
-        }
-        private void testUser()
-        {
-            //Initiation Variable : 
-            UserData userData = new UserData();
-            User userOne = new User("admin", "admin", true);
-            User userTwo = new User("user", "user", false);
-            // insert valeur 
-            userData.create(userOne);
-            userData.create(userTwo);
-            // read values 
-            userOne = userData.read(1);
-            userTwo = userData.read(2);
-            //MessageBox.Show("User One :" + userReadOne.getLogin());
-            //MessageBox.Show("User two :" + userReadTwo.getLogin());
-            //Console.WriteLine("User One :" + userReadOne.getLogin());
-            //Console.WriteLine("User two :" + userReadTwo.getLogin());
-            // update values 
-            userOne.setLogin("administrateur");
-            userData.update(userOne);
-            // read values
-            List<User> result = userData.readAll();
-            for (int i = 0; i < result.Count; i++)
-            {
-                //Console.WriteLine("User " + i + " : " + result[i].getLogin());
-                //MessageBox.Show("User " + i + " : " + result[i].getLogin());
-            }
-            // delete values
-            userData.delete(userTwo);
-            // read value
-            List<User> resultAll = userData.readAll();
-            for (int i = 0; i < result.Count; i++)
-            {
-                //Console.WriteLine("User " + i + " : " + resultAll[i].getLogin());
-                //MessageBox.Show("User " + i + " : " + resultAll[i].getLogin());
+                TestUnitaireTable testUnitaireTable = new TestUnitaireTable();
+                testUnitaireTable.testUser();
+                /*
+                testUnitaireTable.testKeyboard();
+                testUnitaireTable.testApplication();
+                testUnitaireTable.testCategory();
+                testUnitaireTable.testParam();
+                testUnitaireTable.testProfil();
+                /*
+                testUnitaireTable.testCommand();
+                testUnitaireTable.testJointPAC();
+                testUnitaireTable.testJointPC();
+                */
             }
         }
         public void createDatabaseICAN()
@@ -78,12 +54,12 @@ namespace BAJunior.ServiceData
         private void initTables()
         {//REVOIR CELA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             createTableUser();
-            /*
             createTableKeyboard();
             createTableApplication();
             createTableCategory();
             createTableParam();
             createTableProfil();
+            /*
             createTableCommand();
             createTableJointPAC();
             createTableJointPC();

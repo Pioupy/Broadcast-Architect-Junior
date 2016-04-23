@@ -125,6 +125,28 @@ namespace BAJunior.ServiceData
             }
             return userList;
         }
+        public User readByName(String name)
+        {
+            User user = null;
+            string requete = "SELECT * from User WHERE Login = '" + name + "' order by IDUser asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
 
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idUser = Convert.ToInt32(r["IDUser"]);
+                    string userName = r["Login"].ToString();
+                    string password = r["Password"].ToString();
+                    bool isAdmin = Convert.ToBoolean(r["IsAdmin"].ToString());
+                    user = new User(idUser, userName, password, isAdmin);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return user;
+        }
     }
 }

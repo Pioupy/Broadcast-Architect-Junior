@@ -40,7 +40,7 @@ namespace BAJunior.ServiceData
         }
         public void update(Profil pProfil)
         {
-            string requete = "UPDATE Profil SET Name = '" + pProfil.getName() + "', Status = '" + pProfil.getStatus() + "', IDUser = '" + pProfil.getIdUser() + "', IDKeyboard = '" + pProfil.getIdKeyboard() + "' WHERE IDProfl = '" + pProfil.getId() + "';";
+            string requete = "UPDATE Profil SET Name = '" + pProfil.getName() + "', Status = '" + pProfil.getStatus() + "', IDUser = '" + pProfil.getIdUser() + "', IDKeyboard = '" + pProfil.getIdKeyboard() + "' WHERE IDProfil = '" + pProfil.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -59,7 +59,7 @@ namespace BAJunior.ServiceData
         }
         public void delete(Profil pProfil)
         {
-            string requete = "DELETE FROM Profil WHERE IDProdil = '" + pProfil.getId() + "'; ";
+            string requete = "DELETE FROM Profil WHERE IDProfil = '" + pProfil.getId() + "'; ";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -79,7 +79,7 @@ namespace BAJunior.ServiceData
         public Profil read(int id)
         {
             Profil profil = null;
-            string requete = "SELECT * from Profil WHERE IDUser = '" + id + "' order by IDUser asc;";
+            string requete = "SELECT * from Profil WHERE IDProfil = '" + id + "' order by IDProfil asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -87,8 +87,8 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
-                    string name = r["Name"].ToString();
-                    string status = r["Status"].ToString();
+                    String name = r["Name"].ToString();
+                    String status = r["Status"].ToString();
                     int idUser = Convert.ToInt32(r["IDUser"]);
                     int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
                     profil = new Profil(idProfil, name, status, idUser, idKeyboard);
@@ -111,8 +111,8 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
-                    string name = r["Name"].ToString();
-                    string status = r["Status"].ToString();
+                    String name = r["Name"].ToString();
+                    String status = r["Status"].ToString();
                     int idUser = Convert.ToInt32(r["IDUser"]);
                     int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
                     Profil profil = new Profil(idProfil, name, status, idUser, idKeyboard);

@@ -9,23 +9,20 @@ namespace BAJunior.Model
     class JointPC
     {
         private int m_idJointPC;
-        private String m_btnKeyboard;
-        private int m_idProfil;
+        private int m_idParam;
         private int m_idCommand;
 
         //Default constructor
-        public JointPC(String btnKeyboard, int idProfil, int idCommand)
+        public JointPC(int idParam, int idCommand)
         {
-            m_btnKeyboard = btnKeyboard;
-            m_idProfil = idProfil;
+            m_idParam = idParam;
             m_idCommand = idCommand;
         }
         //Constructor with ID
-        public JointPC(int id, String btnKeyboard, int idProfil, int idCommand)
+        public JointPC(int id, int idParam, int idCommand)
         {
             m_idJointPC = id;
-            m_btnKeyboard = btnKeyboard;
-            m_idProfil = idProfil;
+            m_idParam = idParam;
             m_idCommand = idCommand;
         }
         // [Getter/Setter] Int m_idJointPC
@@ -37,24 +34,14 @@ namespace BAJunior.Model
         {
             this.m_idJointPC = id;
         }
-
-        // [Getter/Setter] String m_name
-        public String getBtnKeyboard()
+        // [Getter/Setter] Int m_idParam
+        public int getIdParam()
         {
-            return this.m_btnKeyboard;
+            return this.m_idParam;
         }
-        public void setBtnKeyboard(String btnKeyboard)
+        public void setIdParam(int idParam)
         {
-            this.m_btnKeyboard = btnKeyboard;
-        }
-        // [Getter/Setter] Int m_idProfil
-        public int getIdProfil()
-        {
-            return this.m_idProfil;
-        }
-        public void setIdProfil(int idProfil)
-        {
-            this.m_idProfil = idProfil;
+            this.m_idParam = idParam;
         }
         // [Getter/Setter] Int m_idCommand
         public int getIdCommand()
