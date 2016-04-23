@@ -1,6 +1,6 @@
 ﻿namespace BAJunior.View.Forms.admin
 {
-    partial class Administrator
+    partial class A_Administrator
     {
         // TODO : APPEL TOUS LES USER CONTROL DE ADMIN
         /// <summary>

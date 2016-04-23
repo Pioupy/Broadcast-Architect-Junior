@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BAJunior.View.Forms.user
 {
-    public partial class User : Form
+    public partial class U_User : Form
     {
-        public User()
+        public U_User()
         {
             InitializeComponent();
         }

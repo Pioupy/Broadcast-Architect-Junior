@@ -15,8 +15,7 @@ namespace BAJunior.Controller
 
         public User Connect(String login, String password) {
             UserData uData = new UserData();
-            User user = null;
-          //  User user = uData.readByName(login);
+            User user = uData.readByName(login);
 
             if (user != null) {
                 if (user.getPassword() == ConvertSHA256(password)) {

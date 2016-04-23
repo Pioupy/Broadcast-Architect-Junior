@@ -20,7 +20,7 @@ namespace BAJunior.ServiceData
         }
         public void create(User pUser)
         {
-            bool isAdmin = pUser.getIsAdmin() ? true : false;
+            bool isAdmin = pUser.isAdmin() ? true : false;
             string requete = "insert into User (Login, Password, IsAdmin) values ('" + pUser.getLogin() + "','" + pUser.getPassword() + "','" + isAdmin + "')";
             try
             {
@@ -41,7 +41,7 @@ namespace BAJunior.ServiceData
         }
         public void update(User pUser)
         {
-            bool isAdmin = pUser.getIsAdmin() ? true : false;
+            bool isAdmin = pUser.isAdmin() ? true : false;
             string requete = "UPDATE User SET Login = '" + pUser.getLogin() + "', Password = '" + pUser.getPassword() + "', IsAdmin = '" + isAdmin + "' WHERE IDUser = '" + pUser.getId() + "';";
             try
             {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using BAJunior.View.Forms;
+using System.Security.Cryptography;
+
 
 namespace BAJunior
 {

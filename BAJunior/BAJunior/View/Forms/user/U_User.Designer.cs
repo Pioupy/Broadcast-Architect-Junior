@@ -1,6 +1,6 @@
 ﻿namespace BAJunior.View.Forms.user
 {
-    partial class User
+    partial class U_User
     {
         /// <summary>
         /// Required designer variable.

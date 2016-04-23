@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BAJunior.View.Forms.admin
 {
-    public partial class Administrator : Form
+    public partial class A_Administrator : Form
     {
-        public Administrator()
+        public A_Administrator()
         {
             InitializeComponent();
         }
