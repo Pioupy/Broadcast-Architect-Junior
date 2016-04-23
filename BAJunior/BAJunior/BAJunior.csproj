@@ -99,11 +99,11 @@
     <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
-    <Compile Include="View\Forms\admin\Administrator.cs">
+    <Compile Include="View\Forms\admin\A_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\admin\Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="View\Forms\admin\A_Administrator.Designer.cs">
+      <DependentUpon>A_Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\admin\A_Gest1Btn.cs">
       <SubType>UserControl</SubType>
@@ -143,11 +143,11 @@
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\user\User.cs">
+    <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\user\User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
+    <Compile Include="View\Forms\user\U_User.Designer.cs">
+      <DependentUpon>U_User.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\user\U_AddProfil.cs">
       <SubType>UserControl</SubType>
@@ -176,8 +176,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Forms\admin\Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\admin\A_Administrator.resx">
+      <DependentUpon>A_Administrator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
@@ -185,8 +185,8 @@
     <EmbeddedResource Include="View\Forms\Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\user\User.resx">
-      <DependentUpon>User.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\user\U_User.resx">
+      <DependentUpon>U_User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
