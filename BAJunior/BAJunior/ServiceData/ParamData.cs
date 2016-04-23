@@ -20,7 +20,8 @@ namespace BAJunior.ServiceData
         }
         public void create(Param pParam)
         {
-            string requete = "insert into Param (Name, IDSetCommand, IDCommand) values ('" + pParam.getName() + "','" + pParam.getIdSetCommand() + "','" + pParam.getIdCommand() + "')";
+            bool isUser = pParam.getIsUser() ? true : false;
+            string requete = "insert into Param (Name, Value, IsUser) values ('" + pParam.getName() + "','" + pParam.getValue() + "','" + isUser + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -40,7 +41,8 @@ namespace BAJunior.ServiceData
         }
         public void update(Param pParam)
         {
-            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', IDSetCommand = '" + pParam.getIdSetCommand() + "', IDCommand = '" + pParam.getIdCommand() + "' WHERE IDParam = '" + pParam.getId() + "';";
+            bool isUser = pParam.getIsUser() ? true : false;
+            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', Value = '" + pParam.getValue() + "', IsUser = '" + isUser + "' WHERE IDParam = '" + pParam.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -86,11 +88,11 @@ namespace BAJunior.ServiceData
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idProfil = Convert.ToInt32(r["IDProfil"]);
-                    string name = r["Name"].ToString();
-                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
-                    int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    param = new Param(idProfil, name, idSetCommand, idCommand);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
+                    String name = r["Name"].ToString();
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    param = new Param(idParam, name, value, isUser);
                 }
             }
             catch (Exception fail)
@@ -109,11 +111,11 @@ namespace BAJunior.ServiceData
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idProfil = Convert.ToInt32(r["IDProfil"]);
-                    string name = r["Name"].ToString();
-                    int idSetCommand = Convert.ToInt32(r["IDSetCommand"]);
-                    int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    Param param = new Param(idProfil, name, idSetCommand, idCommand);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
+                    String name = r["Name"].ToString();
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    Param param = new Param(idParam, name, value, isUser);
                     paramList.Add(param);
                 }
             }

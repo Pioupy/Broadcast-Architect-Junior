@@ -10,7 +10,7 @@ namespace BAJunior.ServiceData
     class KeyboardData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(UserData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(KeyboardData));
         private static DbUtils m_dbUtils;
         public KeyboardData()
         {
@@ -41,6 +41,7 @@ namespace BAJunior.ServiceData
         public void update(Keyboard pKeyboard)
         {
             string requete = "UPDATE Keyboard SET Name = '" + pKeyboard.getName() + "' WHERE IDKeyboard = '" + pKeyboard.getId() + "';";
+
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -87,7 +88,7 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
-                    string name = r["Name"].ToString();
+                    String name = r["Name"].ToString();
                     keyboard = new Keyboard(idKeyboard, name);
                 }
             }
@@ -99,8 +100,8 @@ namespace BAJunior.ServiceData
         }
         public List<Keyboard> readAll()
         {
-            List<Keyboard> KeyboardList = new List<Keyboard>();
-            string requete = "SELECT * from User order by IDUser asc";
+            List<Keyboard> keyboardList = new List<Keyboard>();
+            string requete = "SELECT * from Keyboard order by IDKeyboard asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -108,16 +109,16 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
-                    string name = r["Name"].ToString();
+                    String name = r["Name"].ToString();
                     Keyboard keyboard = new Keyboard(idKeyboard, name);
-                    KeyboardList.Add(keyboard);
+                    keyboardList.Add(keyboard);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return KeyboardList;
+            return keyboardList;
         }
     }
 }

@@ -6,30 +6,33 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Keyboard
+    class Application
     {
-        private int m_idKeyboard;
+        private int m_idApplication;
         private String m_name;
+        private String m_link;
 
         //Default constructor
-        public Keyboard(String name)
+        public Application(String name, String link)
         {
             m_name = name;
+            m_link = link;
         }
         //Constructor with ID
-        public Keyboard(int id, String name)
+        public Application(int id, String name, String link)
         {
-            m_idKeyboard = id;
+            m_idApplication = id;
             m_name = name;
+            m_link = link;
         }
-        // [Getter/Setter] Int m_idKeyboard
+        // [Getter/Setter] Int m_idApplication
         public int getId()
         {
-            return this.m_idKeyboard;
+            return this.m_idApplication;
         }
         public void setId(int id)
         {
-            this.m_idKeyboard = id;
+            this.m_idApplication = id;
         }
         // [Getter/Setter] String m_name
         public String getName()
@@ -39,6 +42,15 @@ namespace BAJunior.Model
         public void setName(String name)
         {
             this.m_name = name;
+        }
+        // [Getter/Setter] String m_link
+        public String getLink()
+        {
+            return this.m_link;
+        }
+        public void setLink(String link)
+        {
+            this.m_link = link;
         }
     }
 }
