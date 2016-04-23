@@ -56,7 +56,7 @@ namespace BAJunior.Model
             this.m_password = password;
         }
         // [Getter/Setter] Boolean m_admin
-        public bool getIsAdmin()
+        public bool isAdmin()
         {
             return this.m_admin;
         }
