@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Keyboard
+    class Category
     {
-        private int m_idKeyboard;
+        private int m_idCategory;
         private String m_name;
 
         //Default constructor
-        public Keyboard(String name)
+        public Category(String name)
         {
             m_name = name;
         }
         //Constructor with ID
-        public Keyboard(int id, String name)
+        public Category(int id, String name)
         {
-            m_idKeyboard = id;
+            m_idCategory = id;
             m_name = name;
         }
-        // [Getter/Setter] Int m_idKeyboard
+        // [Getter/Setter] Int m_idCategory
         public int getId()
         {
-            return this.m_idKeyboard;
+            return this.m_idCategory;
         }
         public void setId(int id)
         {
-            this.m_idKeyboard = id;
+            this.m_idCategory = id;
         }
         // [Getter/Setter] String m_name
         public String getName()

@@ -7,29 +7,30 @@ using BAJunior.Model;
 
 namespace BAJunior.ServiceData
 {
-    class KeyboardData
+    class ParamData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(KeyboardData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(ParamData));
         private static DbUtils m_dbUtils;
-        public KeyboardData()
+        public ParamData()
         {
             // On charge la configuration de base qui log dans la console
             BasicConfigurator.Configure();
             m_dbUtils = new DbUtils();
         }
-        public void create(Keyboard pKeyboard)
+        public void create(Param pParam)
         {
-            string requete = "insert into Keyboard (Name) values ('" + pKeyboard.getName() + "')";
+            bool isUser = pParam.getIsUser() ? true : false;
+            string requete = "insert into Param (Name, Value, IsUser) values ('" + pParam.getName() + "','" + pParam.getValue() + "','" + isUser + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been created.");
+                    _log.Info("Param has been created.");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been created.");
+                    _log.Warn("Param has not been created.");
                 }
             }
             catch (Exception fail)
@@ -38,19 +39,19 @@ namespace BAJunior.ServiceData
             }
 
         }
-        public void update(Keyboard pKeyboard)
+        public void update(Param pParam)
         {
-            string requete = "UPDATE Keyboard SET Name = '" + pKeyboard.getName() + "' WHERE IDKeyboard = '" + pKeyboard.getId() + "';";
-
+            bool isUser = pParam.getIsUser() ? true : false;
+            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', Value = '" + pParam.getValue() + "', IsUser = '" + isUser + "' WHERE IDParam = '" + pParam.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been updated.");
+                    _log.Info("Param has been updated.");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been updated.");
+                    _log.Warn("Param has not been updated.");
                 }
             }
             catch (Exception fail)
@@ -58,18 +59,18 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public void delete(Keyboard pKeyboard)
+        public void delete(Param pParam)
         {
-            string requete = "DELETE FROM Keyboard WHERE IDKeyboard = '" + pKeyboard.getId() + "'; ";
+            string requete = "DELETE FROM Param WHERE IDParam = '" + pParam.getId() + "'; ";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
                 {
-                    _log.Info("Keyboard has been deleted");
+                    _log.Info("Param has been deleted");
                 }
                 else
                 {
-                    _log.Warn("Keyboard has not been deleted");
+                    _log.Warn("Param has not been deleted");
                 }
             }
             catch (Exception fail)
@@ -77,48 +78,52 @@ namespace BAJunior.ServiceData
                 _log.Error(fail.Message);
             }
         }
-        public Keyboard read(int id)
+        public Param read(int id)
         {
-            Keyboard keyboard = null;
-            string requete = "SELECT * from Keyboard WHERE IDKeyboard = '" + id + "' order by IDKeyboard asc;";
+            Param param = null;
+            string requete = "SELECT * from Param WHERE IDParam = '" + id + "' order by IDParam asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
                     String name = r["Name"].ToString();
-                    keyboard = new Keyboard(idKeyboard, name);
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    param = new Param(idParam, name, value, isUser);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return keyboard;
+            return param;
         }
-        public List<Keyboard> readAll()
+        public List<Param> readAll()
         {
-            List<Keyboard> keyboardList = new List<Keyboard>();
-            string requete = "SELECT * from Keyboard order by IDKeyboard asc";
+            List<Param> paramList = new List<Param>();
+            string requete = "SELECT * from Param order by IDParam asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    int idParam = Convert.ToInt32(r["IDParam"]);
                     String name = r["Name"].ToString();
-                    Keyboard keyboard = new Keyboard(idKeyboard, name);
-                    keyboardList.Add(keyboard);
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    Param param = new Param(idParam, name, value, isUser);
+                    paramList.Add(param);
                 }
             }
             catch (Exception fail)
             {
                 _log.Error("error :" + fail.Message);
             }
-            return keyboardList;
+            return paramList;
         }
     }
 }
