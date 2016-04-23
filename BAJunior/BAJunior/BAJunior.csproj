@@ -50,13 +50,16 @@
     <Compile Include="Model\Keyboard.cs" />
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ServiceData\ButtonData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
+    <Compile Include="ServiceData\KeyboardData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
-    <Compile Include="View\Forms\Form1.cs">
+    <Compile Include="ServiceData\UserData.cs" />
+    <Compile Include="View\Forms\Connection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Forms\Connection.Designer.cs">
+      <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
