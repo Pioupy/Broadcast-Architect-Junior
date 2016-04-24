@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using log4net;
 using log4net.Config;
 using BAJunior.Model;
 namespace BAJunior.ServiceData
 {
-    //TODO : CLASSE AMENER A DISPARAITRE APRES LES TEST !!!!!!!!!!!!!!!!!!!!!!
+    //TODO : CLASSE AMENER A DISPARAITRE APRES LES TESTS !!!!!!!!!!!!!!!!!!!!!!
     class TestUnitaireTable
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
@@ -23,8 +22,8 @@ namespace BAJunior.ServiceData
         {
             //Initiation Variable : 
             UserData userData = new UserData();
-            User userOne = new User("admin", "admin", true);
-            User userTwo = new User("user", "user", false);
+            User userOne = new User("test1", "test1", false);
+            User userTwo = new User("test2", "test2", true);
             // insert valeur 
             userData.create(userOne);
             userData.create(userTwo);
@@ -231,7 +230,7 @@ namespace BAJunior.ServiceData
             //Initiation Variable : 
             ProfilData profilData = new ProfilData();
             Profil profilOne = new Profil("testProfil1","actif",1,1);
-            Profil profilTwo = new Profil("testProfil2", "passif", 1, 1);
+            Profil profilTwo = new Profil("testProfil2", "passif", 2, 2);
             // insert valeur 
             profilData.create(profilOne);
             profilData.create(profilTwo);

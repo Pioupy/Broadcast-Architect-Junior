@@ -34,35 +34,72 @@ namespace BAJunior.ServiceData
         }
         public void createDatabase()
         {
-            // tester existance fichier
+            // Test for file existence
             if (!File.Exists(m_nameDatabase))
             {
                 SQLiteConnection.CreateFile(m_nameDatabase);
-                _log.Info("Base de données créée");
+                _log.Info("Database has been created");
             }
             else
             {
-                _log.Warn("Base de données DEJA créée");
+                _log.Warn("Database has been already created");
             }
         }
         public void openConnectionDatabase()//pNameDatebase uitliser !!
         {
             m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";");
             m_dbConnection.Open();
-            //_log.Info("Ouverture de la connexion à la base de données");
+            _log.Debug("Ouverture de la connexion à la base de données");
         }
-        public void checkConnection()
+        public bool checkConnection(ConnectionState state)
         {
-            //a faire
+            bool connection = false;
+            if(m_dbConnection != null && state == ConnectionState.Open && m_dbConnection.State == state)
+            {
+                _log.Info("La connexion est bien ouverte."); // traduire
+                connection = true;
+            }
+            if (m_dbConnection != null && state == ConnectionState.Closed && m_dbConnection.State == state)
+            {
+                _log.Info("La connexion est bien fermée."); // traduire
+                connection = true;
+            }
+            else
+            {
+                _log.Error("L'état de la connexion n'est pas celle souhaité."); // traduire
+                connection = true;
+            }
+            return connection;
+        }
+        public bool stateForeignKey(String pstate)
+        {
+            bool result = false;
+            //Activer les clef étrangère
+            if (executeQuery("PRAGMA foreign_keys = " + pstate + ";") == 1)
+            {
+                _log.Info("State of foreign Key is ON.");
+                result = true;
+            }
+            else if (executeQuery("PRAGMA foreign_keys = " + pstate + ";") == 0)
+            {
+                _log.Info("State of foreign Key is OFF.");
+                result = true;
+            }
+            else
+            {
+                _log.Info("State of foreign Key has not been changed.");
+            }
+            int etat = executeQuery("PRAGMA foreign_keys;");
+            _log.Info("L'état de configuration des clef étrangère est : " + etat);
+            return result;
         }
         public void closeConnectionDatabase()
         {
             m_dbConnection.Close();
-            //_log.Info("Fermeture de la connexion à la base de données");
+            _log.Debug("Fermeture de la connexion à la base de données");
         }
         public int executeQuery(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
             int result = -1;//vérif valeur nagatif
             try
             {
@@ -83,7 +120,6 @@ namespace BAJunior.ServiceData
         }
         public DataTable executeReader(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
             DataTable dt = new DataTable();
             try
             {
@@ -106,7 +142,6 @@ namespace BAJunior.ServiceData
         }
         public string executeScalar(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
             openConnectionDatabase();
             SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
             object result = command.ExecuteScalar();
