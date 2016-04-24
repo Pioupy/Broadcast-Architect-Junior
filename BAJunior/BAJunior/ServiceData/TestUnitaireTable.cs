@@ -18,6 +18,54 @@ namespace BAJunior.ServiceData
             BasicConfigurator.Configure();
             m_dbUtils = new DbUtils();
         }
+        /* #####################################################
+           #               Début méthode test !!!              #
+           #####################################################*/
+        public void testProfil()
+        {
+            //Initiation Variable : 
+            ProfilData profilData = new ProfilData();
+            Profil profilOne = new Profil("testProfil1", "actif", 1, 1);
+            //Erreur devrait survenir :
+            Profil profilTwo = new Profil("testProfil2", "passif", 2, 2);
+            // insert valeur 
+            profilData.create(profilOne);
+            profilData.create(profilTwo);
+            // read values 
+            profilOne = profilData.read(1);
+            profilTwo = profilData.read(2);
+            if (seeMessage == true)
+            {
+                MessageBox.Show("Profil One :" + profilOne.getName());
+                MessageBox.Show("Profil two :" + profilTwo.getName());
+            }
+            // update values 
+            profilOne.setName("testProfilUpdate");
+            profilData.update(profilOne);
+            // read values
+            if (seeMessage == true)
+            {
+                List<Profil> result = profilData.readAll();
+                for (int i = 0; i < result.Count; i++)
+                {
+                    MessageBox.Show("Profil " + i + " : " + result[i].getName());
+                }
+            }
+            // delete values
+            profilData.delete(profilTwo);
+            // read value
+            if (seeMessage == true)
+            {
+                List<Profil> resultAll = profilData.readAll();
+                for (int i = 0; i < resultAll.Count; i++)
+                {
+                    MessageBox.Show("Profil " + i + " : " + resultAll[i].getName());
+                }
+            }
+        }
+        /* #####################################################
+           #                Fin méthode test !!!               #
+           #####################################################*/
         public void testUser()
         {
             //Initiation Variable : 
@@ -222,47 +270,6 @@ namespace BAJunior.ServiceData
                 for (int i = 0; i < resultAll.Count; i++)
                 {
                     MessageBox.Show("Param " + i + " : " + resultAll[i].getName());
-                }
-            }
-        }
-        public void testProfil()
-        {
-            //Initiation Variable : 
-            ProfilData profilData = new ProfilData();
-            Profil profilOne = new Profil("testProfil1","actif",1,1);
-            Profil profilTwo = new Profil("testProfil2", "passif", 2, 2);
-            // insert valeur 
-            profilData.create(profilOne);
-            profilData.create(profilTwo);
-            // read values 
-            profilOne = profilData.read(1);
-            profilTwo = profilData.read(2);
-            if (seeMessage == true)
-            {
-                MessageBox.Show("Profil One :" + profilOne.getName());
-                MessageBox.Show("Profil two :" + profilTwo.getName());
-            }
-            // update values 
-            profilOne.setName("testProfilUpdate");
-            profilData.update(profilOne);
-            // read values
-            if (seeMessage == true)
-            {
-                List<Profil> result = profilData.readAll();
-                for (int i = 0; i < result.Count; i++)
-                {
-                    MessageBox.Show("Profil " + i + " : " + result[i].getName());
-                }
-            }
-            // delete values
-            profilData.delete(profilTwo);
-            // read value
-            if (seeMessage == true)
-            {
-                List<Profil> resultAll = profilData.readAll();
-                for (int i = 0; i < resultAll.Count; i++)
-                {
-                    MessageBox.Show("Profil " + i + " : " + resultAll[i].getName());
                 }
             }
         }
