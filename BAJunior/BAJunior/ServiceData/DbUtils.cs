@@ -45,9 +45,9 @@ namespace BAJunior.ServiceData
                 _log.Warn("Database has been already created");
             }
         }
-        public void openConnectionDatabase()//pNameDatebase uitliser !!
+        public void openConnectionDatabase()
         {
-            m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";");
+            m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";foreign keys=True;");
             m_dbConnection.Open();
             _log.Debug("Ouverture de la connexion à la base de données");
         }
@@ -71,28 +71,6 @@ namespace BAJunior.ServiceData
             }
             return connection;
         }
-        public bool stateForeignKey(String pstate)
-        {
-            bool result = false;
-            //Activer les clef étrangère
-            if (executeQuery("PRAGMA foreign_keys = " + pstate + ";") == 1)
-            {
-                _log.Info("State of foreign Key is ON.");
-                result = true;
-            }
-            else if (executeQuery("PRAGMA foreign_keys = " + pstate + ";") == 0)
-            {
-                _log.Info("State of foreign Key is OFF.");
-                result = true;
-            }
-            else
-            {
-                _log.Info("State of foreign Key has not been changed.");
-            }
-            int etat = executeQuery("PRAGMA foreign_keys;");
-            _log.Info("L'état de configuration des clef étrangère est : " + etat);
-            return result;
-        }
         public void closeConnectionDatabase()
         {
             m_dbConnection.Close();
@@ -100,7 +78,7 @@ namespace BAJunior.ServiceData
         }
         public int executeQuery(string pSql)
         {
-            int result = -1;//vérif valeur nagatif
+            int result = -2;//vérif valeur nagatif
             try
             {
                 openConnectionDatabase();
