@@ -6,6 +6,7 @@ using log4net.Config;
 using BAJunior.Model;
 namespace BAJunior.ServiceData
 {
+    //TODO : CLASSE AMENER A DISPARAITRE APRES LES TEST !!!!!!!!!!!!!!!!!!!!!!
     class TestUnitaireTable
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program

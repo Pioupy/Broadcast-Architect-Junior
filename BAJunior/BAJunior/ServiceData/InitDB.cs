@@ -20,8 +20,11 @@ namespace BAJunior.ServiceData
             // APPELER TOUTES LES M2THODE §§§§§§§§§§F!!!!!!!!!!!!!!!!!!!!
             //initTable();
         }
-        public void testCreatedByAlex(bool testCreateDataBase, bool testCreateTable, bool test)
+        public void testCreatedByAlex()
         {
+            bool testCreateDataBase = true;
+            bool testCreateTable = true;
+            bool test = true;
             if (testCreateDataBase == true)
             {
                 createDatabaseICAN();

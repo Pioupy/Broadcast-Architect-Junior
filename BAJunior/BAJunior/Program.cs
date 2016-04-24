@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BAJunior.View.Forms;
 using System.Security.Cryptography;
+using BAJunior.ServiceData;
 
 
 namespace BAJunior
@@ -14,9 +15,19 @@ namespace BAJunior
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connection());
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            // éxécute le if que si c'est Alexandre qui lance le programme. Need pour tester mes classes non "visuel"
+            if (userName == "Alex\\Alex.G")
+            {
+                InitDB initDatabase = new InitDB();
+                initDatabase.testCreatedByAlex();
+            }
+            else
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Connection());
+            }
         }
     }
 }
