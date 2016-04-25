@@ -83,6 +83,7 @@
             // 
             // btn_AddProfil
             // 
+            this.btn_AddProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_AddProfil.Location = new System.Drawing.Point(406, 40);
             this.btn_AddProfil.Name = "btn_AddProfil";
             this.btn_AddProfil.Size = new System.Drawing.Size(90, 30);
@@ -92,6 +93,7 @@
             // 
             // btn_EditProfil
             // 
+            this.btn_EditProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_EditProfil.Location = new System.Drawing.Point(586, 40);
             this.btn_EditProfil.Name = "btn_EditProfil";
             this.btn_EditProfil.Size = new System.Drawing.Size(90, 30);
@@ -101,6 +103,7 @@
             // 
             // btn_DeleteProfil
             // 
+            this.btn_DeleteProfil.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_DeleteProfil.Location = new System.Drawing.Point(733, 40);
             this.btn_DeleteProfil.Name = "btn_DeleteProfil";
             this.btn_DeleteProfil.Size = new System.Drawing.Size(90, 30);
@@ -110,6 +113,7 @@
             // 
             // btn_Load
             // 
+            this.btn_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Load.Location = new System.Drawing.Point(653, 266);
             this.btn_Load.Name = "btn_Load";
             this.btn_Load.Size = new System.Drawing.Size(170, 55);

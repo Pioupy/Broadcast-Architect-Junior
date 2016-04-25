@@ -137,11 +137,23 @@
     <Compile Include="View\Forms\Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\user\Clavier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\user\Clavier.Designer.cs">
+      <DependentUpon>Clavier.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\user\U_choixprofils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\user\U_choixprofils.Designer.cs">
+      <DependentUpon>U_choixprofils.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\Clavier.resx">
+      <DependentUpon>Clavier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_choixprofils.resx">
+      <DependentUpon>U_choixprofils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>

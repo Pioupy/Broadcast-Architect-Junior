@@ -150,6 +150,7 @@
             // 
             // key27
             // 
+            this.key27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key27.Location = new System.Drawing.Point(218, 298);
             this.key27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key27.Name = "key27";
@@ -159,6 +160,7 @@
             // 
             // key26
             // 
+            this.key26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key26.Location = new System.Drawing.Point(124, 298);
             this.key26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key26.Name = "key26";
@@ -168,6 +170,7 @@
             // 
             // key25
             // 
+            this.key25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key25.Location = new System.Drawing.Point(34, 298);
             this.key25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key25.Name = "key25";
@@ -177,6 +180,7 @@
             // 
             // key11
             // 
+            this.key11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key11.Location = new System.Drawing.Point(307, 76);
             this.key11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key11.Name = "key11";
@@ -186,6 +190,7 @@
             // 
             // key22
             // 
+            this.key22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key22.Location = new System.Drawing.Point(231, 224);
             this.key22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key22.Name = "key22";
@@ -195,6 +200,7 @@
             // 
             // key16
             // 
+            this.key16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key16.Location = new System.Drawing.Point(231, 150);
             this.key16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key16.Name = "key16";
@@ -204,6 +210,7 @@
             // 
             // key10
             // 
+            this.key10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key10.Location = new System.Drawing.Point(231, 76);
             this.key10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key10.Name = "key10";
@@ -213,6 +220,7 @@
             // 
             // key21
             // 
+            this.key21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key21.Location = new System.Drawing.Point(155, 224);
             this.key21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key21.Name = "key21";
@@ -222,6 +230,7 @@
             // 
             // key15
             // 
+            this.key15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key15.Location = new System.Drawing.Point(155, 150);
             this.key15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key15.Name = "key15";
@@ -231,6 +240,7 @@
             // 
             // key9
             // 
+            this.key9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key9.Location = new System.Drawing.Point(155, 76);
             this.key9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key9.Name = "key9";
@@ -240,6 +250,7 @@
             // 
             // key20
             // 
+            this.key20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key20.Location = new System.Drawing.Point(79, 224);
             this.key20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key20.Name = "key20";
@@ -249,6 +260,7 @@
             // 
             // key14
             // 
+            this.key14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key14.Location = new System.Drawing.Point(79, 150);
             this.key14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key14.Name = "key14";
@@ -258,6 +270,7 @@
             // 
             // key8
             // 
+            this.key8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key8.Location = new System.Drawing.Point(79, 76);
             this.key8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key8.Name = "key8";
@@ -267,6 +280,7 @@
             // 
             // key19
             // 
+            this.key19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key19.Location = new System.Drawing.Point(3, 224);
             this.key19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key19.Name = "key19";
@@ -276,6 +290,7 @@
             // 
             // key13
             // 
+            this.key13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key13.Location = new System.Drawing.Point(3, 150);
             this.key13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key13.Name = "key13";
@@ -285,6 +300,7 @@
             // 
             // key7
             // 
+            this.key7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key7.Location = new System.Drawing.Point(3, 76);
             this.key7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key7.Name = "key7";
@@ -294,6 +310,7 @@
             // 
             // key17
             // 
+            this.key17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key17.Location = new System.Drawing.Point(307, 150);
             this.key17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key17.Name = "key17";
@@ -303,6 +320,7 @@
             // 
             // key24
             // 
+            this.key24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key24.Location = new System.Drawing.Point(383, 224);
             this.key24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key24.Name = "key24";
@@ -312,6 +330,7 @@
             // 
             // key23
             // 
+            this.key23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key23.Location = new System.Drawing.Point(307, 224);
             this.key23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key23.Name = "key23";
@@ -321,6 +340,7 @@
             // 
             // key18
             // 
+            this.key18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key18.Location = new System.Drawing.Point(383, 150);
             this.key18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key18.Name = "key18";
@@ -330,6 +350,7 @@
             // 
             // key28
             // 
+            this.key28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key28.Location = new System.Drawing.Point(318, 298);
             this.key28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key28.Name = "key28";
@@ -339,6 +360,7 @@
             // 
             // key12
             // 
+            this.key12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key12.Location = new System.Drawing.Point(383, 76);
             this.key12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.key12.Name = "key12";
