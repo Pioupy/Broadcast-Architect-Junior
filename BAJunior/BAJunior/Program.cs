@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using BAJunior.View.Forms;
+using System.Security.Cryptography;
+using BAJunior.ServiceData;
+
 
 namespace BAJunior
 {
@@ -11,9 +15,23 @@ namespace BAJunior
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            // éxécute le if que si c'est Alexandre qui lance le programme. Need pour tester mes classes non "visuel"
+            if (userName == "Alex\\Alex.G")
+            {
+                // Testing Phase :
+                InitDB initDatabase = new InitDB();
+                initDatabase.testCreatedByAlex();
+            }
+            else
+            {
+                // Pour avoir accès à  la base de données avec qu'un seul user qui est : 
+                // login: admin, mdp: admin
+                //Veuilez instancier la classe 'initDB'.
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Connection());
+            }
         }
     }
 }

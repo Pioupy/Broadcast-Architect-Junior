@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BAJunior
+namespace BAJunior.View.Forms.admin
 {
-    public partial class Form1 : Form
+    public partial class A_GestBtns : UserControl
     {
-        public Form1()
+        public A_GestBtns()
         {
             InitializeComponent();
         }

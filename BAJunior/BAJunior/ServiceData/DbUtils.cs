@@ -34,36 +34,51 @@ namespace BAJunior.ServiceData
         }
         public void createDatabase()
         {
-            // tester existance fichier
+            // Test for file existence
             if (!File.Exists(m_nameDatabase))
             {
                 SQLiteConnection.CreateFile(m_nameDatabase);
-                _log.Info("Base de données créée");
+                _log.Info("Database has been created");
             }
             else
             {
-                _log.Warn("Base de données DEJA créée");
+                _log.Warn("Database has been already created");
             }
         }
-        public void openConnectionDatabase()//pNameDatebase uitliser !!
+        public void openConnectionDatabase()
         {
-            m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";");
+            m_dbConnection = new SQLiteConnection("Data Source=" + m_nameDatabase + ";Version=" + m_versionDataBase.ToString() + ";foreign keys=True;");
             m_dbConnection.Open();
-            _log.Info("Ouverture de la connexion à la base de données");
+            _log.Debug("Ouverture de la connexion à la base de données");
         }
-        public void checkConnection()
+        public bool checkConnection(ConnectionState state)
         {
-            //a faire
+            bool connection = false;
+            if(m_dbConnection != null && state == ConnectionState.Open && m_dbConnection.State == state)
+            {
+                _log.Info("La connexion est bien ouverte."); // traduire
+                connection = true;
+            }
+            if (m_dbConnection != null && state == ConnectionState.Closed && m_dbConnection.State == state)
+            {
+                _log.Info("La connexion est bien fermée."); // traduire
+                connection = true;
+            }
+            else
+            {
+                _log.Error("L'état de la connexion n'est pas celle souhaité."); // traduire
+                connection = true;
+            }
+            return connection;
         }
         public void closeConnectionDatabase()
         {
             m_dbConnection.Close();
-            _log.Info("Fermeture de la connexion à la base de données");
+            _log.Debug("Fermeture de la connexion à la base de données");
         }
         public int executeQuery(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
-            int result = -1;//vérif valeur nagatif
+            int result = -2;//vérif valeur nagatif
             try
             {
                 openConnectionDatabase();
@@ -83,7 +98,6 @@ namespace BAJunior.ServiceData
         }
         public DataTable executeReader(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
             DataTable dt = new DataTable();
             try
             {
@@ -106,7 +120,6 @@ namespace BAJunior.ServiceData
         }
         public string executeScalar(string pSql)
         {
-            //string sql = "create table highscores (name varchar(20), score int)";
             openConnectionDatabase();
             SQLiteCommand command = new SQLiteCommand(pSql, m_dbConnection);
             object result = command.ExecuteScalar();

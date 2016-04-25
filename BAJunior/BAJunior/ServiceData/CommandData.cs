@@ -10,7 +10,7 @@ namespace BAJunior.ServiceData
     class CommandData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
-        private static readonly ILog _log = LogManager.GetLogger(typeof(UserData));
+        private static readonly ILog _log = LogManager.GetLogger(typeof(CommandData));
         private static DbUtils m_dbUtils;
         public CommandData()
         {
@@ -20,7 +20,7 @@ namespace BAJunior.ServiceData
         }
         public void create(Command pCommand)
         {
-            string requete = "insert into Command (Name) values ('" + pCommand.getName() + "')";
+            string requete = "insert into Command (Name, Picture, IDCategory) values ('" + pCommand.getName() + "','" + pCommand.getPicture() + "','" + pCommand.getIdCategory() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -40,7 +40,7 @@ namespace BAJunior.ServiceData
         }
         public void update(Command pCommand)
         {
-            string requete = "UPDATE Command SET Name = '" + pCommand.getName() + "' WHERE IDCommand = '" + pCommand.getId() + "';";
+            string requete = "UPDATE Command SET Name = '" + pCommand.getName() + "', Picture = '" + pCommand.getPicture() + "', IDCategory = '" + pCommand.getIdCategory() + "' WHERE IDCommand = '" + pCommand.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -87,8 +87,10 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    string name = r["Name"].ToString();
-                    command = new Command(idCommand, name);
+                    String name = r["Name"].ToString();
+                    String picture = r["Picture"].ToString();
+                    int idCategory = Convert.ToInt32(r["IDCategory"]);
+                    command = new Command(idCommand, name, picture, idCategory);
                 }
             }
             catch (Exception fail)
@@ -100,7 +102,7 @@ namespace BAJunior.ServiceData
         public List<Command> readAll()
         {
             List<Command> commandList = new List<Command>();
-            string requete = "SELECT * from Command order by IDUser asc";
+            string requete = "SELECT * from Command order by IDCommand asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -108,8 +110,10 @@ namespace BAJunior.ServiceData
                 foreach (DataRow r in reader.Rows)
                 {
                     int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    string name = r["Name"].ToString();
-                    Command command = new Command(idCommand, name);
+                    String name = r["Name"].ToString();
+                    String picture = r["Picture"].ToString();
+                    int idCategory = Convert.ToInt32(r["IDCategory"]);
+                    Command command = new Command(idCommand, name, picture, idCategory);
                     commandList.Add(command);
                 }
             }

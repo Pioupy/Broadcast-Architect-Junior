@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class SetCommand
+    class Category
     {
-        private int m_idSetCommand;
+        private int m_idCategory;
         private String m_name;
 
-        // Default constructor
-        public SetCommand(String name)
+        //Default constructor
+        public Category(String name)
         {
             m_name = name;
         }
         //Constructor with ID
-        public SetCommand(int id, String name)
+        public Category(int id, String name)
         {
-            m_idSetCommand = id;
+            m_idCategory = id;
             m_name = name;
         }
-        // [Getter/Setter] int m_idSetCommand
+        // [Getter/Setter] Int m_idCategory
         public int getId()
         {
-            return this.m_idSetCommand;
+            return this.m_idCategory;
         }
         public void setId(int id)
         {
-            this.m_idSetCommand = id;
+            this.m_idCategory = id;
         }
         // [Getter/Setter] String m_name
         public String getName()

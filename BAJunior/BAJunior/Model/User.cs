@@ -14,14 +14,14 @@ namespace BAJunior.Model
         private bool m_admin;
 
         //Default constructor
-        public User(String login, string password, bool isAdmin)
+        public User(String login, String password, bool isAdmin)
         {
             m_login = login;
             m_password = password;
             m_admin = isAdmin;
         }
         //Constructor with ID
-        public User(int id, String login, string password, bool isAdmin)
+        public User(int id, String login, String password, bool isAdmin)
         {
             m_idUser = id;
             m_login = login;
@@ -46,7 +46,6 @@ namespace BAJunior.Model
         {
             this.m_login = login;
         }
-
         // [Getter/Setter] String m_password
         public String getPassword()
         {
@@ -56,13 +55,12 @@ namespace BAJunior.Model
         {
             this.m_password = password;
         }
-
         // [Getter/Setter] Boolean m_admin
         public bool isAdmin()
         {
             return this.m_admin;
         }
-        public void setAdmin(bool admin)
+        public void setIsAdmin(bool admin)
         {
             this.m_admin = admin;
         }

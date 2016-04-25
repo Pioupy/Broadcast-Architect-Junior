@@ -10,24 +10,25 @@ namespace BAJunior.Model
     {
         private int m_idParam;
         private String m_name;
-        private int m_idSetCommand;
-        private int m_idCommand;
+        private String m_value;
+        private bool m_isUser;
+
         //Default constructor
-        public Param(String name, int idSetCommand, int idCommand)
+        public Param(String name, String value, bool isUser)
         {
             m_name = name;
-            m_idSetCommand = idSetCommand;
-            m_idCommand = idCommand;
+            m_value = value;
+            m_isUser = isUser;
         }
         //Constructor with ID
-        public Param(int id, String name, int idSetCommand, int idCommand)
+        public Param(int id, String name, String value, bool isUser)
         {
             m_idParam = id;
             m_name = name;
-            m_idSetCommand = idSetCommand;
-            m_idCommand = idCommand;
+            m_value = value;
+            m_isUser = isUser;
         }
-        // [Getter/Setter] Int m_idParam
+        // [Getter/Setter] Int m_idUSer
         public int getId()
         {
             return this.m_idParam;
@@ -45,23 +46,23 @@ namespace BAJunior.Model
         {
             this.m_name = name;
         }
-        // [Getter/Setter] Int m_idSetCommand
-        public int getIdSetCommand()
+        // [Getter/Setter] String m_value
+        public String getValue()
         {
-            return this.m_idSetCommand;
+            return this.m_value;
         }
-        public void setIdSetCommand(int idSetCommand)
+        public void setValue(String value)
         {
-            this.m_idSetCommand = idSetCommand;
+            this.m_value = value;
         }
-        // [Getter/Setter] Int m_idCommand
-        public int getIdCommand()
+        // [Getter/Setter] Boolean m_isUser
+        public bool getIsUser()
         {
-            return this.m_idCommand;
+            return this.m_isUser;
         }
-        public void setIdCommand(int idCommand)
+        public void setIsUser(bool isUser)
         {
-            this.m_idCommand = idCommand;
+            this.m_isUser = isUser;
         }
     }
 }
