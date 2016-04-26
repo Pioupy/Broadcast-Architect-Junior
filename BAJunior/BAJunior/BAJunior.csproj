@@ -194,6 +194,12 @@
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_GestBtns.resx">
+      <DependentUpon>A_GestBtns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_GestUsers.resx">
+      <DependentUpon>A_GestUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
     </EmbeddedResource>
