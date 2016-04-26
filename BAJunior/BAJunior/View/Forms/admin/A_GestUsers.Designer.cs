@@ -48,7 +48,7 @@
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(111, 41);
             this.btn_AddUser.TabIndex = 1;
-            this.btn_AddUser.Text = "w";
+            this.btn_AddUser.Text = "Ajouter";
             this.btn_AddUser.UseVisualStyleBackColor = true;
             // 
             // btn_EditUser
