@@ -137,6 +137,12 @@
     <Compile Include="View\Forms\Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\FormDeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\FormDeTest.Designer.cs">
+      <DependentUpon>FormDeTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\user\Clavier.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\FormDeTest.resx">
+      <DependentUpon>FormDeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\Clavier.resx">
       <DependentUpon>Clavier.cs</DependentUpon>

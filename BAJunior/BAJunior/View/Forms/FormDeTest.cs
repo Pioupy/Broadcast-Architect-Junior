@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BAJunior.View.Forms.admin
+namespace BAJunior.View.Forms
 {
-    public partial class A_Gest1Btn : UserControl
+    public partial class FormDeTest : Form
     {
-        public A_Gest1Btn()
+        public FormDeTest()
         {
             InitializeComponent();
         }
-        
     }
 }
