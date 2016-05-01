@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_addCat = new System.Windows.Forms.Button();
-            this.cb_catName = new System.Windows.Forms.ComboBox();
-            this.tb_propName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.imageBrowseBtn = new System.Windows.Forms.Button();
-            this.tb_imagePath = new System.Windows.Forms.TextBox();
-            this.lv_Image = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ParameterImagePB = new System.Windows.Forms.PictureBox();
-            this.addParameterBtn = new System.Windows.Forms.Button();
-            this.parameterNameCB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.propNameTB = new System.Windows.Forms.TextBox();
+            this.catNameCB = new System.Windows.Forms.ComboBox();
+            this.addCatBtn = new System.Windows.Forms.Button();
+            this.ImageLV = new System.Windows.Forms.ListView();
+            this.imagePathTB = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.imageBrowseBtn = new System.Windows.Forms.Button();
+            this.parameterNameCB = new System.Windows.Forms.ComboBox();
+            this.addParameterBtn = new System.Windows.Forms.Button();
+            this.ParameterImagePB = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -52,95 +52,29 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_addCat);
-            this.groupBox1.Controls.Add(this.cb_catName);
-            this.groupBox1.Controls.Add(this.tb_propName);
+            this.groupBox1.Controls.Add(this.addCatBtn);
+            this.groupBox1.Controls.Add(this.catNameCB);
+            this.groupBox1.Controls.Add(this.propNameTB);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 92);
+            this.groupBox1.Location = new System.Drawing.Point(524, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 119);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriétés";
             // 
-            // btn_addCat
-            // 
-            this.btn_addCat.Location = new System.Drawing.Point(261, 78);
-            this.btn_addCat.Name = "btn_addCat";
-            this.btn_addCat.Size = new System.Drawing.Size(29, 24);
-            this.btn_addCat.TabIndex = 6;
-            this.btn_addCat.Text = "+";
-            this.btn_addCat.UseVisualStyleBackColor = true;
-            // 
-            // cb_catName
-            // 
-            this.cb_catName.FormattingEnabled = true;
-            this.cb_catName.Location = new System.Drawing.Point(91, 78);
-            this.cb_catName.Name = "cb_catName";
-            this.cb_catName.Size = new System.Drawing.Size(164, 24);
-            this.cb_catName.TabIndex = 5;
-            // 
-            // tb_propName
-            // 
-            this.tb_propName.Location = new System.Drawing.Point(59, 35);
-            this.tb_propName.Name = "tb_propName";
-            this.tb_propName.Size = new System.Drawing.Size(231, 22);
-            this.tb_propName.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Catégorie :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom :";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.imageBrowseBtn);
-            this.groupBox2.Controls.Add(this.tb_imagePath);
-            this.groupBox2.Controls.Add(this.lv_Image);
-            this.groupBox2.Location = new System.Drawing.Point(3, 309);
+            this.groupBox2.Controls.Add(this.imagePathTB);
+            this.groupBox2.Controls.Add(this.ImageLV);
+            this.groupBox2.Location = new System.Drawing.Point(524, 157);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(296, 180);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Images";
-            // 
-            // imageBrowseBtn
-            // 
-            this.imageBrowseBtn.Location = new System.Drawing.Point(215, 147);
-            this.imageBrowseBtn.Name = "imageBrowseBtn";
-            this.imageBrowseBtn.Size = new System.Drawing.Size(75, 23);
-            this.imageBrowseBtn.TabIndex = 2;
-            this.imageBrowseBtn.Text = "Parcourir";
-            this.imageBrowseBtn.UseVisualStyleBackColor = true;
-            // 
-            // tb_imagePath
-            // 
-            this.tb_imagePath.Location = new System.Drawing.Point(10, 147);
-            this.tb_imagePath.Name = "tb_imagePath";
-            this.tb_imagePath.Size = new System.Drawing.Size(199, 22);
-            this.tb_imagePath.TabIndex = 1;
-            // 
-            // lv_Image
-            // 
-            this.lv_Image.Location = new System.Drawing.Point(10, 32);
-            this.lv_Image.Name = "lv_Image";
-            this.lv_Image.Size = new System.Drawing.Size(280, 97);
-            this.lv_Image.TabIndex = 0;
-            this.lv_Image.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox3
             // 
@@ -154,13 +88,85 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Paramètres";
             // 
-            // ParameterImagePB
+            // label1
             // 
-            this.ParameterImagePB.Location = new System.Drawing.Point(10, 63);
-            this.ParameterImagePB.Name = "ParameterImagePB";
-            this.ParameterImagePB.Size = new System.Drawing.Size(280, 57);
-            this.ParameterImagePB.TabIndex = 2;
-            this.ParameterImagePB.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Catégorie :";
+            // 
+            // propNameTB
+            // 
+            this.propNameTB.Location = new System.Drawing.Point(59, 35);
+            this.propNameTB.Name = "propNameTB";
+            this.propNameTB.Size = new System.Drawing.Size(231, 22);
+            this.propNameTB.TabIndex = 4;
+            // 
+            // catNameCB
+            // 
+            this.catNameCB.FormattingEnabled = true;
+            this.catNameCB.Location = new System.Drawing.Point(91, 78);
+            this.catNameCB.Name = "catNameCB";
+            this.catNameCB.Size = new System.Drawing.Size(164, 24);
+            this.catNameCB.TabIndex = 5;
+            // 
+            // addCatBtn
+            // 
+            this.addCatBtn.Location = new System.Drawing.Point(261, 78);
+            this.addCatBtn.Name = "addCatBtn";
+            this.addCatBtn.Size = new System.Drawing.Size(29, 24);
+            this.addCatBtn.TabIndex = 6;
+            this.addCatBtn.Text = "+";
+            this.addCatBtn.UseVisualStyleBackColor = true;
+            // 
+            // ImageLV
+            // 
+            this.ImageLV.Location = new System.Drawing.Point(10, 32);
+            this.ImageLV.Name = "ImageLV";
+            this.ImageLV.Size = new System.Drawing.Size(280, 97);
+            this.ImageLV.TabIndex = 0;
+            this.ImageLV.UseCompatibleStateImageBehavior = false;
+            // 
+            // imagePathTB
+            // 
+            this.imagePathTB.Location = new System.Drawing.Point(10, 147);
+            this.imagePathTB.Name = "imagePathTB";
+            this.imagePathTB.Size = new System.Drawing.Size(199, 22);
+            this.imagePathTB.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
+            // 
+            // imageBrowseBtn
+            // 
+            this.imageBrowseBtn.Location = new System.Drawing.Point(215, 147);
+            this.imageBrowseBtn.Name = "imageBrowseBtn";
+            this.imageBrowseBtn.Size = new System.Drawing.Size(75, 23);
+            this.imageBrowseBtn.TabIndex = 2;
+            this.imageBrowseBtn.Text = "Parcourir";
+            this.imageBrowseBtn.UseVisualStyleBackColor = true;
+            // 
+            // parameterNameCB
+            // 
+            this.parameterNameCB.FormattingEnabled = true;
+            this.parameterNameCB.Location = new System.Drawing.Point(10, 32);
+            this.parameterNameCB.Name = "parameterNameCB";
+            this.parameterNameCB.Size = new System.Drawing.Size(245, 24);
+            this.parameterNameCB.TabIndex = 0;
             // 
             // addParameterBtn
             // 
@@ -171,19 +177,13 @@
             this.addParameterBtn.Text = "+";
             this.addParameterBtn.UseVisualStyleBackColor = true;
             // 
-            // parameterNameCB
+            // ParameterImagePB
             // 
-            this.parameterNameCB.FormattingEnabled = true;
-            this.parameterNameCB.Location = new System.Drawing.Point(10, 32);
-            this.parameterNameCB.Name = "parameterNameCB";
-            this.parameterNameCB.Size = new System.Drawing.Size(245, 24);
-            this.parameterNameCB.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
+            this.ParameterImagePB.Location = new System.Drawing.Point(10, 63);
+            this.ParameterImagePB.Name = "ParameterImagePB";
+            this.ParameterImagePB.Size = new System.Drawing.Size(280, 57);
+            this.ParameterImagePB.TabIndex = 2;
+            this.ParameterImagePB.TabStop = false;
             // 
             // A_Gest1Btn
             // 
@@ -207,16 +207,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tb_propName;
+        private System.Windows.Forms.TextBox propNameTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_addCat;
-        private System.Windows.Forms.ComboBox cb_catName;
+        private System.Windows.Forms.Button addCatBtn;
+        private System.Windows.Forms.ComboBox catNameCB;
         private System.Windows.Forms.Button imageBrowseBtn;
-        private System.Windows.Forms.TextBox tb_imagePath;
-        private System.Windows.Forms.ListView lv_Image;
+        private System.Windows.Forms.TextBox imagePathTB;
+        private System.Windows.Forms.ListView ImageLV;
         private System.Windows.Forms.PictureBox ParameterImagePB;
         private System.Windows.Forms.Button addParameterBtn;
         private System.Windows.Forms.ComboBox parameterNameCB;
