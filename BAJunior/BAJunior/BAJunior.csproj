@@ -99,6 +99,7 @@
     <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\Forms\admin\A_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -40,92 +40,115 @@
             this.lv_Image = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.rbtn_custom14 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix14 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty14 = new System.Windows.Forms.RadioButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.rbtn_custom13 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix13 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty13 = new System.Windows.Forms.RadioButton();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.rbtn_custom12 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix12 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty12 = new System.Windows.Forms.RadioButton();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.rbtn_custom11 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix11 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty11 = new System.Windows.Forms.RadioButton();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.rbtn_custom10 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix10 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty10 = new System.Windows.Forms.RadioButton();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.rbtn_custom9 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix9 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty9 = new System.Windows.Forms.RadioButton();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.rbtn_custom8 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix8 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty8 = new System.Windows.Forms.RadioButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.rbtn_custom7 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix7 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty7 = new System.Windows.Forms.RadioButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.rbtn_custom6 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix6 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty6 = new System.Windows.Forms.RadioButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rbtn_custom5 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix5 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty5 = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rbtn_custom4 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix4 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty4 = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rbtn_custom3 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix3 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty3 = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtn_custom2 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty2 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix2 = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbtn_custom1 = new System.Windows.Forms.RadioButton();
+            this.rbtn_fix1 = new System.Windows.Forms.RadioButton();
+            this.rbtn_empty1 = new System.Windows.Forms.RadioButton();
             this.tb_valor14 = new System.Windows.Forms.TextBox();
             this.lbl_type14 = new System.Windows.Forms.Label();
             this.tb_nom14 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty14 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix14 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom14 = new System.Windows.Forms.RadioButton();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.tb_valor13 = new System.Windows.Forms.TextBox();
             this.lbl_type13 = new System.Windows.Forms.Label();
             this.tb_nom13 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty13 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix13 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom13 = new System.Windows.Forms.RadioButton();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.tb_valor12 = new System.Windows.Forms.TextBox();
             this.lbl_type12 = new System.Windows.Forms.Label();
             this.tb_nom12 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty12 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix12 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom12 = new System.Windows.Forms.RadioButton();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.tb_valor11 = new System.Windows.Forms.TextBox();
             this.lbl_type11 = new System.Windows.Forms.Label();
             this.tb_nom11 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty11 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix11 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom11 = new System.Windows.Forms.RadioButton();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.tb_valor10 = new System.Windows.Forms.TextBox();
             this.lbl_type10 = new System.Windows.Forms.Label();
             this.tb_nom10 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty10 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix10 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom10 = new System.Windows.Forms.RadioButton();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tb_valor9 = new System.Windows.Forms.TextBox();
             this.lbl_type9 = new System.Windows.Forms.Label();
             this.tb_nom9 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty9 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix9 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom9 = new System.Windows.Forms.RadioButton();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.tb_valor8 = new System.Windows.Forms.TextBox();
             this.lbl_type8 = new System.Windows.Forms.Label();
             this.tb_nom8 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty8 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix8 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom8 = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.tb_valor7 = new System.Windows.Forms.TextBox();
             this.lbl_type7 = new System.Windows.Forms.Label();
             this.tb_nom7 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty7 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix7 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom7 = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tb_valor6 = new System.Windows.Forms.TextBox();
             this.lbl_type6 = new System.Windows.Forms.Label();
             this.tb_nom6 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty6 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix6 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom6 = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tb_valor5 = new System.Windows.Forms.TextBox();
             this.lbl_type5 = new System.Windows.Forms.Label();
             this.tb_nom5 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty5 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix5 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom5 = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tb_valor4 = new System.Windows.Forms.TextBox();
             this.lbl_type4 = new System.Windows.Forms.Label();
             this.tb_nom4 = new System.Windows.Forms.TextBox();
-            this.rbtn_empty4 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix4 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom4 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tb_nom2 = new System.Windows.Forms.TextBox();
@@ -134,12 +157,6 @@
             this.lbl_type3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_nom3 = new System.Windows.Forms.TextBox();
-            this.rbtn_custom1 = new System.Windows.Forms.RadioButton();
-            this.rbtn_empty3 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix1 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix3 = new System.Windows.Forms.RadioButton();
-            this.rbtn_empty1 = new System.Windows.Forms.RadioButton();
-            this.rbtn_custom3 = new System.Windows.Forms.RadioButton();
             this.tb_nom1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_type1 = new System.Windows.Forms.Label();
@@ -149,44 +166,27 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_type2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rbtn_custom2 = new System.Windows.Forms.RadioButton();
-            this.rbtn_empty2 = new System.Windows.Forms.RadioButton();
-            this.rbtn_fix2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -383,6 +383,636 @@
             this.panel1.Size = new System.Drawing.Size(442, 524);
             this.panel1.TabIndex = 25;
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.rbtn_custom14);
+            this.panel15.Controls.Add(this.rbtn_fix14);
+            this.panel15.Controls.Add(this.rbtn_empty14);
+            this.panel15.Location = new System.Drawing.Point(69, 719);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(341, 19);
+            this.panel15.TabIndex = 120;
+            // 
+            // rbtn_custom14
+            // 
+            this.rbtn_custom14.AutoSize = true;
+            this.rbtn_custom14.Location = new System.Drawing.Point(0, -3);
+            this.rbtn_custom14.Name = "rbtn_custom14";
+            this.rbtn_custom14.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom14.TabIndex = 107;
+            this.rbtn_custom14.TabStop = true;
+            this.rbtn_custom14.Text = "A définir";
+            this.rbtn_custom14.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix14
+            // 
+            this.rbtn_fix14.AutoSize = true;
+            this.rbtn_fix14.Location = new System.Drawing.Point(129, -3);
+            this.rbtn_fix14.Name = "rbtn_fix14";
+            this.rbtn_fix14.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix14.TabIndex = 108;
+            this.rbtn_fix14.TabStop = true;
+            this.rbtn_fix14.Text = "Fixe";
+            this.rbtn_fix14.UseVisualStyleBackColor = true;
+            this.rbtn_fix14.CheckedChanged += new System.EventHandler(this.rbtn_fix14_CheckedChanged);
+            // 
+            // rbtn_empty14
+            // 
+            this.rbtn_empty14.AutoSize = true;
+            this.rbtn_empty14.Location = new System.Drawing.Point(225, -3);
+            this.rbtn_empty14.Name = "rbtn_empty14";
+            this.rbtn_empty14.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty14.TabIndex = 109;
+            this.rbtn_empty14.TabStop = true;
+            this.rbtn_empty14.Text = "Pas de valeur";
+            this.rbtn_empty14.UseVisualStyleBackColor = true;
+            this.rbtn_empty14.CheckedChanged += new System.EventHandler(this.rbtn_empty14_CheckedChanged);
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.rbtn_custom13);
+            this.panel14.Controls.Add(this.rbtn_fix13);
+            this.panel14.Controls.Add(this.rbtn_empty13);
+            this.panel14.Location = new System.Drawing.Point(69, 665);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(341, 19);
+            this.panel14.TabIndex = 115;
+            // 
+            // rbtn_custom13
+            // 
+            this.rbtn_custom13.AutoSize = true;
+            this.rbtn_custom13.Location = new System.Drawing.Point(0, -3);
+            this.rbtn_custom13.Name = "rbtn_custom13";
+            this.rbtn_custom13.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom13.TabIndex = 99;
+            this.rbtn_custom13.TabStop = true;
+            this.rbtn_custom13.Text = "A définir";
+            this.rbtn_custom13.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix13
+            // 
+            this.rbtn_fix13.AutoSize = true;
+            this.rbtn_fix13.Location = new System.Drawing.Point(129, -3);
+            this.rbtn_fix13.Name = "rbtn_fix13";
+            this.rbtn_fix13.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix13.TabIndex = 100;
+            this.rbtn_fix13.TabStop = true;
+            this.rbtn_fix13.Text = "Fixe";
+            this.rbtn_fix13.UseVisualStyleBackColor = true;
+            this.rbtn_fix13.CheckedChanged += new System.EventHandler(this.rbtn_fix13_CheckedChanged);
+            // 
+            // rbtn_empty13
+            // 
+            this.rbtn_empty13.AutoSize = true;
+            this.rbtn_empty13.Location = new System.Drawing.Point(225, -3);
+            this.rbtn_empty13.Name = "rbtn_empty13";
+            this.rbtn_empty13.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty13.TabIndex = 101;
+            this.rbtn_empty13.TabStop = true;
+            this.rbtn_empty13.Text = "Pas de valeur";
+            this.rbtn_empty13.UseVisualStyleBackColor = true;
+            this.rbtn_empty13.CheckedChanged += new System.EventHandler(this.rbtn_empty13_CheckedChanged);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.rbtn_custom12);
+            this.panel13.Controls.Add(this.rbtn_fix12);
+            this.panel13.Controls.Add(this.rbtn_empty12);
+            this.panel13.Location = new System.Drawing.Point(69, 609);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(341, 19);
+            this.panel13.TabIndex = 115;
+            // 
+            // rbtn_custom12
+            // 
+            this.rbtn_custom12.AutoSize = true;
+            this.rbtn_custom12.Location = new System.Drawing.Point(0, -2);
+            this.rbtn_custom12.Name = "rbtn_custom12";
+            this.rbtn_custom12.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom12.TabIndex = 91;
+            this.rbtn_custom12.TabStop = true;
+            this.rbtn_custom12.Text = "A définir";
+            this.rbtn_custom12.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix12
+            // 
+            this.rbtn_fix12.AutoSize = true;
+            this.rbtn_fix12.Location = new System.Drawing.Point(129, -2);
+            this.rbtn_fix12.Name = "rbtn_fix12";
+            this.rbtn_fix12.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix12.TabIndex = 92;
+            this.rbtn_fix12.TabStop = true;
+            this.rbtn_fix12.Text = "Fixe";
+            this.rbtn_fix12.UseVisualStyleBackColor = true;
+            this.rbtn_fix12.CheckedChanged += new System.EventHandler(this.rbtn_fix12_CheckedChanged);
+            // 
+            // rbtn_empty12
+            // 
+            this.rbtn_empty12.AutoSize = true;
+            this.rbtn_empty12.Location = new System.Drawing.Point(225, -2);
+            this.rbtn_empty12.Name = "rbtn_empty12";
+            this.rbtn_empty12.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty12.TabIndex = 93;
+            this.rbtn_empty12.TabStop = true;
+            this.rbtn_empty12.Text = "Pas de valeur";
+            this.rbtn_empty12.UseVisualStyleBackColor = true;
+            this.rbtn_empty12.CheckedChanged += new System.EventHandler(this.rbtn_empty12_CheckedChanged);
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.rbtn_custom11);
+            this.panel12.Controls.Add(this.rbtn_fix11);
+            this.panel12.Controls.Add(this.rbtn_empty11);
+            this.panel12.Location = new System.Drawing.Point(69, 552);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(341, 19);
+            this.panel12.TabIndex = 119;
+            // 
+            // rbtn_custom11
+            // 
+            this.rbtn_custom11.AutoSize = true;
+            this.rbtn_custom11.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom11.Name = "rbtn_custom11";
+            this.rbtn_custom11.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom11.TabIndex = 83;
+            this.rbtn_custom11.TabStop = true;
+            this.rbtn_custom11.Text = "A définir";
+            this.rbtn_custom11.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix11
+            // 
+            this.rbtn_fix11.AutoSize = true;
+            this.rbtn_fix11.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix11.Name = "rbtn_fix11";
+            this.rbtn_fix11.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix11.TabIndex = 84;
+            this.rbtn_fix11.TabStop = true;
+            this.rbtn_fix11.Text = "Fixe";
+            this.rbtn_fix11.UseVisualStyleBackColor = true;
+            this.rbtn_fix11.CheckedChanged += new System.EventHandler(this.rbtn_fix11_CheckedChanged);
+            // 
+            // rbtn_empty11
+            // 
+            this.rbtn_empty11.AutoSize = true;
+            this.rbtn_empty11.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty11.Name = "rbtn_empty11";
+            this.rbtn_empty11.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty11.TabIndex = 85;
+            this.rbtn_empty11.TabStop = true;
+            this.rbtn_empty11.Text = "Pas de valeur";
+            this.rbtn_empty11.UseVisualStyleBackColor = true;
+            this.rbtn_empty11.CheckedChanged += new System.EventHandler(this.rbtn_empty11_CheckedChanged);
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.rbtn_custom10);
+            this.panel11.Controls.Add(this.rbtn_fix10);
+            this.panel11.Controls.Add(this.rbtn_empty10);
+            this.panel11.Location = new System.Drawing.Point(69, 497);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(341, 19);
+            this.panel11.TabIndex = 118;
+            // 
+            // rbtn_custom10
+            // 
+            this.rbtn_custom10.AutoSize = true;
+            this.rbtn_custom10.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom10.Name = "rbtn_custom10";
+            this.rbtn_custom10.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom10.TabIndex = 75;
+            this.rbtn_custom10.TabStop = true;
+            this.rbtn_custom10.Text = "A définir";
+            this.rbtn_custom10.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix10
+            // 
+            this.rbtn_fix10.AutoSize = true;
+            this.rbtn_fix10.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix10.Name = "rbtn_fix10";
+            this.rbtn_fix10.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix10.TabIndex = 76;
+            this.rbtn_fix10.TabStop = true;
+            this.rbtn_fix10.Text = "Fixe";
+            this.rbtn_fix10.UseVisualStyleBackColor = true;
+            this.rbtn_fix10.CheckedChanged += new System.EventHandler(this.rbtn_fix10_CheckedChanged);
+            // 
+            // rbtn_empty10
+            // 
+            this.rbtn_empty10.AutoSize = true;
+            this.rbtn_empty10.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty10.Name = "rbtn_empty10";
+            this.rbtn_empty10.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty10.TabIndex = 77;
+            this.rbtn_empty10.TabStop = true;
+            this.rbtn_empty10.Text = "Pas de valeur";
+            this.rbtn_empty10.UseVisualStyleBackColor = true;
+            this.rbtn_empty10.CheckedChanged += new System.EventHandler(this.rbtn_empty10_CheckedChanged);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.rbtn_custom9);
+            this.panel10.Controls.Add(this.rbtn_fix9);
+            this.panel10.Controls.Add(this.rbtn_empty9);
+            this.panel10.Location = new System.Drawing.Point(69, 444);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(341, 19);
+            this.panel10.TabIndex = 115;
+            // 
+            // rbtn_custom9
+            // 
+            this.rbtn_custom9.AutoSize = true;
+            this.rbtn_custom9.Location = new System.Drawing.Point(0, -2);
+            this.rbtn_custom9.Name = "rbtn_custom9";
+            this.rbtn_custom9.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom9.TabIndex = 67;
+            this.rbtn_custom9.TabStop = true;
+            this.rbtn_custom9.Text = "A définir";
+            this.rbtn_custom9.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix9
+            // 
+            this.rbtn_fix9.AutoSize = true;
+            this.rbtn_fix9.Location = new System.Drawing.Point(129, -2);
+            this.rbtn_fix9.Name = "rbtn_fix9";
+            this.rbtn_fix9.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix9.TabIndex = 68;
+            this.rbtn_fix9.TabStop = true;
+            this.rbtn_fix9.Text = "Fixe";
+            this.rbtn_fix9.UseVisualStyleBackColor = true;
+            this.rbtn_fix9.CheckedChanged += new System.EventHandler(this.rbtn_fix9_CheckedChanged);
+            // 
+            // rbtn_empty9
+            // 
+            this.rbtn_empty9.AutoSize = true;
+            this.rbtn_empty9.Location = new System.Drawing.Point(225, -2);
+            this.rbtn_empty9.Name = "rbtn_empty9";
+            this.rbtn_empty9.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty9.TabIndex = 69;
+            this.rbtn_empty9.TabStop = true;
+            this.rbtn_empty9.Text = "Pas de valeur";
+            this.rbtn_empty9.UseVisualStyleBackColor = true;
+            this.rbtn_empty9.CheckedChanged += new System.EventHandler(this.rbtn_empty9_CheckedChanged);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.rbtn_custom8);
+            this.panel9.Controls.Add(this.rbtn_fix8);
+            this.panel9.Controls.Add(this.rbtn_empty8);
+            this.panel9.Location = new System.Drawing.Point(69, 387);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(341, 19);
+            this.panel9.TabIndex = 115;
+            // 
+            // rbtn_custom8
+            // 
+            this.rbtn_custom8.AutoSize = true;
+            this.rbtn_custom8.Location = new System.Drawing.Point(0, -2);
+            this.rbtn_custom8.Name = "rbtn_custom8";
+            this.rbtn_custom8.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom8.TabIndex = 59;
+            this.rbtn_custom8.TabStop = true;
+            this.rbtn_custom8.Text = "A définir";
+            this.rbtn_custom8.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix8
+            // 
+            this.rbtn_fix8.AutoSize = true;
+            this.rbtn_fix8.Location = new System.Drawing.Point(129, -2);
+            this.rbtn_fix8.Name = "rbtn_fix8";
+            this.rbtn_fix8.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix8.TabIndex = 60;
+            this.rbtn_fix8.TabStop = true;
+            this.rbtn_fix8.Text = "Fixe";
+            this.rbtn_fix8.UseVisualStyleBackColor = true;
+            this.rbtn_fix8.CheckedChanged += new System.EventHandler(this.rbtn_fix8_CheckedChanged);
+            // 
+            // rbtn_empty8
+            // 
+            this.rbtn_empty8.AutoSize = true;
+            this.rbtn_empty8.Location = new System.Drawing.Point(225, -2);
+            this.rbtn_empty8.Name = "rbtn_empty8";
+            this.rbtn_empty8.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty8.TabIndex = 61;
+            this.rbtn_empty8.TabStop = true;
+            this.rbtn_empty8.Text = "Pas de valeur";
+            this.rbtn_empty8.UseVisualStyleBackColor = true;
+            this.rbtn_empty8.CheckedChanged += new System.EventHandler(this.rbtn_empty8_CheckedChanged);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.rbtn_custom7);
+            this.panel8.Controls.Add(this.rbtn_fix7);
+            this.panel8.Controls.Add(this.rbtn_empty7);
+            this.panel8.Location = new System.Drawing.Point(69, 332);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(341, 19);
+            this.panel8.TabIndex = 115;
+            // 
+            // rbtn_custom7
+            // 
+            this.rbtn_custom7.AutoSize = true;
+            this.rbtn_custom7.Location = new System.Drawing.Point(0, -2);
+            this.rbtn_custom7.Name = "rbtn_custom7";
+            this.rbtn_custom7.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom7.TabIndex = 51;
+            this.rbtn_custom7.TabStop = true;
+            this.rbtn_custom7.Text = "A définir";
+            this.rbtn_custom7.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix7
+            // 
+            this.rbtn_fix7.AutoSize = true;
+            this.rbtn_fix7.Location = new System.Drawing.Point(129, -2);
+            this.rbtn_fix7.Name = "rbtn_fix7";
+            this.rbtn_fix7.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix7.TabIndex = 52;
+            this.rbtn_fix7.TabStop = true;
+            this.rbtn_fix7.Text = "Fixe";
+            this.rbtn_fix7.UseVisualStyleBackColor = true;
+            this.rbtn_fix7.CheckedChanged += new System.EventHandler(this.rbtn_fix7_CheckedChanged);
+            // 
+            // rbtn_empty7
+            // 
+            this.rbtn_empty7.AutoSize = true;
+            this.rbtn_empty7.Location = new System.Drawing.Point(225, -2);
+            this.rbtn_empty7.Name = "rbtn_empty7";
+            this.rbtn_empty7.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty7.TabIndex = 53;
+            this.rbtn_empty7.TabStop = true;
+            this.rbtn_empty7.Text = "Pas de valeur";
+            this.rbtn_empty7.UseVisualStyleBackColor = true;
+            this.rbtn_empty7.CheckedChanged += new System.EventHandler(this.rbtn_empty7_CheckedChanged);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.rbtn_custom6);
+            this.panel7.Controls.Add(this.rbtn_fix6);
+            this.panel7.Controls.Add(this.rbtn_empty6);
+            this.panel7.Location = new System.Drawing.Point(69, 279);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(341, 19);
+            this.panel7.TabIndex = 117;
+            // 
+            // rbtn_custom6
+            // 
+            this.rbtn_custom6.AutoSize = true;
+            this.rbtn_custom6.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom6.Name = "rbtn_custom6";
+            this.rbtn_custom6.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom6.TabIndex = 43;
+            this.rbtn_custom6.TabStop = true;
+            this.rbtn_custom6.Text = "A définir";
+            this.rbtn_custom6.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix6
+            // 
+            this.rbtn_fix6.AutoSize = true;
+            this.rbtn_fix6.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix6.Name = "rbtn_fix6";
+            this.rbtn_fix6.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix6.TabIndex = 44;
+            this.rbtn_fix6.TabStop = true;
+            this.rbtn_fix6.Text = "Fixe";
+            this.rbtn_fix6.UseVisualStyleBackColor = true;
+            this.rbtn_fix6.CheckedChanged += new System.EventHandler(this.rbtn_fix6_CheckedChanged);
+            // 
+            // rbtn_empty6
+            // 
+            this.rbtn_empty6.AutoSize = true;
+            this.rbtn_empty6.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty6.Name = "rbtn_empty6";
+            this.rbtn_empty6.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty6.TabIndex = 45;
+            this.rbtn_empty6.TabStop = true;
+            this.rbtn_empty6.Text = "Pas de valeur";
+            this.rbtn_empty6.UseVisualStyleBackColor = true;
+            this.rbtn_empty6.CheckedChanged += new System.EventHandler(this.rbtn_empty6_CheckedChanged);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.rbtn_custom5);
+            this.panel6.Controls.Add(this.rbtn_fix5);
+            this.panel6.Controls.Add(this.rbtn_empty5);
+            this.panel6.Location = new System.Drawing.Point(69, 222);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(341, 19);
+            this.panel6.TabIndex = 116;
+            // 
+            // rbtn_custom5
+            // 
+            this.rbtn_custom5.AutoSize = true;
+            this.rbtn_custom5.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom5.Name = "rbtn_custom5";
+            this.rbtn_custom5.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom5.TabIndex = 35;
+            this.rbtn_custom5.TabStop = true;
+            this.rbtn_custom5.Text = "A définir";
+            this.rbtn_custom5.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix5
+            // 
+            this.rbtn_fix5.AutoSize = true;
+            this.rbtn_fix5.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix5.Name = "rbtn_fix5";
+            this.rbtn_fix5.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix5.TabIndex = 36;
+            this.rbtn_fix5.TabStop = true;
+            this.rbtn_fix5.Text = "Fixe";
+            this.rbtn_fix5.UseVisualStyleBackColor = true;
+            this.rbtn_fix5.CheckedChanged += new System.EventHandler(this.rbtn_fix5_CheckedChanged);
+            // 
+            // rbtn_empty5
+            // 
+            this.rbtn_empty5.AutoSize = true;
+            this.rbtn_empty5.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty5.Name = "rbtn_empty5";
+            this.rbtn_empty5.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty5.TabIndex = 37;
+            this.rbtn_empty5.TabStop = true;
+            this.rbtn_empty5.Text = "Pas de valeur";
+            this.rbtn_empty5.UseVisualStyleBackColor = true;
+            this.rbtn_empty5.CheckedChanged += new System.EventHandler(this.rbtn_empty5_CheckedChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.rbtn_custom4);
+            this.panel5.Controls.Add(this.rbtn_fix4);
+            this.panel5.Controls.Add(this.rbtn_empty4);
+            this.panel5.Location = new System.Drawing.Point(69, 167);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(341, 19);
+            this.panel5.TabIndex = 115;
+            // 
+            // rbtn_custom4
+            // 
+            this.rbtn_custom4.AutoSize = true;
+            this.rbtn_custom4.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom4.Name = "rbtn_custom4";
+            this.rbtn_custom4.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom4.TabIndex = 27;
+            this.rbtn_custom4.TabStop = true;
+            this.rbtn_custom4.Text = "A définir";
+            this.rbtn_custom4.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix4
+            // 
+            this.rbtn_fix4.AutoSize = true;
+            this.rbtn_fix4.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix4.Name = "rbtn_fix4";
+            this.rbtn_fix4.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix4.TabIndex = 28;
+            this.rbtn_fix4.TabStop = true;
+            this.rbtn_fix4.Text = "Fixe";
+            this.rbtn_fix4.UseVisualStyleBackColor = true;
+            this.rbtn_fix4.CheckedChanged += new System.EventHandler(this.rbtn_fix4_CheckedChanged);
+            // 
+            // rbtn_empty4
+            // 
+            this.rbtn_empty4.AutoSize = true;
+            this.rbtn_empty4.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty4.Name = "rbtn_empty4";
+            this.rbtn_empty4.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty4.TabIndex = 29;
+            this.rbtn_empty4.TabStop = true;
+            this.rbtn_empty4.Text = "Pas de valeur";
+            this.rbtn_empty4.UseVisualStyleBackColor = true;
+            this.rbtn_empty4.CheckedChanged += new System.EventHandler(this.rbtn_empty4_CheckedChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.rbtn_custom3);
+            this.panel4.Controls.Add(this.rbtn_fix3);
+            this.panel4.Controls.Add(this.rbtn_empty3);
+            this.panel4.Location = new System.Drawing.Point(69, 114);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(341, 19);
+            this.panel4.TabIndex = 115;
+            // 
+            // rbtn_custom3
+            // 
+            this.rbtn_custom3.AutoSize = true;
+            this.rbtn_custom3.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom3.Name = "rbtn_custom3";
+            this.rbtn_custom3.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom3.TabIndex = 19;
+            this.rbtn_custom3.TabStop = true;
+            this.rbtn_custom3.Text = "A définir";
+            this.rbtn_custom3.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix3
+            // 
+            this.rbtn_fix3.AutoSize = true;
+            this.rbtn_fix3.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix3.Name = "rbtn_fix3";
+            this.rbtn_fix3.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix3.TabIndex = 20;
+            this.rbtn_fix3.TabStop = true;
+            this.rbtn_fix3.Text = "Fixe";
+            this.rbtn_fix3.UseVisualStyleBackColor = true;
+            this.rbtn_fix3.CheckedChanged += new System.EventHandler(this.rbtn_fix3_CheckedChanged);
+            // 
+            // rbtn_empty3
+            // 
+            this.rbtn_empty3.AutoSize = true;
+            this.rbtn_empty3.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty3.Name = "rbtn_empty3";
+            this.rbtn_empty3.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty3.TabIndex = 21;
+            this.rbtn_empty3.TabStop = true;
+            this.rbtn_empty3.Text = "Pas de valeur";
+            this.rbtn_empty3.UseVisualStyleBackColor = true;
+            this.rbtn_empty3.CheckedChanged += new System.EventHandler(this.rbtn_empty3_CheckedChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rbtn_custom2);
+            this.panel3.Controls.Add(this.rbtn_empty2);
+            this.panel3.Controls.Add(this.rbtn_fix2);
+            this.panel3.Location = new System.Drawing.Point(69, 57);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(341, 19);
+            this.panel3.TabIndex = 114;
+            // 
+            // rbtn_custom2
+            // 
+            this.rbtn_custom2.AutoSize = true;
+            this.rbtn_custom2.Location = new System.Drawing.Point(0, 0);
+            this.rbtn_custom2.Name = "rbtn_custom2";
+            this.rbtn_custom2.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom2.TabIndex = 11;
+            this.rbtn_custom2.TabStop = true;
+            this.rbtn_custom2.Text = "A définir";
+            this.rbtn_custom2.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_empty2
+            // 
+            this.rbtn_empty2.AutoSize = true;
+            this.rbtn_empty2.Location = new System.Drawing.Point(225, 0);
+            this.rbtn_empty2.Name = "rbtn_empty2";
+            this.rbtn_empty2.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty2.TabIndex = 13;
+            this.rbtn_empty2.TabStop = true;
+            this.rbtn_empty2.Text = "Pas de valeur";
+            this.rbtn_empty2.UseVisualStyleBackColor = true;
+            this.rbtn_empty2.CheckedChanged += new System.EventHandler(this.rbtn_empty2_CheckedChanged);
+            // 
+            // rbtn_fix2
+            // 
+            this.rbtn_fix2.AutoSize = true;
+            this.rbtn_fix2.Location = new System.Drawing.Point(129, 0);
+            this.rbtn_fix2.Name = "rbtn_fix2";
+            this.rbtn_fix2.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix2.TabIndex = 12;
+            this.rbtn_fix2.TabStop = true;
+            this.rbtn_fix2.Text = "Fixe";
+            this.rbtn_fix2.UseVisualStyleBackColor = true;
+            this.rbtn_fix2.CheckedChanged += new System.EventHandler(this.rbtn_fix2_CheckedChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rbtn_custom1);
+            this.panel2.Controls.Add(this.rbtn_fix1);
+            this.panel2.Controls.Add(this.rbtn_empty1);
+            this.panel2.Location = new System.Drawing.Point(69, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(341, 23);
+            this.panel2.TabIndex = 113;
+            // 
+            // rbtn_custom1
+            // 
+            this.rbtn_custom1.AutoSize = true;
+            this.rbtn_custom1.Location = new System.Drawing.Point(0, 4);
+            this.rbtn_custom1.Name = "rbtn_custom1";
+            this.rbtn_custom1.Size = new System.Drawing.Size(81, 21);
+            this.rbtn_custom1.TabIndex = 3;
+            this.rbtn_custom1.TabStop = true;
+            this.rbtn_custom1.Text = "A définir";
+            this.rbtn_custom1.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_fix1
+            // 
+            this.rbtn_fix1.AutoSize = true;
+            this.rbtn_fix1.Location = new System.Drawing.Point(129, 4);
+            this.rbtn_fix1.Name = "rbtn_fix1";
+            this.rbtn_fix1.Size = new System.Drawing.Size(54, 21);
+            this.rbtn_fix1.TabIndex = 4;
+            this.rbtn_fix1.TabStop = true;
+            this.rbtn_fix1.Text = "Fixe";
+            this.rbtn_fix1.UseVisualStyleBackColor = true;
+            this.rbtn_fix1.CheckedChanged += new System.EventHandler(this.rbtn_fix1_CheckedChanged);
+            // 
+            // rbtn_empty1
+            // 
+            this.rbtn_empty1.AutoSize = true;
+            this.rbtn_empty1.Location = new System.Drawing.Point(225, 4);
+            this.rbtn_empty1.Name = "rbtn_empty1";
+            this.rbtn_empty1.Size = new System.Drawing.Size(116, 21);
+            this.rbtn_empty1.TabIndex = 5;
+            this.rbtn_empty1.TabStop = true;
+            this.rbtn_empty1.Text = "Pas de valeur";
+            this.rbtn_empty1.UseVisualStyleBackColor = true;
+            this.rbtn_empty1.CheckedChanged += new System.EventHandler(this.rbtn_empty1_CheckedChanged);
+            // 
             // tb_valor14
             // 
             this.tb_valor14.Location = new System.Drawing.Point(310, 745);
@@ -405,39 +1035,6 @@
             this.tb_nom14.Name = "tb_nom14";
             this.tb_nom14.Size = new System.Drawing.Size(172, 22);
             this.tb_nom14.TabIndex = 110;
-            // 
-            // rbtn_empty14
-            // 
-            this.rbtn_empty14.AutoSize = true;
-            this.rbtn_empty14.Location = new System.Drawing.Point(225, -3);
-            this.rbtn_empty14.Name = "rbtn_empty14";
-            this.rbtn_empty14.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty14.TabIndex = 109;
-            this.rbtn_empty14.TabStop = true;
-            this.rbtn_empty14.Text = "Pas de valeur";
-            this.rbtn_empty14.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix14
-            // 
-            this.rbtn_fix14.AutoSize = true;
-            this.rbtn_fix14.Location = new System.Drawing.Point(129, -3);
-            this.rbtn_fix14.Name = "rbtn_fix14";
-            this.rbtn_fix14.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix14.TabIndex = 108;
-            this.rbtn_fix14.TabStop = true;
-            this.rbtn_fix14.Text = "Fixe";
-            this.rbtn_fix14.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom14
-            // 
-            this.rbtn_custom14.AutoSize = true;
-            this.rbtn_custom14.Location = new System.Drawing.Point(0, -3);
-            this.rbtn_custom14.Name = "rbtn_custom14";
-            this.rbtn_custom14.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom14.TabIndex = 107;
-            this.rbtn_custom14.TabStop = true;
-            this.rbtn_custom14.Text = "A définir";
-            this.rbtn_custom14.UseVisualStyleBackColor = true;
             // 
             // label36
             // 
@@ -480,39 +1077,6 @@
             this.tb_nom13.Size = new System.Drawing.Size(172, 22);
             this.tb_nom13.TabIndex = 102;
             // 
-            // rbtn_empty13
-            // 
-            this.rbtn_empty13.AutoSize = true;
-            this.rbtn_empty13.Location = new System.Drawing.Point(225, -3);
-            this.rbtn_empty13.Name = "rbtn_empty13";
-            this.rbtn_empty13.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty13.TabIndex = 101;
-            this.rbtn_empty13.TabStop = true;
-            this.rbtn_empty13.Text = "Pas de valeur";
-            this.rbtn_empty13.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix13
-            // 
-            this.rbtn_fix13.AutoSize = true;
-            this.rbtn_fix13.Location = new System.Drawing.Point(129, -3);
-            this.rbtn_fix13.Name = "rbtn_fix13";
-            this.rbtn_fix13.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix13.TabIndex = 100;
-            this.rbtn_fix13.TabStop = true;
-            this.rbtn_fix13.Text = "Fixe";
-            this.rbtn_fix13.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom13
-            // 
-            this.rbtn_custom13.AutoSize = true;
-            this.rbtn_custom13.Location = new System.Drawing.Point(0, -3);
-            this.rbtn_custom13.Name = "rbtn_custom13";
-            this.rbtn_custom13.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom13.TabIndex = 99;
-            this.rbtn_custom13.TabStop = true;
-            this.rbtn_custom13.Text = "A définir";
-            this.rbtn_custom13.UseVisualStyleBackColor = true;
-            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -553,39 +1117,6 @@
             this.tb_nom12.Name = "tb_nom12";
             this.tb_nom12.Size = new System.Drawing.Size(172, 22);
             this.tb_nom12.TabIndex = 94;
-            // 
-            // rbtn_empty12
-            // 
-            this.rbtn_empty12.AutoSize = true;
-            this.rbtn_empty12.Location = new System.Drawing.Point(225, -2);
-            this.rbtn_empty12.Name = "rbtn_empty12";
-            this.rbtn_empty12.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty12.TabIndex = 93;
-            this.rbtn_empty12.TabStop = true;
-            this.rbtn_empty12.Text = "Pas de valeur";
-            this.rbtn_empty12.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix12
-            // 
-            this.rbtn_fix12.AutoSize = true;
-            this.rbtn_fix12.Location = new System.Drawing.Point(129, -2);
-            this.rbtn_fix12.Name = "rbtn_fix12";
-            this.rbtn_fix12.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix12.TabIndex = 92;
-            this.rbtn_fix12.TabStop = true;
-            this.rbtn_fix12.Text = "Fixe";
-            this.rbtn_fix12.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom12
-            // 
-            this.rbtn_custom12.AutoSize = true;
-            this.rbtn_custom12.Location = new System.Drawing.Point(0, -2);
-            this.rbtn_custom12.Name = "rbtn_custom12";
-            this.rbtn_custom12.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom12.TabIndex = 91;
-            this.rbtn_custom12.TabStop = true;
-            this.rbtn_custom12.Text = "A définir";
-            this.rbtn_custom12.UseVisualStyleBackColor = true;
             // 
             // label42
             // 
@@ -628,39 +1159,6 @@
             this.tb_nom11.Size = new System.Drawing.Size(172, 22);
             this.tb_nom11.TabIndex = 86;
             // 
-            // rbtn_empty11
-            // 
-            this.rbtn_empty11.AutoSize = true;
-            this.rbtn_empty11.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty11.Name = "rbtn_empty11";
-            this.rbtn_empty11.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty11.TabIndex = 85;
-            this.rbtn_empty11.TabStop = true;
-            this.rbtn_empty11.Text = "Pas de valeur";
-            this.rbtn_empty11.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix11
-            // 
-            this.rbtn_fix11.AutoSize = true;
-            this.rbtn_fix11.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix11.Name = "rbtn_fix11";
-            this.rbtn_fix11.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix11.TabIndex = 84;
-            this.rbtn_fix11.TabStop = true;
-            this.rbtn_fix11.Text = "Fixe";
-            this.rbtn_fix11.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom11
-            // 
-            this.rbtn_custom11.AutoSize = true;
-            this.rbtn_custom11.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom11.Name = "rbtn_custom11";
-            this.rbtn_custom11.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom11.TabIndex = 83;
-            this.rbtn_custom11.TabStop = true;
-            this.rbtn_custom11.Text = "A définir";
-            this.rbtn_custom11.UseVisualStyleBackColor = true;
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -701,39 +1199,6 @@
             this.tb_nom10.Name = "tb_nom10";
             this.tb_nom10.Size = new System.Drawing.Size(172, 22);
             this.tb_nom10.TabIndex = 78;
-            // 
-            // rbtn_empty10
-            // 
-            this.rbtn_empty10.AutoSize = true;
-            this.rbtn_empty10.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty10.Name = "rbtn_empty10";
-            this.rbtn_empty10.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty10.TabIndex = 77;
-            this.rbtn_empty10.TabStop = true;
-            this.rbtn_empty10.Text = "Pas de valeur";
-            this.rbtn_empty10.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix10
-            // 
-            this.rbtn_fix10.AutoSize = true;
-            this.rbtn_fix10.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix10.Name = "rbtn_fix10";
-            this.rbtn_fix10.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix10.TabIndex = 76;
-            this.rbtn_fix10.TabStop = true;
-            this.rbtn_fix10.Text = "Fixe";
-            this.rbtn_fix10.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom10
-            // 
-            this.rbtn_custom10.AutoSize = true;
-            this.rbtn_custom10.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom10.Name = "rbtn_custom10";
-            this.rbtn_custom10.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom10.TabIndex = 75;
-            this.rbtn_custom10.TabStop = true;
-            this.rbtn_custom10.Text = "A définir";
-            this.rbtn_custom10.UseVisualStyleBackColor = true;
             // 
             // label30
             // 
@@ -776,39 +1241,6 @@
             this.tb_nom9.Size = new System.Drawing.Size(172, 22);
             this.tb_nom9.TabIndex = 70;
             // 
-            // rbtn_empty9
-            // 
-            this.rbtn_empty9.AutoSize = true;
-            this.rbtn_empty9.Location = new System.Drawing.Point(225, -2);
-            this.rbtn_empty9.Name = "rbtn_empty9";
-            this.rbtn_empty9.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty9.TabIndex = 69;
-            this.rbtn_empty9.TabStop = true;
-            this.rbtn_empty9.Text = "Pas de valeur";
-            this.rbtn_empty9.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix9
-            // 
-            this.rbtn_fix9.AutoSize = true;
-            this.rbtn_fix9.Location = new System.Drawing.Point(129, -2);
-            this.rbtn_fix9.Name = "rbtn_fix9";
-            this.rbtn_fix9.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix9.TabIndex = 68;
-            this.rbtn_fix9.TabStop = true;
-            this.rbtn_fix9.Text = "Fixe";
-            this.rbtn_fix9.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom9
-            // 
-            this.rbtn_custom9.AutoSize = true;
-            this.rbtn_custom9.Location = new System.Drawing.Point(0, -2);
-            this.rbtn_custom9.Name = "rbtn_custom9";
-            this.rbtn_custom9.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom9.TabIndex = 67;
-            this.rbtn_custom9.TabStop = true;
-            this.rbtn_custom9.Text = "A définir";
-            this.rbtn_custom9.UseVisualStyleBackColor = true;
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -849,39 +1281,6 @@
             this.tb_nom8.Name = "tb_nom8";
             this.tb_nom8.Size = new System.Drawing.Size(172, 22);
             this.tb_nom8.TabIndex = 62;
-            // 
-            // rbtn_empty8
-            // 
-            this.rbtn_empty8.AutoSize = true;
-            this.rbtn_empty8.Location = new System.Drawing.Point(225, -2);
-            this.rbtn_empty8.Name = "rbtn_empty8";
-            this.rbtn_empty8.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty8.TabIndex = 61;
-            this.rbtn_empty8.TabStop = true;
-            this.rbtn_empty8.Text = "Pas de valeur";
-            this.rbtn_empty8.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix8
-            // 
-            this.rbtn_fix8.AutoSize = true;
-            this.rbtn_fix8.Location = new System.Drawing.Point(129, -2);
-            this.rbtn_fix8.Name = "rbtn_fix8";
-            this.rbtn_fix8.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix8.TabIndex = 60;
-            this.rbtn_fix8.TabStop = true;
-            this.rbtn_fix8.Text = "Fixe";
-            this.rbtn_fix8.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom8
-            // 
-            this.rbtn_custom8.AutoSize = true;
-            this.rbtn_custom8.Location = new System.Drawing.Point(0, -2);
-            this.rbtn_custom8.Name = "rbtn_custom8";
-            this.rbtn_custom8.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom8.TabIndex = 59;
-            this.rbtn_custom8.TabStop = true;
-            this.rbtn_custom8.Text = "A définir";
-            this.rbtn_custom8.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -924,39 +1323,6 @@
             this.tb_nom7.Size = new System.Drawing.Size(172, 22);
             this.tb_nom7.TabIndex = 54;
             // 
-            // rbtn_empty7
-            // 
-            this.rbtn_empty7.AutoSize = true;
-            this.rbtn_empty7.Location = new System.Drawing.Point(225, -2);
-            this.rbtn_empty7.Name = "rbtn_empty7";
-            this.rbtn_empty7.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty7.TabIndex = 53;
-            this.rbtn_empty7.TabStop = true;
-            this.rbtn_empty7.Text = "Pas de valeur";
-            this.rbtn_empty7.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix7
-            // 
-            this.rbtn_fix7.AutoSize = true;
-            this.rbtn_fix7.Location = new System.Drawing.Point(129, -2);
-            this.rbtn_fix7.Name = "rbtn_fix7";
-            this.rbtn_fix7.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix7.TabIndex = 52;
-            this.rbtn_fix7.TabStop = true;
-            this.rbtn_fix7.Text = "Fixe";
-            this.rbtn_fix7.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom7
-            // 
-            this.rbtn_custom7.AutoSize = true;
-            this.rbtn_custom7.Location = new System.Drawing.Point(0, -2);
-            this.rbtn_custom7.Name = "rbtn_custom7";
-            this.rbtn_custom7.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom7.TabIndex = 51;
-            this.rbtn_custom7.TabStop = true;
-            this.rbtn_custom7.Text = "A définir";
-            this.rbtn_custom7.UseVisualStyleBackColor = true;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -997,39 +1363,6 @@
             this.tb_nom6.Name = "tb_nom6";
             this.tb_nom6.Size = new System.Drawing.Size(172, 22);
             this.tb_nom6.TabIndex = 46;
-            // 
-            // rbtn_empty6
-            // 
-            this.rbtn_empty6.AutoSize = true;
-            this.rbtn_empty6.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty6.Name = "rbtn_empty6";
-            this.rbtn_empty6.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty6.TabIndex = 45;
-            this.rbtn_empty6.TabStop = true;
-            this.rbtn_empty6.Text = "Pas de valeur";
-            this.rbtn_empty6.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix6
-            // 
-            this.rbtn_fix6.AutoSize = true;
-            this.rbtn_fix6.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix6.Name = "rbtn_fix6";
-            this.rbtn_fix6.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix6.TabIndex = 44;
-            this.rbtn_fix6.TabStop = true;
-            this.rbtn_fix6.Text = "Fixe";
-            this.rbtn_fix6.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom6
-            // 
-            this.rbtn_custom6.AutoSize = true;
-            this.rbtn_custom6.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom6.Name = "rbtn_custom6";
-            this.rbtn_custom6.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom6.TabIndex = 43;
-            this.rbtn_custom6.TabStop = true;
-            this.rbtn_custom6.Text = "A définir";
-            this.rbtn_custom6.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -1072,39 +1405,6 @@
             this.tb_nom5.Size = new System.Drawing.Size(172, 22);
             this.tb_nom5.TabIndex = 38;
             // 
-            // rbtn_empty5
-            // 
-            this.rbtn_empty5.AutoSize = true;
-            this.rbtn_empty5.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty5.Name = "rbtn_empty5";
-            this.rbtn_empty5.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty5.TabIndex = 37;
-            this.rbtn_empty5.TabStop = true;
-            this.rbtn_empty5.Text = "Pas de valeur";
-            this.rbtn_empty5.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix5
-            // 
-            this.rbtn_fix5.AutoSize = true;
-            this.rbtn_fix5.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix5.Name = "rbtn_fix5";
-            this.rbtn_fix5.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix5.TabIndex = 36;
-            this.rbtn_fix5.TabStop = true;
-            this.rbtn_fix5.Text = "Fixe";
-            this.rbtn_fix5.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom5
-            // 
-            this.rbtn_custom5.AutoSize = true;
-            this.rbtn_custom5.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom5.Name = "rbtn_custom5";
-            this.rbtn_custom5.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom5.TabIndex = 35;
-            this.rbtn_custom5.TabStop = true;
-            this.rbtn_custom5.Text = "A définir";
-            this.rbtn_custom5.UseVisualStyleBackColor = true;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1145,39 +1445,6 @@
             this.tb_nom4.Name = "tb_nom4";
             this.tb_nom4.Size = new System.Drawing.Size(172, 22);
             this.tb_nom4.TabIndex = 30;
-            // 
-            // rbtn_empty4
-            // 
-            this.rbtn_empty4.AutoSize = true;
-            this.rbtn_empty4.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty4.Name = "rbtn_empty4";
-            this.rbtn_empty4.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty4.TabIndex = 29;
-            this.rbtn_empty4.TabStop = true;
-            this.rbtn_empty4.Text = "Pas de valeur";
-            this.rbtn_empty4.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix4
-            // 
-            this.rbtn_fix4.AutoSize = true;
-            this.rbtn_fix4.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix4.Name = "rbtn_fix4";
-            this.rbtn_fix4.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix4.TabIndex = 28;
-            this.rbtn_fix4.TabStop = true;
-            this.rbtn_fix4.Text = "Fixe";
-            this.rbtn_fix4.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom4
-            // 
-            this.rbtn_custom4.AutoSize = true;
-            this.rbtn_custom4.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom4.Name = "rbtn_custom4";
-            this.rbtn_custom4.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom4.TabIndex = 27;
-            this.rbtn_custom4.TabStop = true;
-            this.rbtn_custom4.Text = "A définir";
-            this.rbtn_custom4.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -1244,72 +1511,6 @@
             this.tb_nom3.Name = "tb_nom3";
             this.tb_nom3.Size = new System.Drawing.Size(172, 22);
             this.tb_nom3.TabIndex = 22;
-            // 
-            // rbtn_custom1
-            // 
-            this.rbtn_custom1.AutoSize = true;
-            this.rbtn_custom1.Location = new System.Drawing.Point(0, -3);
-            this.rbtn_custom1.Name = "rbtn_custom1";
-            this.rbtn_custom1.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom1.TabIndex = 3;
-            this.rbtn_custom1.TabStop = true;
-            this.rbtn_custom1.Text = "A définir";
-            this.rbtn_custom1.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_empty3
-            // 
-            this.rbtn_empty3.AutoSize = true;
-            this.rbtn_empty3.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty3.Name = "rbtn_empty3";
-            this.rbtn_empty3.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty3.TabIndex = 21;
-            this.rbtn_empty3.TabStop = true;
-            this.rbtn_empty3.Text = "Pas de valeur";
-            this.rbtn_empty3.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix1
-            // 
-            this.rbtn_fix1.AutoSize = true;
-            this.rbtn_fix1.Location = new System.Drawing.Point(129, -3);
-            this.rbtn_fix1.Name = "rbtn_fix1";
-            this.rbtn_fix1.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix1.TabIndex = 4;
-            this.rbtn_fix1.TabStop = true;
-            this.rbtn_fix1.Text = "Fixe";
-            this.rbtn_fix1.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix3
-            // 
-            this.rbtn_fix3.AutoSize = true;
-            this.rbtn_fix3.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix3.Name = "rbtn_fix3";
-            this.rbtn_fix3.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix3.TabIndex = 20;
-            this.rbtn_fix3.TabStop = true;
-            this.rbtn_fix3.Text = "Fixe";
-            this.rbtn_fix3.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_empty1
-            // 
-            this.rbtn_empty1.AutoSize = true;
-            this.rbtn_empty1.Location = new System.Drawing.Point(225, -3);
-            this.rbtn_empty1.Name = "rbtn_empty1";
-            this.rbtn_empty1.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty1.TabIndex = 5;
-            this.rbtn_empty1.TabStop = true;
-            this.rbtn_empty1.Text = "Pas de valeur";
-            this.rbtn_empty1.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_custom3
-            // 
-            this.rbtn_custom3.AutoSize = true;
-            this.rbtn_custom3.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom3.Name = "rbtn_custom3";
-            this.rbtn_custom3.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom3.TabIndex = 19;
-            this.rbtn_custom3.TabStop = true;
-            this.rbtn_custom3.Text = "A définir";
-            this.rbtn_custom3.UseVisualStyleBackColor = true;
             // 
             // tb_nom1
             // 
@@ -1386,39 +1587,6 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nom :";
             // 
-            // rbtn_custom2
-            // 
-            this.rbtn_custom2.AutoSize = true;
-            this.rbtn_custom2.Location = new System.Drawing.Point(0, 0);
-            this.rbtn_custom2.Name = "rbtn_custom2";
-            this.rbtn_custom2.Size = new System.Drawing.Size(81, 21);
-            this.rbtn_custom2.TabIndex = 11;
-            this.rbtn_custom2.TabStop = true;
-            this.rbtn_custom2.Text = "A définir";
-            this.rbtn_custom2.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_empty2
-            // 
-            this.rbtn_empty2.AutoSize = true;
-            this.rbtn_empty2.Location = new System.Drawing.Point(225, 0);
-            this.rbtn_empty2.Name = "rbtn_empty2";
-            this.rbtn_empty2.Size = new System.Drawing.Size(116, 21);
-            this.rbtn_empty2.TabIndex = 13;
-            this.rbtn_empty2.TabStop = true;
-            this.rbtn_empty2.Text = "Pas de valeur";
-            this.rbtn_empty2.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_fix2
-            // 
-            this.rbtn_fix2.AutoSize = true;
-            this.rbtn_fix2.Location = new System.Drawing.Point(129, 0);
-            this.rbtn_fix2.Name = "rbtn_fix2";
-            this.rbtn_fix2.Size = new System.Drawing.Size(54, 21);
-            this.rbtn_fix2.TabIndex = 12;
-            this.rbtn_fix2.TabStop = true;
-            this.rbtn_fix2.Text = "Fixe";
-            this.rbtn_fix2.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(171, 36);
@@ -1435,146 +1603,6 @@
             this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Sauvegarder le bouton";
             this.btn_save.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.rbtn_custom1);
-            this.panel2.Controls.Add(this.rbtn_fix1);
-            this.panel2.Controls.Add(this.rbtn_empty1);
-            this.panel2.Location = new System.Drawing.Point(69, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 18);
-            this.panel2.TabIndex = 113;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.rbtn_custom2);
-            this.panel3.Controls.Add(this.rbtn_empty2);
-            this.panel3.Controls.Add(this.rbtn_fix2);
-            this.panel3.Location = new System.Drawing.Point(69, 57);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(341, 19);
-            this.panel3.TabIndex = 114;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.rbtn_custom3);
-            this.panel4.Controls.Add(this.rbtn_fix3);
-            this.panel4.Controls.Add(this.rbtn_empty3);
-            this.panel4.Location = new System.Drawing.Point(69, 114);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(341, 19);
-            this.panel4.TabIndex = 115;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rbtn_custom4);
-            this.panel5.Controls.Add(this.rbtn_fix4);
-            this.panel5.Controls.Add(this.rbtn_empty4);
-            this.panel5.Location = new System.Drawing.Point(69, 167);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(341, 19);
-            this.panel5.TabIndex = 115;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.rbtn_custom5);
-            this.panel6.Controls.Add(this.rbtn_fix5);
-            this.panel6.Controls.Add(this.rbtn_empty5);
-            this.panel6.Location = new System.Drawing.Point(69, 222);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(341, 19);
-            this.panel6.TabIndex = 116;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.rbtn_custom6);
-            this.panel7.Controls.Add(this.rbtn_fix6);
-            this.panel7.Controls.Add(this.rbtn_empty6);
-            this.panel7.Location = new System.Drawing.Point(69, 279);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(341, 19);
-            this.panel7.TabIndex = 117;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.rbtn_custom7);
-            this.panel8.Controls.Add(this.rbtn_fix7);
-            this.panel8.Controls.Add(this.rbtn_empty7);
-            this.panel8.Location = new System.Drawing.Point(69, 332);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(341, 19);
-            this.panel8.TabIndex = 115;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.rbtn_custom8);
-            this.panel9.Controls.Add(this.rbtn_fix8);
-            this.panel9.Controls.Add(this.rbtn_empty8);
-            this.panel9.Location = new System.Drawing.Point(69, 387);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(341, 19);
-            this.panel9.TabIndex = 115;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.rbtn_custom9);
-            this.panel10.Controls.Add(this.rbtn_fix9);
-            this.panel10.Controls.Add(this.rbtn_empty9);
-            this.panel10.Location = new System.Drawing.Point(69, 444);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(341, 19);
-            this.panel10.TabIndex = 115;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.rbtn_custom10);
-            this.panel11.Controls.Add(this.rbtn_fix10);
-            this.panel11.Controls.Add(this.rbtn_empty10);
-            this.panel11.Location = new System.Drawing.Point(69, 497);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(341, 19);
-            this.panel11.TabIndex = 118;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.rbtn_custom11);
-            this.panel12.Controls.Add(this.rbtn_fix11);
-            this.panel12.Controls.Add(this.rbtn_empty11);
-            this.panel12.Location = new System.Drawing.Point(69, 552);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(341, 19);
-            this.panel12.TabIndex = 119;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.rbtn_custom12);
-            this.panel13.Controls.Add(this.rbtn_fix12);
-            this.panel13.Controls.Add(this.rbtn_empty12);
-            this.panel13.Location = new System.Drawing.Point(69, 609);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(341, 19);
-            this.panel13.TabIndex = 115;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.rbtn_custom13);
-            this.panel14.Controls.Add(this.rbtn_fix13);
-            this.panel14.Controls.Add(this.rbtn_empty13);
-            this.panel14.Location = new System.Drawing.Point(69, 665);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(341, 19);
-            this.panel14.TabIndex = 115;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.rbtn_custom14);
-            this.panel15.Controls.Add(this.rbtn_fix14);
-            this.panel15.Controls.Add(this.rbtn_empty14);
-            this.panel15.Location = new System.Drawing.Point(69, 719);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(341, 19);
-            this.panel15.TabIndex = 120;
             // 
             // A_Gest1Btn
             // 
@@ -1594,35 +1622,35 @@
             this.groupBox3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
