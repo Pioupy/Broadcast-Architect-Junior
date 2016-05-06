@@ -168,9 +168,7 @@
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\user\U_choixprofils.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Forms\user\U_choixprofils.cs" />
     <Compile Include="View\Forms\user\U_choixprofils.Designer.cs">
       <DependentUpon>U_choixprofils.cs</DependentUpon>
     </Compile>
@@ -193,7 +191,7 @@
       <DependentUpon>U_PreConfAddProfil.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\user\U_Profils.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Forms\user\U_Profils.Designer.cs">
       <DependentUpon>U_Profils.cs</DependentUpon>
