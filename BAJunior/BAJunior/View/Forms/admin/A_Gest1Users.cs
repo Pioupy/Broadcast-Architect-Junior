@@ -16,5 +16,18 @@ namespace BAJunior.View.Forms.admin
         {
             InitializeComponent();
         }
+
+        public A_Gest1Users(string name, string password, bool isAdmin)
+        {
+            InitializeComponent();
+
+            tb_id.Text = name;
+            tb_password.Text = password;
+
+            if (isAdmin)            
+                rbtn_yes.Checked = true;            
+            else
+                rbtn_no.Checked = true;
+        }
     }
 }
