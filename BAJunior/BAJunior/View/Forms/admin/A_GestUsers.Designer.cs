@@ -50,6 +50,7 @@
             this.btn_AddUser.TabIndex = 1;
             this.btn_AddUser.Text = "Ajouter";
             this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
             // btn_EditUser
             // 

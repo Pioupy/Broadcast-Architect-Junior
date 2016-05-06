@@ -33,9 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.rbtn_yes = new System.Windows.Forms.RadioButton();
             this.rbtn_no = new System.Windows.Forms.RadioButton();
+            this.rbtn_yes = new System.Windows.Forms.RadioButton();
+            this.btn_save = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -81,14 +81,16 @@
             this.panel1.Size = new System.Drawing.Size(186, 31);
             this.panel1.TabIndex = 4;
             // 
-            // btn_save
+            // rbtn_no
             // 
-            this.btn_save.Location = new System.Drawing.Point(135, 136);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
-            this.btn_save.TabIndex = 5;
-            this.btn_save.Text = "Valider";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.rbtn_no.AutoSize = true;
+            this.rbtn_no.Location = new System.Drawing.Point(62, 7);
+            this.rbtn_no.Name = "rbtn_no";
+            this.rbtn_no.Size = new System.Drawing.Size(55, 21);
+            this.rbtn_no.TabIndex = 1;
+            this.rbtn_no.TabStop = true;
+            this.rbtn_no.Text = "Non";
+            this.rbtn_no.UseVisualStyleBackColor = true;
             // 
             // rbtn_yes
             // 
@@ -101,16 +103,14 @@
             this.rbtn_yes.Text = "Oui";
             this.rbtn_yes.UseVisualStyleBackColor = true;
             // 
-            // rbtn_no
+            // btn_save
             // 
-            this.rbtn_no.AutoSize = true;
-            this.rbtn_no.Location = new System.Drawing.Point(62, 7);
-            this.rbtn_no.Name = "rbtn_no";
-            this.rbtn_no.Size = new System.Drawing.Size(55, 21);
-            this.rbtn_no.TabIndex = 1;
-            this.rbtn_no.TabStop = true;
-            this.rbtn_no.Text = "Non";
-            this.rbtn_no.UseVisualStyleBackColor = true;
+            this.btn_save.Location = new System.Drawing.Point(135, 136);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.TabIndex = 5;
+            this.btn_save.Text = "Valider";
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -133,7 +133,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_id);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "A_Gest1Users";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ShowInTaskbar = false;
             this.Text = "Gestion utilisateur";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
