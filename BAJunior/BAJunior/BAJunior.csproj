@@ -126,6 +126,12 @@
     <Compile Include="View\Forms\admin\A_GestBtns.Designer.cs">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\admin\A_GestionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\admin\A_GestionApplication.Designer.cs">
+      <DependentUpon>A_GestionApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\admin\A_GestUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestBtns.resx">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_GestionApplication.resx">
+      <DependentUpon>A_GestionApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestUsers.resx">
       <DependentUpon>A_GestUsers.cs</DependentUpon>
