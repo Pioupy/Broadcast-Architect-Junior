@@ -36,33 +36,36 @@
             // 
             // lv_User
             // 
-            this.lv_User.Location = new System.Drawing.Point(78, 104);
+            this.lv_User.Location = new System.Drawing.Point(80, 111);
             this.lv_User.Name = "lv_User";
-            this.lv_User.Size = new System.Drawing.Size(487, 717);
+            this.lv_User.Size = new System.Drawing.Size(450, 600);
             this.lv_User.TabIndex = 0;
             this.lv_User.UseCompatibleStateImageBehavior = false;
+            this.lv_User.View = System.Windows.Forms.View.List;
             // 
             // btn_AddUser
             // 
-            this.btn_AddUser.Location = new System.Drawing.Point(888, 316);
+            this.btn_AddUser.Location = new System.Drawing.Point(720, 300);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(111, 41);
             this.btn_AddUser.TabIndex = 1;
             this.btn_AddUser.Text = "Ajouter";
             this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
             // btn_EditUser
             // 
-            this.btn_EditUser.Location = new System.Drawing.Point(888, 417);
+            this.btn_EditUser.Location = new System.Drawing.Point(720, 400);
             this.btn_EditUser.Name = "btn_EditUser";
             this.btn_EditUser.Size = new System.Drawing.Size(111, 41);
             this.btn_EditUser.TabIndex = 2;
             this.btn_EditUser.Text = "Modifier";
             this.btn_EditUser.UseVisualStyleBackColor = true;
+            this.btn_EditUser.Click += new System.EventHandler(this.btn_EditUser_Click);
             // 
             // btn_DeleteUser
             // 
-            this.btn_DeleteUser.Location = new System.Drawing.Point(888, 507);
+            this.btn_DeleteUser.Location = new System.Drawing.Point(720, 500);
             this.btn_DeleteUser.Name = "btn_DeleteUser";
             this.btn_DeleteUser.Size = new System.Drawing.Size(111, 41);
             this.btn_DeleteUser.TabIndex = 3;
@@ -78,7 +81,7 @@
             this.Controls.Add(this.btn_AddUser);
             this.Controls.Add(this.lv_User);
             this.Name = "A_GestUsers";
-            this.Size = new System.Drawing.Size(1246, 890);
+            this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
 
         }

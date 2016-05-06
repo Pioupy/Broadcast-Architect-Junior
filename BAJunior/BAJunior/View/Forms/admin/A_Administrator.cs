@@ -16,5 +16,6 @@ namespace BAJunior.View.Forms.admin
         {
             InitializeComponent();
         }
+        
     }
 }

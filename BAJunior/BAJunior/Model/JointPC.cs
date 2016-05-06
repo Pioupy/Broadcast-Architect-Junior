@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class JointPC
+    public class JointPC
     {
         private int m_idJointPC;
         private int m_idParam;

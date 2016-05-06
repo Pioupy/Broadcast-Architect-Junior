@@ -29,59 +29,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.Administrator = new System.Windows.Forms.TabControl();
+            this.GestBtns = new System.Windows.Forms.TabPage();
+            this.a_GestBtns1 = new BAJunior.View.Forms.admin.A_GestBtns();
+            this.GestUsers = new System.Windows.Forms.TabPage();
+            this.a_GestUsers1 = new BAJunior.View.Forms.admin.A_GestUsers();
+            this.GestApps = new System.Windows.Forms.TabPage();
+            this.a_GestApps1 = new BAJunior.View.Forms.admin.A_GestApps();
+            this.Administrator.SuspendLayout();
+            this.GestBtns.SuspendLayout();
+            this.GestUsers.SuspendLayout();
+            this.GestApps.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(259, 249);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(251, 223);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(251, 223);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Administrator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Administrator.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Administrator.Controls.Add(this.GestBtns);
+            this.Administrator.Controls.Add(this.GestUsers);
+            this.Administrator.Controls.Add(this.GestApps);
+            this.Administrator.Location = new System.Drawing.Point(16, 15);
+            this.Administrator.Margin = new System.Windows.Forms.Padding(4);
+            this.Administrator.Name = "Administrator";
+            this.Administrator.SelectedIndex = 0;
+            this.Administrator.Size = new System.Drawing.Size(1233, 892);
+            this.Administrator.TabIndex = 0;
+            // 
+            // GestBtns
+            // 
+            this.GestBtns.Controls.Add(this.a_GestBtns1);
+            this.GestBtns.Location = new System.Drawing.Point(4, 25);
+            this.GestBtns.Margin = new System.Windows.Forms.Padding(4);
+            this.GestBtns.Name = "GestBtns";
+            this.GestBtns.Padding = new System.Windows.Forms.Padding(4);
+            this.GestBtns.Size = new System.Drawing.Size(1225, 863);
+            this.GestBtns.TabIndex = 0;
+            this.GestBtns.Text = "Boutons";
+            this.GestBtns.UseVisualStyleBackColor = true;
+            // 
+            // a_GestBtns1
+            // 
+            this.a_GestBtns1.Location = new System.Drawing.Point(15, 15);
+            this.a_GestBtns1.Name = "a_GestBtns1";
+            this.a_GestBtns1.Size = new System.Drawing.Size(1286, 876);
+            this.a_GestBtns1.TabIndex = 0;
+            // 
+            // GestUsers
+            // 
+            this.GestUsers.Controls.Add(this.a_GestUsers1);
+            this.GestUsers.Location = new System.Drawing.Point(4, 25);
+            this.GestUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.GestUsers.Name = "GestUsers";
+            this.GestUsers.Padding = new System.Windows.Forms.Padding(4);
+            this.GestUsers.Size = new System.Drawing.Size(1308, 914);
+            this.GestUsers.TabIndex = 1;
+            this.GestUsers.Text = "Utilisateurs";
+            this.GestUsers.UseVisualStyleBackColor = true;
+            // 
+            // a_GestUsers1
+            // 
+            this.a_GestUsers1.Location = new System.Drawing.Point(15, 15);
+            this.a_GestUsers1.Name = "a_GestUsers1";
+            this.a_GestUsers1.Size = new System.Drawing.Size(1246, 890);
+            this.a_GestUsers1.TabIndex = 0;
+            // 
+            // GestApps
+            // 
+            this.GestApps.Controls.Add(this.a_GestApps1);
+            this.GestApps.Location = new System.Drawing.Point(4, 25);
+            this.GestApps.Name = "GestApps";
+            this.GestApps.Padding = new System.Windows.Forms.Padding(3);
+            this.GestApps.Size = new System.Drawing.Size(1308, 914);
+            this.GestApps.TabIndex = 2;
+            this.GestApps.Text = "Applications";
+            this.GestApps.UseVisualStyleBackColor = true;
+            // 
+            // a_GestApps1
+            // 
+            this.a_GestApps1.Location = new System.Drawing.Point(15, 15);
+            this.a_GestApps1.Name = "a_GestApps1";
+            this.a_GestApps1.Size = new System.Drawing.Size(1280, 870);
+            this.a_GestApps1.TabIndex = 0;
+            // 
+            // A_Administrator
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.tabControl1);
-            this.Name = "Administrator";
+            this.ClientSize = new System.Drawing.Size(1262, 915);
+            this.Controls.Add(this.Administrator);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "A_Administrator";
             this.Text = "Administrator";
-            this.tabControl1.ResumeLayout(false);
+            this.Administrator.ResumeLayout(false);
+            this.GestBtns.ResumeLayout(false);
+            this.GestUsers.ResumeLayout(false);
+            this.GestApps.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl Administrator;
+        private System.Windows.Forms.TabPage GestBtns;
+        private System.Windows.Forms.TabPage GestUsers;
+        private A_GestUsers a_GestUsers1;
+        private A_GestBtns a_GestBtns1;
+        private System.Windows.Forms.TabPage GestApps;
+        private A_GestApps a_GestApps1;
     }
 }

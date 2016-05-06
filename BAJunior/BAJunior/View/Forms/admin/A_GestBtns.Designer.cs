@@ -36,15 +36,15 @@
             // 
             // lv_Button
             // 
-            this.lv_Button.Location = new System.Drawing.Point(88, 110);
+            this.lv_Button.Location = new System.Drawing.Point(80, 110);
             this.lv_Button.Name = "lv_Button";
-            this.lv_Button.Size = new System.Drawing.Size(493, 699);
+            this.lv_Button.Size = new System.Drawing.Size(450, 600);
             this.lv_Button.TabIndex = 0;
             this.lv_Button.UseCompatibleStateImageBehavior = false;
             // 
             // btn_DeleteBtn
             // 
-            this.btn_DeleteBtn.Location = new System.Drawing.Point(874, 549);
+            this.btn_DeleteBtn.Location = new System.Drawing.Point(720, 500);
             this.btn_DeleteBtn.Name = "btn_DeleteBtn";
             this.btn_DeleteBtn.Size = new System.Drawing.Size(111, 41);
             this.btn_DeleteBtn.TabIndex = 6;
@@ -53,7 +53,7 @@
             // 
             // btn_EditBtn
             // 
-            this.btn_EditBtn.Location = new System.Drawing.Point(874, 459);
+            this.btn_EditBtn.Location = new System.Drawing.Point(720, 400);
             this.btn_EditBtn.Name = "btn_EditBtn";
             this.btn_EditBtn.Size = new System.Drawing.Size(111, 41);
             this.btn_EditBtn.TabIndex = 5;
@@ -62,7 +62,7 @@
             // 
             // btn_AddBtn
             // 
-            this.btn_AddBtn.Location = new System.Drawing.Point(874, 358);
+            this.btn_AddBtn.Location = new System.Drawing.Point(720, 300);
             this.btn_AddBtn.Name = "btn_AddBtn";
             this.btn_AddBtn.Size = new System.Drawing.Size(111, 41);
             this.btn_AddBtn.TabIndex = 4;
@@ -78,7 +78,7 @@
             this.Controls.Add(this.btn_AddBtn);
             this.Controls.Add(this.lv_Button);
             this.Name = "A_GestBtns";
-            this.Size = new System.Drawing.Size(1286, 876);
+            this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
 
         }

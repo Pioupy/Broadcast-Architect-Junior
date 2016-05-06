@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BAJunior.View.Forms.user
+namespace BAJunior.View.Forms.admin
 {
-    public partial class U_choixprofils : Form
+    public partial class A_GestionApplication : Form
     {
-        public U_choixprofils()
+        public A_GestionApplication()
         {
             InitializeComponent();
-        }
-
-        private void U_choixprofils_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

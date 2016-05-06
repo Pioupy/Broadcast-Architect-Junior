@@ -4,7 +4,6 @@ using BAJunior.View.Forms;
 using System.Security.Cryptography;
 using BAJunior.ServiceData;
 
-
 namespace BAJunior
 {
     static class Program
@@ -17,7 +16,7 @@ namespace BAJunior
         {
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             // éxécute le if que si c'est Alexandre qui lance le programme. Need pour tester mes classes non "visuel"
-            if (userName == "Alex\\Alex.G")
+            if (userName == "Alex\\Alex.G" )
             {
                 // Testing Phase :
                 //InitDB initDatabase = new InitDB();
@@ -32,8 +31,9 @@ namespace BAJunior
                 //Veuilez instancier la classe 'initDB'.
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-               // Application.Run(new BAJunior.View.Forms.FormDeTest());
-                Application.Run(new Connection());
+              // Application.Run(new BAJunior.View.Forms.FormDeTest());
+                Application.Run(new BAJunior.View.Forms.admin.A_Administrator());
+               // Application.Run(new Connection());
             }
         }
     }
