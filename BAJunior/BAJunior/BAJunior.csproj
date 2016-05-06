@@ -98,6 +98,7 @@
     <Compile Include="ServiceData\ProfilData.cs" />
     <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
+    <Compile Include="ServiceData\Xml.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\Forms\admin\A_Administrator.cs">
@@ -218,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_choixprofils.resx">
       <DependentUpon>U_choixprofils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_PreConfAddProfil.resx">
+      <DependentUpon>U_PreConfAddProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>
