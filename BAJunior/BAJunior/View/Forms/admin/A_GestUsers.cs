@@ -22,5 +22,11 @@ namespace BAJunior.View.Forms.admin
             var PopUp = new A_Gest1Users();
             PopUp.Show();
         }
+
+        private void btn_EditUser_Click(object sender, EventArgs e)
+        {
+            var PopUp = new A_Gest1Users("erwan","krob0!",true);
+            PopUp.Show();
+        }
     }
 }
