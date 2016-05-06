@@ -201,6 +201,9 @@
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_GestApps.resx">
+      <DependentUpon>A_GestApps.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestBtns.resx">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
     </EmbeddedResource>
