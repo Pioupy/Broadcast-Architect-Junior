@@ -30,7 +30,8 @@ namespace BAJunior
                 //Veuilez instancier la classe 'initDB'.
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-               // Application.Run(new BAJunior.View.Forms.FormDeTest());
+              // Application.Run(new BAJunior.View.Forms.FormDeTest());
+               // Application.Run(new BAJunior.View.Forms.admin.A_Administrator());
                 Application.Run(new Connection());
             }
         }
