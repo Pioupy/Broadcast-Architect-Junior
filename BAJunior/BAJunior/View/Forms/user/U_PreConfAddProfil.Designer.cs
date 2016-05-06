@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // U_PreConfAddProfil
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(883, 358);
+            this.Name = "U_PreConfAddProfil";
             this.Text = "U_PreConfAddProfil";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -20,8 +20,10 @@ namespace BAJunior
             if (userName == "Alex\\Alex.G")
             {
                 // Testing Phase :
-                InitDB initDatabase = new InitDB();
-                initDatabase.testCreatedByAlex();
+                //InitDB initDatabase = new InitDB();
+                //initDatabase.testCreatedByAlex();
+                Xml profil = new Xml();
+                profil.readNameProfil("ClavierTestOne");
             }
             else
             {
