@@ -76,7 +76,7 @@
             this.GestUsers.Margin = new System.Windows.Forms.Padding(4);
             this.GestUsers.Name = "GestUsers";
             this.GestUsers.Padding = new System.Windows.Forms.Padding(4);
-            this.GestUsers.Size = new System.Drawing.Size(1308, 914);
+            this.GestUsers.Size = new System.Drawing.Size(1200, 914);
             this.GestUsers.TabIndex = 1;
             this.GestUsers.Text = "Utilisateurs";
             this.GestUsers.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             this.GestApps.Location = new System.Drawing.Point(4, 25);
             this.GestApps.Name = "GestApps";
             this.GestApps.Padding = new System.Windows.Forms.Padding(3);
-            this.GestApps.Size = new System.Drawing.Size(1308, 914);
+            this.GestApps.Size = new System.Drawing.Size(1200, 914);
             this.GestApps.TabIndex = 2;
             this.GestApps.Text = "Applications";
             this.GestApps.UseVisualStyleBackColor = true;

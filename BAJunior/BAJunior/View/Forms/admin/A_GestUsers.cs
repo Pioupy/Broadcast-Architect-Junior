@@ -16,5 +16,11 @@ namespace BAJunior.View.Forms.admin
         {
             InitializeComponent();
         }
+
+        private void btn_AddUser_Click(object sender, EventArgs e)
+        {
+            var PopUp = new A_Gest1Users();
+            PopUp.Show();
+        }
     }
 }
