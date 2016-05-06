@@ -39,7 +39,7 @@ namespace BAJunior.View.Forms.admin
         {
             User userSelected = users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault();
 
-            var PopUp = new A_Gest1Users(userSelected.getLogin(), userSelected.getPassword(), userSelected.isAdmin());
+            var PopUp = new A_Gest1Users(userSelected);
             PopUp.Show();
         }
     }

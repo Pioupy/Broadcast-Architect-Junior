@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Category
+    public class Category
     {
         private int m_idCategory;
         private String m_name;

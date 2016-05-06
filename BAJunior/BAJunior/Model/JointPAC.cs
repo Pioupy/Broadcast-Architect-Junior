@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class JointPAC
+    public class JointPAC
     {
         private int m_idJointPAC;
         private int m_btnKeyboard;
