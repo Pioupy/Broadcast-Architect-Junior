@@ -38,13 +38,13 @@
             // 
             this.lv_User.Location = new System.Drawing.Point(80, 110);
             this.lv_User.Name = "lv_User";
-            this.lv_User.Size = new System.Drawing.Size(500, 700);
+            this.lv_User.Size = new System.Drawing.Size(450, 600);
             this.lv_User.TabIndex = 0;
             this.lv_User.UseCompatibleStateImageBehavior = false;
             // 
             // btn_AddUser
             // 
-            this.btn_AddUser.Location = new System.Drawing.Point(870, 300);
+            this.btn_AddUser.Location = new System.Drawing.Point(720, 300);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(111, 41);
             this.btn_AddUser.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // btn_EditUser
             // 
-            this.btn_EditUser.Location = new System.Drawing.Point(870, 400);
+            this.btn_EditUser.Location = new System.Drawing.Point(720, 400);
             this.btn_EditUser.Name = "btn_EditUser";
             this.btn_EditUser.Size = new System.Drawing.Size(111, 41);
             this.btn_EditUser.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // btn_DeleteUser
             // 
-            this.btn_DeleteUser.Location = new System.Drawing.Point(870, 500);
+            this.btn_DeleteUser.Location = new System.Drawing.Point(720, 500);
             this.btn_DeleteUser.Name = "btn_DeleteUser";
             this.btn_DeleteUser.Size = new System.Drawing.Size(111, 41);
             this.btn_DeleteUser.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.btn_AddUser);
             this.Controls.Add(this.lv_User);
             this.Name = "A_GestUsers";
-            this.Size = new System.Drawing.Size(1280, 870);
+            this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
 
         }

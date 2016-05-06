@@ -36,7 +36,7 @@
             // 
             // btn_DeleteApps
             // 
-            this.btn_DeleteApps.Location = new System.Drawing.Point(870, 500);
+            this.btn_DeleteApps.Location = new System.Drawing.Point(720, 500);
             this.btn_DeleteApps.Name = "btn_DeleteApps";
             this.btn_DeleteApps.Size = new System.Drawing.Size(111, 41);
             this.btn_DeleteApps.TabIndex = 7;
@@ -45,7 +45,7 @@
             // 
             // btn_EditApps
             // 
-            this.btn_EditApps.Location = new System.Drawing.Point(870, 400);
+            this.btn_EditApps.Location = new System.Drawing.Point(720, 400);
             this.btn_EditApps.Name = "btn_EditApps";
             this.btn_EditApps.Size = new System.Drawing.Size(111, 41);
             this.btn_EditApps.TabIndex = 6;
@@ -54,7 +54,7 @@
             // 
             // btn_AddApps
             // 
-            this.btn_AddApps.Location = new System.Drawing.Point(870, 300);
+            this.btn_AddApps.Location = new System.Drawing.Point(720, 300);
             this.btn_AddApps.Name = "btn_AddApps";
             this.btn_AddApps.Size = new System.Drawing.Size(111, 41);
             this.btn_AddApps.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             this.lv_Apps.Location = new System.Drawing.Point(80, 110);
             this.lv_Apps.Name = "lv_Apps";
-            this.lv_Apps.Size = new System.Drawing.Size(500, 700);
+            this.lv_Apps.Size = new System.Drawing.Size(450, 600);
             this.lv_Apps.TabIndex = 4;
             this.lv_Apps.UseCompatibleStateImageBehavior = false;
             // 
@@ -78,7 +78,7 @@
             this.Controls.Add(this.btn_AddApps);
             this.Controls.Add(this.lv_Apps);
             this.Name = "A_GestApps";
-            this.Size = new System.Drawing.Size(1280, 870);
+            this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
 
         }
