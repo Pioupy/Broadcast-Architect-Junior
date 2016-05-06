@@ -168,11 +168,11 @@
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\user\U_choixprofils.cs">
+    <Compile Include="View\Forms\user\U_Profils.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\user\U_choixprofils.Designer.cs">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
+    <Compile Include="View\Forms\user\U_Profils.Designer.cs">
+      <DependentUpon>U_Profils.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
@@ -191,12 +191,6 @@
     </Compile>
     <Compile Include="View\Forms\user\U_PreConfAddProfil.Designer.cs">
       <DependentUpon>U_PreConfAddProfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\user\U_Profils.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\user\U_Profils.Designer.cs">
-      <DependentUpon>U_Profils.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -237,8 +231,8 @@
     <EmbeddedResource Include="View\Forms\user\Clavier.resx">
       <DependentUpon>Clavier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\user\U_choixprofils.resx">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\user\U_Profils.resx">
+      <DependentUpon>U_Profils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>
