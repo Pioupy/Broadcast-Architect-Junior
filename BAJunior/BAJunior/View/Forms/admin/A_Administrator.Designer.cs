@@ -31,7 +31,7 @@
         {
             this.GestUsers = new System.Windows.Forms.TabControl();
             this.GestBtns = new System.Windows.Forms.TabPage();
-            this.a_GestBtns2 = new BAJunior.View.Forms.admin.A_GestBtns();
+            this.a_GestBtns1 = new BAJunior.View.Forms.admin.A_GestBtns();
             this.Gest_Users = new System.Windows.Forms.TabPage();
             this.a_GestUsers1 = new BAJunior.View.Forms.admin.A_GestUsers();
             this.GestUsers.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             // GestBtns
             // 
-            this.GestBtns.Controls.Add(this.a_GestBtns2);
+            this.GestBtns.Controls.Add(this.a_GestBtns1);
             this.GestBtns.Location = new System.Drawing.Point(4, 25);
             this.GestBtns.Margin = new System.Windows.Forms.Padding(4);
             this.GestBtns.Name = "GestBtns";
@@ -62,12 +62,12 @@
             this.GestBtns.Text = "Boutons";
             this.GestBtns.UseVisualStyleBackColor = true;
             // 
-            // a_GestBtns2
+            // a_GestBtns1
             // 
-            this.a_GestBtns2.Location = new System.Drawing.Point(83, 34);
-            this.a_GestBtns2.Name = "a_GestBtns2";
-            this.a_GestBtns2.Size = new System.Drawing.Size(1116, 856);
-            this.a_GestBtns2.TabIndex = 1;
+            this.a_GestBtns1.Location = new System.Drawing.Point(15, 15);
+            this.a_GestBtns1.Name = "a_GestBtns1";
+            this.a_GestBtns1.Size = new System.Drawing.Size(1286, 876);
+            this.a_GestBtns1.TabIndex = 0;
             // 
             // Gest_Users
             // 
@@ -83,9 +83,9 @@
             // 
             // a_GestUsers1
             // 
-            this.a_GestUsers1.Location = new System.Drawing.Point(53, 28);
+            this.a_GestUsers1.Location = new System.Drawing.Point(15, 15);
             this.a_GestUsers1.Name = "a_GestUsers1";
-            this.a_GestUsers1.Size = new System.Drawing.Size(1192, 833);
+            this.a_GestUsers1.Size = new System.Drawing.Size(1246, 890);
             this.a_GestUsers1.TabIndex = 0;
             // 
             // A_Administrator
@@ -109,7 +109,7 @@
         private System.Windows.Forms.TabControl GestUsers;
         private System.Windows.Forms.TabPage GestBtns;
         private System.Windows.Forms.TabPage Gest_Users;
-        private A_GestBtns a_GestBtns2;
         private A_GestUsers a_GestUsers1;
+        private A_GestBtns a_GestBtns1;
     }
 }
