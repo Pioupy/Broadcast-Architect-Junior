@@ -168,10 +168,6 @@
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\user\U_choixprofils.cs" />
-    <Compile Include="View\Forms\user\U_choixprofils.Designer.cs">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,9 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\Clavier.resx">
       <DependentUpon>Clavier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\user\U_choixprofils.resx">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>

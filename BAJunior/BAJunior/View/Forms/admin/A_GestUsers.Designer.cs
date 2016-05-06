@@ -32,10 +32,13 @@
             this.btn_AddUser = new System.Windows.Forms.Button();
             this.btn_EditUser = new System.Windows.Forms.Button();
             this.btn_DeleteUser = new System.Windows.Forms.Button();
+            this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lv_User
             // 
+            this.lv_User.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Nom});
             this.lv_User.Location = new System.Drawing.Point(80, 110);
             this.lv_User.Name = "lv_User";
             this.lv_User.Size = new System.Drawing.Size(450, 600);
@@ -91,5 +94,6 @@
         private System.Windows.Forms.Button btn_AddUser;
         private System.Windows.Forms.Button btn_EditUser;
         private System.Windows.Forms.Button btn_DeleteUser;
+        private System.Windows.Forms.ColumnHeader Nom;
     }
 }
