@@ -123,5 +123,29 @@ namespace BAJunior.ServiceData
             }
             return commandList;
         }
+        public List<Param> readParamByCommand(int id)
+        {
+            List<Param> commandListParam = new List<Param>();
+            string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser FROM Command c, JointPC jpc, Param p WHERE jpc.IDCommand=c.IDCommand AND jpc.IDParam=p.IDParam AND c.IDCommand=" + id + " order by c.IDCommand asc";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idParam = Convert.ToInt32(r["IDParam"]);
+                    String name = r["Name"].ToString();
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    Param param = new Param(idParam, name, value, isUser);
+                    commandListParam.Add(param);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return commandListParam;
+        }
     }
 }
