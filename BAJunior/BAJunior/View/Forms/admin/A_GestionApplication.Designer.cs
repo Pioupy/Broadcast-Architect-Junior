@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_AppsPath = new System.Windows.Forms.TextBox();
             this.btn_appsPath = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // l_application
@@ -86,6 +87,12 @@
             this.btn_appsPath.TabIndex = 5;
             this.btn_appsPath.Text = "Parcourir";
             this.btn_appsPath.UseVisualStyleBackColor = true;
+            this.btn_appsPath.Click += new System.EventHandler(this.btn_appsPath_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "executable (*.exe)|*.exe";
             // 
             // A_GestionApplication
             // 
@@ -116,5 +123,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_AppsPath;
         private System.Windows.Forms.Button btn_appsPath;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

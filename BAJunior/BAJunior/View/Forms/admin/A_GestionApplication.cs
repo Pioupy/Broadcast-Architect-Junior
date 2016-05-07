@@ -49,5 +49,14 @@ namespace BAJunior.View.Forms.admin
 
             Form.ActiveForm.Close();
         }
+
+        private void btn_appsPath_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.tb_AppsPath.Text = openFileDialog1.FileName;
+
+            }
+        }
     }
 }
