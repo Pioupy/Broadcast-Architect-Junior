@@ -90,6 +90,7 @@
             this.btn_AddProfil.TabIndex = 2;
             this.btn_AddProfil.Text = "Ajouter";
             this.btn_AddProfil.UseVisualStyleBackColor = true;
+            this.btn_AddProfil.Click += new System.EventHandler(this.btn_AddProfil_Click);
             // 
             // btn_EditProfil
             // 
@@ -130,7 +131,7 @@
             this.clavier1.Size = new System.Drawing.Size(539, 373);
             this.clavier1.TabIndex = 6;
             // 
-            // U_choixprofils
+            // U_Profils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +145,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "U_choixprofils";
+            this.Name = "U_Profils";
             this.Text = "U_choixprofils";
             this.Load += new System.EventHandler(this.U_choixprofils_Load);
             this.menuStrip1.ResumeLayout(false);

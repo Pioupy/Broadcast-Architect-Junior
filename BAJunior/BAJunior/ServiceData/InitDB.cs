@@ -1,6 +1,10 @@
 ﻿using log4net;
 using log4net.Config;
 using BAJunior.Model;
+using System.Security.Cryptography;
+using System.Text;
+using System;
+using BAJunior.Controller;
 
 namespace BAJunior.ServiceData
 {
@@ -32,6 +36,20 @@ namespace BAJunior.ServiceData
             testUnitaireTable.testJointPAC();
             testUnitaireTable.testJointPC();
         }
+        public void testCreatedByAlexV2()
+        {
+            // TODO : Méthode destinée à disparaître après les test.
+            TestUnitaireTable testUnitaireTable = new TestUnitaireTable();
+            testUnitaireTable.testUserV2();
+            testUnitaireTable.testKeyboardV2();
+            testUnitaireTable.testApplicationV2();
+            testUnitaireTable.testCategoryV2();
+            //testUnitaireTable.testParam();
+            //testUnitaireTable.testProfil();
+            //testUnitaireTable.testCommand();
+            //testUnitaireTable.testJointPAC();
+            //testUnitaireTable.testJointPC();
+        }
         public void createDatabaseICAN()
         {
             //Create Database
@@ -58,14 +76,35 @@ namespace BAJunior.ServiceData
             if (userSearch == null)
             {
                 //Create user 'admin" only if it's the first launch of software
-                User adminUser = new User("admin", "admin", true);
+                /*
+                String pwd = "admin";
+                SHA256 sha = SHA256.Create();
+                byte[] data = sha.ComputeHash(Encoding.Default.GetBytes(pwd));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sb.Append(data[i].ToString("6064060758"));
+                }
+                */
+                CtrlConnection con = new CtrlConnection();
+                User adminUser = new User("admin", con.ConvertSHA256("admin"), true);
                 userData.create(adminUser);
+            }
+
+            //Create categorie default
+            CategoryData catagoryData = new CategoryData();
+            Category categorySearch = catagoryData.read(1);
+            if (categorySearch == null)
+            {
+                //Create category "default" only if it's the first launch of software
+                Category category = new Category("Default");
+                catagoryData.create(category);
             }
         }
         private void createTableUser()
         {
             // Make Query
-            string requete = "CREATE TABLE IF NOT EXISTS User (IDUser  INTEGER PRIMARY KEY AUTOINCREMENT, Login varchar(50) UNIQUE, Password varchar(50), IsAdmin boolean not null default 0)";
+            string requete = "CREATE TABLE IF NOT EXISTS User (IDUser  INTEGER PRIMARY KEY AUTOINCREMENT, Login varchar(50) UNIQUE, Password varchar(500), IsAdmin boolean not null default 0)";
             // Execute Query and tested her value
             if (m_dbUtils.executeQuery(requete) == 0)
             { // Condition executeNonQuery : retourne nombre de lignes affectées. Comme on créer une table, on affecte 0 ligne.

@@ -41,6 +41,7 @@
             this.lv_Button.Size = new System.Drawing.Size(450, 600);
             this.lv_Button.TabIndex = 0;
             this.lv_Button.UseCompatibleStateImageBehavior = false;
+            this.lv_Button.View = System.Windows.Forms.View.List;
             // 
             // btn_DeleteBtn
             // 

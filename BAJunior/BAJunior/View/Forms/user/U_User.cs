@@ -16,5 +16,9 @@ namespace BAJunior.View.Forms.user
         {
             InitializeComponent();
         }
+        public U_User(String nameProfil, String nameClavier, String nameApplication)
+        {
+            InitializeComponent();
+        }
     }
 }

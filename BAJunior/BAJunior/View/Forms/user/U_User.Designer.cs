@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // User
+            // U_User
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 265);
-            this.Name = "User";
+            this.ClientSize = new System.Drawing.Size(837, 447);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "U_User";
             this.Text = "User";
             this.ResumeLayout(false);
 
