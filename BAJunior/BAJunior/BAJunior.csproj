@@ -98,6 +98,7 @@
     <Compile Include="ServiceData\ProfilData.cs" />
     <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
+    <Compile Include="ServiceData\Xml.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
     <Compile Include="View\Forms\admin\A_Administrator.cs">
       <SubType>Form</SubType>
@@ -209,9 +210,6 @@
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Users.resx">
       <DependentUpon>A_Gest1Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\admin\A_GestApps.resx">
-      <DependentUpon>A_GestApps.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestBtns.resx">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +227,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\Clavier.resx">
       <DependentUpon>Clavier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_AddProfil.resx">
+      <DependentUpon>U_AddProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_PreConfAddProfil.resx">
+      <DependentUpon>U_PreConfAddProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_Profils.resx">
+      <DependentUpon>U_Profils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>
@@ -252,6 +259,7 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets')" />

@@ -21,5 +21,11 @@ namespace BAJunior.View.Forms.user
         {
 
         }
+
+        private void btn_AddProfil_Click(object sender, EventArgs e)
+        {
+            U_PreConfAddProfil preConfAddProfilForm = new U_PreConfAddProfil();
+            preConfAddProfilForm.ShowDialog();
+        }
     }
 }

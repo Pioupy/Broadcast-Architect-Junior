@@ -19,7 +19,7 @@ namespace BAJunior.Controller
 
             if (user != null) {
                 if (user.getPassword() == ConvertSHA256(password)) {
-                    return user;
+                        return user;
                 } else {
                     return null;
                 }

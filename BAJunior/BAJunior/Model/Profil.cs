@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Profil
+    public class Profil
     {
         private int m_idProfil;
         private String m_name;

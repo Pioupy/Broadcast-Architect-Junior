@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class Keyboard
+    public class Keyboard
     {
         private int m_idKeyboard;
         private String m_name;

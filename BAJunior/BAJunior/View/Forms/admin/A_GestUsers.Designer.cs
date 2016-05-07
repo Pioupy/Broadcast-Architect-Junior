@@ -37,9 +37,7 @@
             // 
             // lv_User
             // 
-            this.lv_User.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Nom});
-            this.lv_User.Location = new System.Drawing.Point(80, 110);
+            this.lv_User.Location = new System.Drawing.Point(80, 111);
             this.lv_User.Name = "lv_User";
             this.lv_User.Size = new System.Drawing.Size(450, 600);
             this.lv_User.TabIndex = 0;
@@ -95,6 +93,5 @@
         private System.Windows.Forms.Button btn_AddUser;
         private System.Windows.Forms.Button btn_EditUser;
         private System.Windows.Forms.Button btn_DeleteUser;
-        private System.Windows.Forms.ColumnHeader Nom;
     }
 }
