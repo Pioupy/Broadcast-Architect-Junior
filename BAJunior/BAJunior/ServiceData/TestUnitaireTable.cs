@@ -406,15 +406,19 @@ namespace BAJunior.ServiceData
             //Initiation Variable : 
             CtrlConnection con = new CtrlConnection();
             UserData userData = new UserData();
+            User user = new User("user", con.ConvertSHA256("user"), false);
             User userOne = new User("agoget", con.ConvertSHA256("agoget"), true);
             User userTwo = new User("cyurekli", con.ConvertSHA256("cyurekli"), false);
             User userThreee = new User("esicsic", con.ConvertSHA256("esicsic"), false);
             User userFour = new User("mctailleux", con.ConvertSHA256("mctailleux"), false);
+            User userU = new User("u", con.ConvertSHA256("u"), false);
             // insert valeur 
+            userData.create(user);
             userData.create(userOne);
             userData.create(userTwo);
             userData.create(userThreee);
             userData.create(userFour);
+            userData.create(userU);
 
         }
         public void testKeyboardV2()
