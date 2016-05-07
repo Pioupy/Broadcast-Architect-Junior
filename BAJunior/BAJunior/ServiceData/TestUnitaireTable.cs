@@ -3,6 +3,10 @@ using System.Windows.Forms;
 using log4net;
 using log4net.Config;
 using BAJunior.Model;
+using System.Security.Cryptography;
+using System.Text;
+using BAJunior.Controller;
+
 namespace BAJunior.ServiceData
 {
     //TODO : CLASSE AMENER A DISPARAITRE APRES LES TESTS !!!!!!!!!!!!!!!!!!!!!!
@@ -395,6 +399,61 @@ namespace BAJunior.ServiceData
                     MessageBox.Show("JointPC " + i + " : " + resultAll[i].getIdCommand().ToString());
                 }
             }
+        }
+        //########################################### test v2 #############################################
+        public void testUserV2()
+        {
+            //Initiation Variable : 
+            CtrlConnection con = new CtrlConnection();
+            UserData userData = new UserData();
+            User userOne = new User("agoget", con.ConvertSHA256("agoget"), true);
+            User userTwo = new User("cyurekli", con.ConvertSHA256("cyurekli"), false);
+            User userThreee = new User("esicsic", con.ConvertSHA256("esicsic"), false);
+            User userFour = new User("mctailleux", con.ConvertSHA256("mctailleux"), false);
+            // insert valeur 
+            userData.create(userOne);
+            userData.create(userTwo);
+            userData.create(userThreee);
+            userData.create(userFour);
+
+        }
+        public void testKeyboardV2()
+        {
+            //Initiation Variable : 
+            KeyboardData keyboardData = new KeyboardData();
+            Keyboard keyboardOne = new Keyboard("Intellipad");
+            Keyboard keyboardTwo = new Keyboard("keyboardTest");
+            // insert valeur 
+            keyboardData.create(keyboardOne);
+            keyboardData.create(keyboardTwo);
+            
+        }
+        public void testApplicationV2()
+        {
+            //Initiation Variable : 
+            ApplicationData applicationData = new ApplicationData();
+            Model.Application applicationOne = new Model.Application("Firefox", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+            Model.Application applicationTwo = new Model.Application("Internet Explorer", "C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe");
+            Model.Application applicationThree = new Model.Application("Google Chrome", "C:\\Program Files (x86)\\Google Chrome\\googlechrome.exe");
+            // insert valeur 
+            applicationData.create(applicationOne);
+            applicationData.create(applicationTwo);
+            applicationData.create(applicationThree);
+
+        }
+        public void testCategoryV2()
+        {
+            //Initiation Variable : 
+            CategoryData categoryData = new CategoryData();
+            Category categoryOne = new Category("Category1");
+            Category categoryTwo = new Category("Category2");
+            Category categoryThree = new Category("Category1");
+            Category categoryFour = new Category("Category2");
+            // insert valeur 
+            categoryData.create(categoryOne);
+            categoryData.create(categoryTwo);
+            categoryData.create(categoryThree);
+            categoryData.create(categoryFour);
         }
     }
 }

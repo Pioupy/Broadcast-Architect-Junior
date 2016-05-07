@@ -100,7 +100,6 @@
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceData\Xml.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />
-    <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\Forms\admin\A_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +114,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Forms\admin\A_Gest1Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\admin\A_Gest1Users.Designer.cs">
+      <DependentUpon>A_Gest1Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\admin\A_GestApps.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +131,12 @@
     </Compile>
     <Compile Include="View\Forms\admin\A_GestBtns.Designer.cs">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\admin\A_GestionApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\admin\A_GestionApplication.Designer.cs">
+      <DependentUpon>A_GestionApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\admin\A_GestUsers.cs">
       <SubType>UserControl</SubType>
@@ -156,10 +167,6 @@
     </Compile>
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\user\U_choixprofils.cs" />
-    <Compile Include="View\Forms\user\U_choixprofils.Designer.cs">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
@@ -200,8 +207,14 @@
     <EmbeddedResource Include="View\Forms\admin\A_Gest1Btn.resx">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_Gest1Users.resx">
+      <DependentUpon>A_Gest1Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestBtns.resx">
       <DependentUpon>A_GestBtns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\admin\A_GestionApplication.resx">
+      <DependentUpon>A_GestionApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\admin\A_GestUsers.resx">
       <DependentUpon>A_GestUsers.cs</DependentUpon>
@@ -215,11 +228,14 @@
     <EmbeddedResource Include="View\Forms\user\Clavier.resx">
       <DependentUpon>Clavier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\user\U_choixprofils.resx">
-      <DependentUpon>U_choixprofils.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\user\U_AddProfil.resx">
+      <DependentUpon>U_AddProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_PreConfAddProfil.resx">
       <DependentUpon>U_PreConfAddProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_Profils.resx">
+      <DependentUpon>U_Profils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_User.resx">
       <DependentUpon>U_User.cs</DependentUpon>
@@ -243,6 +259,7 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets')" />

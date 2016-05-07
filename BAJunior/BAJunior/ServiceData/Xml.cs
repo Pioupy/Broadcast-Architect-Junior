@@ -61,7 +61,6 @@ namespace BAJunior.ServiceData
                             }
                         }
                     }
-
                 }
             }
             //tester son nombre au retour pour savori si on doit l'afficher
