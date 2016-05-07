@@ -14,6 +14,9 @@ namespace BAJunior.View.Forms.admin
 {
     public partial class A_Gest1Btn : UserControl
     {
+        Command actualCommand;
+        CommandData commandData = new CommandData();
+
         public A_Gest1Btn()
         {
             InitializeComponent();
@@ -22,6 +25,27 @@ namespace BAJunior.View.Forms.admin
         public A_Gest1Btn(Command command)
         {
             InitializeComponent();
+
+            List<Param> buttonParam = commandData.readParamByCommand(command.getId());
+
+            tb_propName.Text = command.getName();                
+            tb_imagePath.Text = command.getPicture();
+
+            if (buttonParam[0].getName() == "vide")
+            {
+                tb_nom1.Text = "vide";
+                tb_valor1.Text = "vide";
+            }
+            else
+            {
+                tb_nom1.Text = buttonParam[0].getName();
+                tb_valor1.Text = buttonParam[0].getValue();
+
+                if (buttonParam[0].getIsUser())
+                    rbtn_custom1.Checked = true;
+                else
+                    rbtn_fix1.Checked = true;
+            }
         }
 
         private void rbtn_empty1_CheckedChanged(object sender, EventArgs e)
@@ -387,6 +411,11 @@ namespace BAJunior.View.Forms.admin
             {
                 lbl_type14.Text = "Valeur :";
             }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1603,6 +1603,7 @@
             this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Sauvegarder le bouton";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // A_Gest1Btn
             // 

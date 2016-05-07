@@ -30,7 +30,7 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_AddApps_Click(object sender, EventArgs e)
         {
-            var PopUp = new A_GestApps();
+            var PopUp = new A_GestionApplication();
             PopUp.Show();
         }
 
@@ -39,7 +39,7 @@ namespace BAJunior.View.Forms.admin
             Model.Application appsSelected = applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault();
 
             var PopUp = new A_GestionApplication(appsSelected);
-            PopUp.Show();
+            PopUp.Show();            
         }
 
         private void btn_DeleteApps_Click(object sender, EventArgs e)

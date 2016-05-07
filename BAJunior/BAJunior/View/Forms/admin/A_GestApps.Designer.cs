@@ -38,7 +38,7 @@
             // 
             this.btn_DeleteApps.Location = new System.Drawing.Point(720, 500);
             this.btn_DeleteApps.Name = "btn_DeleteApps";
-            this.btn_DeleteApps.Size = new System.Drawing.Size(111, 41);
+            this.btn_DeleteApps.Size = new System.Drawing.Size(85, 33);
             this.btn_DeleteApps.TabIndex = 7;
             this.btn_DeleteApps.Text = "Supprimer";
             this.btn_DeleteApps.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // btn_EditApps
             // 
-            this.btn_EditApps.Location = new System.Drawing.Point(720, 400);
+            this.btn_EditApps.Location = new System.Drawing.Point(720, 442);
             this.btn_EditApps.Name = "btn_EditApps";
-            this.btn_EditApps.Size = new System.Drawing.Size(111, 41);
+            this.btn_EditApps.Size = new System.Drawing.Size(85, 33);
             this.btn_EditApps.TabIndex = 6;
             this.btn_EditApps.Text = "Modifier";
             this.btn_EditApps.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btn_AddApps
             // 
-            this.btn_AddApps.Location = new System.Drawing.Point(720, 300);
+            this.btn_AddApps.Location = new System.Drawing.Point(720, 376);
             this.btn_AddApps.Name = "btn_AddApps";
-            this.btn_AddApps.Size = new System.Drawing.Size(111, 41);
+            this.btn_AddApps.Size = new System.Drawing.Size(85, 33);
             this.btn_AddApps.TabIndex = 5;
             this.btn_AddApps.Text = "Ajouter";
             this.btn_AddApps.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // 
             // lv_Apps
             // 
-            this.lv_Apps.Location = new System.Drawing.Point(80, 110);
+            this.lv_Apps.Location = new System.Drawing.Point(30, 100);
             this.lv_Apps.Name = "lv_Apps";
             this.lv_Apps.Size = new System.Drawing.Size(450, 600);
             this.lv_Apps.TabIndex = 4;

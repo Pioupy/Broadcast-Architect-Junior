@@ -46,16 +46,16 @@
             // 
             this.btn_DeleteYes.Location = new System.Drawing.Point(86, 116);
             this.btn_DeleteYes.Name = "btn_DeleteYes";
-            this.btn_DeleteYes.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteYes.Size = new System.Drawing.Size(90, 31);
             this.btn_DeleteYes.TabIndex = 1;
             this.btn_DeleteYes.Text = "Oui";
             this.btn_DeleteYes.UseVisualStyleBackColor = true;
             // 
             // btn_DeleteNo
             // 
-            this.btn_DeleteNo.Location = new System.Drawing.Point(245, 116);
+            this.btn_DeleteNo.Location = new System.Drawing.Point(230, 116);
             this.btn_DeleteNo.Name = "btn_DeleteNo";
-            this.btn_DeleteNo.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteNo.Size = new System.Drawing.Size(90, 31);
             this.btn_DeleteNo.TabIndex = 2;
             this.btn_DeleteNo.Text = "Non";
             this.btn_DeleteNo.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 187);
+            this.ClientSize = new System.Drawing.Size(406, 181);
             this.Controls.Add(this.btn_DeleteNo);
             this.Controls.Add(this.btn_DeleteYes);
             this.Controls.Add(this.label1);
