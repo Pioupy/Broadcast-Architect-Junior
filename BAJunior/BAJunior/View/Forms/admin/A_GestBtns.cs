@@ -37,10 +37,25 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_EditBtn_Click(object sender, EventArgs e)
         {
-           Command buttonSelected = commands.Where(item => item.getName() == lv_Button.SelectedItems[0].Text).FirstOrDefault();
+            if (lv_Button.SelectedItems.Count > 0)
+            {
+                Command buttonSelected = commands.Where(item => item.getName() == lv_Button.SelectedItems[0].Text).FirstOrDefault();
 
-            var PopUp = new A_Gest1Btn(buttonSelected);
-            PopUp.Show();
+                var PopUp = new A_Gest1Btn(buttonSelected);
+                PopUp.Show();
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner un bouton.");
+        }
+
+        private void btn_DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (lv_Button.SelectedItems.Count > 0)
+            {
+ 
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner un bouton.");
         }
     }
 }

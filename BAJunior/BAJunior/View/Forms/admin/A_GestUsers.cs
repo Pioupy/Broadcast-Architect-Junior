@@ -36,15 +36,25 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_EditUser_Click(object sender, EventArgs e)
         {
-            User userSelected = users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault();
+            if (lv_User.SelectedItems.Count > 0)
+            {
+                User userSelected = users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault();
 
             var PopUp = new A_Gest1Users(userSelected);
             PopUp.Show();
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner un utilisateur.");
         }
 
         private void btn_DeleteUser_Click(object sender, EventArgs e)
         {
-            
+            if (lv_User.SelectedItems.Count > 0)
+            {
+
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner un utilisateur.");
         }
     }
 }

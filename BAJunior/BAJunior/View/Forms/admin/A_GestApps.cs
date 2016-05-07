@@ -36,15 +36,25 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_EditApps_Click(object sender, EventArgs e)
         {
-            Model.Application appsSelected = applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault();
+            if (lv_Apps.SelectedItems.Count > 0)
+            {
+                Model.Application appsSelected = applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault();
 
             var PopUp = new A_GestionApplication(appsSelected);
-            PopUp.Show();            
+            PopUp.Show();
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner une application.");
         }
 
         private void btn_DeleteApps_Click(object sender, EventArgs e)
         {
+            if (lv_Apps.SelectedItems.Count > 0)
+            {
 
+            }
+            else
+                MessageBox.Show("Veuillez séléctionner une application.");
         }
     }
 }

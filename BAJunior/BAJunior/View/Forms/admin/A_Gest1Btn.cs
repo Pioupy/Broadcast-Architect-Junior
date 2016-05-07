@@ -15,6 +15,7 @@ namespace BAJunior.View.Forms.admin
     public partial class A_Gest1Btn : UserControl
     {
         Command actualCommand;
+        List<Param> buttonParam;
         CommandData commandData = new CommandData();
 
         public A_Gest1Btn()
@@ -25,8 +26,9 @@ namespace BAJunior.View.Forms.admin
         public A_Gest1Btn(Command command)
         {
             InitializeComponent();
+            actualCommand = command;
 
-            List<Param> buttonParam = commandData.readParamByCommand(command.getId());
+            buttonParam = commandData.readParamByCommand(command.getId());
 
             tb_propName.Text = command.getName();                
             tb_imagePath.Text = command.getPicture();
@@ -415,7 +417,39 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            if (actualCommand != null)
+            {
+                 actualCommand.setName(tb_propName.Text);
+                 actualCommand.setPicture(tb_imagePath.Text);
 
+                if (buttonParam[0].getName() == "vide")
+                {
+                    tb_nom1.Text = "vide";
+                    tb_valor1.Text = "vide";
+                }
+                else
+                {
+                    tb_nom1.Text = buttonParam[0].getName();
+                    tb_valor1.Text = buttonParam[0].getValue();
+
+                    if (buttonParam[0].getIsUser())
+                        rbtn_custom1.Checked = true;
+                    else
+                        rbtn_fix1.Checked = true;
+                }
+            }
+            else
+            {
+                actualCommand = new Command(tb_propName.Text, tb_imagePath.Text, cb_catName.TabIndex);
+                commandData.create(actualCommand);
+
+                buttonParam.Add(new Param(tb_nom1.Text, tb_valor1.Text, rbtn_custom1.Checked));
+
+                foreach (Param item in buttonParam)
+                {
+
+                }
+            }
         }
     }
 }
