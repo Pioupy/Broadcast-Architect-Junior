@@ -31,16 +31,19 @@
             this.l_application = new System.Windows.Forms.Label();
             this.tb_NameApps = new System.Windows.Forms.TextBox();
             this.btn_saveApps = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_AppsPath = new System.Windows.Forms.TextBox();
+            this.btn_appsPath = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // l_application
             // 
             this.l_application.AutoSize = true;
-            this.l_application.Location = new System.Drawing.Point(47, 82);
+            this.l_application.Location = new System.Drawing.Point(31, 82);
             this.l_application.Name = "l_application";
-            this.l_application.Size = new System.Drawing.Size(135, 17);
+            this.l_application.Size = new System.Drawing.Size(143, 17);
             this.l_application.TabIndex = 0;
-            this.l_application.Text = "Nom de l\'application";
+            this.l_application.Text = "Nom de l\'application :";
             // 
             // tb_NameApps
             // 
@@ -51,18 +54,47 @@
             // 
             // btn_saveApps
             // 
-            this.btn_saveApps.Location = new System.Drawing.Point(237, 150);
+            this.btn_saveApps.Location = new System.Drawing.Point(230, 179);
             this.btn_saveApps.Name = "btn_saveApps";
             this.btn_saveApps.Size = new System.Drawing.Size(85, 33);
             this.btn_saveApps.TabIndex = 2;
             this.btn_saveApps.Text = "Valider";
             this.btn_saveApps.UseVisualStyleBackColor = true;
+            this.btn_saveApps.Click += new System.EventHandler(this.btn_saveApps_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Chemin de l\'application :";
+            // 
+            // tb_AppsPath
+            // 
+            this.tb_AppsPath.Location = new System.Drawing.Point(219, 117);
+            this.tb_AppsPath.Name = "tb_AppsPath";
+            this.tb_AppsPath.Size = new System.Drawing.Size(230, 22);
+            this.tb_AppsPath.TabIndex = 4;
+            // 
+            // btn_appsPath
+            // 
+            this.btn_appsPath.Location = new System.Drawing.Point(455, 117);
+            this.btn_appsPath.Name = "btn_appsPath";
+            this.btn_appsPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_appsPath.TabIndex = 5;
+            this.btn_appsPath.Text = "Parcourir";
+            this.btn_appsPath.UseVisualStyleBackColor = true;
             // 
             // A_GestionApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 245);
+            this.Controls.Add(this.btn_appsPath);
+            this.Controls.Add(this.tb_AppsPath);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_saveApps);
             this.Controls.Add(this.tb_NameApps);
             this.Controls.Add(this.l_application);
@@ -81,5 +113,8 @@
         private System.Windows.Forms.Label l_application;
         private System.Windows.Forms.TextBox tb_NameApps;
         private System.Windows.Forms.Button btn_saveApps;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_AppsPath;
+        private System.Windows.Forms.Button btn_appsPath;
     }
 }

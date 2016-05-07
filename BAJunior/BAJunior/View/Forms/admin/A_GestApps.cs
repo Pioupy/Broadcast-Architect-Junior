@@ -28,26 +28,23 @@ namespace BAJunior.View.Forms.admin
             }
         }
 
-        private void lv_Apps_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_AddApps_Click(object sender, EventArgs e)
         {
-            tb_NameApps.Text = lv_Apps.SelectedItems[0].Text;
+            var PopUp = new A_GestApps();
+            PopUp.Show();
         }
 
-        private void btn_saveApps_Click(object sender, EventArgs e)
+        private void btn_EditApps_Click(object sender, EventArgs e)
         {
-            Model.Application appTmp = applications.Where(item => item.getName() == tb_NameApps.Text).FirstOrDefault();
+            Model.Application appsSelected = applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault();
 
-            if (appTmp != null)
-            {
-                application.update(appTmp);
-            }
-            else
-            {
-                application.create(new Model.Application(tb_NameApps.Text,tb_ApplicationFolder.Text));
-            }
+            var PopUp = new A_GestionApplication(appsSelected);
+            PopUp.Show();
+        }
 
-            tb_NameApps.Text = "";
-            lv_Apps.Refresh();
+        private void btn_DeleteApps_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,12 +32,6 @@
             this.btn_EditApps = new System.Windows.Forms.Button();
             this.btn_AddApps = new System.Windows.Forms.Button();
             this.lv_Apps = new System.Windows.Forms.ListView();
-            this.btn_saveApps = new System.Windows.Forms.Button();
-            this.tb_NameApps = new System.Windows.Forms.TextBox();
-            this.l_application = new System.Windows.Forms.Label();
-            this.tb_ApplicationFolder = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_FindApplication = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_DeleteApps
@@ -48,6 +42,7 @@
             this.btn_DeleteApps.TabIndex = 7;
             this.btn_DeleteApps.Text = "Supprimer";
             this.btn_DeleteApps.UseVisualStyleBackColor = true;
+            this.btn_DeleteApps.Click += new System.EventHandler(this.btn_DeleteApps_Click);
             // 
             // btn_EditApps
             // 
@@ -57,6 +52,7 @@
             this.btn_EditApps.TabIndex = 6;
             this.btn_EditApps.Text = "Modifier";
             this.btn_EditApps.UseVisualStyleBackColor = true;
+            this.btn_EditApps.Click += new System.EventHandler(this.btn_EditApps_Click);
             // 
             // btn_AddApps
             // 
@@ -66,6 +62,7 @@
             this.btn_AddApps.TabIndex = 5;
             this.btn_AddApps.Text = "Ajouter";
             this.btn_AddApps.UseVisualStyleBackColor = true;
+            this.btn_AddApps.Click += new System.EventHandler(this.btn_AddApps_Click);
             // 
             // lv_Apps
             // 
@@ -74,69 +71,12 @@
             this.lv_Apps.Size = new System.Drawing.Size(450, 600);
             this.lv_Apps.TabIndex = 4;
             this.lv_Apps.UseCompatibleStateImageBehavior = false;
-            this.lv_Apps.SelectedIndexChanged += new System.EventHandler(this.lv_Apps_SelectedIndexChanged);
-            // 
-            // btn_saveApps
-            // 
-            this.btn_saveApps.Location = new System.Drawing.Point(775, 213);
-            this.btn_saveApps.Name = "btn_saveApps";
-            this.btn_saveApps.Size = new System.Drawing.Size(85, 33);
-            this.btn_saveApps.TabIndex = 10;
-            this.btn_saveApps.Text = "Valider";
-            this.btn_saveApps.UseVisualStyleBackColor = true;
-            this.btn_saveApps.Click += new System.EventHandler(this.btn_saveApps_Click);
-            // 
-            // tb_NameApps
-            // 
-            this.tb_NameApps.Location = new System.Drawing.Point(720, 142);
-            this.tb_NameApps.Name = "tb_NameApps";
-            this.tb_NameApps.Size = new System.Drawing.Size(230, 22);
-            this.tb_NameApps.TabIndex = 9;
-            // 
-            // l_application
-            // 
-            this.l_application.AutoSize = true;
-            this.l_application.Location = new System.Drawing.Point(548, 145);
-            this.l_application.Name = "l_application";
-            this.l_application.Size = new System.Drawing.Size(147, 17);
-            this.l_application.TabIndex = 8;
-            this.l_application.Text = "Nom de l\'application : ";
-            // 
-            // tb_ApplicationFolder
-            // 
-            this.tb_ApplicationFolder.Location = new System.Drawing.Point(715, 173);
-            this.tb_ApplicationFolder.Name = "tb_ApplicationFolder";
-            this.tb_ApplicationFolder.Size = new System.Drawing.Size(230, 22);
-            this.tb_ApplicationFolder.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Chemin de l\'application :";
-            // 
-            // btn_FindApplication
-            // 
-            this.btn_FindApplication.Location = new System.Drawing.Point(956, 173);
-            this.btn_FindApplication.Name = "btn_FindApplication";
-            this.btn_FindApplication.Size = new System.Drawing.Size(75, 23);
-            this.btn_FindApplication.TabIndex = 13;
-            this.btn_FindApplication.Text = "Parcourir";
-            this.btn_FindApplication.UseVisualStyleBackColor = true;
+            this.lv_Apps.View = System.Windows.Forms.View.List;
             // 
             // A_GestApps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_FindApplication);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_ApplicationFolder);
-            this.Controls.Add(this.btn_saveApps);
-            this.Controls.Add(this.tb_NameApps);
-            this.Controls.Add(this.l_application);
             this.Controls.Add(this.btn_DeleteApps);
             this.Controls.Add(this.btn_EditApps);
             this.Controls.Add(this.btn_AddApps);
@@ -144,7 +84,6 @@
             this.Name = "A_GestApps";
             this.Size = new System.Drawing.Size(1024, 768);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -154,11 +93,5 @@
         private System.Windows.Forms.Button btn_EditApps;
         private System.Windows.Forms.Button btn_AddApps;
         private System.Windows.Forms.ListView lv_Apps;
-        private System.Windows.Forms.Button btn_saveApps;
-        private System.Windows.Forms.TextBox tb_NameApps;
-        private System.Windows.Forms.Label l_application;
-        private System.Windows.Forms.TextBox tb_ApplicationFolder;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_FindApplication;
     }
 }
