@@ -52,6 +52,11 @@ namespace BAJunior.View.Forms.admin
             if (lv_Apps.SelectedItems.Count > 0)
             {
 
+                DialogResult resultat = MessageBox.Show("Voulez-vous supprimer l'élément ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultat == DialogResult.Yes)
+                {
+                    application.delete(applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault());
+                }
             }
             else
                 MessageBox.Show("Veuillez séléctionner une application.");

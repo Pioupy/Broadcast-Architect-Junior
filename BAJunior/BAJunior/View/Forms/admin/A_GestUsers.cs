@@ -51,7 +51,12 @@ namespace BAJunior.View.Forms.admin
         {
             if (lv_User.SelectedItems.Count > 0)
             {
-
+                DialogResult resultat = MessageBox.Show("Voulez-vous supprimer l'élément ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultat == DialogResult.Yes)
+                {
+                    user.delete(users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault());
+                    lv_User.Refresh();
+                }
             }
             else
                 MessageBox.Show("Veuillez séléctionner un utilisateur.");
