@@ -147,5 +147,28 @@ namespace BAJunior.ServiceData
             }
             return commandListParam;
         }
+        public Command readByName(string Name)
+        {
+            Command command = null;
+            string requete = "SELECT * from Command WHERE Name = '" + Name + "' order by IDCommand asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    String name = r["Name"].ToString();
+                    String picture = r["Picture"].ToString();
+                    int idCategory = Convert.ToInt32(r["IDCategory"]);
+                    command = new Command(idCommand, name, picture, idCategory);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return command;
+        }
     }
 }
