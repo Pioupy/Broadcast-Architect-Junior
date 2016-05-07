@@ -68,6 +68,7 @@
             this.lv_Apps.Size = new System.Drawing.Size(450, 600);
             this.lv_Apps.TabIndex = 4;
             this.lv_Apps.UseCompatibleStateImageBehavior = false;
+            this.lv_Apps.View = System.Windows.Forms.View.List;
             // 
             // A_GestApps
             // 

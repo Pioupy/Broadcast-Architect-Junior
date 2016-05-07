@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lv_User = new System.Windows.Forms.ListView();
+            this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_AddUser = new System.Windows.Forms.Button();
             this.btn_EditUser = new System.Windows.Forms.Button();
             this.btn_DeleteUser = new System.Windows.Forms.Button();
-            this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lv_User
@@ -44,6 +44,7 @@
             this.lv_User.Size = new System.Drawing.Size(450, 600);
             this.lv_User.TabIndex = 0;
             this.lv_User.UseCompatibleStateImageBehavior = false;
+            this.lv_User.View = System.Windows.Forms.View.List;
             // 
             // btn_AddUser
             // 
