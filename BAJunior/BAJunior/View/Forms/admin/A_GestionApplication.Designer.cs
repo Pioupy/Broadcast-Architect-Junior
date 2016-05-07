@@ -39,7 +39,7 @@
             // l_application
             // 
             this.l_application.AutoSize = true;
-            this.l_application.Location = new System.Drawing.Point(31, 82);
+            this.l_application.Location = new System.Drawing.Point(31, 60);
             this.l_application.Name = "l_application";
             this.l_application.Size = new System.Drawing.Size(143, 17);
             this.l_application.TabIndex = 0;
@@ -47,14 +47,14 @@
             // 
             // tb_NameApps
             // 
-            this.tb_NameApps.Location = new System.Drawing.Point(219, 79);
+            this.tb_NameApps.Location = new System.Drawing.Point(193, 57);
             this.tb_NameApps.Name = "tb_NameApps";
             this.tb_NameApps.Size = new System.Drawing.Size(230, 22);
             this.tb_NameApps.TabIndex = 1;
             // 
             // btn_saveApps
             // 
-            this.btn_saveApps.Location = new System.Drawing.Point(230, 179);
+            this.btn_saveApps.Location = new System.Drawing.Point(246, 171);
             this.btn_saveApps.Name = "btn_saveApps";
             this.btn_saveApps.Size = new System.Drawing.Size(85, 33);
             this.btn_saveApps.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 120);
+            this.label1.Location = new System.Drawing.Point(13, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 17);
             this.label1.TabIndex = 3;
@@ -73,16 +73,16 @@
             // 
             // tb_AppsPath
             // 
-            this.tb_AppsPath.Location = new System.Drawing.Point(219, 117);
+            this.tb_AppsPath.Location = new System.Drawing.Point(193, 109);
             this.tb_AppsPath.Name = "tb_AppsPath";
             this.tb_AppsPath.Size = new System.Drawing.Size(230, 22);
             this.tb_AppsPath.TabIndex = 4;
             // 
             // btn_appsPath
             // 
-            this.btn_appsPath.Location = new System.Drawing.Point(455, 117);
+            this.btn_appsPath.Location = new System.Drawing.Point(445, 104);
             this.btn_appsPath.Name = "btn_appsPath";
-            this.btn_appsPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_appsPath.Size = new System.Drawing.Size(85, 33);
             this.btn_appsPath.TabIndex = 5;
             this.btn_appsPath.Text = "Parcourir";
             this.btn_appsPath.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 245);
+            this.ClientSize = new System.Drawing.Size(558, 247);
             this.Controls.Add(this.btn_appsPath);
             this.Controls.Add(this.tb_AppsPath);
             this.Controls.Add(this.label1);
