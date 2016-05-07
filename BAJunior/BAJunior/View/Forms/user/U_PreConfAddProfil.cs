@@ -43,11 +43,11 @@ namespace BAJunior.View.Forms.user
             //TODO : Faire les test si les champs son rempli !!!!!!!!
             if ((tb_nameProfile.Text != "") && (cb_keyboard.Text != "") && (cb_application.Text != ""))
             {
-                //U_User userForm = new U_User();
+                //U_AddProfil userForm = new U_AddProfil();
                 //Constructeur avec les informations récupérées ici 
-                U_User userForm = new U_User(tb_nameProfile.Text, cb_keyboard.Text, cb_application.Text);
+                U_AddProfil profilForm = new U_AddProfil(tb_nameProfile.Text, cb_keyboard.Text, cb_application.Text);
                 this.Hide();
-                userForm.ShowDialog();
+                profilForm.ShowDialog();
                 this.Close();// note Alex : avant le show ? 
             }
             else

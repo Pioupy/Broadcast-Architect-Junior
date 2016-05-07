@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System;
 using BAJunior.Controller;
+using System.Collections.Generic;
 
 namespace BAJunior.ServiceData
 {
@@ -21,6 +22,12 @@ namespace BAJunior.ServiceData
             // Create tables of Database.
             createDatabaseICAN();
             initTables();
+        }
+        public void testForOthes()
+        {
+            // TODO : Méthode destinée à disparaître après les test demandés par  les autres.
+            CommandData commandData = new CommandData();
+            List<Param> listParam = commandData.readParamByCommand(1);
         }
         public void testCreatedByAlex()
         {

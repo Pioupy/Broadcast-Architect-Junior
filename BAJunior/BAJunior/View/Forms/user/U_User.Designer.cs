@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.u_AddProfil = new BAJunior.View.Forms.user.U_AddProfil();
             this.SuspendLayout();
+            // 
+            // u_AddProfil
+            // 
+            this.u_AddProfil.Location = new System.Drawing.Point(12, 12);
+            this.u_AddProfil.Name = "u_AddProfil";
+            this.u_AddProfil.Size = new System.Drawing.Size(1107, 574);
+            this.u_AddProfil.TabIndex = 0;
             // 
             // U_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 447);
+            this.ClientSize = new System.Drawing.Size(1228, 527);
+            this.Controls.Add(this.u_AddProfil);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "U_User";
             this.Text = "User";
@@ -43,5 +52,7 @@
         }
 
         #endregion
+
+        private U_AddProfil u_AddProfil;
     }
 }

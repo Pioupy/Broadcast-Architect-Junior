@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace BAJunior.View.Forms.user
 {
-    public partial class U_AddProfil : UserControl
+    public partial class U_AddProfil : Form
     {
         public U_AddProfil()
         {
             InitializeComponent();
+        }
+        public U_AddProfil(String nameProfile, String nameKeyboard, String nameApplication)
+        {
+            InitializeComponent();
+            labelNameProfile.Text = nameProfile;
+            labelKeyboard.Text = nameKeyboard;
         }
     }
 }

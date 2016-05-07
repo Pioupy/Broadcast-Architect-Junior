@@ -16,9 +16,11 @@ namespace BAJunior.View.Forms.user
         {
             InitializeComponent();
         }
-        public U_User(String nameProfil, String nameClavier, String nameApplication)
+        public U_User(String nameProfile, String nameKeyboard, String nameApplication)
         {
             InitializeComponent();
+            U_AddProfil addProfile = new U_AddProfil(nameProfile, nameKeyboard, nameApplication);
+            u_AddProfil = addProfile;
         }
     }
 }
