@@ -59,6 +59,7 @@
             this.btn_EditBtn.TabIndex = 5;
             this.btn_EditBtn.Text = "Modifier";
             this.btn_EditBtn.UseVisualStyleBackColor = true;
+            this.btn_EditBtn.Click += new System.EventHandler(this.btn_EditBtn_Click);
             // 
             // btn_AddBtn
             // 
@@ -68,6 +69,7 @@
             this.btn_AddBtn.TabIndex = 4;
             this.btn_AddBtn.Text = "Ajouter";
             this.btn_AddBtn.UseVisualStyleBackColor = true;
+            this.btn_AddBtn.Click += new System.EventHandler(this.btn_AddBtn_Click);
             // 
             // A_GestBtns
             // 

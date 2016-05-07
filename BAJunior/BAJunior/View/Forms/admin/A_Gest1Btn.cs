@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BAJunior.ServiceData;
+using BAJunior.Model;
 
 namespace BAJunior.View.Forms.admin
 {
     public partial class A_Gest1Btn : UserControl
     {
         public A_Gest1Btn()
+        {
+            InitializeComponent();
+        }
+
+        public A_Gest1Btn(Command command)
         {
             InitializeComponent();
         }

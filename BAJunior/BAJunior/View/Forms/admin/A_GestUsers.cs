@@ -15,14 +15,13 @@ namespace BAJunior.View.Forms.admin
     public partial class A_GestUsers : UserControl
     {
         List<User> users = new List<User>();
+        UserData user = new UserData();
 
         public A_GestUsers()
         {
             InitializeComponent();
 
-            UserData user = new UserData();
             users = user.readAll();
-
             foreach (User item in users)
             {
                 lv_User.Items.Add(item.getLogin());
@@ -41,6 +40,11 @@ namespace BAJunior.View.Forms.admin
 
             var PopUp = new A_Gest1Users(userSelected);
             PopUp.Show();
+        }
+
+        private void btn_DeleteUser_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
