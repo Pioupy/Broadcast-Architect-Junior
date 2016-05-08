@@ -792,5 +792,14 @@ namespace BAJunior.View.Forms.admin
                 cb_catName.Items.Add(item.getName());
             }
         }
+
+        private void Btn_imageBrowse_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                this.tb_imagePath.Text = openFileDialog2.FileName;
+
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_addCat = new System.Windows.Forms.Button();
             this.cb_catName = new System.Windows.Forms.ComboBox();
             this.tb_propName = new System.Windows.Forms.TextBox();
@@ -168,7 +169,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -204,6 +205,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriétés";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(312, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 24);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_addCat
             // 
@@ -268,6 +279,7 @@
             this.Btn_imageBrowse.TabIndex = 2;
             this.Btn_imageBrowse.Text = "Parcourir";
             this.Btn_imageBrowse.UseVisualStyleBackColor = true;
+            this.Btn_imageBrowse.Click += new System.EventHandler(this.Btn_imageBrowse_Click);
             // 
             // tb_imagePath
             // 
@@ -1594,15 +1606,9 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // button1
+            // openFileDialog2
             // 
-            this.button1.Location = new System.Drawing.Point(312, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 24);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.openFileDialog2.Filter = "image (*.bmp)|*.bmp";
             // 
             // A_Gest1Btn
             // 
@@ -1798,5 +1804,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
