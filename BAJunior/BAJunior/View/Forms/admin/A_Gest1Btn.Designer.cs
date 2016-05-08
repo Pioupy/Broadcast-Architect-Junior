@@ -396,6 +396,7 @@
             // rbtn_custom14
             // 
             this.rbtn_custom14.AutoSize = true;
+            this.rbtn_custom14.Checked = true;
             this.rbtn_custom14.Location = new System.Drawing.Point(0, -3);
             this.rbtn_custom14.Name = "rbtn_custom14";
             this.rbtn_custom14.Size = new System.Drawing.Size(81, 21);
@@ -441,6 +442,7 @@
             // rbtn_custom13
             // 
             this.rbtn_custom13.AutoSize = true;
+            this.rbtn_custom13.Checked = true;
             this.rbtn_custom13.Location = new System.Drawing.Point(0, -3);
             this.rbtn_custom13.Name = "rbtn_custom13";
             this.rbtn_custom13.Size = new System.Drawing.Size(81, 21);
@@ -486,6 +488,7 @@
             // rbtn_custom12
             // 
             this.rbtn_custom12.AutoSize = true;
+            this.rbtn_custom12.Checked = true;
             this.rbtn_custom12.Location = new System.Drawing.Point(0, -2);
             this.rbtn_custom12.Name = "rbtn_custom12";
             this.rbtn_custom12.Size = new System.Drawing.Size(81, 21);
@@ -531,6 +534,7 @@
             // rbtn_custom11
             // 
             this.rbtn_custom11.AutoSize = true;
+            this.rbtn_custom11.Checked = true;
             this.rbtn_custom11.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom11.Name = "rbtn_custom11";
             this.rbtn_custom11.Size = new System.Drawing.Size(81, 21);
@@ -576,6 +580,7 @@
             // rbtn_custom10
             // 
             this.rbtn_custom10.AutoSize = true;
+            this.rbtn_custom10.Checked = true;
             this.rbtn_custom10.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom10.Name = "rbtn_custom10";
             this.rbtn_custom10.Size = new System.Drawing.Size(81, 21);
@@ -621,6 +626,7 @@
             // rbtn_custom9
             // 
             this.rbtn_custom9.AutoSize = true;
+            this.rbtn_custom9.Checked = true;
             this.rbtn_custom9.Location = new System.Drawing.Point(0, -2);
             this.rbtn_custom9.Name = "rbtn_custom9";
             this.rbtn_custom9.Size = new System.Drawing.Size(81, 21);
@@ -666,6 +672,7 @@
             // rbtn_custom8
             // 
             this.rbtn_custom8.AutoSize = true;
+            this.rbtn_custom8.Checked = true;
             this.rbtn_custom8.Location = new System.Drawing.Point(0, -2);
             this.rbtn_custom8.Name = "rbtn_custom8";
             this.rbtn_custom8.Size = new System.Drawing.Size(81, 21);
@@ -711,6 +718,7 @@
             // rbtn_custom7
             // 
             this.rbtn_custom7.AutoSize = true;
+            this.rbtn_custom7.Checked = true;
             this.rbtn_custom7.Location = new System.Drawing.Point(0, -2);
             this.rbtn_custom7.Name = "rbtn_custom7";
             this.rbtn_custom7.Size = new System.Drawing.Size(81, 21);
@@ -756,6 +764,7 @@
             // rbtn_custom6
             // 
             this.rbtn_custom6.AutoSize = true;
+            this.rbtn_custom6.Checked = true;
             this.rbtn_custom6.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom6.Name = "rbtn_custom6";
             this.rbtn_custom6.Size = new System.Drawing.Size(81, 21);
@@ -801,6 +810,7 @@
             // rbtn_custom5
             // 
             this.rbtn_custom5.AutoSize = true;
+            this.rbtn_custom5.Checked = true;
             this.rbtn_custom5.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom5.Name = "rbtn_custom5";
             this.rbtn_custom5.Size = new System.Drawing.Size(81, 21);
@@ -846,6 +856,7 @@
             // rbtn_custom4
             // 
             this.rbtn_custom4.AutoSize = true;
+            this.rbtn_custom4.Checked = true;
             this.rbtn_custom4.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom4.Name = "rbtn_custom4";
             this.rbtn_custom4.Size = new System.Drawing.Size(81, 21);
@@ -891,6 +902,7 @@
             // rbtn_custom3
             // 
             this.rbtn_custom3.AutoSize = true;
+            this.rbtn_custom3.Checked = true;
             this.rbtn_custom3.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom3.Name = "rbtn_custom3";
             this.rbtn_custom3.Size = new System.Drawing.Size(81, 21);
@@ -936,6 +948,7 @@
             // rbtn_custom2
             // 
             this.rbtn_custom2.AutoSize = true;
+            this.rbtn_custom2.Checked = true;
             this.rbtn_custom2.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom2.Name = "rbtn_custom2";
             this.rbtn_custom2.Size = new System.Drawing.Size(81, 21);
@@ -981,6 +994,7 @@
             // rbtn_custom1
             // 
             this.rbtn_custom1.AutoSize = true;
+            this.rbtn_custom1.Checked = true;
             this.rbtn_custom1.Location = new System.Drawing.Point(0, 4);
             this.rbtn_custom1.Name = "rbtn_custom1";
             this.rbtn_custom1.Size = new System.Drawing.Size(81, 21);
@@ -1609,13 +1623,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(844, 592);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "A_Gest1Btn";
-            this.Size = new System.Drawing.Size(843, 586);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

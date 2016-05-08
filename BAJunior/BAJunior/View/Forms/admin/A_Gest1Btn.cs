@@ -12,7 +12,7 @@ using BAJunior.Model;
 
 namespace BAJunior.View.Forms.admin
 {
-    public partial class A_Gest1Btn : UserControl
+    public partial class A_Gest1Btn : Form
     {
         Command actualCommand;
         List<Param> buttonParam;
@@ -37,8 +37,9 @@ namespace BAJunior.View.Forms.admin
 
             if (buttonParam[0].getName() == "vide")
             {
-                tb_nom1.Text = "vide";
-                tb_valor1.Text = "vide";
+                tb_nom1.Text = "";
+                tb_valor1.Text = "";
+                rbtn_empty1.Checked = true;
             }
             else
             {
@@ -49,6 +50,227 @@ namespace BAJunior.View.Forms.admin
                     rbtn_custom1.Checked = true;
                 else
                     rbtn_fix1.Checked = true;
+            }
+
+            if (buttonParam[1].getName() == "vide")
+            {
+                tb_nom2.Text = "";
+                tb_valor2.Text = "";
+                rbtn_empty2.Checked = true;
+            }
+            else
+            {
+                tb_nom2.Text = buttonParam[1].getName();
+                tb_valor2.Text = buttonParam[1].getValue();
+
+                if (buttonParam[1].getIsUser())
+                    rbtn_custom2.Checked = true;
+                else
+                    rbtn_fix2.Checked = true;
+            }
+
+            if (buttonParam[2].getName() == "vide")
+            {
+                tb_nom3.Text = "";
+                tb_valor3.Text = "";
+                rbtn_empty3.Checked = true;
+            }
+            else
+            {
+                tb_nom3.Text = buttonParam[2].getName();
+                tb_valor3.Text = buttonParam[2].getValue();
+
+                if (buttonParam[2].getIsUser())
+                    rbtn_custom3.Checked = true;
+                else
+                    rbtn_fix3.Checked = true;
+            }
+
+            if (buttonParam[3].getName() == "vide")
+            {
+                tb_nom4.Text = "";
+                tb_valor4.Text = "";
+                rbtn_empty4.Checked = true;
+            }
+            else
+            {
+                tb_nom4.Text = buttonParam[3].getName();
+                tb_valor4.Text = buttonParam[3].getValue();
+
+                if (buttonParam[3].getIsUser())
+                    rbtn_custom4.Checked = true;
+                else
+                    rbtn_fix4.Checked = true;
+            }
+
+            if (buttonParam[4].getName() == "vide")
+            {
+                tb_nom5.Text = "";
+                tb_valor5.Text = "";
+                rbtn_empty5.Checked = true;
+            }
+            else
+            {
+                tb_nom5.Text = buttonParam[4].getName();
+                tb_valor5.Text = buttonParam[4].getValue();
+
+                if (buttonParam[4].getIsUser())
+                    rbtn_custom5.Checked = true;
+                else
+                    rbtn_fix5.Checked = true;
+            }
+
+            if (buttonParam[5].getName() == "vide")
+            {
+                tb_nom6.Text = "";
+                tb_valor6.Text = "";
+                rbtn_empty6.Checked = true;
+            }
+            else
+            {
+                tb_nom6.Text = buttonParam[5].getName();
+                tb_valor6.Text = buttonParam[5].getValue();
+
+                if (buttonParam[5].getIsUser())
+                    rbtn_custom6.Checked = true;
+                else
+                    rbtn_fix6.Checked = true;
+            }
+
+            if (buttonParam[6].getName() == "vide")
+            {
+                tb_nom7.Text = "";
+                tb_valor7.Text = "";
+                rbtn_empty7.Checked = true;
+            }
+            else
+            {
+                tb_nom7.Text = buttonParam[6].getName();
+                tb_valor7.Text = buttonParam[6].getValue();
+
+                if (buttonParam[6].getIsUser())
+                    rbtn_custom7.Checked = true;
+                else
+                    rbtn_fix7.Checked = true;
+            }
+
+            if (buttonParam[7].getName() == "vide")
+            {
+                tb_nom8.Text = "";
+                tb_valor8.Text = "";
+                rbtn_empty8.Checked = true;
+            }
+            else
+            {
+                tb_nom8.Text = buttonParam[7].getName();
+                tb_valor8.Text = buttonParam[7].getValue();
+
+                if (buttonParam[7].getIsUser())
+                    rbtn_custom8.Checked = true;
+                else
+                    rbtn_fix8.Checked = true;
+            }
+
+            if (buttonParam[8].getName() == "vide")
+            {
+                tb_nom9.Text = "";
+                tb_valor9.Text = "";
+                rbtn_empty9.Checked = true;
+            }
+            else
+            {
+                tb_nom9.Text = buttonParam[8].getName();
+                tb_valor9.Text = buttonParam[8].getValue();
+
+                if (buttonParam[8].getIsUser())
+                    rbtn_custom9.Checked = true;
+                else
+                    rbtn_fix9.Checked = true;
+            }
+
+            if (buttonParam[9].getName() == "vide")
+            {
+                tb_nom10.Text = "";
+                tb_valor10.Text = "";
+                rbtn_empty10.Checked = true;
+            }
+            else
+            {
+                tb_nom10.Text = buttonParam[9].getName();
+                tb_valor10.Text = buttonParam[9].getValue();
+
+                if (buttonParam[9].getIsUser())
+                    rbtn_custom10.Checked = true;
+                else
+                    rbtn_fix10.Checked = true;
+            }
+
+            if (buttonParam[10].getName() == "vide")
+            {
+                tb_nom11.Text = "";
+                tb_valor11.Text = "";
+                rbtn_empty11.Checked = true;
+            }
+            else
+            {
+                tb_nom11.Text = buttonParam[10].getName();
+                tb_valor11.Text = buttonParam[10].getValue();
+
+                if (buttonParam[10].getIsUser())
+                    rbtn_custom11.Checked = true;
+                else
+                    rbtn_fix11.Checked = true;
+            }
+
+            if (buttonParam[11].getName() == "vide")
+            {
+                tb_nom12.Text = "";
+                tb_valor12.Text = "";
+                rbtn_empty12.Checked = true;
+            }
+            else
+            {
+                tb_nom12.Text = buttonParam[11].getName();
+                tb_valor12.Text = buttonParam[11].getValue();
+
+                if (buttonParam[11].getIsUser())
+                    rbtn_custom12.Checked = true;
+                else
+                    rbtn_fix12.Checked = true;
+            }
+
+            if (buttonParam[12].getName() == "vide")
+            {
+                tb_nom13.Text = "";
+                tb_valor13.Text = "";
+                rbtn_empty13.Checked = true;
+            }
+            else
+            {
+                tb_nom13.Text = buttonParam[12].getName();
+                tb_valor13.Text = buttonParam[12].getValue();
+
+                if (buttonParam[12].getIsUser())
+                    rbtn_custom13.Checked = true;
+                else
+                    rbtn_fix13.Checked = true;
+            }
+
+            if (buttonParam[13].getName() == "vide")
+            {
+                tb_nom14.Text = "";
+                tb_valor14.Text = "";
+                rbtn_empty14.Checked = true;
+            }
+            else
+            {
+                tb_nom14.Text = buttonParam[13].getName();
+                tb_valor14.Text = buttonParam[13].getValue();
+
+                if (buttonParam[13].getIsUser())
+                    rbtn_custom14.Checked = true;
+                else
+                    rbtn_fix14.Checked = true;
             }
         }
 
@@ -442,6 +664,7 @@ namespace BAJunior.View.Forms.admin
             }
             else
             {
+                buttonParam = new List<Param>();
                 actualCommand = new Command(tb_propName.Text, tb_imagePath.Text, cb_catName.TabIndex);
                 commandData.create(actualCommand);
                 int newCommandId = commandData.readAll().Where(item => item.getName() == actualCommand.getName()).FirstOrDefault().getId();
@@ -509,6 +732,7 @@ namespace BAJunior.View.Forms.admin
                     jointPCData.create(new JointPC(item.getId(), commandData.readByName(actualCommand.getName()).getId()));
                 }
             }
+            Form.ActiveForm.Close();
         }
     }
 }

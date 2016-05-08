@@ -52,7 +52,19 @@ namespace BAJunior.View.Forms.admin
         {
             if (lv_Button.SelectedItems.Count > 0)
             {
- 
+                DialogResult resultat = MessageBox.Show("Voulez-vous supprimer l'élément ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultat == DialogResult.Yes)
+                {
+                    command.delete(commands.Where(item => item.getName() == lv_Button.SelectedItems[0].Text).FirstOrDefault());
+
+                    lv_Button.Clear();
+                    commands.Clear();
+                    commands = command.readAll();
+                    foreach (Command item in commands)
+                    {
+                        lv_Button.Items.Add(item.getName());
+                    }
+                }
             }
             else
                 MessageBox.Show("Veuillez séléctionner un bouton.");

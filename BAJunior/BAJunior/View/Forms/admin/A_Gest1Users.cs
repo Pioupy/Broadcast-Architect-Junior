@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAJunior.ServiceData;
 using BAJunior.Model;
+using BAJunior.Controller;
 
 namespace BAJunior.View.Forms.admin
 {
     public partial class A_Gest1Users : Form
     {
+        CtrlConnection con = new CtrlConnection();
         User actual;
 
         public A_Gest1Users()
@@ -42,7 +44,7 @@ namespace BAJunior.View.Forms.admin
             if (actual != null)
             {
                 actual.setLogin(tb_id.Text);
-                actual.setPassword(tb_password.Text);
+                actual.setPassword(con.ConvertSHA256(tb_password.Text));
                 actual.setIsAdmin(rbtn_yes.Checked);
 
                 bdd.update(actual);

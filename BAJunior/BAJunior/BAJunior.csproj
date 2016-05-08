@@ -107,7 +107,7 @@
       <DependentUpon>A_Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\admin\A_Gest1Btn.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Forms\admin\A_Gest1Btn.Designer.cs">
       <DependentUpon>A_Gest1Btn.cs</DependentUpon>
