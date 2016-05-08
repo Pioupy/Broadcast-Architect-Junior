@@ -16,13 +16,22 @@ namespace BAJunior.View.Forms.admin
     {
         Command actualCommand;
         List<Param> buttonParam;
+        List<Category> listCat;
         CommandData commandData = new CommandData();
         ParamData paramData = new ParamData();
         JointPCData jointPCData = new JointPCData();
+        CategoryData catData = new CategoryData();
 
         public A_Gest1Btn()
         {
             InitializeComponent();
+
+            listCat = catData.readAll();
+
+            foreach (Category item in listCat)
+            {
+                cb_catName.Items.Add(item.getName());
+            }
         }
 
         public A_Gest1Btn(Command command)
@@ -641,98 +650,147 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (actualCommand != null)
-            {
-                actualCommand.setName(tb_propName.Text);
-                actualCommand.setPicture(tb_imagePath.Text);
 
-                if (buttonParam[0].getName() == "vide")
+            if (listCat.Where(item => item.getName() == cb_catName.Text).Count() > 0)
+            {
+                if (actualCommand != null)
                 {
-                    tb_nom1.Text = "vide";
-                    tb_valor1.Text = "vide";
+                    actualCommand.setName(tb_propName.Text);
+                    actualCommand.setPicture(tb_imagePath.Text);
+
+                    if (buttonParam[0].getName() == "vide")
+                    {
+                        tb_nom1.Text = "vide";
+                        tb_valor1.Text = "vide";
+                    }
+                    else
+                    {
+                        tb_nom1.Text = buttonParam[0].getName();
+                        tb_valor1.Text = buttonParam[0].getValue();
+
+                        if (buttonParam[0].getIsUser())
+                            rbtn_custom1.Checked = true;
+                        else
+                            rbtn_fix1.Checked = true;
+                    }
                 }
                 else
                 {
-                    tb_nom1.Text = buttonParam[0].getName();
-                    tb_valor1.Text = buttonParam[0].getValue();
+                    buttonParam = new List<Param>();
 
-                    if (buttonParam[0].getIsUser())
-                        rbtn_custom1.Checked = true;
+                    actualCommand = new Command(tb_propName.Text, tb_imagePath.Text, listCat.Where(item => item.getName() == cb_catName.Text).FirstOrDefault().getId());
+                    commandData.create(actualCommand);
+                    int newCommandId = commandData.readAll().Where(item => item.getName() == actualCommand.getName()).FirstOrDefault().getId();
+
+                    if (rbtn_empty1.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
                     else
-                        rbtn_fix1.Checked = true;
+                        buttonParam.Add(new Param(tb_nom1.Text, tb_valor1.Text, rbtn_custom1.Checked));
+                    if (rbtn_empty2.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom2.Text, tb_valor2.Text, rbtn_custom2.Checked));
+                    if (rbtn_empty3.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom3.Text, tb_valor3.Text, rbtn_custom3.Checked));
+                    if (rbtn_empty4.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom4.Text, tb_valor4.Text, rbtn_custom4.Checked));
+                    if (rbtn_empty5.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom5.Text, tb_valor5.Text, rbtn_custom5.Checked));
+                    if (rbtn_empty6.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom6.Text, tb_valor6.Text, rbtn_custom6.Checked));
+                    if (rbtn_empty7.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom7.Text, tb_valor7.Text, rbtn_custom7.Checked));
+                    if (rbtn_empty8.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom8.Text, tb_valor8.Text, rbtn_custom8.Checked));
+                    if (rbtn_empty9.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom9.Text, tb_valor9.Text, rbtn_custom9.Checked));
+                    if (rbtn_empty10.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom10.Text, tb_valor10.Text, rbtn_custom10.Checked));
+                    if (rbtn_empty11.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom11.Text, tb_valor11.Text, rbtn_custom11.Checked));
+                    if (rbtn_empty12.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom12.Text, tb_valor12.Text, rbtn_custom12.Checked));
+                    if (rbtn_empty13.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom13.Text, tb_valor13.Text, rbtn_custom13.Checked));
+                    if (rbtn_empty14.Checked)
+                        buttonParam.Add(new Param("vide", "vide", false));
+                    else
+                        buttonParam.Add(new Param(tb_nom14.Text, tb_valor14.Text, rbtn_custom14.Checked));
+
+                    foreach (Param item in buttonParam)
+                    {
+                        paramData.create(item);
+                        jointPCData.create(new JointPC(item.getId(), commandData.readByName(actualCommand.getName()).getId()));
+                    }
+
+                    Form.ActiveForm.Close();
                 }
             }
             else
             {
-                buttonParam = new List<Param>();
-                actualCommand = new Command(tb_propName.Text, tb_imagePath.Text, cb_catName.TabIndex);
-                commandData.create(actualCommand);
-                int newCommandId = commandData.readAll().Where(item => item.getName() == actualCommand.getName()).FirstOrDefault().getId();
-
-                if (rbtn_empty1.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom1.Text, tb_valor1.Text, rbtn_custom1.Checked));
-                if (rbtn_empty2.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom2.Text, tb_valor2.Text, rbtn_custom2.Checked));
-                if (rbtn_empty3.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom3.Text, tb_valor3.Text, rbtn_custom3.Checked));
-                if (rbtn_empty4.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom4.Text, tb_valor4.Text, rbtn_custom4.Checked));
-                if (rbtn_empty5.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom5.Text, tb_valor5.Text, rbtn_custom5.Checked));
-                if (rbtn_empty6.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom6.Text, tb_valor6.Text, rbtn_custom6.Checked));
-                if (rbtn_empty7.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom7.Text, tb_valor7.Text, rbtn_custom7.Checked));
-                if (rbtn_empty8.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom8.Text, tb_valor8.Text, rbtn_custom8.Checked));
-                if (rbtn_empty9.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom9.Text, tb_valor9.Text, rbtn_custom9.Checked));
-                if (rbtn_empty10.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom10.Text, tb_valor10.Text, rbtn_custom10.Checked));
-                if (rbtn_empty11.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom11.Text, tb_valor11.Text, rbtn_custom11.Checked));
-                if (rbtn_empty12.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom12.Text, tb_valor12.Text, rbtn_custom12.Checked));
-                if (rbtn_empty13.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom13.Text, tb_valor13.Text, rbtn_custom13.Checked));
-                if (rbtn_empty14.Checked)
-                    buttonParam.Add(new Param("vide", "vide", false));
-                else
-                    buttonParam.Add(new Param(tb_nom14.Text, tb_valor14.Text, rbtn_custom14.Checked));
-
-                foreach (Param item in buttonParam)
-                {
-                    paramData.create(item);
-                    jointPCData.create(new JointPC(item.getId(), commandData.readByName(actualCommand.getName()).getId()));
-                }
+                MessageBox.Show("Veuillez selectionner une catégorie.");
             }
-            Form.ActiveForm.Close();
+        }
+
+        private void btn_addCat_Click(object sender, EventArgs e)
+        {
+            if (cb_catName.Text != null && cb_catName.Text != "")
+            {
+                catData.create(new Category(cb_catName.Text));
+                refreshComboBoxCat();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner une catégorie.");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cb_catName.Text != null && cb_catName.Text != "")
+            {
+                catData.delete(listCat.Where(item => item.getName() == cb_catName.Text).FirstOrDefault());
+                cb_catName.Text = "";
+                refreshComboBoxCat();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner une catégorie.");
+            }
+        }
+
+        public void refreshComboBoxCat()
+        {
+            cb_catName.Items.Clear();
+            listCat.Clear();
+
+            listCat = catData.readAll();
+            foreach (Category item in listCat)
+            {
+                cb_catName.Items.Add(item.getName());
+            }
         }
     }
 }

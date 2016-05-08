@@ -40,22 +40,27 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            UserData bdd = new UserData();
-            if (actual != null)
+            if (tb_id.Text != "" && tb_id.Text != null && tb_password.Text != "" && tb_password.Text != null)
             {
-                actual.setLogin(tb_id.Text);
-                actual.setPassword(con.ConvertSHA256(tb_password.Text));
-                actual.setIsAdmin(rbtn_yes.Checked);
+                UserData bdd = new UserData();
+                if (actual != null)
+                {
+                    actual.setLogin(tb_id.Text);
+                    actual.setPassword(con.ConvertSHA256(tb_password.Text));
+                    actual.setIsAdmin(rbtn_yes.Checked);
 
-                bdd.update(actual);
+                    bdd.update(actual);
+                }
+                else
+                {
+                    actual = new User(tb_id.Text, con.ConvertSHA256(tb_password.Text), rbtn_yes.Checked);
+                    bdd.create(actual);
+                }
+
+                Form.ActiveForm.Close();
             }
             else
-            {
-                actual = new User(tb_id.Text, tb_password.Text, rbtn_yes.Checked);
-                bdd.create(actual);
-            }
-
-            Form.ActiveForm.Close();
+                MessageBox.Show("Veuillez remplir tous les champs");
         }
     }
 }

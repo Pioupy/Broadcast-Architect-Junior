@@ -33,21 +33,26 @@ namespace BAJunior.View.Forms.admin
 
         private void btn_saveApps_Click(object sender, EventArgs e)
         {
-            ApplicationData bdd = new ApplicationData();
-            if (actualApps != null)
+            if (tb_AppsPath.Text != "" && tb_AppsPath.Text != null && tb_NameApps.Text != "" && tb_NameApps.Text != null)
             {
-                actualApps.setName(tb_NameApps.Text);
-                actualApps.setLink(tb_AppsPath.Text);
+                ApplicationData bdd = new ApplicationData();
+                if (actualApps != null)
+                {
+                    actualApps.setName(tb_NameApps.Text);
+                    actualApps.setLink(tb_AppsPath.Text);
 
-                bdd.update(actualApps);
+                    bdd.update(actualApps);
+                }
+                else
+                {
+                    actualApps = new Model.Application(tb_NameApps.Text, tb_AppsPath.Text);
+                    bdd.create(actualApps);
+                }
+
+                Form.ActiveForm.Close();
             }
             else
-            {
-                actualApps = new Model.Application(tb_NameApps.Text, tb_AppsPath.Text);
-                bdd.create(actualApps);
-            }
-
-            Form.ActiveForm.Close();
+                MessageBox.Show("Veuillez replir tous les champs.");
         }
 
         private void btn_appsPath_Click(object sender, EventArgs e)

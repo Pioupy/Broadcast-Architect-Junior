@@ -168,6 +168,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -191,6 +192,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btn_addCat);
             this.groupBox1.Controls.Add(this.cb_catName);
             this.groupBox1.Controls.Add(this.tb_propName);
@@ -207,10 +209,11 @@
             // 
             this.btn_addCat.Location = new System.Drawing.Point(261, 78);
             this.btn_addCat.Name = "btn_addCat";
-            this.btn_addCat.Size = new System.Drawing.Size(82, 24);
+            this.btn_addCat.Size = new System.Drawing.Size(45, 24);
             this.btn_addCat.TabIndex = 6;
-            this.btn_addCat.Text = "Ajouter";
+            this.btn_addCat.Text = "+";
             this.btn_addCat.UseVisualStyleBackColor = true;
+            this.btn_addCat.Click += new System.EventHandler(this.btn_addCat_Click);
             // 
             // cb_catName
             // 
@@ -412,7 +415,6 @@
             this.rbtn_fix14.Name = "rbtn_fix14";
             this.rbtn_fix14.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix14.TabIndex = 108;
-            this.rbtn_fix14.TabStop = true;
             this.rbtn_fix14.Text = "Fixe";
             this.rbtn_fix14.UseVisualStyleBackColor = true;
             this.rbtn_fix14.CheckedChanged += new System.EventHandler(this.rbtn_fix14_CheckedChanged);
@@ -424,7 +426,6 @@
             this.rbtn_empty14.Name = "rbtn_empty14";
             this.rbtn_empty14.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty14.TabIndex = 109;
-            this.rbtn_empty14.TabStop = true;
             this.rbtn_empty14.Text = "Pas de valeur";
             this.rbtn_empty14.UseVisualStyleBackColor = true;
             this.rbtn_empty14.CheckedChanged += new System.EventHandler(this.rbtn_empty14_CheckedChanged);
@@ -458,7 +459,6 @@
             this.rbtn_fix13.Name = "rbtn_fix13";
             this.rbtn_fix13.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix13.TabIndex = 100;
-            this.rbtn_fix13.TabStop = true;
             this.rbtn_fix13.Text = "Fixe";
             this.rbtn_fix13.UseVisualStyleBackColor = true;
             this.rbtn_fix13.CheckedChanged += new System.EventHandler(this.rbtn_fix13_CheckedChanged);
@@ -470,7 +470,6 @@
             this.rbtn_empty13.Name = "rbtn_empty13";
             this.rbtn_empty13.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty13.TabIndex = 101;
-            this.rbtn_empty13.TabStop = true;
             this.rbtn_empty13.Text = "Pas de valeur";
             this.rbtn_empty13.UseVisualStyleBackColor = true;
             this.rbtn_empty13.CheckedChanged += new System.EventHandler(this.rbtn_empty13_CheckedChanged);
@@ -504,7 +503,6 @@
             this.rbtn_fix12.Name = "rbtn_fix12";
             this.rbtn_fix12.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix12.TabIndex = 92;
-            this.rbtn_fix12.TabStop = true;
             this.rbtn_fix12.Text = "Fixe";
             this.rbtn_fix12.UseVisualStyleBackColor = true;
             this.rbtn_fix12.CheckedChanged += new System.EventHandler(this.rbtn_fix12_CheckedChanged);
@@ -516,7 +514,6 @@
             this.rbtn_empty12.Name = "rbtn_empty12";
             this.rbtn_empty12.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty12.TabIndex = 93;
-            this.rbtn_empty12.TabStop = true;
             this.rbtn_empty12.Text = "Pas de valeur";
             this.rbtn_empty12.UseVisualStyleBackColor = true;
             this.rbtn_empty12.CheckedChanged += new System.EventHandler(this.rbtn_empty12_CheckedChanged);
@@ -550,7 +547,6 @@
             this.rbtn_fix11.Name = "rbtn_fix11";
             this.rbtn_fix11.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix11.TabIndex = 84;
-            this.rbtn_fix11.TabStop = true;
             this.rbtn_fix11.Text = "Fixe";
             this.rbtn_fix11.UseVisualStyleBackColor = true;
             this.rbtn_fix11.CheckedChanged += new System.EventHandler(this.rbtn_fix11_CheckedChanged);
@@ -562,7 +558,6 @@
             this.rbtn_empty11.Name = "rbtn_empty11";
             this.rbtn_empty11.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty11.TabIndex = 85;
-            this.rbtn_empty11.TabStop = true;
             this.rbtn_empty11.Text = "Pas de valeur";
             this.rbtn_empty11.UseVisualStyleBackColor = true;
             this.rbtn_empty11.CheckedChanged += new System.EventHandler(this.rbtn_empty11_CheckedChanged);
@@ -596,7 +591,6 @@
             this.rbtn_fix10.Name = "rbtn_fix10";
             this.rbtn_fix10.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix10.TabIndex = 76;
-            this.rbtn_fix10.TabStop = true;
             this.rbtn_fix10.Text = "Fixe";
             this.rbtn_fix10.UseVisualStyleBackColor = true;
             this.rbtn_fix10.CheckedChanged += new System.EventHandler(this.rbtn_fix10_CheckedChanged);
@@ -608,7 +602,6 @@
             this.rbtn_empty10.Name = "rbtn_empty10";
             this.rbtn_empty10.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty10.TabIndex = 77;
-            this.rbtn_empty10.TabStop = true;
             this.rbtn_empty10.Text = "Pas de valeur";
             this.rbtn_empty10.UseVisualStyleBackColor = true;
             this.rbtn_empty10.CheckedChanged += new System.EventHandler(this.rbtn_empty10_CheckedChanged);
@@ -642,7 +635,6 @@
             this.rbtn_fix9.Name = "rbtn_fix9";
             this.rbtn_fix9.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix9.TabIndex = 68;
-            this.rbtn_fix9.TabStop = true;
             this.rbtn_fix9.Text = "Fixe";
             this.rbtn_fix9.UseVisualStyleBackColor = true;
             this.rbtn_fix9.CheckedChanged += new System.EventHandler(this.rbtn_fix9_CheckedChanged);
@@ -654,7 +646,6 @@
             this.rbtn_empty9.Name = "rbtn_empty9";
             this.rbtn_empty9.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty9.TabIndex = 69;
-            this.rbtn_empty9.TabStop = true;
             this.rbtn_empty9.Text = "Pas de valeur";
             this.rbtn_empty9.UseVisualStyleBackColor = true;
             this.rbtn_empty9.CheckedChanged += new System.EventHandler(this.rbtn_empty9_CheckedChanged);
@@ -688,7 +679,6 @@
             this.rbtn_fix8.Name = "rbtn_fix8";
             this.rbtn_fix8.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix8.TabIndex = 60;
-            this.rbtn_fix8.TabStop = true;
             this.rbtn_fix8.Text = "Fixe";
             this.rbtn_fix8.UseVisualStyleBackColor = true;
             this.rbtn_fix8.CheckedChanged += new System.EventHandler(this.rbtn_fix8_CheckedChanged);
@@ -700,7 +690,6 @@
             this.rbtn_empty8.Name = "rbtn_empty8";
             this.rbtn_empty8.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty8.TabIndex = 61;
-            this.rbtn_empty8.TabStop = true;
             this.rbtn_empty8.Text = "Pas de valeur";
             this.rbtn_empty8.UseVisualStyleBackColor = true;
             this.rbtn_empty8.CheckedChanged += new System.EventHandler(this.rbtn_empty8_CheckedChanged);
@@ -734,7 +723,6 @@
             this.rbtn_fix7.Name = "rbtn_fix7";
             this.rbtn_fix7.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix7.TabIndex = 52;
-            this.rbtn_fix7.TabStop = true;
             this.rbtn_fix7.Text = "Fixe";
             this.rbtn_fix7.UseVisualStyleBackColor = true;
             this.rbtn_fix7.CheckedChanged += new System.EventHandler(this.rbtn_fix7_CheckedChanged);
@@ -746,7 +734,6 @@
             this.rbtn_empty7.Name = "rbtn_empty7";
             this.rbtn_empty7.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty7.TabIndex = 53;
-            this.rbtn_empty7.TabStop = true;
             this.rbtn_empty7.Text = "Pas de valeur";
             this.rbtn_empty7.UseVisualStyleBackColor = true;
             this.rbtn_empty7.CheckedChanged += new System.EventHandler(this.rbtn_empty7_CheckedChanged);
@@ -780,7 +767,6 @@
             this.rbtn_fix6.Name = "rbtn_fix6";
             this.rbtn_fix6.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix6.TabIndex = 44;
-            this.rbtn_fix6.TabStop = true;
             this.rbtn_fix6.Text = "Fixe";
             this.rbtn_fix6.UseVisualStyleBackColor = true;
             this.rbtn_fix6.CheckedChanged += new System.EventHandler(this.rbtn_fix6_CheckedChanged);
@@ -792,7 +778,6 @@
             this.rbtn_empty6.Name = "rbtn_empty6";
             this.rbtn_empty6.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty6.TabIndex = 45;
-            this.rbtn_empty6.TabStop = true;
             this.rbtn_empty6.Text = "Pas de valeur";
             this.rbtn_empty6.UseVisualStyleBackColor = true;
             this.rbtn_empty6.CheckedChanged += new System.EventHandler(this.rbtn_empty6_CheckedChanged);
@@ -826,7 +811,6 @@
             this.rbtn_fix5.Name = "rbtn_fix5";
             this.rbtn_fix5.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix5.TabIndex = 36;
-            this.rbtn_fix5.TabStop = true;
             this.rbtn_fix5.Text = "Fixe";
             this.rbtn_fix5.UseVisualStyleBackColor = true;
             this.rbtn_fix5.CheckedChanged += new System.EventHandler(this.rbtn_fix5_CheckedChanged);
@@ -838,7 +822,6 @@
             this.rbtn_empty5.Name = "rbtn_empty5";
             this.rbtn_empty5.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty5.TabIndex = 37;
-            this.rbtn_empty5.TabStop = true;
             this.rbtn_empty5.Text = "Pas de valeur";
             this.rbtn_empty5.UseVisualStyleBackColor = true;
             this.rbtn_empty5.CheckedChanged += new System.EventHandler(this.rbtn_empty5_CheckedChanged);
@@ -872,7 +855,6 @@
             this.rbtn_fix4.Name = "rbtn_fix4";
             this.rbtn_fix4.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix4.TabIndex = 28;
-            this.rbtn_fix4.TabStop = true;
             this.rbtn_fix4.Text = "Fixe";
             this.rbtn_fix4.UseVisualStyleBackColor = true;
             this.rbtn_fix4.CheckedChanged += new System.EventHandler(this.rbtn_fix4_CheckedChanged);
@@ -884,7 +866,6 @@
             this.rbtn_empty4.Name = "rbtn_empty4";
             this.rbtn_empty4.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty4.TabIndex = 29;
-            this.rbtn_empty4.TabStop = true;
             this.rbtn_empty4.Text = "Pas de valeur";
             this.rbtn_empty4.UseVisualStyleBackColor = true;
             this.rbtn_empty4.CheckedChanged += new System.EventHandler(this.rbtn_empty4_CheckedChanged);
@@ -918,7 +899,6 @@
             this.rbtn_fix3.Name = "rbtn_fix3";
             this.rbtn_fix3.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix3.TabIndex = 20;
-            this.rbtn_fix3.TabStop = true;
             this.rbtn_fix3.Text = "Fixe";
             this.rbtn_fix3.UseVisualStyleBackColor = true;
             this.rbtn_fix3.CheckedChanged += new System.EventHandler(this.rbtn_fix3_CheckedChanged);
@@ -930,7 +910,6 @@
             this.rbtn_empty3.Name = "rbtn_empty3";
             this.rbtn_empty3.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty3.TabIndex = 21;
-            this.rbtn_empty3.TabStop = true;
             this.rbtn_empty3.Text = "Pas de valeur";
             this.rbtn_empty3.UseVisualStyleBackColor = true;
             this.rbtn_empty3.CheckedChanged += new System.EventHandler(this.rbtn_empty3_CheckedChanged);
@@ -964,7 +943,6 @@
             this.rbtn_empty2.Name = "rbtn_empty2";
             this.rbtn_empty2.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty2.TabIndex = 13;
-            this.rbtn_empty2.TabStop = true;
             this.rbtn_empty2.Text = "Pas de valeur";
             this.rbtn_empty2.UseVisualStyleBackColor = true;
             this.rbtn_empty2.CheckedChanged += new System.EventHandler(this.rbtn_empty2_CheckedChanged);
@@ -976,7 +954,6 @@
             this.rbtn_fix2.Name = "rbtn_fix2";
             this.rbtn_fix2.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix2.TabIndex = 12;
-            this.rbtn_fix2.TabStop = true;
             this.rbtn_fix2.Text = "Fixe";
             this.rbtn_fix2.UseVisualStyleBackColor = true;
             this.rbtn_fix2.CheckedChanged += new System.EventHandler(this.rbtn_fix2_CheckedChanged);
@@ -1010,7 +987,6 @@
             this.rbtn_fix1.Name = "rbtn_fix1";
             this.rbtn_fix1.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix1.TabIndex = 4;
-            this.rbtn_fix1.TabStop = true;
             this.rbtn_fix1.Text = "Fixe";
             this.rbtn_fix1.UseVisualStyleBackColor = true;
             this.rbtn_fix1.CheckedChanged += new System.EventHandler(this.rbtn_fix1_CheckedChanged);
@@ -1022,7 +998,6 @@
             this.rbtn_empty1.Name = "rbtn_empty1";
             this.rbtn_empty1.Size = new System.Drawing.Size(116, 21);
             this.rbtn_empty1.TabIndex = 5;
-            this.rbtn_empty1.TabStop = true;
             this.rbtn_empty1.Text = "Pas de valeur";
             this.rbtn_empty1.UseVisualStyleBackColor = true;
             this.rbtn_empty1.CheckedChanged += new System.EventHandler(this.rbtn_empty1_CheckedChanged);
@@ -1619,6 +1594,16 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(312, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 24);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // A_Gest1Btn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1812,5 +1797,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button button1;
     }
 }

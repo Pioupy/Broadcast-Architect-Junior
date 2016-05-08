@@ -85,6 +85,7 @@
             // rbtn_no
             // 
             this.rbtn_no.AutoSize = true;
+            this.rbtn_no.Checked = true;
             this.rbtn_no.Location = new System.Drawing.Point(62, 7);
             this.rbtn_no.Name = "rbtn_no";
             this.rbtn_no.Size = new System.Drawing.Size(55, 21);
@@ -100,7 +101,6 @@
             this.rbtn_yes.Name = "rbtn_yes";
             this.rbtn_yes.Size = new System.Drawing.Size(51, 21);
             this.rbtn_yes.TabIndex = 0;
-            this.rbtn_yes.TabStop = true;
             this.rbtn_yes.Text = "Oui";
             this.rbtn_yes.UseVisualStyleBackColor = true;
             // 

@@ -31,7 +31,8 @@ namespace BAJunior.View.Forms.admin
         private void btn_AddApps_Click(object sender, EventArgs e)
         {
             var PopUp = new A_GestionApplication();
-            PopUp.Show();
+            PopUp.ShowDialog();
+            refreshLvApps();
         }
 
         private void btn_EditApps_Click(object sender, EventArgs e)
@@ -40,8 +41,10 @@ namespace BAJunior.View.Forms.admin
             {
                 Model.Application appsSelected = applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault();
 
-            var PopUp = new A_GestionApplication(appsSelected);
-            PopUp.Show();
+                var PopUp = new A_GestionApplication(appsSelected);
+                PopUp.ShowDialog();
+                refreshLvApps();
+
             }
             else
                 MessageBox.Show("Veuillez séléctionner une application.");
@@ -56,10 +59,23 @@ namespace BAJunior.View.Forms.admin
                 if (resultat == DialogResult.Yes)
                 {
                     application.delete(applications.Where(item => item.getName() == lv_Apps.SelectedItems[0].Text).FirstOrDefault());
+                    refreshLvApps();
                 }
             }
             else
                 MessageBox.Show("Veuillez séléctionner une application.");
+        }
+
+        private void refreshLvApps()
+        {
+            lv_Apps.Items.Clear();
+            applications.Clear();
+
+            applications = application.readAll();
+            foreach (Model.Application item in applications)
+            {
+                lv_Apps.Items.Add(item.getName());
+            }
         }
     }
 }

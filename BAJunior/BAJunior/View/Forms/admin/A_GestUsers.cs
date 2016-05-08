@@ -31,7 +31,8 @@ namespace BAJunior.View.Forms.admin
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
             var PopUp = new A_Gest1Users();
-            PopUp.Show();
+            PopUp.ShowDialog();
+            refreshLvUser();
         }
 
         private void btn_EditUser_Click(object sender, EventArgs e)
@@ -40,8 +41,9 @@ namespace BAJunior.View.Forms.admin
             {
                 User userSelected = users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault();
 
-            var PopUp = new A_Gest1Users(userSelected);
-            PopUp.Show();
+                var PopUp = new A_Gest1Users(userSelected);
+                PopUp.ShowDialog();
+                refreshLvUser();
             }
             else
                 MessageBox.Show("Veuillez séléctionner un utilisateur.");
@@ -55,11 +57,23 @@ namespace BAJunior.View.Forms.admin
                 if (resultat == DialogResult.Yes)
                 {
                     user.delete(users.Where(item => item.getLogin() == lv_User.SelectedItems[0].Text).FirstOrDefault());
-                    lv_User.Refresh();
+                    refreshLvUser();
                 }
             }
             else
                 MessageBox.Show("Veuillez séléctionner un utilisateur.");
+        }
+
+        private void refreshLvUser()
+        {
+            lv_User.Items.Clear();
+            users.Clear();
+
+            users = user.readAll();
+            foreach (User item in users)
+            {
+                lv_User.Items.Add(item.getLogin());
+            }
         }
     }
 }
