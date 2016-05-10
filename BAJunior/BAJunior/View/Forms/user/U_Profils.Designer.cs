@@ -37,7 +37,7 @@
             this.btn_EditProfil = new System.Windows.Forms.Button();
             this.btn_DeleteProfil = new System.Windows.Forms.Button();
             this.btn_Load = new System.Windows.Forms.Button();
-            this.clavier1 = new BAJunior.View.Forms.user.Clavier();
+            this.intellipad = new BAJunior.View.Forms.user.K_Intellipad();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,19 +124,19 @@
             // 
             // clavier1
             // 
-            this.clavier1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clavier1.Location = new System.Drawing.Point(48, 107);
-            this.clavier1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clavier1.Name = "clavier1";
-            this.clavier1.Size = new System.Drawing.Size(539, 373);
-            this.clavier1.TabIndex = 6;
+            this.intellipad.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.intellipad.Location = new System.Drawing.Point(48, 107);
+            this.intellipad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.intellipad.Name = "clavier1";
+            this.intellipad.Size = new System.Drawing.Size(539, 373);
+            this.intellipad.TabIndex = 6;
             // 
             // U_Profils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 516);
-            this.Controls.Add(this.clavier1);
+            this.Controls.Add(this.intellipad);
             this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.btn_DeleteProfil);
             this.Controls.Add(this.btn_EditProfil);
@@ -166,6 +166,6 @@
         private System.Windows.Forms.Button btn_EditProfil;
         private System.Windows.Forms.Button btn_DeleteProfil;
         private System.Windows.Forms.Button btn_Load;
-        private Clavier clavier1;
+        private K_Intellipad intellipad;
     }
 }

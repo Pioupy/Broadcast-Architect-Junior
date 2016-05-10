@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BAJunior.View.Forms.user.keyboard
+namespace BAJunior.View.Forms.user
 {
     public partial class K_Intellipad : UserControl
     {
