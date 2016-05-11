@@ -93,6 +93,7 @@
             this.btn_selectApplication.TabIndex = 1;
             this.btn_selectApplication.Text = "Sélectionner";
             this.btn_selectApplication.UseVisualStyleBackColor = true;
+            this.btn_selectApplication.Click += new System.EventHandler(this.btn_selectApplication_Click);
             // 
             // lv_application
             // 
@@ -102,6 +103,7 @@
             this.lv_application.Size = new System.Drawing.Size(419, 150);
             this.lv_application.TabIndex = 0;
             this.lv_application.UseCompatibleStateImageBehavior = false;
+            this.lv_application.SelectedIndexChanged += new System.EventHandler(this.lv_application_SelectedIndexChanged);
             // 
             // gb_boutons
             // 

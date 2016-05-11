@@ -17,7 +17,7 @@ namespace BAJunior.View.Forms.user
     {
         private String m_nameProfile;
         private String m_nameKeyboard;
-        private String m_nameApplication;
+        private List<String> m_nameApplication = new List<string>();
         public U_AddProfil()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace BAJunior.View.Forms.user
             InitializeComponent();
             m_nameProfile = nameProfile;
             m_nameKeyboard = nameKeyboard;
-            m_nameApplication = nameApplication;
+            m_nameApplication.Add(nameApplication);
             labelNameProfile.Text = nameProfile;
             labelKeyboard.Text = nameKeyboard;
             lv_application.Items.Add(nameApplication);
@@ -64,15 +64,40 @@ namespace BAJunior.View.Forms.user
                 //je crois que le bouton en faite se crée par dessus le premier !!!
             }
         }
+        // Code gestion Xml :
         void button_Click_Default_Profils(object obj, EventArgs e) // envent onClick pour les boutons des profils par défaut
         {
            
         }
-
+        // Code gestion application :
         private void btn_addApplication_Click(object sender, EventArgs e)
         {
-            U_AddApplicationInAddProfil addApplicaion = new U_AddApplicationInAddProfil(m_nameApplication);
+            U_AddApplicationInAddProfil addApplicaion = new U_AddApplicationInAddProfil(this, m_nameApplication);
             addApplicaion.ShowDialog();
         }
+        private void btn_selectApplication_Click(object sender, EventArgs e)
+        {
+            //récuperer valeur
+
+            //charger paramètre
+
+            //mettre fond vert
+
+        }
+        private void lv_application_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_application.SelectedItems.Count > 0)
+            {
+                int count = lv_application.Items.IndexOf(lv_application.SelectedItems[0]);
+                //recuperer champs selelectionner
+            }
+        }
+        public void addApplication(String application)
+        {
+            lv_application.Items.Add(application);
+            m_nameApplication.Add(application);
+        }
+        // Code gestion bouton
+        
     }
 }
