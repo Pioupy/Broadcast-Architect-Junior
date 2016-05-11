@@ -21,6 +21,8 @@ namespace BAJunior.View.Forms.user
             InitializeComponent();
             labelNameProfile.Text = nameProfile;
             labelKeyboard.Text = nameKeyboard;
+            lv_application.Items.Add(nameApplication);
+            lv_application.Items[0].BackColor = Color.Green;
         }
     }
 }

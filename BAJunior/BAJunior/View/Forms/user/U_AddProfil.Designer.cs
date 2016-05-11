@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.gb_application = new System.Windows.Forms.GroupBox();
+            this.labelLambdaListApplication = new System.Windows.Forms.Label();
+            this.btn_addApplication = new System.Windows.Forms.Button();
+            this.btn_selectApplication = new System.Windows.Forms.Button();
+            this.lv_application = new System.Windows.Forms.ListView();
             this.gb_boutons = new System.Windows.Forms.GroupBox();
+            this.labelLambdaBoutons = new System.Windows.Forms.Label();
             this.labelLambdaProfle = new System.Windows.Forms.Label();
             this.labelNameProfile = new System.Windows.Forms.Label();
             this.labelLambdaKeyboard = new System.Windows.Forms.Label();
@@ -37,11 +42,6 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.gb_property = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.btn_selectApplication = new System.Windows.Forms.Button();
-            this.btn_addApplication = new System.Windows.Forms.Button();
-            this.labelLambdaListApplication = new System.Windows.Forms.Label();
-            this.labelLambdaBoutons = new System.Windows.Forms.Label();
             this.gb_application.SuspendLayout();
             this.gb_boutons.SuspendLayout();
             this.gb_property.SuspendLayout();
@@ -52,13 +52,48 @@
             this.gb_application.Controls.Add(this.labelLambdaListApplication);
             this.gb_application.Controls.Add(this.btn_addApplication);
             this.gb_application.Controls.Add(this.btn_selectApplication);
-            this.gb_application.Controls.Add(this.listView1);
+            this.gb_application.Controls.Add(this.lv_application);
             this.gb_application.Location = new System.Drawing.Point(781, 12);
             this.gb_application.Name = "gb_application";
             this.gb_application.Size = new System.Drawing.Size(431, 261);
             this.gb_application.TabIndex = 0;
             this.gb_application.TabStop = false;
             this.gb_application.Text = "Applications";
+            // 
+            // labelLambdaListApplication
+            // 
+            this.labelLambdaListApplication.AutoSize = true;
+            this.labelLambdaListApplication.Location = new System.Drawing.Point(7, 22);
+            this.labelLambdaListApplication.Name = "labelLambdaListApplication";
+            this.labelLambdaListApplication.Size = new System.Drawing.Size(240, 17);
+            this.labelLambdaListApplication.TabIndex = 3;
+            this.labelLambdaListApplication.Text = "Liste des applications liées au profil :";
+            // 
+            // btn_addApplication
+            // 
+            this.btn_addApplication.Location = new System.Drawing.Point(321, 209);
+            this.btn_addApplication.Name = "btn_addApplication";
+            this.btn_addApplication.Size = new System.Drawing.Size(100, 36);
+            this.btn_addApplication.TabIndex = 2;
+            this.btn_addApplication.Text = "Ajouter";
+            this.btn_addApplication.UseVisualStyleBackColor = true;
+            // 
+            // btn_selectApplication
+            // 
+            this.btn_selectApplication.Location = new System.Drawing.Point(215, 209);
+            this.btn_selectApplication.Name = "btn_selectApplication";
+            this.btn_selectApplication.Size = new System.Drawing.Size(100, 36);
+            this.btn_selectApplication.TabIndex = 1;
+            this.btn_selectApplication.Text = "Sélectionner";
+            this.btn_selectApplication.UseVisualStyleBackColor = true;
+            // 
+            // lv_application
+            // 
+            this.lv_application.Location = new System.Drawing.Point(6, 52);
+            this.lv_application.Name = "lv_application";
+            this.lv_application.Size = new System.Drawing.Size(419, 151);
+            this.lv_application.TabIndex = 0;
+            this.lv_application.UseCompatibleStateImageBehavior = false;
             // 
             // gb_boutons
             // 
@@ -69,6 +104,15 @@
             this.gb_boutons.TabIndex = 1;
             this.gb_boutons.TabStop = false;
             this.gb_boutons.Text = "Boutons";
+            // 
+            // labelLambdaBoutons
+            // 
+            this.labelLambdaBoutons.AutoSize = true;
+            this.labelLambdaBoutons.Location = new System.Drawing.Point(7, 18);
+            this.labelLambdaBoutons.Name = "labelLambdaBoutons";
+            this.labelLambdaBoutons.Size = new System.Drawing.Size(128, 17);
+            this.labelLambdaBoutons.TabIndex = 0;
+            this.labelLambdaBoutons.Text = "Liste des boutons :";
             // 
             // labelLambdaProfle
             // 
@@ -137,50 +181,6 @@
             this.gb_property.TabStop = false;
             this.gb_property.Text = "Propriétés";
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(6, 52);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(419, 151);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // btn_selectApplication
-            // 
-            this.btn_selectApplication.Location = new System.Drawing.Point(215, 209);
-            this.btn_selectApplication.Name = "btn_selectApplication";
-            this.btn_selectApplication.Size = new System.Drawing.Size(100, 36);
-            this.btn_selectApplication.TabIndex = 1;
-            this.btn_selectApplication.Text = "Sélectionner";
-            this.btn_selectApplication.UseVisualStyleBackColor = true;
-            // 
-            // btn_addApplication
-            // 
-            this.btn_addApplication.Location = new System.Drawing.Point(321, 209);
-            this.btn_addApplication.Name = "btn_addApplication";
-            this.btn_addApplication.Size = new System.Drawing.Size(100, 36);
-            this.btn_addApplication.TabIndex = 2;
-            this.btn_addApplication.Text = "Ajouter";
-            this.btn_addApplication.UseVisualStyleBackColor = true;
-            // 
-            // labelLambdaListApplication
-            // 
-            this.labelLambdaListApplication.AutoSize = true;
-            this.labelLambdaListApplication.Location = new System.Drawing.Point(7, 22);
-            this.labelLambdaListApplication.Name = "labelLambdaListApplication";
-            this.labelLambdaListApplication.Size = new System.Drawing.Size(240, 17);
-            this.labelLambdaListApplication.TabIndex = 3;
-            this.labelLambdaListApplication.Text = "Liste des applications liées au profil :";
-            // 
-            // labelLambdaBoutons
-            // 
-            this.labelLambdaBoutons.AutoSize = true;
-            this.labelLambdaBoutons.Location = new System.Drawing.Point(7, 18);
-            this.labelLambdaBoutons.Name = "labelLambdaBoutons";
-            this.labelLambdaBoutons.Size = new System.Drawing.Size(128, 17);
-            this.labelLambdaBoutons.TabIndex = 0;
-            this.labelLambdaBoutons.Text = "Liste des boutons :";
-            // 
             // U_AddProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,7 +214,7 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.GroupBox gb_property;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lv_application;
         private System.Windows.Forms.Label labelLambdaListApplication;
         private System.Windows.Forms.Button btn_addApplication;
         private System.Windows.Forms.Button btn_selectApplication;
