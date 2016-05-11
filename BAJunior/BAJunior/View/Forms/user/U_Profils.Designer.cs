@@ -37,7 +37,7 @@
             this.btn_EditProfil = new System.Windows.Forms.Button();
             this.btn_DeleteProfil = new System.Windows.Forms.Button();
             this.btn_Load = new System.Windows.Forms.Button();
-            this.clavier1 = new BAJunior.View.Forms.user.Clavier();
+            this.intellipad = new BAJunior.View.Forms.user.K_Intellipad();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,44 +49,46 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(862, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(646, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.déconexionToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // déconexionToolStripMenuItem
             // 
             this.déconexionToolStripMenuItem.Name = "déconexionToolStripMenuItem";
-            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.déconexionToolStripMenuItem.Text = "Déconexion";
             // 
             // cb_Profils
             // 
             this.cb_Profils.FormattingEnabled = true;
-            this.cb_Profils.Location = new System.Drawing.Point(60, 40);
+            this.cb_Profils.Location = new System.Drawing.Point(45, 32);
+            this.cb_Profils.Margin = new System.Windows.Forms.Padding(2);
             this.cb_Profils.Name = "cb_Profils";
-            this.cb_Profils.Size = new System.Drawing.Size(228, 24);
+            this.cb_Profils.Size = new System.Drawing.Size(172, 21);
             this.cb_Profils.TabIndex = 1;
             // 
             // btn_AddProfil
             // 
             this.btn_AddProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_AddProfil.Location = new System.Drawing.Point(406, 40);
+            this.btn_AddProfil.Location = new System.Drawing.Point(304, 32);
+            this.btn_AddProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddProfil.Name = "btn_AddProfil";
-            this.btn_AddProfil.Size = new System.Drawing.Size(90, 30);
+            this.btn_AddProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_AddProfil.TabIndex = 2;
             this.btn_AddProfil.Text = "Ajouter";
             this.btn_AddProfil.UseVisualStyleBackColor = true;
@@ -95,9 +97,10 @@
             // btn_EditProfil
             // 
             this.btn_EditProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_EditProfil.Location = new System.Drawing.Point(586, 40);
+            this.btn_EditProfil.Location = new System.Drawing.Point(440, 32);
+            this.btn_EditProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EditProfil.Name = "btn_EditProfil";
-            this.btn_EditProfil.Size = new System.Drawing.Size(90, 30);
+            this.btn_EditProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_EditProfil.TabIndex = 3;
             this.btn_EditProfil.Text = "Editer";
             this.btn_EditProfil.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@
             // btn_DeleteProfil
             // 
             this.btn_DeleteProfil.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_DeleteProfil.Location = new System.Drawing.Point(733, 40);
+            this.btn_DeleteProfil.Location = new System.Drawing.Point(550, 32);
+            this.btn_DeleteProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DeleteProfil.Name = "btn_DeleteProfil";
-            this.btn_DeleteProfil.Size = new System.Drawing.Size(90, 30);
+            this.btn_DeleteProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_DeleteProfil.TabIndex = 4;
             this.btn_DeleteProfil.Text = "Supprimer";
             this.btn_DeleteProfil.UseVisualStyleBackColor = true;
@@ -115,28 +119,29 @@
             // btn_Load
             // 
             this.btn_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Load.Location = new System.Drawing.Point(653, 266);
+            this.btn_Load.Location = new System.Drawing.Point(486, 234);
+            this.btn_Load.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Load.Name = "btn_Load";
-            this.btn_Load.Size = new System.Drawing.Size(170, 55);
+            this.btn_Load.Size = new System.Drawing.Size(128, 45);
             this.btn_Load.TabIndex = 5;
             this.btn_Load.Text = "Charger dans la console";
             this.btn_Load.UseVisualStyleBackColor = true;
             // 
-            // clavier1
+            // intellipad
             // 
-            this.clavier1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clavier1.Location = new System.Drawing.Point(48, 107);
-            this.clavier1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clavier1.Name = "clavier1";
-            this.clavier1.Size = new System.Drawing.Size(539, 373);
-            this.clavier1.TabIndex = 6;
+            this.intellipad.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.intellipad.Location = new System.Drawing.Point(32, 105);
+            this.intellipad.Margin = new System.Windows.Forms.Padding(2);
+            this.intellipad.Name = "intellipad";
+            this.intellipad.Size = new System.Drawing.Size(404, 303);
+            this.intellipad.TabIndex = 6;
             // 
             // U_Profils
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 516);
-            this.Controls.Add(this.clavier1);
+            this.ClientSize = new System.Drawing.Size(646, 419);
+            this.Controls.Add(this.intellipad);
             this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.btn_DeleteProfil);
             this.Controls.Add(this.btn_EditProfil);
@@ -144,9 +149,9 @@
             this.Controls.Add(this.cb_Profils);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "U_Profils";
-            this.Text = "U_choixprofils";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.U_choixprofils_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -166,6 +171,6 @@
         private System.Windows.Forms.Button btn_EditProfil;
         private System.Windows.Forms.Button btn_DeleteProfil;
         private System.Windows.Forms.Button btn_Load;
-        private Clavier clavier1;
+        private K_Intellipad intellipad;
     }
 }

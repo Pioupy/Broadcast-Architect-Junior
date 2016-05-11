@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BAJunior.View.Forms.user
 {
-    public partial class Clavier : UserControl
+    public partial class K_testkeyboard : UserControl
     {
-        public Clavier()
+        public K_testkeyboard()
         {
             InitializeComponent();
         }

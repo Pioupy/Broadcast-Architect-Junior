@@ -1,4 +1,4 @@
-﻿namespace BAJunior.View.Forms.user.keyboard
+﻿namespace BAJunior.View.Forms.user
 {
     partial class K_Intellipad
     {
