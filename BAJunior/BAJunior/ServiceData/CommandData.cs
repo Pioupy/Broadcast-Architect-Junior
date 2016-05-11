@@ -125,6 +125,7 @@ namespace BAJunior.ServiceData
         }
         public List<Param> readParamByCommand(int id)
         {
+
             List<Param> commandListParam = new List<Param>();
             string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser FROM Command c, JointPC jpc, Param p WHERE jpc.IDCommand=c.IDCommand AND jpc.IDParam=p.IDParam AND c.IDCommand=" + id + " order by c.IDCommand asc";
             try
