@@ -77,7 +77,7 @@
             // 
             this.cb_Profils.FormattingEnabled = true;
             this.cb_Profils.Location = new System.Drawing.Point(45, 32);
-            this.cb_Profils.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_Profils.Margin = new System.Windows.Forms.Padding(2);
             this.cb_Profils.Name = "cb_Profils";
             this.cb_Profils.Size = new System.Drawing.Size(172, 21);
             this.cb_Profils.TabIndex = 1;
@@ -86,7 +86,7 @@
             // 
             this.btn_AddProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_AddProfil.Location = new System.Drawing.Point(304, 32);
-            this.btn_AddProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_AddProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddProfil.Name = "btn_AddProfil";
             this.btn_AddProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_AddProfil.TabIndex = 2;
@@ -98,7 +98,7 @@
             // 
             this.btn_EditProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_EditProfil.Location = new System.Drawing.Point(440, 32);
-            this.btn_EditProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EditProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EditProfil.Name = "btn_EditProfil";
             this.btn_EditProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_EditProfil.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             this.btn_DeleteProfil.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_DeleteProfil.Location = new System.Drawing.Point(550, 32);
-            this.btn_DeleteProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_DeleteProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DeleteProfil.Name = "btn_DeleteProfil";
             this.btn_DeleteProfil.Size = new System.Drawing.Size(68, 24);
             this.btn_DeleteProfil.TabIndex = 4;
@@ -119,8 +119,8 @@
             // btn_Load
             // 
             this.btn_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Load.Location = new System.Drawing.Point(490, 216);
-            this.btn_Load.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Load.Location = new System.Drawing.Point(486, 234);
+            this.btn_Load.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Load.Name = "btn_Load";
             this.btn_Load.Size = new System.Drawing.Size(128, 45);
             this.btn_Load.TabIndex = 5;
@@ -130,8 +130,8 @@
             // intellipad
             // 
             this.intellipad.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.intellipad.Location = new System.Drawing.Point(36, 87);
-            this.intellipad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intellipad.Location = new System.Drawing.Point(32, 105);
+            this.intellipad.Margin = new System.Windows.Forms.Padding(2);
             this.intellipad.Name = "intellipad";
             this.intellipad.Size = new System.Drawing.Size(404, 303);
             this.intellipad.TabIndex = 6;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.cb_Profils);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "U_Profils";
             this.Text = " ";
             this.Load += new System.EventHandler(this.U_choixprofils_Load);
