@@ -21,7 +21,7 @@ namespace BAJunior.ServiceData
         public void create(Param pParam)
         {
             bool isUser = pParam.getIsUser() ? true : false;
-            string requete = "insert into Param (Name, Value, IsUser) values ('" + pParam.getName() + "','" + pParam.getValue() + "','" + isUser + "')";
+            string requete = "insert into Param (Name, Value, IsUser, IDCommand) values ('" + pParam.getName() + "','" + pParam.getValue() + "','" + isUser + "','" + pParam.getIdCommand() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -42,7 +42,7 @@ namespace BAJunior.ServiceData
         public void update(Param pParam)
         {
             bool isUser = pParam.getIsUser() ? true : false;
-            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', Value = '" + pParam.getValue() + "', IsUser = '" + isUser + "' WHERE IDParam = '" + pParam.getId() + "';";
+            string requete = "UPDATE Param SET Name = '" + pParam.getName() + "', Value = '" + pParam.getValue() + "', IsUser = '" + isUser + "', IDCommand = '" + pParam.getIdCommand() + "' WHERE IDParam = '" + pParam.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -92,7 +92,8 @@ namespace BAJunior.ServiceData
                     String name = r["Name"].ToString();
                     String value = r["Value"].ToString();
                     bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
-                    param = new Param(idParam, name, value, isUser);
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    param = new Param(idParam, name, value, isUser, idCommand);
                 }
             }
             catch (Exception fail)
@@ -115,7 +116,8 @@ namespace BAJunior.ServiceData
                     String name = r["Name"].ToString();
                     String value = r["Value"].ToString();
                     bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
-                    Param param = new Param(idParam, name, value, isUser);
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    Param param = new Param(idParam, name, value, isUser, idCommand);
                     paramList.Add(param);
                 }
             }
