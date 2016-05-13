@@ -40,5 +40,15 @@ namespace BAJunior.Properties {
                 return ((string)(this["TextFileHeader"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Erwan\\Documents\\GitHub\\Broadcast-Architect-Junior\\BAJunior\\BAJunior\\bin\\" +
+            "Debug\\Resources")]
+        public string DefaultImagePath {
+            get {
+                return ((string)(this["DefaultImagePath"]));
+            }
+        }
     }
 }

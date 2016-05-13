@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAJunior.ServiceData;
 using BAJunior.Model;
+using System.IO;
 
 namespace BAJunior.View.Forms.admin
 {
@@ -27,11 +28,12 @@ namespace BAJunior.View.Forms.admin
             InitializeComponent();
 
             listCat = catData.readAll();
-
             foreach (Category item in listCat)
             {
                 cb_catName.Items.Add(item.getName());
             }
+
+            getAllImages();
         }
 
         public A_Gest1Btn(Command command)
@@ -42,7 +44,9 @@ namespace BAJunior.View.Forms.admin
             buttonParam = commandData.readParamByCommand(command.getId());
 
             tb_propName.Text = command.getName();
-            tb_imagePath.Text = command.getPicture();
+        //    tb_imagePath.Text = command.getPicture();
+        
+            getAllImages();
 
             if (buttonParam[0].getName() == "vide")
             {
@@ -790,6 +794,31 @@ namespace BAJunior.View.Forms.admin
             foreach (Category item in listCat)
             {
                 cb_catName.Items.Add(item.getName());
+            }
+        }
+
+        public void getAllImages()
+        {
+            DirectoryInfo directory = new DirectoryInfo(@Properties.Settings.Default.DefaultImagePath);
+            FileInfo[] Archives = directory.GetFiles("*.bmp");
+
+            foreach (FileInfo fileinfo in Archives)
+            {
+                il_AddBtn.Images.Add(Image.FromFile(fileinfo.FullName));
+                //lv_Image.Items.Add(Image.FromFile(fileinfo.FullName));
+            }
+
+          //  lv_Image.LargeImageList = il_AddBtn;
+
+            //lv_Image.View = View.LargeIcon;
+            il_AddBtn.ImageSize = new Size(21, 21);
+            lv_Image.LargeImageList = il_AddBtn;
+
+            for (int j = 0; j < il_AddBtn.Images.Count; j++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = j;
+                lv_Image.Items.Add(item);
             }
         }
     }

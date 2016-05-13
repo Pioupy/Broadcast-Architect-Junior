@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_addCat = new System.Windows.Forms.Button();
             this.cb_catName = new System.Windows.Forms.ComboBox();
             this.tb_propName = new System.Windows.Forms.TextBox();
@@ -168,7 +170,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.il_AddBtn = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -204,6 +206,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriétés";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(312, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 24);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_addCat
             // 
@@ -262,9 +274,9 @@
             // 
             // Btn_imageBrowse
             // 
-            this.Btn_imageBrowse.Location = new System.Drawing.Point(294, 308);
+            this.Btn_imageBrowse.Location = new System.Drawing.Point(294, 306);
             this.Btn_imageBrowse.Name = "Btn_imageBrowse";
-            this.Btn_imageBrowse.Size = new System.Drawing.Size(75, 23);
+            this.Btn_imageBrowse.Size = new System.Drawing.Size(83, 23);
             this.Btn_imageBrowse.TabIndex = 2;
             this.Btn_imageBrowse.Text = "Parcourir";
             this.Btn_imageBrowse.UseVisualStyleBackColor = true;
@@ -278,9 +290,9 @@
             // 
             // lv_Image
             // 
-            this.lv_Image.Location = new System.Drawing.Point(10, 32);
+            this.lv_Image.Location = new System.Drawing.Point(6, 32);
             this.lv_Image.Name = "lv_Image";
-            this.lv_Image.Size = new System.Drawing.Size(367, 270);
+            this.lv_Image.Size = new System.Drawing.Size(371, 270);
             this.lv_Image.TabIndex = 0;
             this.lv_Image.UseCompatibleStateImageBehavior = false;
             // 
@@ -1594,15 +1606,11 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // button1
+            // il_AddBtn
             // 
-            this.button1.Location = new System.Drawing.Point(312, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 24);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.il_AddBtn.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.il_AddBtn.ImageSize = new System.Drawing.Size(32, 32);
+            this.il_AddBtn.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // A_Gest1Btn
             // 
@@ -1798,5 +1806,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ImageList il_AddBtn;
     }
 }
