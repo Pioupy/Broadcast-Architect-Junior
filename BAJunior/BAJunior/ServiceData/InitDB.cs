@@ -41,7 +41,6 @@ namespace BAJunior.ServiceData
             testUnitaireTable.testProfil();
             testUnitaireTable.testCommand();
             testUnitaireTable.testJointPAC();
-            testUnitaireTable.testJointPC();
         }
         public void testCreatedByAlexV2()
         {
@@ -55,7 +54,6 @@ namespace BAJunior.ServiceData
             //testUnitaireTable.testProfil();
             //testUnitaireTable.testCommand();
             //testUnitaireTable.testJointPAC();
-            //testUnitaireTable.testJointPC();
         }
         public void createDatabaseICAN()
         {
@@ -76,28 +74,15 @@ namespace BAJunior.ServiceData
             createTableProfil();
             createTableCommand();
             createTableJointPAC();
-            createTableJointPC();
             //Create the user : Admin
             UserData userData = new UserData();
             User userSearch = userData.read(1);// "IDUser = 1" = admin
             if (userSearch == null)
             {
-                //Create user 'admin" only if it's the first launch of software
-                /*
-                String pwd = "admin";
-                SHA256 sha = SHA256.Create();
-                byte[] data = sha.ComputeHash(Encoding.Default.GetBytes(pwd));
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sb.Append(data[i].ToString("6064060758"));
-                }
-                */
                 CtrlConnection con = new CtrlConnection();
                 User adminUser = new User("admin", con.ConvertSHA256("admin"), true);
                 userData.create(adminUser);
             }
-
             //Create categorie default
             CategoryData catagoryData = new CategoryData();
             Category categorySearch = catagoryData.read(1);
@@ -195,22 +180,9 @@ namespace BAJunior.ServiceData
                 _log.Info("The Category table has not been created.");
             }
         }
-        private void createTableJointPC()
-        {
-            string requete = "CREATE TABLE IF NOT EXISTS JointPC (IDJointPC  INTEGER PRIMARY KEY AUTOINCREMENT, IDCommand INTEGER, IDParam INTEGER, FOREIGN KEY (IDCommand) REFERENCES Command(IDCommand), FOREIGN KEY (IDParam) REFERENCES Param(IDParam))";
-            if (m_dbUtils.executeQuery(requete) == 0)
-            { 
-                _log.Info("The JointPC table thas been created.");
-            }
-            else
-            {
-                _log.Info("The JointPC table has not been created.");
-            }
-        }
-
         private void createTableParam()
         {
-            string requete = "CREATE TABLE IF NOT EXISTS Param (IDParam  INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(50), Value varchar(50), IsUser boolean not null default 0)";
+            string requete = "CREATE TABLE IF NOT EXISTS Param (IDParam  INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(50), Value varchar(50), IsUser boolean not null default 0, IDCommand INTEGER, FOREIGN KEY (IDCommand) REFERENCES Command(IDCommand))";
             if (m_dbUtils.executeQuery(requete) == 0)
             {
                 _log.Info("The Param table thas been created.");
