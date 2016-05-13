@@ -45,7 +45,7 @@ namespace BAJunior.View.Forms.admin
 
             tb_propName.Text = command.getName();
         //    tb_imagePath.Text = command.getPicture();
-        
+
             getAllImages();
 
             if (buttonParam[0].getName() == "vide")

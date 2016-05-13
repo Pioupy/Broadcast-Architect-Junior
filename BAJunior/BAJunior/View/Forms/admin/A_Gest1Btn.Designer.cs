@@ -171,6 +171,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.il_AddBtn = new System.Windows.Forms.ImageList(this.components);
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -280,6 +281,7 @@
             this.Btn_imageBrowse.TabIndex = 2;
             this.Btn_imageBrowse.Text = "Parcourir";
             this.Btn_imageBrowse.UseVisualStyleBackColor = true;
+            this.Btn_imageBrowse.Click += new System.EventHandler(this.Btn_imageBrowse_Click);
             // 
             // tb_imagePath
             // 
@@ -1606,11 +1608,13 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // openFileDialog2
             // il_AddBtn
             // 
             this.il_AddBtn.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.il_AddBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.il_AddBtn.TransparentColor = System.Drawing.Color.Transparent;
+            this.openFileDialog2.Filter = "image (*.bmp)|*.bmp";
             // 
             // A_Gest1Btn
             // 
@@ -1807,5 +1811,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ImageList il_AddBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
