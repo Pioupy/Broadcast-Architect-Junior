@@ -9,7 +9,7 @@
       <Value Profile="(Default)">VERSION,2,</Value>
     </Setting>
     <Setting Name="DefaultImagePath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\Erwan\Documents\GitHub\Broadcast-Architect-Junior\BAJunior\BAJunior\bin\Debug\Resources</Value>
+      <Value Profile="(Default)">\Resources</Value>
     </Setting>
   </Settings>
 </SettingsFile>

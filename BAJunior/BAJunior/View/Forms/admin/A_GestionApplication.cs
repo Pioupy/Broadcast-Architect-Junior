@@ -60,7 +60,6 @@ namespace BAJunior.View.Forms.admin
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 this.tb_AppsPath.Text = openFileDialog1.FileName;
-
             }
         }
     }

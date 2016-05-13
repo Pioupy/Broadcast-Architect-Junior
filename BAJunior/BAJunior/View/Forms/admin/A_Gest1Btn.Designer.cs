@@ -1608,12 +1608,14 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // openFileDialog2
             // il_AddBtn
             // 
             this.il_AddBtn.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.il_AddBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.il_AddBtn.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // openFileDialog2
+            // 
             this.openFileDialog2.Filter = "image (*.bmp)|*.bmp";
             // 
             // A_Gest1Btn

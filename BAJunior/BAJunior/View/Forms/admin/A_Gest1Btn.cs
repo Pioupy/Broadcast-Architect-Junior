@@ -44,7 +44,7 @@ namespace BAJunior.View.Forms.admin
             buttonParam = commandData.readParamByCommand(command.getId());
 
             tb_propName.Text = command.getName();
-        //    tb_imagePath.Text = command.getPicture();
+            //    tb_imagePath.Text = command.getPicture();
 
             getAllImages();
 
@@ -799,7 +799,13 @@ namespace BAJunior.View.Forms.admin
 
         public void getAllImages()
         {
-            DirectoryInfo directory = new DirectoryInfo(@Properties.Settings.Default.DefaultImagePath);
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            path = path.Replace("file:\\", "");
+
+            il_AddBtn.Images.Clear();
+            lv_Image.Items.Clear();
+
+            DirectoryInfo directory = new DirectoryInfo(@path);
             FileInfo[] Archives = directory.GetFiles("*.bmp");
 
             foreach (FileInfo fileinfo in Archives)
@@ -808,7 +814,7 @@ namespace BAJunior.View.Forms.admin
                 //lv_Image.Items.Add(Image.FromFile(fileinfo.FullName));
             }
 
-          //  lv_Image.LargeImageList = il_AddBtn;
+            //  lv_Image.LargeImageList = il_AddBtn;
 
             //lv_Image.View = View.LargeIcon;
             il_AddBtn.ImageSize = new Size(21, 21);
@@ -819,6 +825,33 @@ namespace BAJunior.View.Forms.admin
                 ListViewItem item = new ListViewItem();
                 item.ImageIndex = j;
                 lv_Image.Items.Add(item);
+            }
+        }
+
+        private void Btn_imageBrowse_Click(object sender, EventArgs e)
+        {
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            path = path.Replace("file:\\", "");
+
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                string newImage = path + "\\" + openFileDialog2.SafeFileName;
+                if (File.Exists(newImage))
+                {
+                    int i = 1;
+                    string fileName = openFileDialog2.SafeFileName.Replace(".bmp", "");
+                    newImage = path + "\\" + fileName + "(" + (i) + ").bmp";
+
+                    while (File.Exists(newImage))
+                    {
+                        i++;
+                        newImage = path + "\\" + fileName + "(" + (i) + ").bmp";
+                    }
+                }
+
+                File.Copy(openFileDialog2.FileName, newImage);
+                this.tb_imagePath.Text = newImage;
+                getAllImages();
             }
         }
     }
