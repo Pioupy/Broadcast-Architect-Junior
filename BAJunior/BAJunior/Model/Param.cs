@@ -12,24 +12,24 @@ namespace BAJunior.Model
         private String m_name;
         private String m_value;
         private bool m_isUser;
-        private int m_idCommand
+        private int m_idCommand;
 
         //Default constructor
-        public Param(String name, String value, bool isUser, int m_idCommand)
+        public Param(String name, String value, bool isUser, int idCommand)
         {
             m_name = name;
             m_value = value;
             m_isUser = isUser;
-            m_idCommand = m_idCommand;
+            m_idCommand = idCommand;
         }
         //Constructor with ID
-        public Param(int id, String name, String value, bool isUser, int m_idCommand)
+        public Param(int id, String name, String value, bool isUser, int idCommand)
         {
             m_idParam = id;
             m_name = name;
             m_value = value;
             m_isUser = isUser;
-            m_idCommand = m_idCommand;
+            m_idCommand = idCommand;
         }
         // [Getter/Setter] Int m_idUSer
         public int getId()
