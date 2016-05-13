@@ -66,11 +66,11 @@ namespace BAJunior.Model
             this.m_isUser = isUser;
         }
         // [Getter/Setter] Int m_idCommand
-        public int getId()
+        public int getIdCommand()
         {
             return this.m_idCommand;
         }
-        public void setId(int idCommand)
+        public void setIdCommand(int idCommand)
         {
             this.m_idCommand = idCommand;
         }
