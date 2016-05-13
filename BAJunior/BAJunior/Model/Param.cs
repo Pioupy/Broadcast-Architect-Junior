@@ -12,6 +12,7 @@ namespace BAJunior.Model
         private String m_name;
         private String m_value;
         private bool m_isUser;
+        private int m_idCommand
 
         //Default constructor
         public Param(String name, String value, bool isUser)
@@ -63,6 +64,15 @@ namespace BAJunior.Model
         public void setIsUser(bool isUser)
         {
             this.m_isUser = isUser;
+        }
+        // [Getter/Setter] Int m_idCommand
+        public int getId()
+        {
+            return this.m_idCommand;
+        }
+        public void setId(int idCommand)
+        {
+            this.m_idCommand = idCommand;
         }
     }
 }
