@@ -832,6 +832,9 @@ namespace BAJunior.View.Forms.admin
         {
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
             path = path.Replace("file:\\", "");
+            //TODO Peut etre deplacer ça dans le dossier application data, pour les droits 
+            //var systemPath = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            //var complete = Path.Combine(systemPath, Properties.Settings.Default.DefaultImagePath);
 
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
