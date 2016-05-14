@@ -47,7 +47,7 @@ namespace BAJunior.View.Forms.user
             [2:57] la t'a le répertoire ou y'a les images
             [2:58] apres, pour chopé les images etc, c'est surment plsu chaud que le repertoire image DANS le truc*/
             foreach (Command cmd in listBtns) {
-                Bitmap img = (Bitmap)Image.FromFile(cmd.getPicture(), true);
+                Bitmap img = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + cmd.getPicture(), true);
                 imageList.Images.Add(cmd.getPicture(), img);                
             }
             listViewBtns.LargeImageList = imageList;
