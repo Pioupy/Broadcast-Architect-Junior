@@ -96,6 +96,7 @@
             this.key1.Size = new System.Drawing.Size(70, 70);
             this.key1.TabIndex = 0;
             this.key1.TabStop = false;
+            this.key1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key1_MouseUp);
             // 
             // key2
             // 

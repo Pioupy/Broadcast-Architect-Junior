@@ -95,6 +95,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(70, 70);
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
             // 
             // pictureBox4
             // 

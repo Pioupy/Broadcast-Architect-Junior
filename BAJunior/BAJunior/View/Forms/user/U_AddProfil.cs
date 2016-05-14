@@ -20,6 +20,8 @@ namespace BAJunior.View.Forms.user
         private String m_nameProfile;
         private String m_nameKeyboard;
         private List<String> m_nameApplication = new List<string>();
+        private Command m_commandDragAndDrop;
+        private int countListBtn;
         public U_AddProfil()
         {
             InitializeComponent();
@@ -75,12 +77,12 @@ namespace BAJunior.View.Forms.user
             {
                 if (nameKeyboard == "Intellipad")
                 {
-                    var keyboardClass = new K_Intellipad();
+                    var keyboardClass = new K_Intellipad(this);
                     panel_keyboard.Controls.Add(keyboardClass);
                 }
                 else if (nameKeyboard == "testkeyboard")
                 {
-                    var keyboardClass = new K_testkeyboard();
+                    var keyboardClass = new K_testkeyboard(this);
                     panel_keyboard.Controls.Add(keyboardClass);
                 }
                 else
@@ -133,13 +135,50 @@ namespace BAJunior.View.Forms.user
             lv_application.Items.Add(application);
             m_nameApplication.Add(application);
         }
+
+
         /*#######################################
-          #    CODE GESTION DES BOUTONS         #
-          #######################################*/
+         #    CODE GESTION DES BOUTONS         #
+         #######################################*/
 
         /*#######################################
           #    CODE GESTION DES KEYBOARD        #
           #######################################*/
 
+        /*#######################################
+          #    CODE GESTION DRAG AND DROP       #
+          #######################################*/
+        private void listViewBtns_MouseDown(object sender, MouseEventArgs e)
+        {
+            Point mouseDownLocation = new Point(e.X, e.Y);
+            // Récupérer l'index
+            ListViewHitTestInfo info = listViewBtns.HitTest(e.X, e.Y);
+            if (info.Item != null) { countListBtn = info.Item.Index;}
+            // Set données
+            CommandData commandData = new CommandData();
+            Command command = commandData.readByName(listViewBtns.Items[countListBtn].Text);
+            setCommand(command);
+            //Les mystères de la vie
+            listViewBtns.Focus();
+            //listViewBtns.Invalidate();
+        }
+        public Command getCommand()
+        {
+            return this.m_commandDragAndDrop;
+        }
+        public void setCommand(Command command)
+        {
+            this.m_commandDragAndDrop = command;
+        }
+        /*
+        private void listViewBtns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewBtns.SelectedItems.Count > 0)
+            {
+                countListBtn = listViewBtns.Items.IndexOf(listViewBtns.SelectedItems[0]);
+                //listViewBtns.addApplication(lv_application.Items[count].Text);
+            }
+        }
+        */
     }
 }

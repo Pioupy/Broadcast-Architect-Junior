@@ -127,6 +127,7 @@
             this.listViewBtns.Size = new System.Drawing.Size(409, 270);
             this.listViewBtns.TabIndex = 1;
             this.listViewBtns.UseCompatibleStateImageBehavior = false;
+            this.listViewBtns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewBtns_MouseDown);
             // 
             // labelLambdaBoutons
             // 
