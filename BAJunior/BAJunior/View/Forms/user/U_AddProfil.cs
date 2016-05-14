@@ -69,9 +69,22 @@ namespace BAJunior.View.Forms.user
             String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + nameKeyboard + ".cs";
             if (File.Exists(fileKeyboard))
             {
-                //sMessageBox.Show("existe");
-                var keyboardClass = new K_Intellipad();
-                panel_keyboard.Controls.Add(keyboardClass);
+                if (nameKeyboard == "Intellipad")
+                {
+                    var keyboardClass = new K_Intellipad();
+                    panel_keyboard.Controls.Add(keyboardClass);
+                }
+                else if (nameKeyboard == "testkeyboard")
+                {
+                    var keyboardClass = new K_testkeyboard();
+                    panel_keyboard.Controls.Add(keyboardClass);
+                }
+                else
+                {
+                    //gerer lerreur affichage !
+                    MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
+                }
+                
             }
             else
             {
