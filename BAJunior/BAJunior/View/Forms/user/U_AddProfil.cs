@@ -41,9 +41,13 @@ namespace BAJunior.View.Forms.user
             // Gestion de l'affichage de la liste des boutons
             listBtns = commandData.readAll();
             var imageList = new ImageList();
+            /* string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            path = path.Replace("file:\\", "");
 
+            [2:57] la t'a le répertoire ou y'a les images
+            [2:58] apres, pour chopé les images etc, c'est surment plsu chaud que le repertoire image DANS le truc*/
             foreach (Command cmd in listBtns) {
-                Bitmap img = (Bitmap)Image.FromFile("Image/"+cmd.getPicture(), true);
+                Bitmap img = (Bitmap)Image.FromFile(cmd.getPicture(), true);
                 imageList.Images.Add(cmd.getPicture(), img);                
             }
             listViewBtns.LargeImageList = imageList;
