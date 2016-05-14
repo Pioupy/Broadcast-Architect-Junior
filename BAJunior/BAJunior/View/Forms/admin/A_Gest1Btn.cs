@@ -748,8 +748,8 @@ namespace BAJunior.View.Forms.admin
                         paramData.create(item);
                        // jointPCData.create(new JointPC(item.getId(), commandData.readByName(actualCommand.getName()).getId()));
                     }
-
-                    Form.ActiveForm.Close();
+                    
+                    this.Close();
                 }
             }
             else

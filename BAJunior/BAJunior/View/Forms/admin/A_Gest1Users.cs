@@ -56,8 +56,8 @@ namespace BAJunior.View.Forms.admin
                     actual = new User(tb_id.Text, con.ConvertSHA256(tb_password.Text), rbtn_yes.Checked);
                     bdd.create(actual);
                 }
-
-                Form.ActiveForm.Close();
+                
+                this.Close();
             }
             else
                 MessageBox.Show("Veuillez remplir tous les champs");

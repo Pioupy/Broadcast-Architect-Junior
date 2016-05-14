@@ -48,8 +48,8 @@ namespace BAJunior.View.Forms.admin
                     actualApps = new Model.Application(tb_NameApps.Text, tb_AppsPath.Text);
                     bdd.create(actualApps);
                 }
-
-                Form.ActiveForm.Close();
+                
+                this.Close();
             }
             else
                 MessageBox.Show("Veuillez replir tous les champs.");
