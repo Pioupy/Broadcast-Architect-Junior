@@ -1030,9 +1030,9 @@
             this.lbl_type14.AutoSize = true;
             this.lbl_type14.Location = new System.Drawing.Point(247, 748);
             this.lbl_type14.Name = "lbl_type14";
-            this.lbl_type14.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type14.Size = new System.Drawing.Size(56, 17);
             this.lbl_type14.TabIndex = 111;
-            this.lbl_type14.Text = "Valeur :";
+            this.lbl_type14.Text = " Type  :";
             // 
             // tb_nom14
             // 
@@ -1071,9 +1071,9 @@
             this.lbl_type13.AutoSize = true;
             this.lbl_type13.Location = new System.Drawing.Point(247, 693);
             this.lbl_type13.Name = "lbl_type13";
-            this.lbl_type13.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type13.Size = new System.Drawing.Size(56, 17);
             this.lbl_type13.TabIndex = 103;
-            this.lbl_type13.Text = "Valeur :";
+            this.lbl_type13.Text = " Type  :";
             // 
             // tb_nom13
             // 
@@ -1112,9 +1112,9 @@
             this.lbl_type12.AutoSize = true;
             this.lbl_type12.Location = new System.Drawing.Point(247, 638);
             this.lbl_type12.Name = "lbl_type12";
-            this.lbl_type12.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type12.Size = new System.Drawing.Size(56, 17);
             this.lbl_type12.TabIndex = 95;
-            this.lbl_type12.Text = "Valeur :";
+            this.lbl_type12.Text = " Type  :";
             // 
             // tb_nom12
             // 
@@ -1153,9 +1153,9 @@
             this.lbl_type11.AutoSize = true;
             this.lbl_type11.Location = new System.Drawing.Point(247, 583);
             this.lbl_type11.Name = "lbl_type11";
-            this.lbl_type11.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type11.Size = new System.Drawing.Size(56, 17);
             this.lbl_type11.TabIndex = 87;
-            this.lbl_type11.Text = "Valeur :";
+            this.lbl_type11.Text = " Type  :";
             // 
             // tb_nom11
             // 
@@ -1194,9 +1194,9 @@
             this.lbl_type10.AutoSize = true;
             this.lbl_type10.Location = new System.Drawing.Point(247, 528);
             this.lbl_type10.Name = "lbl_type10";
-            this.lbl_type10.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type10.Size = new System.Drawing.Size(56, 17);
             this.lbl_type10.TabIndex = 79;
-            this.lbl_type10.Text = "Valeur :";
+            this.lbl_type10.Text = " Type  :";
             // 
             // tb_nom10
             // 
@@ -1235,9 +1235,9 @@
             this.lbl_type9.AutoSize = true;
             this.lbl_type9.Location = new System.Drawing.Point(247, 473);
             this.lbl_type9.Name = "lbl_type9";
-            this.lbl_type9.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type9.Size = new System.Drawing.Size(56, 17);
             this.lbl_type9.TabIndex = 71;
-            this.lbl_type9.Text = "Valeur :";
+            this.lbl_type9.Text = " Type  :";
             // 
             // tb_nom9
             // 
@@ -1276,9 +1276,9 @@
             this.lbl_type8.AutoSize = true;
             this.lbl_type8.Location = new System.Drawing.Point(247, 418);
             this.lbl_type8.Name = "lbl_type8";
-            this.lbl_type8.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type8.Size = new System.Drawing.Size(56, 17);
             this.lbl_type8.TabIndex = 63;
-            this.lbl_type8.Text = "Valeur :";
+            this.lbl_type8.Text = " Type  :";
             // 
             // tb_nom8
             // 
@@ -1317,9 +1317,9 @@
             this.lbl_type7.AutoSize = true;
             this.lbl_type7.Location = new System.Drawing.Point(247, 363);
             this.lbl_type7.Name = "lbl_type7";
-            this.lbl_type7.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type7.Size = new System.Drawing.Size(56, 17);
             this.lbl_type7.TabIndex = 55;
-            this.lbl_type7.Text = "Valeur :";
+            this.lbl_type7.Text = " Type  :";
             // 
             // tb_nom7
             // 
@@ -1358,9 +1358,9 @@
             this.lbl_type6.AutoSize = true;
             this.lbl_type6.Location = new System.Drawing.Point(247, 308);
             this.lbl_type6.Name = "lbl_type6";
-            this.lbl_type6.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type6.Size = new System.Drawing.Size(56, 17);
             this.lbl_type6.TabIndex = 47;
-            this.lbl_type6.Text = "Valeur :";
+            this.lbl_type6.Text = " Type  :";
             // 
             // tb_nom6
             // 
@@ -1399,9 +1399,9 @@
             this.lbl_type5.AutoSize = true;
             this.lbl_type5.Location = new System.Drawing.Point(247, 253);
             this.lbl_type5.Name = "lbl_type5";
-            this.lbl_type5.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type5.Size = new System.Drawing.Size(56, 17);
             this.lbl_type5.TabIndex = 39;
-            this.lbl_type5.Text = "Valeur :";
+            this.lbl_type5.Text = " Type  :";
             // 
             // tb_nom5
             // 
@@ -1440,9 +1440,9 @@
             this.lbl_type4.AutoSize = true;
             this.lbl_type4.Location = new System.Drawing.Point(247, 198);
             this.lbl_type4.Name = "lbl_type4";
-            this.lbl_type4.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type4.Size = new System.Drawing.Size(56, 17);
             this.lbl_type4.TabIndex = 31;
-            this.lbl_type4.Text = "Valeur :";
+            this.lbl_type4.Text = " Type  :";
             // 
             // tb_nom4
             // 
@@ -1497,9 +1497,9 @@
             this.lbl_type3.AutoSize = true;
             this.lbl_type3.Location = new System.Drawing.Point(247, 143);
             this.lbl_type3.Name = "lbl_type3";
-            this.lbl_type3.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type3.Size = new System.Drawing.Size(56, 17);
             this.lbl_type3.TabIndex = 23;
-            this.lbl_type3.Text = "Valeur :";
+            this.lbl_type3.Text = " Type  :";
             // 
             // label4
             // 
@@ -1538,9 +1538,9 @@
             this.lbl_type1.AutoSize = true;
             this.lbl_type1.Location = new System.Drawing.Point(247, 33);
             this.lbl_type1.Name = "lbl_type1";
-            this.lbl_type1.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type1.Size = new System.Drawing.Size(56, 17);
             this.lbl_type1.TabIndex = 7;
-            this.lbl_type1.Text = "Valeur :";
+            this.lbl_type1.Text = " Type  :";
             // 
             // label10
             // 
@@ -1579,9 +1579,9 @@
             this.lbl_type2.AutoSize = true;
             this.lbl_type2.Location = new System.Drawing.Point(247, 88);
             this.lbl_type2.Name = "lbl_type2";
-            this.lbl_type2.Size = new System.Drawing.Size(57, 17);
+            this.lbl_type2.Size = new System.Drawing.Size(56, 17);
             this.lbl_type2.TabIndex = 15;
-            this.lbl_type2.Text = "Valeur :";
+            this.lbl_type2.Text = " Type  :";
             // 
             // label6
             // 
@@ -1631,6 +1631,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "A_Gest1Btn";
+            this.Text = " Type  :";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
