@@ -32,7 +32,8 @@ namespace BAJunior.View.Forms.admin
         private void btn_AddBtn_Click(object sender, EventArgs e)
         {
             var PopUp = new A_Gest1Btn();
-            PopUp.Show();
+            PopUp.ShowDialog();
+            refreshLvButton();
         }
 
         private void btn_EditBtn_Click(object sender, EventArgs e)
@@ -42,7 +43,8 @@ namespace BAJunior.View.Forms.admin
                 Command buttonSelected = commands.Where(item => item.getName() == lv_Button.SelectedItems[0].Text).FirstOrDefault();
 
                 var PopUp = new A_Gest1Btn(buttonSelected);
-                PopUp.Show();
+                PopUp.ShowDialog();
+                refreshLvButton();
             }
             else
                 MessageBox.Show("Veuillez séléctionner un bouton.");
@@ -56,18 +58,23 @@ namespace BAJunior.View.Forms.admin
                 if (resultat == DialogResult.Yes)
                 {
                     command.delete(commands.Where(item => item.getName() == lv_Button.SelectedItems[0].Text).FirstOrDefault());
-
-                    lv_Button.Clear();
-                    commands.Clear();
-                    commands = command.readAll();
-                    foreach (Command item in commands)
-                    {
-                        lv_Button.Items.Add(item.getName());
-                    }
+                    refreshLvButton();
                 }
             }
             else
                 MessageBox.Show("Veuillez séléctionner un bouton.");
+        }
+
+        private void refreshLvButton()
+        {
+            lv_Button.Items.Clear();
+            commands.Clear();
+
+            commands = command.readAll();
+            foreach (Command item in commands)
+            {
+                lv_Button.Items.Add(item.getName());
+            }
         }
     }
 }
