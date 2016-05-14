@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using BAJunior.ServiceData;
 using BAJunior.Model;
+using BAJunior.View.Forms.user;
 using System.IO;
 
 namespace BAJunior.View.Forms.user
@@ -65,16 +66,18 @@ namespace BAJunior.View.Forms.user
                 //je crois que le bouton en faite se crée par dessus le premier !!!
             }
             // Gestion de l'affichage/génération du clavier  par défaut
-
-            if(File.Exists("/keyboard/K_" + nameKeyboard + ".cs"))
+            String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + nameKeyboard + ".cs";
+            if (File.Exists(fileKeyboard))
             {
-                MessageBox.Show("existe");
+                //sMessageBox.Show("existe");
+                var keyboardClass = new K_Intellipad();
+                panel_keyboard.Controls.Add(keyboardClass);
             }
             else
             {
-                MessageBox.Show("existe pas");
+                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum");
             }
-
+            
         }
         /*#######################################
           #       CODE GESTION XML              #

@@ -243,6 +243,9 @@
     <EmbeddedResource Include="View\Forms\FormDeTest.resx">
       <DependentUpon>FormDeTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\keyboard\K_Intellipad.resx">
+      <DependentUpon>K_Intellipad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\keyboard\K_testkeyboard.resx">
       <DependentUpon>K_testkeyboard.cs</DependentUpon>
     </EmbeddedResource>

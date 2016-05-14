@@ -15,7 +15,7 @@ namespace BAJunior
         {
             // TODO : Beaucoup de commentaire de ma part ( alex ), bien sur à la fin, il n'y aura que les 3 lignes qui appellent connectioon.cs dans le main.
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            bool testAlexandre = true;
+            bool testAlexandre = false;
             // éxécute le if que si c'est Alexandre qui lance le programme. Need pour tester mes classes non "visuel"
             if ((userName == "Alex\\Alex.G") && (testAlexandre == true))
             {
