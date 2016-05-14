@@ -240,8 +240,8 @@ namespace BAJunior.ServiceData
         {
             //Initiation Variable : 
             ParamData paramData = new ParamData();
-            Param paramOne = new Param("testParam1","test1",true);
-            Param paramTwo = new Param("testParam2", "test2", false);
+            Param paramOne = new Param("testParam1","test1",true, 1);
+            Param paramTwo = new Param("testParam2", "test2", false, 2);
             // insert valeur 
             paramData.create(paramOne);
             paramData.create(paramTwo);
@@ -356,47 +356,6 @@ namespace BAJunior.ServiceData
                 for (int i = 0; i < resultAll.Count; i++)
                 {
                     MessageBox.Show("JointPAC " + i + " : " + resultAll[i].getBtnKeyboard().ToString());
-                }
-            }
-        }
-        public void testJointPC()
-        {
-            //Initiation Variable : 
-            JointPCData jointPCData = new JointPCData();
-            JointPC jointPCOne = new JointPC(1,1);
-            JointPC jointPCTwo = new JointPC(2,2);
-            // insert valeur 
-            jointPCData.create(jointPCOne);
-            jointPCData.create(jointPCTwo);
-            // read values 
-            jointPCOne = jointPCData.read(1);
-            jointPCTwo = jointPCData.read(2);
-            if (seeMessage == true)
-            {
-                MessageBox.Show("JointPC One :" + jointPCOne.getIdCommand().ToString());
-                MessageBox.Show("JointPC two :" + jointPCTwo.getIdCommand().ToString());
-            }
-            // update values 
-            jointPCOne.setIdCommand(10);
-            jointPCData.update(jointPCOne);
-            // read values
-            if (seeMessage == true)
-            {
-                List<JointPC> result = jointPCData.readAll();
-                for (int i = 0; i < result.Count; i++)
-                {
-                    MessageBox.Show("JointPC " + i + " : " + result[i].getIdCommand().ToString());
-                }
-            }
-            // delete values
-            jointPCData.delete(jointPCTwo);
-            // read value
-            if (seeMessage == true)
-            {
-                List<JointPC> resultAll = jointPCData.readAll();
-                for (int i = 0; i < resultAll.Count; i++)
-                {
-                    MessageBox.Show("JointPC " + i + " : " + resultAll[i].getIdCommand().ToString());
                 }
             }
         }

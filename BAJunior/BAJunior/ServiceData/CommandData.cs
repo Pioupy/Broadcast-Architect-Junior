@@ -138,7 +138,8 @@ namespace BAJunior.ServiceData
                     String name = r["Name"].ToString();
                     String value = r["Value"].ToString();
                     bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
-                    Param param = new Param(idParam, name, value, isUser);
+                    int idCommand = Convert.ToInt32(r["IDCommand"]);
+                    Param param = new Param(idParam, name, value, isUser, idCommand);
                     commandListParam.Add(param);
                 }
             }
