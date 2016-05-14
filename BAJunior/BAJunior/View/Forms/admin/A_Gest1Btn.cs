@@ -20,12 +20,14 @@ namespace BAJunior.View.Forms.admin
         List<Category> listCat;
         CommandData commandData = new CommandData();
         ParamData paramData = new ParamData();
-      //  JointPCData jointPCData = new JointPCData();
         CategoryData catData = new CategoryData();
+        string pathImage = "";
 
         public A_Gest1Btn()
         {
             InitializeComponent();
+            pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            pathImage = pathImage.Replace("file:\\", "");
 
             listCat = catData.readAll();
             foreach (Category item in listCat)
@@ -33,19 +35,30 @@ namespace BAJunior.View.Forms.admin
                 cb_catName.Items.Add(item.getName());
             }
 
+            pb_btn.Image = Image.FromFile(pathImage + "\\default.bmp");
             getAllImages();
         }
 
         public A_Gest1Btn(Command command)
         {
             InitializeComponent();
+            pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            pathImage = pathImage.Replace("file:\\", "");
             actualCommand = command;
+
+            listCat = catData.readAll();
+            foreach (Category item in listCat)
+            {
+                cb_catName.Items.Add(item.getName());
+            }
+           cb_catName.SelectedIndex = cb_catName.FindString(listCat.Where(item => item.getId() == actualCommand.getIdCategory()).FirstOrDefault().getName());
 
             buttonParam = commandData.readParamByCommand(command.getId());
 
             tb_propName.Text = command.getName();
-            //    tb_imagePath.Text = command.getPicture();
+            tb_imagePath.Text = command.getPicture();
 
+            pb_btn.Image = Image.FromFile(pathImage + "\\" + actualCommand.getPicture());
             getAllImages();
 
             if (buttonParam[0].getName() == "vide")
@@ -487,12 +500,12 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix1.Checked)
             {
-                lbl_type1.Text = " Type  :";
+                lbl_type1.Text = "Valeur :";
                 //tb_valor1.Hide(); cacher la tb et montrer la cb => trop complex
             }
             else
             {
-                lbl_type1.Text = "Valeur :";
+                lbl_type1.Text = " Type  :";
             }
         }
 
@@ -500,11 +513,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix2.Checked)
             {
-                lbl_type2.Text = " Type  :";
+                lbl_type2.Text = "Valeur :";
             }
             else
             {
-                lbl_type2.Text = "Valeur :";
+                lbl_type2.Text = " Type  :";
             }
         }
 
@@ -512,11 +525,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix3.Checked)
             {
-                lbl_type3.Text = " Type  :";
+                lbl_type3.Text = "Valeur :";
             }
             else
             {
-                lbl_type3.Text = "Valeur :";
+                lbl_type3.Text = " Type  :";
             }
         }
 
@@ -524,11 +537,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix4.Checked)
             {
-                lbl_type4.Text = " Type  :";
+                lbl_type4.Text = "Valeur :";
             }
             else
             {
-                lbl_type4.Text = "Valeur :";
+                lbl_type4.Text = " Type  :";
             }
         }
 
@@ -536,11 +549,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix5.Checked)
             {
-                lbl_type5.Text = " Type  :";
+                lbl_type5.Text = "Valeur :";
             }
             else
             {
-                lbl_type5.Text = "Valeur :";
+                lbl_type5.Text = " Type  :";
             }
         }
 
@@ -548,11 +561,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix6.Checked)
             {
-                lbl_type6.Text = " Type  :";
+                lbl_type6.Text = "Valeur :";
             }
             else
             {
-                lbl_type6.Text = "Valeur :";
+                lbl_type6.Text = " Type  :";
             }
         }
 
@@ -560,11 +573,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix7.Checked)
             {
-                lbl_type7.Text = " Type  :";
+                lbl_type7.Text = "Valeur :";
             }
             else
             {
-                lbl_type7.Text = "Valeur :";
+                lbl_type7.Text = " Type  :";
             }
         }
 
@@ -572,11 +585,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix8.Checked)
             {
-                lbl_type8.Text = " Type  :";
+                lbl_type8.Text = "Valeur :";
             }
             else
             {
-                lbl_type8.Text = "Valeur :";
+                lbl_type8.Text = " Type  :";
             }
         }
 
@@ -584,11 +597,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix9.Checked)
             {
-                lbl_type9.Text = " Type  :";
+                lbl_type9.Text = "Valeur :";
             }
             else
             {
-                lbl_type9.Text = "Valeur :";
+                lbl_type9.Text = " Type  :";
             }
         }
 
@@ -596,11 +609,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix10.Checked)
             {
-                lbl_type10.Text = " Type  :";
+                lbl_type10.Text = "Valeur :";
             }
             else
             {
-                lbl_type10.Text = "Valeur :";
+                lbl_type10.Text = " Type  :";
             }
         }
 
@@ -608,11 +621,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix11.Checked)
             {
-                lbl_type11.Text = " Type  :";
+                lbl_type11.Text = "Valeur :";
             }
             else
             {
-                lbl_type11.Text = "Valeur :";
+                lbl_type11.Text = " Type  :";
             }
         }
 
@@ -620,11 +633,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix12.Checked)
             {
-                lbl_type12.Text = " Type  :";
+                lbl_type12.Text = "Valeur :";
             }
             else
             {
-                lbl_type12.Text = "Valeur :";
+                lbl_type12.Text = " Type  :";
             }
         }
 
@@ -632,11 +645,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix13.Checked)
             {
-                lbl_type13.Text = " Type  :";
+                lbl_type13.Text = "Valeur :";
             }
             else
             {
-                lbl_type13.Text = "Valeur :";
+                lbl_type13.Text = " Type  :";
             }
         }
 
@@ -644,11 +657,11 @@ namespace BAJunior.View.Forms.admin
         {
             if (rbtn_fix14.Checked)
             {
-                lbl_type14.Text = " Type  :";
+                lbl_type14.Text = "Valeur :";
             }
             else
             {
-                lbl_type14.Text = "Valeur :";
+                lbl_type14.Text = " Type  :";
             }
         }
 
@@ -800,33 +813,38 @@ namespace BAJunior.View.Forms.admin
 
         public void getAllImages()
         {
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
-            path = path.Replace("file:\\", "");
-
             il_AddBtn.Images.Clear();
             lv_Image.Items.Clear();
 
-            DirectoryInfo directory = new DirectoryInfo(@path);
+            DirectoryInfo directory = new DirectoryInfo(pathImage);
             FileInfo[] Archives = directory.GetFiles("*.bmp");
 
             foreach (FileInfo fileinfo in Archives)
             {
-                il_AddBtn.Images.Add(Image.FromFile(fileinfo.FullName));
+                il_AddBtn.Images.Add(fileinfo.FullName, Image.FromFile(fileinfo.FullName));
                 //lv_Image.Items.Add(Image.FromFile(fileinfo.FullName));
             }
 
             //  lv_Image.LargeImageList = il_AddBtn;
-
             //lv_Image.View = View.LargeIcon;
             il_AddBtn.ImageSize = new Size(21, 21);
             lv_Image.LargeImageList = il_AddBtn;
 
-            for (int j = 0; j < il_AddBtn.Images.Count; j++)
+            int j = 0;
+            foreach (FileInfo fileinfo in Archives)
             {
-                ListViewItem item = new ListViewItem();
-                item.ImageIndex = j;
-                lv_Image.Items.Add(item);
+                var listViewItem = lv_Image.Items.Add(fileinfo.Name);
+                listViewItem.ImageKey = fileinfo.FullName;
+                listViewItem.ImageIndex = j;
+                j++;
             }
+
+            //for (int j = 0; j < il_AddBtn.Images.Count; j++)
+            //{
+            //    ListViewItem item = new ListViewItem();
+            //    item.ImageIndex = j;
+            //    lv_Image.Items.Add(item);
+            //}
         }
 
         private void Btn_imageBrowse_Click(object sender, EventArgs e)
@@ -836,6 +854,7 @@ namespace BAJunior.View.Forms.admin
             //TODO Peut etre deplacer ça dans le dossier application data, pour les droits 
             //var systemPath = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
             //var complete = Path.Combine(systemPath, Properties.Settings.Default.DefaultImagePath);
+            string fileName = openFileDialog2.SafeFileName;
 
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
@@ -843,19 +862,31 @@ namespace BAJunior.View.Forms.admin
                 if (File.Exists(newImage))
                 {
                     int i = 1;
-                    string fileName = openFileDialog2.SafeFileName.Replace(".bmp", "");
-                    newImage = path + "\\" + fileName + "(" + (i) + ").bmp";
+                    fileName = openFileDialog2.SafeFileName.Replace(".bmp", "");
+                    newImage = path + "\\" + fileName + " (" + (i) + ").bmp";
 
                     while (File.Exists(newImage))
                     {
                         i++;
-                        newImage = path + "\\" + fileName + "(" + (i) + ").bmp";
+                        newImage = path + "\\" + fileName + " (" + (i) + ").bmp";
                     }
+                    fileName = fileName + " (" + (i) + ").bmp";
                 }
 
                 File.Copy(openFileDialog2.FileName, newImage);
-                this.tb_imagePath.Text = newImage;
+                this.tb_imagePath.Text = fileName;
+                pb_btn.Image = Image.FromFile(pathImage + "\\" + fileName);
+                //mettre en surbrillance l'image incluse                
                 getAllImages();
+            }
+        }
+
+        private void lv_Image_Click(object sender, EventArgs e)
+        {
+            if (lv_Image.SelectedItems[0] != null)
+            {
+                tb_imagePath.Text = lv_Image.SelectedItems[0].Text;
+                pb_btn.Image = Image.FromFile(pathImage + "\\" + lv_Image.SelectedItems[0].Text);
             }
         }
     }

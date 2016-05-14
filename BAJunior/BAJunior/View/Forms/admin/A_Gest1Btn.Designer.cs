@@ -168,7 +168,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_type2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_btn = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.il_AddBtn = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
@@ -190,7 +190,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -287,6 +287,7 @@
             // 
             this.tb_imagePath.Location = new System.Drawing.Point(6, 306);
             this.tb_imagePath.Name = "tb_imagePath";
+            this.tb_imagePath.ReadOnly = true;
             this.tb_imagePath.Size = new System.Drawing.Size(282, 22);
             this.tb_imagePath.TabIndex = 1;
             // 
@@ -297,6 +298,7 @@
             this.lv_Image.Size = new System.Drawing.Size(371, 270);
             this.lv_Image.TabIndex = 0;
             this.lv_Image.UseCompatibleStateImageBehavior = false;
+            this.lv_Image.Click += new System.EventHandler(this.lv_Image_Click);
             // 
             // groupBox3
             // 
@@ -1590,13 +1592,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nom :";
             // 
-            // pictureBox1
+            // pb_btn
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(171, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pb_btn.Location = new System.Drawing.Point(160, 36);
+            this.pb_btn.Name = "pb_btn";
+            this.pb_btn.Size = new System.Drawing.Size(51, 50);
+            this.pb_btn.TabIndex = 3;
+            this.pb_btn.TabStop = false;
             // 
             // btn_save
             // 
@@ -1624,7 +1626,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 592);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb_btn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1664,7 +1666,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1682,7 +1684,7 @@
         private System.Windows.Forms.Button Btn_imageBrowse;
         private System.Windows.Forms.TextBox tb_imagePath;
         private System.Windows.Forms.ListView lv_Image;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_btn;
         private System.Windows.Forms.TextBox tb_valor1;
         private System.Windows.Forms.Label lbl_type1;
         private System.Windows.Forms.TextBox tb_nom1;
