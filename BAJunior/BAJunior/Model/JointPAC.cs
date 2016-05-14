@@ -13,7 +13,7 @@ namespace BAJunior.Model
         private int m_bank;
         private int m_idProfil;
         private int m_idApplication;
-        private int m_idCommand;
+        private int m_idCommandUser;
 
         //Default constructor
         public JointPAC(int btnKeyboard, int bank, int idProfil, int idApplication, int idCommand)
@@ -22,7 +22,7 @@ namespace BAJunior.Model
             m_bank = bank;
             m_idProfil = idProfil;
             m_idApplication = idApplication;
-            m_idCommand = idCommand;
+            m_idCommandUser = idCommand;
         }
         //Constructor with ID
         public JointPAC(int id, int btnKeyboard, int bank, int idProfil, int idApplication, int idCommand)
@@ -32,7 +32,7 @@ namespace BAJunior.Model
             m_bank = bank;
             m_idProfil = idProfil;
             m_idApplication = idApplication;
-            m_idCommand = idCommand;
+            m_idCommandUser = idCommand;
         }
         // [Getter/Setter] Int m_idJointPEC
         public int getId()
@@ -80,13 +80,13 @@ namespace BAJunior.Model
             this.m_idApplication = idApplication;
         }
         // [Getter/Setter] Int m_idCommand
-        public int getIdCommand()
+        public int getIdCommandUser()
         {
-            return this.m_idCommand;
+            return this.m_idCommandUser;
         }
-        public void setIdCommand(int idCommand)
+        public void setIdCommandUser(int idCommandUser)
         {
-            this.m_idCommand = idCommand;
+            this.m_idCommandUser = idCommandUser;
         }
     }
 }

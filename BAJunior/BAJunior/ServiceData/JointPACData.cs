@@ -20,7 +20,7 @@ namespace BAJunior.ServiceData
         }
         public void create(JointPAC pJointPAC)
         {
-            string requete = "insert into JointPAC (BtnKeyboard, Bank, IDProfil, IDApplication, IDCommand) values ('" + pJointPAC.getBtnKeyboard() + "','" + pJointPAC.getBank() + "','" + pJointPAC.getIdProfil() + "','" + pJointPAC.getIdApplication() + "','" + pJointPAC.getIdCommand() + "')";
+            string requete = "insert into JointPAC (BtnKeyboard, Bank, IDProfil, IDApplication, IDCommandUser) values ('" + pJointPAC.getBtnKeyboard() + "','" + pJointPAC.getBank() + "','" + pJointPAC.getIdProfil() + "','" + pJointPAC.getIdApplication() + "','" + pJointPAC.getIdCommandUser() + "')";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -40,7 +40,7 @@ namespace BAJunior.ServiceData
         }
         public void update(JointPAC pJointPAC)
         {
-            string requete = "UPDATE JointPAC SET BtnKeyboard = '" + pJointPAC.getBtnKeyboard() + "', Bank = '" + pJointPAC.getBank() + "', IDProfil = '" + pJointPAC.getIdProfil() + "', IDApplication = '" + pJointPAC.getIdApplication() + "', IDCommand = '" + pJointPAC.getIdCommand() + "' WHERE IDJointPAC = '" + pJointPAC.getId() + "';";
+            string requete = "UPDATE JointPAC SET BtnKeyboard = '" + pJointPAC.getBtnKeyboard() + "', Bank = '" + pJointPAC.getBank() + "', IDProfil = '" + pJointPAC.getIdProfil() + "', IDApplication = '" + pJointPAC.getIdApplication() + "', IDCommandUser = '" + pJointPAC.getIdCommandUser() + "' WHERE IDJointPAC = '" + pJointPAC.getId() + "';";
             try
             {
                 if (m_dbUtils.executeQuery(requete) > 0)
@@ -91,8 +91,8 @@ namespace BAJunior.ServiceData
                     int bank = Convert.ToInt32(r["Bank"]);
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
                     int idApplication = Convert.ToInt32(r["IDApplication"]);
-                    int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommand);
+                    int idCommandUser = Convert.ToInt32(r["IDCommandUser"]);
+                    jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommandUser);
                 }
             }
             catch (Exception fail)
@@ -116,8 +116,8 @@ namespace BAJunior.ServiceData
                     int bank = Convert.ToInt32(r["Bank"]);
                     int idProfil = Convert.ToInt32(r["IDProfil"]);
                     int idApplication = Convert.ToInt32(r["IDApplication"]);
-                    int idCommand = Convert.ToInt32(r["IDCommand"]);
-                    JointPAC jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommand);
+                    int idCommandUser = Convert.ToInt32(r["IDCommandUser"]);
+                    JointPAC jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommandUser);
                     jointPACList.Add(jointPAC);
                 }
             }

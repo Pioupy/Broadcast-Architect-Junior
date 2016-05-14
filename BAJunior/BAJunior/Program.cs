@@ -22,8 +22,8 @@ namespace BAJunior
                 // Testing Phase :
                 InitDB initDatabase = new InitDB();
                 //initDatabase.testCreatedByAlex();
-                initDatabase.testForOthes();
-                //initDatabase.testCreatedByAlexV2();
+                //initDatabase.testForOthes();
+                initDatabase.createDatabaseByAlexForTest();
                 //Xml profil = new Xml();
                 //profil.readNameProfil("ClavierTestOne");
             }

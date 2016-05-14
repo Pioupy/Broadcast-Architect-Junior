@@ -38,11 +38,13 @@ namespace BAJunior.ServiceData
             testUnitaireTable.testApplication();
             testUnitaireTable.testCategory();
             testUnitaireTable.testParam();
+            testUnitaireTable.testParamUser();
             testUnitaireTable.testProfil();
             testUnitaireTable.testCommand();
+            testUnitaireTable.testCommandUser();
             testUnitaireTable.testJointPAC();
         }
-        public void testCreatedByAlexV2()
+        public void createDatabaseByAlexForTest()
         {
             // TODO : Méthode destinée à disparaître après les test.
             TestUnitaireTable testUnitaireTable = new TestUnitaireTable();
@@ -54,14 +56,12 @@ namespace BAJunior.ServiceData
             //testUnitaireTable.testProfil();
             //testUnitaireTable.testCommand();
             //testUnitaireTable.testJointPAC();
+            
         }
         public void createDatabaseICAN()
         {
             //Create Database
             m_dbUtils.createDatabase();
-            //Configure ON or OFF foreign key
-            // --- TRAVAIL HERE
-            //m_dbUtils.stateForeignKey("ON");
         }
         private void initTables()
         {
@@ -71,8 +71,10 @@ namespace BAJunior.ServiceData
             createTableApplication();
             createTableCategory();
             createTableParam();
+            createTableParamUser();
             createTableProfil();
             createTableCommand();
+            createTableCommandUser();
             createTableJointPAC();
             //Create the user : Admin
             UserData userData = new UserData();
@@ -134,7 +136,7 @@ namespace BAJunior.ServiceData
         }
         private void createTableJointPAC()
         {
-            string requete = "CREATE TABLE IF NOT EXISTS JointPAC (IDJointPAC  INTEGER PRIMARY KEY AUTOINCREMENT, BtnKeyboard int, bank int, IDProfil INTEGER, IDApplication INTEGER, IDCommand INTEGER, FOREIGN KEY (IDProfil) REFERENCES Profil(IDProfil), FOREIGN KEY (IDApplication) REFERENCES Application(IDApplication), FOREIGN KEY (IDCommand) REFERENCES Command(IDCommand))";
+            string requete = "CREATE TABLE IF NOT EXISTS JointPAC (IDJointPAC  INTEGER PRIMARY KEY AUTOINCREMENT, BtnKeyboard int, bank int, IDProfil INTEGER, IDApplication INTEGER, IDCommandUser INTEGER, FOREIGN KEY (IDProfil) REFERENCES Profil(IDProfil), FOREIGN KEY (IDApplication) REFERENCES Application(IDApplication), FOREIGN KEY (IDCommandUser) REFERENCES CommandUser(IDCommandUser))";
             if (m_dbUtils.executeQuery(requete) == 0)
             {
                 _log.Info("The JointPAC table thas been created.");
@@ -168,6 +170,18 @@ namespace BAJunior.ServiceData
                 _log.Info("The Command table has not been created.");
             }
         }
+        private void createTableCommandUser()
+        {
+            string requete = "CREATE TABLE IF NOT EXISTS CommandUser (IDCommandUser  INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(50), Picture varchar(200), IDCategory INTEGER, FOREIGN KEY (IDCategory) REFERENCES Category(IDCategory))";
+            if (m_dbUtils.executeQuery(requete) == 0)
+            {
+                _log.Info("The CommandUser table thas been created.");
+            }
+            else
+            {
+                _log.Info("The CommandUser table has not been created.");
+            }
+        }
         private void createTableCategory()
         {
             string requete = "CREATE TABLE IF NOT EXISTS Category (IDCategory  INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(50))";
@@ -190,6 +204,18 @@ namespace BAJunior.ServiceData
             else
             {
                 _log.Info("The Param table has not been created.");
+            }
+        }
+        private void createTableParamUser()
+        {
+            string requete = "CREATE TABLE IF NOT EXISTS ParamUser (IDParamUser  INTEGER PRIMARY KEY AUTOINCREMENT, Name varchar(50), Value varchar(50), IsUser boolean not null default 0, IDCommandUser INTEGER, FOREIGN KEY (IDCommandUser) REFERENCES CommandUser(IDCommandUser))";
+            if (m_dbUtils.executeQuery(requete) == 0)
+            {
+                _log.Info("The ParamUser table thas been created.");
+            }
+            else
+            {
+                _log.Info("The ParamUser table has not been created.");
             }
         }
     }

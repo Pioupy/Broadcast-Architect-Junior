@@ -277,6 +277,47 @@ namespace BAJunior.ServiceData
                 }
             }
         }
+        public void testParamUser()
+        {
+            //Initiation Variable : 
+            ParamUserData paramData = new ParamUserData();
+            ParamUser paramOne = new ParamUser("testParamUser1", "test1", true, 1);
+            ParamUser paramTwo = new ParamUser("testParamUser2", "test2", false, 2);
+            // insert valeur 
+            paramData.create(paramOne);
+            paramData.create(paramTwo);
+            // read values 
+            paramOne = paramData.read(1);
+            paramTwo = paramData.read(2);
+            if (seeMessage == true)
+            {
+                MessageBox.Show("ParamUser One :" + paramOne.getName());
+                MessageBox.Show("ParamUser two :" + paramTwo.getName());
+            }
+            // update values 
+            paramOne.setName("testParamUserUpdate");
+            paramData.update(paramOne);
+            // read values
+            if (seeMessage == true)
+            {
+                List<ParamUser> result = paramData.readAll();
+                for (int i = 0; i < result.Count; i++)
+                {
+                    MessageBox.Show("ParamUser " + i + " : " + result[i].getName());
+                }
+            }
+            // delete values
+            paramData.delete(paramTwo);
+            // read value
+            if (seeMessage == true)
+            {
+                List<ParamUser> resultAll = paramData.readAll();
+                for (int i = 0; i < resultAll.Count; i++)
+                {
+                    MessageBox.Show("ParamUser " + i + " : " + resultAll[i].getName());
+                }
+            }
+        }
         public void testCommand()
         {
             //Initiation Variable : 
@@ -315,6 +356,47 @@ namespace BAJunior.ServiceData
                 for (int i = 0; i < resultAll.Count; i++)
                 {
                     MessageBox.Show("Command " + i + " : " + resultAll[i].getName());
+                }
+            }
+        }
+        public void testCommandUser()
+        {
+            //Initiation Variable : 
+            CommandUserData commandData = new CommandUserData();
+            CommandUser commandOne = new CommandUser("testCommandUser1", "test1", 1);
+            CommandUser commandTwo = new CommandUser("testCommandUser2", "test2", 1);
+            // insert valeur 
+            commandData.create(commandOne);
+            commandData.create(commandTwo);
+            // read values 
+            commandOne = commandData.read(1);
+            commandTwo = commandData.read(2);
+            if (seeMessage == true)
+            {
+                MessageBox.Show("Command One :" + commandOne.getName());
+                MessageBox.Show("Command two :" + commandTwo.getName());
+            }
+            // update values 
+            commandOne.setName("testCommandUserUpdae");
+            commandData.update(commandOne);
+            // read values
+            if (seeMessage == true)
+            {
+                List<CommandUser> result = commandData.readAll();
+                for (int i = 0; i < result.Count; i++)
+                {
+                    MessageBox.Show("CommandUser " + i + " : " + result[i].getName());
+                }
+            }
+            // delete values
+            commandData.delete(commandTwo);
+            // read value
+            if (seeMessage == true)
+            {
+                List<CommandUser> resultAll = commandData.readAll();
+                for (int i = 0; i < resultAll.Count; i++)
+                {
+                    MessageBox.Show("CommandUser " + i + " : " + resultAll[i].getName());
                 }
             }
         }

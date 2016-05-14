@@ -40,6 +40,7 @@ namespace BAJunior.View.Forms.user
                 {
                     MessageBox.Show("les erreur sont : " + param.getName());
                     //appelle de la form 
+                    //U_AddParamInAddProfil
                 }
                 else
                 {

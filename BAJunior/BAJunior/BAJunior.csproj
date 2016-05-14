@@ -77,10 +77,11 @@
     <Compile Include="Model\Application.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Command.cs" />
+    <Compile Include="Model\CommandUser.cs" />
     <Compile Include="Model\JointPAC.cs" />
-    <Compile Include="Model\JointPC.cs" />
     <Compile Include="Model\Keyboard.cs" />
     <Compile Include="Model\Param.cs" />
+    <Compile Include="Model\ParamUser.cs" />
     <Compile Include="Model\Profil.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -89,12 +90,13 @@
     <Compile Include="ServiceData\ApplicationData.cs" />
     <Compile Include="ServiceData\CategoryData.cs" />
     <Compile Include="ServiceData\CommandData.cs" />
+    <Compile Include="ServiceData\CommandUserData.cs" />
     <Compile Include="ServiceData\DbUtils.cs" />
     <Compile Include="ServiceData\InitDB.cs" />
     <Compile Include="ServiceData\JointPACData.cs" />
-    <Compile Include="ServiceData\JointPCData.cs" />
     <Compile Include="ServiceData\KeyboardData.cs" />
     <Compile Include="ServiceData\ParamData.cs" />
+    <Compile Include="ServiceData\ParamUserData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
     <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
@@ -180,6 +182,12 @@
     <Compile Include="View\Forms\user\U_AddApplicationInAddProfil.Designer.cs">
       <DependentUpon>U_AddApplicationInAddProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\user\U_AddParamInAddProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\user\U_AddParamInAddProfil.Designer.cs">
+      <DependentUpon>U_AddParamInAddProfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\user\U_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_AddApplicationInAddProfil.resx">
       <DependentUpon>U_AddApplicationInAddProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\U_AddParamInAddProfil.resx">
+      <DependentUpon>U_AddParamInAddProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_AddProfil.resx">
       <DependentUpon>U_AddProfil.cs</DependentUpon>
