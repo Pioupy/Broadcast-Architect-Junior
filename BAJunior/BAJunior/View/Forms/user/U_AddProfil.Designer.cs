@@ -44,6 +44,7 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.gb_property = new System.Windows.Forms.GroupBox();
             this.panelDefaultProfils = new System.Windows.Forms.Panel();
+            this.panel_keyboard = new System.Windows.Forms.Panel();
             this.gb_application.SuspendLayout();
             this.gb_boutons.SuspendLayout();
             this.gb_property.SuspendLayout();
@@ -209,17 +210,25 @@
             // 
             // panelDefaultProfils
             // 
-            this.panelDefaultProfils.Location = new System.Drawing.Point(12, 85);
+            this.panelDefaultProfils.Location = new System.Drawing.Point(12, 84);
             this.panelDefaultProfils.Margin = new System.Windows.Forms.Padding(4);
             this.panelDefaultProfils.Name = "panelDefaultProfils";
             this.panelDefaultProfils.Size = new System.Drawing.Size(763, 64);
             this.panelDefaultProfils.TabIndex = 9;
+            // 
+            // panel_keyboard
+            // 
+            this.panel_keyboard.Location = new System.Drawing.Point(12, 156);
+            this.panel_keyboard.Name = "panel_keyboard";
+            this.panel_keyboard.Size = new System.Drawing.Size(763, 450);
+            this.panel_keyboard.TabIndex = 10;
             // 
             // U_AddProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 660);
+            this.Controls.Add(this.panel_keyboard);
             this.Controls.Add(this.panelDefaultProfils);
             this.Controls.Add(this.gb_property);
             this.Controls.Add(this.btn_cancel);
@@ -257,5 +266,6 @@
         private System.Windows.Forms.Label labelLambdaBoutons;
         private System.Windows.Forms.ListView listViewBtns;
         private System.Windows.Forms.Panel panelDefaultProfils;
+        private System.Windows.Forms.Panel panel_keyboard;
     }
 }

@@ -27,7 +27,7 @@ namespace BAJunior.ServiceData
         {
             // TODO : Méthode destinée à disparaître après les test demandés par  les autres.
             CommandData commandData = new CommandData();
-            List<Param> listParam = commandData.readParamByCommand(1);
+            List<Param> listParam = commandData.readParamByCommand(3);
         }
         public void testCreatedByAlex()
         {

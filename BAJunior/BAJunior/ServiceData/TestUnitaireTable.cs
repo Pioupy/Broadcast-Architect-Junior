@@ -385,7 +385,7 @@ namespace BAJunior.ServiceData
             //Initiation Variable : 
             KeyboardData keyboardData = new KeyboardData();
             Keyboard keyboardOne = new Keyboard("Intellipad");
-            Keyboard keyboardTwo = new Keyboard("keyboardTest");
+            Keyboard keyboardTwo = new Keyboard("testkeyboard");
             // insert valeur 
             keyboardData.create(keyboardOne);
             keyboardData.create(keyboardTwo);

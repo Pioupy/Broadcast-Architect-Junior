@@ -168,6 +168,12 @@
     <Compile Include="View\Forms\user\keyboard\K_Intellipad.Designer.cs">
       <DependentUpon>K_Intellipad.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\user\keyboard\K_testkeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\user\keyboard\K_testkeyboard.Designer.cs">
+      <DependentUpon>K_testkeyboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\user\U_AddApplicationInAddProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormDeTest.resx">
       <DependentUpon>FormDeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\user\keyboard\K_testkeyboard.resx">
+      <DependentUpon>K_testkeyboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\user\U_AddApplicationInAddProfil.resx">
       <DependentUpon>U_AddApplicationInAddProfil.cs</DependentUpon>

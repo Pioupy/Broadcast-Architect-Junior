@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using BAJunior.ServiceData;
 using BAJunior.Model;
+using System.IO;
 
 namespace BAJunior.View.Forms.user
 {
@@ -63,13 +64,28 @@ namespace BAJunior.View.Forms.user
                 //faire en sorte que le btn sois auto size
                 //je crois que le bouton en faite se crée par dessus le premier !!!
             }
+            // Gestion de l'affichage/génération du clavier  par défaut
+
+            if(File.Exists("/keyboard/K_" + nameKeyboard + ".cs"))
+            {
+                MessageBox.Show("existe");
+            }
+            else
+            {
+                MessageBox.Show("existe pas");
+            }
+
         }
-        // Code gestion Xml :
+        /*#######################################
+          #       CODE GESTION XML              #
+          #######################################*/
         void button_Click_Default_Profils(object obj, EventArgs e) // envent onClick pour les boutons des profils par défaut
         {
            
         }
-        // Code gestion application :
+        /*#######################################
+          #    CODE GESTION APPLICATION         #
+          #######################################*/
         private void btn_addApplication_Click(object sender, EventArgs e)
         {
             U_AddApplicationInAddProfil addApplicaion = new U_AddApplicationInAddProfil(this, m_nameApplication);
@@ -97,7 +113,13 @@ namespace BAJunior.View.Forms.user
             lv_application.Items.Add(application);
             m_nameApplication.Add(application);
         }
-        // Code gestion bouton
-        
+        /*#######################################
+          #    CODE GESTION DES BOUTONS         #
+          #######################################*/
+
+        /*#######################################
+          #    CODE GESTION DES KEYBOARD        #
+          #######################################*/
+
     }
 }
