@@ -43,7 +43,7 @@ namespace BAJunior.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\Resources")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Image")]
         public string DefaultImagePath {
             get {
                 return ((string)(this["DefaultImagePath"]));
