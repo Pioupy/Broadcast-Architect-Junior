@@ -127,7 +127,7 @@ namespace BAJunior.ServiceData
         {
 
             List<Param> commandListParam = new List<Param>();
-            string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser FROM Command c, JointPC jpc, Param p WHERE jpc.IDCommand=c.IDCommand AND jpc.IDParam=p.IDParam AND c.IDCommand=" + id + " order by c.IDCommand asc";
+            string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser FROM Command c, Param p WHERE c.IDCommand=p.IDCommand AND c.IDCommand=" + id + " order by c.IDCommand asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
