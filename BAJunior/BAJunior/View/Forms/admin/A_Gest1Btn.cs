@@ -687,59 +687,59 @@ namespace BAJunior.View.Forms.admin
                     int newCommandId = commandData.readAll().Where(item => item.getName() == actualCommand.getName()).FirstOrDefault().getId();
 
                     if (rbtn_empty1.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom1.Text, tb_valor1.Text, rbtn_custom1.Checked, newCommandId));
                     if (rbtn_empty2.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom2.Text, tb_valor2.Text, rbtn_custom2.Checked, newCommandId));
                     if (rbtn_empty3.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom3.Text, tb_valor3.Text, rbtn_custom3.Checked, newCommandId));
                     if (rbtn_empty4.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom4.Text, tb_valor4.Text, rbtn_custom4.Checked, newCommandId));
                     if (rbtn_empty5.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom5.Text, tb_valor5.Text, rbtn_custom5.Checked, newCommandId));
                     if (rbtn_empty6.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom6.Text, tb_valor6.Text, rbtn_custom6.Checked, newCommandId));
                     if (rbtn_empty7.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom7.Text, tb_valor7.Text, rbtn_custom7.Checked, newCommandId));
                     if (rbtn_empty8.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom8.Text, tb_valor8.Text, rbtn_custom8.Checked, newCommandId));
                     if (rbtn_empty9.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom9.Text, tb_valor9.Text, rbtn_custom9.Checked, newCommandId));
                     if (rbtn_empty10.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom10.Text, tb_valor10.Text, rbtn_custom10.Checked, newCommandId));
                     if (rbtn_empty11.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom11.Text, tb_valor11.Text, rbtn_custom11.Checked, newCommandId));
                     if (rbtn_empty12.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom12.Text, tb_valor12.Text, rbtn_custom12.Checked, newCommandId));
                     if (rbtn_empty13.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom13.Text, tb_valor13.Text, rbtn_custom13.Checked, newCommandId));
                     if (rbtn_empty14.Checked)
-                        buttonParam.Add(new Param("vide", "vide", false, 0));
+                        buttonParam.Add(new Param("vide", "vide", false, newCommandId));
                     else
                         buttonParam.Add(new Param(tb_nom14.Text, tb_valor14.Text, rbtn_custom14.Checked, newCommandId));
 
@@ -775,6 +775,7 @@ namespace BAJunior.View.Forms.admin
         {
             if (cb_catName.Text != null && cb_catName.Text != "")
             {
+               // paramData.delete(); effacer les param en rapport avec le bouton
                 catData.delete(listCat.Where(item => item.getName() == cb_catName.Text).FirstOrDefault());
                 cb_catName.Text = "";
                 refreshComboBoxCat();
