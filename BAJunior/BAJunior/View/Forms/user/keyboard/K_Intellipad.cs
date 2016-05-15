@@ -24,7 +24,7 @@ namespace BAJunior.View.Forms.user
         }
         private void key1_MouseUp(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("cool");
+            MessageBox.Show("effectuer vos tests avec keyboardtest");
         }
     }
 }

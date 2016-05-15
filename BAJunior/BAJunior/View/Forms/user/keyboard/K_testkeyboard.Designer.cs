@@ -54,6 +54,7 @@
             this.key1.Size = new System.Drawing.Size(70, 70);
             this.key1.TabIndex = 0;
             this.key1.TabStop = false;
+            this.key1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key1_MouseUp);
             // 
             // key6
             // 
@@ -64,6 +65,7 @@
             this.key6.Size = new System.Drawing.Size(70, 70);
             this.key6.TabIndex = 5;
             this.key6.TabStop = false;
+            this.key6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key6_MouseUp);
             // 
             // pictureBox1
             // 
@@ -74,6 +76,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // pictureBox2
             // 
@@ -85,6 +88,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(70, 70);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // pictureBox3
             // 
