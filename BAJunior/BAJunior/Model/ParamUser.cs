@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BAJunior.Model
 {
-    class ParamUser
+    public class ParamUser
     {
         private int m_idParamUser;
         private String m_name;

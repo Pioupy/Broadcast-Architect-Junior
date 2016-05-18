@@ -7,7 +7,7 @@ using BAJunior.Model;
 
 namespace BAJunior.ServiceData
 {
-    class CommandUserData
+    public class CommandUserData
     {
         // On définit une variable logger static qui référence l'instance du logger nommé Program
         private static readonly ILog _log = LogManager.GetLogger(typeof(CommandUserData));

@@ -15,6 +15,7 @@ namespace BAJunior.View.Forms.user
     {
         private List<Param> m_listParam;
         private List<TextBox> m_listTextBox = new List<TextBox>();
+        private bool m_isOK = true;
         public U_AddParamInAddProfil()
         {
             InitializeComponent();
@@ -57,24 +58,85 @@ namespace BAJunior.View.Forms.user
         private void btn_save_Click(object sender, EventArgs e)
         {
             int i = 0;
+            bool isOk = true;
             foreach(Param param in m_listParam)
             {
                 TextBox texbox = m_listTextBox[i];
+                // check type 
                 if (texbox.Text != "")
                 {
-                    //enregristrer
+                    if (param.getValue() == "1") // numérique
+                    {
+                        int parseValeur = 0;
+                        bool result = int.TryParse(texbox.Text, out parseValeur);
+                        if (result==false)
+                        {
+                            isOk = false;
+                        }
+                        else
+                        {
+                            m_listParam[i].setValue(texbox.Text);
+                        }
+                    }
+                    else if (param.getValue() == "2") // charactère
+                    {
+                        int parseValeur = 0;
+                        bool result = int.TryParse(texbox.Text, out parseValeur);
+                        if (result == true)
+                        {
+                            isOk = false;
+                        }
+                        else
+                        {
+                            m_listParam[i].setValue(texbox.Text);
+                        }
+                    }
+                    else
+                    {
+                        //(param.getValue() > 3 anormal !
+                        //text message erreur
+                        MessageBox.Show("Problèmes sur la valeur de getValues > 2");
+                        isOk = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("le param " + param.getName() + "n'est pas renseigner");
+                    MessageBox.Show("le param " + param.getName() + " n'est pas renseigné");
                 }
                 i++;
+            }
+            if(isOk == true )
+            {
+                setListParam(m_listParam);
+                setIsOK(true);
+                this.Close();
             }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             //appelle méthode qui annule dans u_addprofil
+            setIsOK(false);
+            this.Close();
+        }
+
+        // [Getter/Setter] List<Param> m_listParam
+        public List<Param> getListParam()
+        {
+            return this.m_listParam;
+        }
+        public void setListParam(List<Param> listParam)
+        {
+            this.m_listParam = listParam;
+        }
+        // [Getter/Setter] Bool m_isOK
+        public bool getIsOK()
+        {
+            return this.m_isOK;
+        }
+        public void setIsOK(bool isOK)
+        {
+            this.m_isOK = isOK;
         }
     }
 }
