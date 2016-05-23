@@ -22,6 +22,15 @@ namespace BAJunior.View.Forms.user
         private List<String> m_nameApplication = new List<string>();
         private Command m_commandDragAndDrop;
         private int countListBtn;
+        // Data table
+        private int m_sizeButtonKeyboard;
+        private int m_bank = 1;
+        private int m_nbMaxBank;
+        private List<JointPAC> m_listJointPAC = new List<JointPAC>();
+        private List<CommandUser> m_listCommandUser = new List<CommandUser>();
+        private List<List<ParamUser>> m_listParamUser = new List<List<ParamUser>>();
+
+
         public U_AddProfil()
         {
             InitializeComponent();
@@ -29,9 +38,11 @@ namespace BAJunior.View.Forms.user
         public U_AddProfil(String nameProfile, String nameKeyboard, String nameApplication)
         {
             InitializeComponent();
+            // init value
             m_nameProfile = nameProfile;
             m_nameKeyboard = nameKeyboard;
             m_nameApplication.Add(nameApplication);
+            //init visuel
             labelNameProfile.Text = nameProfile;
             labelKeyboard.Text = nameKeyboard;
             lv_application.Items.Add(nameApplication);
@@ -43,11 +54,6 @@ namespace BAJunior.View.Forms.user
             // Gestion de l'affichage de la liste des boutons
             listBtns = commandData.readAll();
             var imageList = new ImageList();
-            /* string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
-            path = path.Replace("file:\\", "");
-
-            [2:57] la t'a le répertoire ou y'a les images
-            [2:58] apres, pour chopé les images etc, c'est surment plsu chaud que le repertoire image DANS le truc*/
             foreach (Command cmd in listBtns) {
                 Bitmap img = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + cmd.getPicture(), true);
                 imageList.Images.Add(cmd.getPicture(), img);                
@@ -79,11 +85,19 @@ namespace BAJunior.View.Forms.user
                 {
                     var keyboardClass = new K_Intellipad(this);
                     panel_keyboard.Controls.Add(keyboardClass);
+                    // init value 
+                    m_sizeButtonKeyboard = 50;
+                    m_nbMaxBank = 4;
+                    initData();
                 }
                 else if (nameKeyboard == "testkeyboard")
                 {
                     var keyboardClass = new K_testkeyboard(this);
                     panel_keyboard.Controls.Add(keyboardClass);
+                    // init value 
+                    m_sizeButtonKeyboard = 5;
+                    m_nbMaxBank = 2;
+                    initData();
                 }
                 else
                 {
@@ -97,6 +111,37 @@ namespace BAJunior.View.Forms.user
                 MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum");
             }
             
+        }
+        /*#######################################
+          #       INIT KEYBOARD DATA            #
+          #######################################*/
+        private void initData()
+        {
+            int bank = 0;
+            // Récupérer valeur ID Apllication
+            ApplicationData applicationData = new ApplicationData();
+            Model.Application application = applicationData.readByName(m_nameApplication[0]);//modifier siil est appeler autre par que le constructeur et detecter quelel application est charger
+            //ID pofil sera modifier dans JointPAC lors de la sauvegarde
+            // init list JointPAC
+            for (int y=0; y<m_nbMaxBank;y++)
+            {
+                bank = y + 1;
+                for (int i = (y*m_sizeButtonKeyboard); i < (m_sizeButtonKeyboard * (y+1)); i++)
+                {
+                    JointPAC jointPAC = new JointPAC(0, bank, 1, application.getId(), 0); // do it
+                    m_listJointPAC.Add(jointPAC);
+                    m_listCommandUser.Add(null);
+                    m_listParamUser.Add(null);
+                }
+            }
+        }
+        public void loadKeyboard()
+        {
+            //init data 
+            
+            //charge data
+
+            //afficher visuel
         }
         /*#######################################
           #       CODE GESTION XML              #
@@ -162,6 +207,47 @@ namespace BAJunior.View.Forms.user
             listViewBtns.Focus();
             //listViewBtns.Invalidate();
         }
+
+        /*#######################################
+          #          GETTER / SETTER            #
+          #######################################*/
+        // [Getter/Setter] int m_bank
+        public int getBank()
+        {
+            return this.m_bank;
+        }
+        public void setBank(int bank)
+        {
+            this.m_bank = bank;
+        }
+        // [Getter/Setter] int m_bank
+        public int getNbMaxBank()
+        {
+            return this.m_nbMaxBank;
+        }
+        public void setNbMaxBank(int nbMaxBank)
+        {
+            this.m_nbMaxBank = nbMaxBank;
+        }
+        // [Getter/Setter] int m_bank
+        public int getSizeButtonKeyboardk()
+        {
+            return this.m_sizeButtonKeyboard;
+        }
+        public void setSizeButtonKeyboardk(int sizeButtonKeyboard)
+        {
+            this.m_sizeButtonKeyboard = sizeButtonKeyboard;
+        }
+        // [Getter/Setter] List<JointPAC> m_listJointPAC
+        public List<JointPAC> getListJointPAC()
+        {
+            return this.m_listJointPAC;
+        }
+        public void setListJointPAC(List<JointPAC> listJointPAC)
+        {
+            this.m_listJointPAC = listJointPAC;
+        }
+        // [Getter/Setter] Command m_commandDragAndDrop
         public Command getCommand()
         {
             return this.m_commandDragAndDrop;
@@ -170,15 +256,30 @@ namespace BAJunior.View.Forms.user
         {
             this.m_commandDragAndDrop = command;
         }
-        /*
-        private void listViewBtns_SelectedIndexChanged(object sender, EventArgs e)
+        // [Getter/Setter] List<CommandUser> m_listCommandUser
+        public List<CommandUser> getListCommandUser()
         {
-            if (listViewBtns.SelectedItems.Count > 0)
-            {
-                countListBtn = listViewBtns.Items.IndexOf(listViewBtns.SelectedItems[0]);
-                //listViewBtns.addApplication(lv_application.Items[count].Text);
-            }
+            return this.m_listCommandUser;
         }
-        */
+        public void setListCommandUser(List<CommandUser> commandUser)
+        {
+            this.m_listCommandUser = commandUser;
+        }
+        // [Getter/Setter] List<List<ParamUser>> m_listParamUser
+        public List<List<ParamUser>> getListParamUser()
+        {
+            return this.m_listParamUser;
+        }
+        public void setListParamUser(List<List<ParamUser>> listParamUser)
+        {
+            this.m_listParamUser = listParamUser;
+        }
+        /*#######################################
+          #             SAUVEGARDER             #
+          #######################################*/
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            //crée profil bd et editer object jointpac
+        }
     }
 }

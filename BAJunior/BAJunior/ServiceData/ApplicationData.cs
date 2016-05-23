@@ -121,5 +121,27 @@ namespace BAJunior.ServiceData
             }
             return applicationList;
         }
+        public Application readByName(String nameApplication)
+        {
+            Application application = null;
+            string requete = "SELECT * from Application WHERE Name = '" + nameApplication + "' order by IDApplication asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idApplication = Convert.ToInt32(r["IDApplication"]);
+                    String name = r["Name"].ToString();
+                    String link = r["Link"].ToString();
+                    application = new Application(idApplication, name, link);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return application;
+        }
     }
 }

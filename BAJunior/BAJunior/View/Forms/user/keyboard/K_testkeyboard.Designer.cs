@@ -111,6 +111,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(70, 70);
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
@@ -122,6 +123,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(70, 70);
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // K_testkeyboard
             // 

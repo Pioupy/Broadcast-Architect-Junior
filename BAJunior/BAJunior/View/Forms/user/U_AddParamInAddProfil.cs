@@ -59,7 +59,7 @@ namespace BAJunior.View.Forms.user
         {
             int i = 0;
             bool isOk = true;
-            foreach(Param param in m_listParam)
+            foreach (Param param in m_listParam)
             {
                 TextBox texbox = m_listTextBox[i];
                 // check type 
@@ -72,10 +72,7 @@ namespace BAJunior.View.Forms.user
                         if (result==false)
                         {
                             isOk = false;
-                        }
-                        else
-                        {
-                            m_listParam[i].setValue(texbox.Text);
+                            MessageBox.Show("Problèmes sur la valeur de getValues not numérique");
                         }
                     }
                     else if (param.getValue() == "2") // charactère
@@ -85,10 +82,7 @@ namespace BAJunior.View.Forms.user
                         if (result == true)
                         {
                             isOk = false;
-                        }
-                        else
-                        {
-                            m_listParam[i].setValue(texbox.Text);
+                            MessageBox.Show("Problèmes sur la valeur de getValues not charactere");
                         }
                     }
                     else
@@ -105,11 +99,22 @@ namespace BAJunior.View.Forms.user
                 }
                 i++;
             }
+            i = 0;
             if(isOk == true )
             {
+                foreach (Param param in m_listParam)
+                {
+                    TextBox texbox = m_listTextBox[i];
+                    m_listParam[i].setValue(texbox.Text);
+                    i++;
+                }
                 setListParam(m_listParam);
                 setIsOK(true);
                 this.Close();
+            }
+            else
+            {
+                //
             }
         }
 
