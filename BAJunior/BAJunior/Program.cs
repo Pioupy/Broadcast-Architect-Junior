@@ -13,6 +13,12 @@ namespace BAJunior
         [STAThread]
         static void Main()
         {
+            //string pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            //pathImage = pathImage.Replace("file:\\", "");
+
+            //if (!Directory.Exists(pathImage))
+            //    Directory.CreateDirectory(pathImage);
+
             // TODO : Beaucoup de commentaire de ma part ( alex ), bien sur à la fin, il n'y aura que les 3 lignes qui appellent connectioon.cs dans le main.
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             bool testAlexandre = false;
