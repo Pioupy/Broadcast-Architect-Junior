@@ -203,14 +203,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 119);
+            this.groupBox1.Size = new System.Drawing.Size(652, 129);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriétés";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(312, 78);
+            this.button1.Location = new System.Drawing.Point(378, 78);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 24);
             this.button1.TabIndex = 7;
@@ -220,7 +220,7 @@
             // 
             // btn_addCat
             // 
-            this.btn_addCat.Location = new System.Drawing.Point(261, 78);
+            this.btn_addCat.Location = new System.Drawing.Point(327, 78);
             this.btn_addCat.Name = "btn_addCat";
             this.btn_addCat.Size = new System.Drawing.Size(45, 24);
             this.btn_addCat.TabIndex = 6;
@@ -231,16 +231,16 @@
             // cb_catName
             // 
             this.cb_catName.FormattingEnabled = true;
-            this.cb_catName.Location = new System.Drawing.Point(91, 78);
+            this.cb_catName.Location = new System.Drawing.Point(90, 78);
             this.cb_catName.Name = "cb_catName";
-            this.cb_catName.Size = new System.Drawing.Size(164, 24);
+            this.cb_catName.Size = new System.Drawing.Size(219, 24);
             this.cb_catName.TabIndex = 5;
             // 
             // tb_propName
             // 
             this.tb_propName.Location = new System.Drawing.Point(59, 35);
             this.tb_propName.Name = "tb_propName";
-            this.tb_propName.Size = new System.Drawing.Size(196, 22);
+            this.tb_propName.Size = new System.Drawing.Size(250, 22);
             this.tb_propName.TabIndex = 4;
             // 
             // label2
@@ -263,19 +263,17 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Btn_imageBrowse);
-            this.groupBox2.Controls.Add(this.tb_imagePath);
             this.groupBox2.Controls.Add(this.lv_Image);
             this.groupBox2.Location = new System.Drawing.Point(3, 217);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 337);
+            this.groupBox2.Size = new System.Drawing.Size(652, 367);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Images";
             // 
             // Btn_imageBrowse
             // 
-            this.Btn_imageBrowse.Location = new System.Drawing.Point(294, 306);
+            this.Btn_imageBrowse.Location = new System.Drawing.Point(548, 590);
             this.Btn_imageBrowse.Name = "Btn_imageBrowse";
             this.Btn_imageBrowse.Size = new System.Drawing.Size(83, 23);
             this.Btn_imageBrowse.TabIndex = 2;
@@ -285,17 +283,17 @@
             // 
             // tb_imagePath
             // 
-            this.tb_imagePath.Location = new System.Drawing.Point(6, 306);
+            this.tb_imagePath.Location = new System.Drawing.Point(9, 587);
             this.tb_imagePath.Name = "tb_imagePath";
             this.tb_imagePath.ReadOnly = true;
-            this.tb_imagePath.Size = new System.Drawing.Size(282, 22);
+            this.tb_imagePath.Size = new System.Drawing.Size(514, 22);
             this.tb_imagePath.TabIndex = 1;
             // 
             // lv_Image
             // 
-            this.lv_Image.Location = new System.Drawing.Point(6, 32);
+            this.lv_Image.Location = new System.Drawing.Point(6, 38);
             this.lv_Image.Name = "lv_Image";
-            this.lv_Image.Size = new System.Drawing.Size(371, 270);
+            this.lv_Image.Size = new System.Drawing.Size(632, 322);
             this.lv_Image.TabIndex = 0;
             this.lv_Image.UseCompatibleStateImageBehavior = false;
             this.lv_Image.Click += new System.EventHandler(this.lv_Image_Click);
@@ -303,9 +301,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.panel1);
-            this.groupBox3.Location = new System.Drawing.Point(392, 3);
+            this.groupBox3.Location = new System.Drawing.Point(703, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(448, 551);
+            this.groupBox3.Size = new System.Drawing.Size(466, 825);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Paramètres";
@@ -399,7 +397,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(0, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 524);
+            this.panel1.Size = new System.Drawing.Size(460, 788);
             this.panel1.TabIndex = 25;
             // 
             // panel15
@@ -1594,7 +1592,7 @@
             // 
             // pb_btn
             // 
-            this.pb_btn.Location = new System.Drawing.Point(160, 36);
+            this.pb_btn.Location = new System.Drawing.Point(297, 32);
             this.pb_btn.Name = "pb_btn";
             this.pb_btn.Size = new System.Drawing.Size(51, 50);
             this.pb_btn.TabIndex = 3;
@@ -1602,7 +1600,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(305, 560);
+            this.btn_save.Location = new System.Drawing.Point(215, 664);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(226, 23);
             this.btn_save.TabIndex = 4;
@@ -1624,7 +1622,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 592);
+            this.ClientSize = new System.Drawing.Size(1262, 841);
+            this.Controls.Add(this.tb_imagePath);
+            this.Controls.Add(this.Btn_imageBrowse);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.pb_btn);
             this.Controls.Add(this.groupBox3);
@@ -1635,7 +1635,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1669,6 +1668,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_btn)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
