@@ -87,7 +87,7 @@ namespace BAJunior.ServiceData
             List<String> listBtnKeyboard = new List<string>();
             List<String> listPicture = new List<string>();
             List<ParamUser> listParam = new List<ParamUser>();
-            for (int i = 0; i < m_addProfil.getSizeButtonKeyboard(); i++)
+            for (int i = 0; i < (m_addProfil.getSizeButtonKeyboard()* m_addProfil.getNbMaxBank()); i++)
             {
                 listCommandUser.Add(null);
                 listParamUser.Add(null);

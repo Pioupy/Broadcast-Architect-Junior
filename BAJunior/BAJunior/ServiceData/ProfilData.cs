@@ -125,5 +125,30 @@ namespace BAJunior.ServiceData
             }
             return profilList;
         }
+        public List<Profil> readByUserID(int id)
+        {
+            List<Profil> profilList = new List<Profil>();
+            string requete = "SELECT * from Profil WHERE IDUser = '" + id + "' order by IDProfil asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idProfil = Convert.ToInt32(r["IDProfil"]);
+                    String name = r["Name"].ToString();
+                    String status = r["Status"].ToString();
+                    int idUser = Convert.ToInt32(r["IDUser"]);
+                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    Profil profil = new Profil(idProfil, name, status, idUser, idKeyboard);
+                    profilList.Add(profil);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return profilList;
+        }
     }
 }
