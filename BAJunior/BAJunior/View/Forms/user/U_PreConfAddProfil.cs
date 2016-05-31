@@ -15,9 +15,9 @@ namespace BAJunior.View.Forms.user
     public partial class U_PreConfAddProfil : Form
     {
         private User m_UserLogin;
-
         public U_PreConfAddProfil(User UserLogged)
         {
+            //init value userlogged
             m_UserLogin = UserLogged;
 
             InitializeComponent();

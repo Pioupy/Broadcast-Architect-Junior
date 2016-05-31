@@ -87,11 +87,15 @@ namespace BAJunior.ServiceData
             List<String> listBtnKeyboard = new List<string>();
             List<String> listPicture = new List<string>();
             List<ParamUser> listParam = new List<ParamUser>();
+            /*
             for (int i = 0; i < (m_addProfil.getSizeButtonKeyboard()* m_addProfil.getNbMaxBank()); i++)
             {
                 listCommandUser.Add(null);
                 listParamUser.Add(null);
             }
+            */
+            listCommandUser = m_addProfil.getListCommandUser();
+            listParamUser = m_addProfil.getListParamUser();
             // - Load 
             if (loadXml() == true)
             {
@@ -172,7 +176,8 @@ namespace BAJunior.ServiceData
             {
                 CommandUser commandUser = new CommandUser(listNameCommand[i], listPicture[i], 1);
                 //listCommandUser.Add(commandUser);
-                listCommandUser[Int32.Parse(listBtnKeyboard[i])] = commandUser;
+                int positionBtn = (Int32.Parse(listBtnKeyboard[i])+((m_addProfil.getBank()-1))*m_addProfil.getSizeButtonKeyboard());
+                listCommandUser[positionBtn] = commandUser;
                 List<ParamUser> list = new List<ParamUser>();
                 for( int y=0; y<14;y++)
                 {

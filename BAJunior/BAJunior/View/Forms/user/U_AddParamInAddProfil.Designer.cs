@@ -75,7 +75,6 @@
             this.Text = "U_AddParamInAddProfil";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
