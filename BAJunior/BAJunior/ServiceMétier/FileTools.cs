@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BAJunior.ServiceData;
+using BAJunior.Model;
 
 namespace BAJunior.ServiceMétier
 {
@@ -39,34 +41,6 @@ namespace BAJunior.ServiceMétier
                 }
                 writer.Close();
 
-              //  _log.Info("File "+ path + "\\" + txtName + ".txt has been created.");
-                result = true;
-            }
-            catch
-            {
-                //  _log.Warn("File "+ path + "\\" + txtName + ".txt has not been created.");
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Create a image file 
-        /// </summary>
-        /// <param name="folder">Folder's name</param>
-        /// <param name="imageName">Image name</param>
-        /// <returns></returns>
-        public bool createImageFile(string folder, string imageName) //TODO : rajouter fonction image...
-        {
-            bool result = false;
-            string path = Path.Combine(Properties.Settings.Default.TextFilePath, folder, "Resources");
-
-            try
-            {
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-
                 //  _log.Info("File "+ path + "\\" + txtName + ".txt has been created.");
                 result = true;
             }
@@ -78,6 +52,57 @@ namespace BAJunior.ServiceMétier
 
             return result;
         }
+
+        public bool objectToTxt(Profil profil)
+        {
+            bool result = false;
+            ApplicationData appData = new ApplicationData();
+            JointPACData m_JointPacData = new JointPACData();
+            List<JointPAC> m_JointPac = m_JointPacData.readByProfilId(profil.getId());
+            int tempIdAppli = -1;
+
+            foreach (JointPAC listJoin in m_JointPac)
+            {
+                if (listJoin.getIdApplication() == tempIdAppli)
+                    continue;
+                else
+                {
+                    tempIdAppli = listJoin.getIdApplication();
+
+                    foreach (JointPAC appli in m_JointPac.Where(item => item.getIdApplication() == listJoin.getIdApplication()).OrderBy(item => item.getIdApplication()))
+                    {
+                        string folder = appData.read(appli.getIdApplication()).getName();
+                         int tempbank = -1;
+
+                        if (appli.getBank() == tempbank)
+                            continue;
+                        else
+                        {
+                            string[] lines;
+                            tempbank = appli.getBank();
+                            foreach (JointPAC banks in m_JointPac.Where(item => item.getIdApplication() == tempIdAppli && item.getBank() == appli.getBank()).OrderBy(item => item.getBtnKeyboard()))
+                            {
+                                CommandUserData cmdUserData = new CommandUserData();
+                                List<ParamUser> ParamU =  cmdUserData.readParamByCommand(banks.getIdCommandUser());
+                                string line = "";
+
+                                foreach (ParamUser param in ParamU)
+                                {
+                                    line = line + param.getValue() + ",";
+                                }
+                           //     lines.a
+                            }
+
+                            createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines );
+                        }
+                    }
+                }
+                
+            }
+
+            return result;
+        }
+
     }
 }
 ////Exemple test : 
