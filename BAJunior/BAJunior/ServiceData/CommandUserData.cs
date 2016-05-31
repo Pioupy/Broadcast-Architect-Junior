@@ -123,10 +123,10 @@ namespace BAJunior.ServiceData
             }
             return commandUserList;
         }
-        public List<Param> readParamByCommand(int id)
+        public List<ParamUser> readParamByCommand(int id)
         {
 
-            List<Param> commandListParam = new List<Param>();
+            List<ParamUser> commandListParam = new List<ParamUser>();
             string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser, p.IDCommandUser  FROM CommandUser c, Param p WHERE c.IDCommandUser=p.IDCommandUser AND c.IDCommandUser=" + id + " order by c.IDCommandUser asc";
             try
             {
@@ -139,7 +139,7 @@ namespace BAJunior.ServiceData
                     String value = r["Value"].ToString();
                     bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
                     int idCommand = Convert.ToInt32(r["IDCommandUser"]);
-                    Param param = new Param(idParam, name, value, isUser, idCommand);
+                    ParamUser param = new ParamUser(idParam, name, value, isUser, idCommand);
                     commandListParam.Add(param);
                 }
             }
