@@ -70,7 +70,7 @@
             // déconexionToolStripMenuItem
             // 
             this.déconexionToolStripMenuItem.Name = "déconexionToolStripMenuItem";
-            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.déconexionToolStripMenuItem.Text = "Déconexion";
             // 
             // cb_Profils
@@ -107,8 +107,8 @@
             // 
             // btn_DeleteProfil
             // 
-            this.btn_DeleteProfil.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_DeleteProfil.Location = new System.Drawing.Point(977, 39);
+            this.btn_DeleteProfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_DeleteProfil.Location = new System.Drawing.Point(952, 39);
             this.btn_DeleteProfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_DeleteProfil.Name = "btn_DeleteProfil";
             this.btn_DeleteProfil.Size = new System.Drawing.Size(91, 30);
@@ -118,8 +118,8 @@
             // 
             // btn_Load
             // 
-            this.btn_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Load.Location = new System.Drawing.Point(845, 286);
+            this.btn_Load.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Load.Location = new System.Drawing.Point(788, 323);
             this.btn_Load.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Load.Name = "btn_Load";
             this.btn_Load.Size = new System.Drawing.Size(171, 55);
@@ -133,14 +133,14 @@
             this.intellipad.Location = new System.Drawing.Point(43, 129);
             this.intellipad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intellipad.Name = "intellipad";
-            this.intellipad.Size = new System.Drawing.Size(629, 493);
+            this.intellipad.Size = new System.Drawing.Size(467, 397);
             this.intellipad.TabIndex = 6;
             // 
             // U_Profils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 714);
+            this.ClientSize = new System.Drawing.Size(1262, 755);
             this.Controls.Add(this.intellipad);
             this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.btn_DeleteProfil);
