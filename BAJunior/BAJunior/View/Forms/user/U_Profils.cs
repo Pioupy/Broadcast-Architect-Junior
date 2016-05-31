@@ -8,17 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAJunior.Model;
+using BAJunior.ServiceData;
 
 namespace BAJunior.View.Forms.user
 {
     public partial class U_Profils : Form
     {
-        private User m_UserLogin; 
+        private User m_UserLogin;
+        private ProfilData m_ProfilData = new ProfilData(); 
 
         public U_Profils(User UserLogged)
         {
+            List<Profil> listProfil = m_ProfilData.readByProfilId(UserLogged.getId());
             m_UserLogin = UserLogged;
             InitializeComponent();
+
+            foreach (Profil item in listProfil)
+            {
+                cb_Profils.Items.Add(item.getName());
+            }
         }
 
         private void U_choixprofils_Load(object sender, EventArgs e)
