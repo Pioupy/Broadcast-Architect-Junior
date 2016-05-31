@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BAJunior.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,10 @@ namespace BAJunior.View.Forms.user
         {
             InitializeComponent();
         }
-        public U_User(String nameProfile, String nameKeyboard, String nameApplication)
+        public U_User(User user, String nameProfile, String nameKeyboard, String nameApplication)
         {
             InitializeComponent();
-            U_AddProfil addProfile = new U_AddProfil(nameProfile, nameKeyboard, nameApplication);
+            U_AddProfil addProfile = new U_AddProfil(user, nameProfile, nameKeyboard, nameApplication);
             u_AddProfil = addProfile;
         }
     }
