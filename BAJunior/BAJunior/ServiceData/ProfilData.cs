@@ -125,10 +125,10 @@ namespace BAJunior.ServiceData
             }
             return profilList;
         }
-        public List<Profil> readByProfilId(int id)
+        public List<Profil> readByUserID(int id)
         {
             List<Profil> profilList = new List<Profil>();
-            string requete = "SELECT * from Profil WHERE IDProfil = '" + id + "' order by IDProfil asc;";
+            string requete = "SELECT * from Profil WHERE IDUser = '" + id + "' order by IDProfil asc;";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);

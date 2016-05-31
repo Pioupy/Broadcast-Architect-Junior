@@ -36,6 +36,7 @@ namespace BAJunior.View.Forms.user
             this.m_listParamUser = m_addProfil.getListParamUser();
             // init list PictureBox
             m_pictureBox.InsertRange(m_pictureBox.Count, new List<PictureBox> { pictureBox3, key1, key6, pictureBox2, pictureBox1 });
+            m_addProfil.setLispictureBox(m_pictureBox);
 
         }
         private void genetiqueMethodeeEvent(PictureBox pictureBox, int id)
@@ -157,7 +158,7 @@ namespace BAJunior.View.Forms.user
             m_addProfil.setBank(1);
             //charger clavier
             //loadKeyboard();
-            m_addProfil.setLispictureBox(m_pictureBox);
+            //m_addProfil.setLispictureBox(m_pictureBox);
             m_addProfil.loadKeyboard();
         }
 
@@ -166,7 +167,7 @@ namespace BAJunior.View.Forms.user
             //charger clavier
             m_addProfil.setBank(2);
             //loadKeyboard();
-            m_addProfil.setLispictureBox(m_pictureBox);
+            //m_addProfil.setLispictureBox(m_pictureBox);
             m_addProfil.loadKeyboard();
         }
         

@@ -17,9 +17,12 @@ namespace BAJunior.View.Forms.user
 {
     public partial class U_AddProfil : Form
     {
+        private User m_user;
         private String m_nameProfile;
         private String m_nameKeyboard;
         private List<String> m_nameApplication = new List<string>();
+        private String m_applicationSelected;
+        private int m_focusApplication;
         private Command m_commandDragAndDrop;
         private int countListBtn;
         // Data table
@@ -29,8 +32,10 @@ namespace BAJunior.View.Forms.user
         private List<JointPAC> m_listJointPAC = new List<JointPAC>();
         private List<CommandUser> m_listCommandUser = new List<CommandUser>();
         private List<List<ParamUser>> m_listParamUser = new List<List<ParamUser>>();
+        private List<List<CommandUser>> m_listCommandUserFinal = new List<List<CommandUser>>();
+        private List<List<List<ParamUser>>> m_listParamUserFinal = new List<List<List<ParamUser>>>();
 
-        
+
 
         // clavier
         K_Intellipad intelipadClass;
@@ -43,13 +48,16 @@ namespace BAJunior.View.Forms.user
         {
             InitializeComponent();
         }
-        public U_AddProfil(String nameProfile, String nameKeyboard, String nameApplication)
+        public U_AddProfil(User user, String nameProfile, String nameKeyboard, String nameApplication)
         {
             InitializeComponent();
             // init value
+            m_user = user;
             m_nameProfile = nameProfile;
             m_nameKeyboard = nameKeyboard;
             m_nameApplication.Add(nameApplication);
+            m_applicationSelected = nameApplication;//init
+            m_focusApplication = 0;
             //init visuel
             labelNameProfile.Text = nameProfile;
             labelKeyboard.Text = nameKeyboard;
@@ -133,6 +141,7 @@ namespace BAJunior.View.Forms.user
         private void initData()
         {
             int bank = 0;
+            int idPositionCommand = 0;
             // Récupérer valeur ID Apllication
             ApplicationData applicationData = new ApplicationData();
             Model.Application application = applicationData.readByName(m_nameApplication[0]);//modifier siil est appeler autre par que le constructeur et detecter quelel application est charger
@@ -143,10 +152,11 @@ namespace BAJunior.View.Forms.user
                 bank = y + 1;
                 for (int i = (y*m_sizeButtonKeyboard); i < (m_sizeButtonKeyboard * (y+1)); i++)
                 {
-                    JointPAC jointPAC = new JointPAC(0, bank, 1, application.getId(), 0); // do it
+                    JointPAC jointPAC = new JointPAC(idPositionCommand, bank, 1, application.getId(), 0); // do it
                     m_listJointPAC.Add(jointPAC);
                     m_listCommandUser.Add(null);
                     m_listParamUser.Add(null);
+                    idPositionCommand++;
                 }
             }
         }
@@ -213,12 +223,82 @@ namespace BAJunior.View.Forms.user
         }
         private void btn_selectApplication_Click(object sender, EventArgs e)
         {
-            //récuperer valeur
+            //Récuperer valeur via lv_application_SelectedIndexChanged
+            // tester si la valeur selectionner n'est pas l'appication en cours !!!
+            if (m_nameApplication.IndexOf(m_applicationSelected) != m_focusApplication)
+            {
+                if (m_listCommandUserFinal.Count != m_nameApplication.Count)
+                {//nouvelle application
+                    m_listCommandUserFinal.Add(m_listCommandUser.ToList());
+                    m_listParamUserFinal.Add(m_listParamUser.ToList());
+                    // Nettoyer list
+                    m_listCommandUser.Clear();
+                    m_listParamUser.Clear();
+                    //initData();
+                }
+                else
+                {
+                    m_listCommandUserFinal[m_focusApplication] = m_listCommandUser.ToList();
+                    m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
+                    // Nettoyer list
+                    m_listCommandUser.Clear();
+                    m_listParamUser.Clear();
+                    //init data tableau
+                    //m_listCommandUser = m_listCommandUserFinal[m_nameApplication.IndexOf(m_applicationSelected)];
+                    //m_listParamUser = m_listParamUserFinal[m_nameApplication.IndexOf(m_applicationSelected)];
+                }
+                m_focusApplication = m_nameApplication.IndexOf(m_applicationSelected);//editer valeur
+                                                                                      //m_listCommandUserFinal[m_nameApplication.IndexOf(m_applicationSelected)] != null
+                if (m_focusApplication <= (m_listCommandUserFinal.Count - 1))
+                {
+                    m_listCommandUser = m_listCommandUserFinal[m_focusApplication];
+                    m_listParamUser = m_listParamUserFinal[m_focusApplication];
+                }
+                else
+                {
+                    initData();
+                }
 
-            //charger paramètre
+                // visuel ! 
+                loadKeyboard();
+                //affichage vert fond
+            }
+            else
+            {
+                //message l'appication est deja celle en cours
+            }
 
-            //mettre fond vert
 
+        }
+        
+        public void addApplication(String application)
+        {
+            lv_application.Items.Add(application);
+            m_nameApplication.Add(application);
+            // ajouter les champs
+            /*
+            //init list 
+            int bank = 0;
+            int size = m_listCommandUser.Count;
+            int idPositionCommand = 0;
+            // Récupérer valeur ID Apllication
+            ApplicationData applicationData = new ApplicationData();
+            Model.Application applicationSelected = applicationData.readByName(application);//modifier siil est appeler autre par que le constructeur et detecter quelel application est charger
+            //ID pofil sera modifier dans JointPAC lors de la sauvegarde
+            // init list JointPAC
+            for (int y = 1; y <= m_nbMaxBank; y++)
+            {
+                bank = y;
+                for (int i = (size + (m_sizeButtonKeyboard * (y-1))); i < (size + (m_sizeButtonKeyboard * y )); i++)
+                {
+                    JointPAC jointPAC = new JointPAC(idPositionCommand, bank, 1, applicationSelected.getId(), 0); // do it
+                    m_listJointPAC.Add(jointPAC);
+                    m_listCommandUser.Add(null);
+                    m_listParamUser.Add(null);
+                    idPositionCommand++;
+                }
+            }
+            */
         }
         private void lv_application_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -226,14 +306,9 @@ namespace BAJunior.View.Forms.user
             {
                 int count = lv_application.Items.IndexOf(lv_application.SelectedItems[0]);
                 //recuperer champs selelectionner
+                m_applicationSelected = lv_application.Items[count].Text;
             }
         }
-        public void addApplication(String application)
-        {
-            lv_application.Items.Add(application);
-            m_nameApplication.Add(application);
-        }
-
 
         /*#######################################
          #    CODE GESTION DES BOUTONS         #
@@ -341,7 +416,97 @@ namespace BAJunior.View.Forms.user
           #######################################*/
         private void btn_save_Click(object sender, EventArgs e)
         {
-            //crée profil bd et editer object jointpac
+            // Init variable
+            JointPACData jointPACData = new JointPACData();
+            CommandUserData commandUserData = new CommandUserData();
+            ParamUserData paramUserData = new ParamUserData();
+            ProfilData profilData = new ProfilData();
+            // Update Data of actuel keyboard
+            if (m_listCommandUserFinal.Count != m_nameApplication.Count)
+            {//Insert new field
+                m_listCommandUserFinal.Add(m_listCommandUser.ToList());
+                m_listParamUserFinal.Add(m_listParamUser.ToList());
+            }
+            else
+            {//Update field existant
+                m_listCommandUserFinal[m_focusApplication] = m_listCommandUser.ToList();
+                m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
+            }
+            // Insert database list of CommandUser and ParamUser
+
+            foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
+            {
+                foreach(CommandUser commandUser in listCommandUser)
+                {
+                    if(commandUser == null)
+                    {
+
+                    }
+                    commandUserData.create(commandUser);
+                    int id = commandUserData.readLastID();
+                    commandUser.setId(id);
+                }
+            }
+            //AJOUTER ID COMMAND DANS LES LIST PARAM !
+            int indexApplication = 0;
+            foreach(List<List<ParamUser>> listOfListParamUser in m_listParamUserFinal)
+            {
+                int indexList = 0;
+                List<CommandUser> listCommandUser = m_listCommandUserFinal[indexApplication];
+                foreach (List<ParamUser> listParamUser in listOfListParamUser)
+                {
+                    foreach (ParamUser paramUser in listParamUser)
+                    {
+                        if (paramUser == null )
+                        {
+
+                        }
+                        paramUser.setIdCommandUser(listCommandUser[indexList].getId());
+                        paramUserData.create(paramUser);
+                        int id = paramUserData.readLastID();
+                        paramUser.setId(id);
+                    }
+                    indexList++;
+                }
+                indexApplication++;
+            }
+            // TESTER ET VALIDER LES IDCOMMANDUSER
+            //crée les data jointPAC
+            // get idprofil !!!
+            int idProfil = com;//modifier
+            int indexBtn = 0;
+            for (int i=0;i<m_listJointPAC.Count;i++)
+            {
+                 
+                 //get id application
+                 //get command
+                 JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[i].getBank(),idProfil, m_listJointPAC[i].getIdApplication(),m_listCommandUser[i].getId());
+                 m_listJointPAC[i] = jointPAC;
+                if(indexBtn >= m_sizeButtonKeyboard)
+                {
+                    indexBtn = 0;
+                }
+                else
+                {
+                    indexBtn++;
+                }
+            }
+            // Insert database jointPAC
+            foreach (JointPAC jointPAC in m_listJointPAC)
+            {
+                jointPACData.create(jointPAC);
+            }
+            //close form 
+            this.Close();
+            //charger la fenetre dans la fenetre ? 
+
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            //vider les data 
+
+            //close fenetre
         }
     }
 }

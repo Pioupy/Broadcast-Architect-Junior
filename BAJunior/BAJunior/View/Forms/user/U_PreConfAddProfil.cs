@@ -49,7 +49,7 @@ namespace BAJunior.View.Forms.user
             {
                 //U_AddProfil userForm = new U_AddProfil();
                 //Constructeur avec les informations récupérées ici 
-                U_AddProfil profilForm = new U_AddProfil(tb_nameProfile.Text, cb_keyboard.Text, cb_application.Text);
+                U_AddProfil profilForm = new U_AddProfil(m_UserLogin, tb_nameProfile.Text, cb_keyboard.Text, cb_application.Text);
                 this.Hide();
                 profilForm.ShowDialog();
                 this.Close();// note Alex : avant le show ? 
