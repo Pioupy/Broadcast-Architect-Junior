@@ -19,7 +19,7 @@ namespace BAJunior.View.Forms.user
 
         public U_Profils(User UserLogged)
         {
-            List<Profil> listProfil = m_ProfilData.readByProfilId(UserLogged.getId());
+            List<Profil> listProfil = m_ProfilData.readByUserID(UserLogged.getId());
             m_UserLogin = UserLogged;
             InitializeComponent();
 
