@@ -93,7 +93,7 @@ namespace BAJunior.ServiceMétier
                            //     lines.a
                             }
 
-                            createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines );
+                         //   createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines );
                         }
                     }
                 }
