@@ -9,17 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAJunior.Model;
 using BAJunior.ServiceData;
+using BAJunior.ServiceMétier;
 
 namespace BAJunior.View.Forms.user
 {
     public partial class U_Profils : Form
     {
         private User m_UserLogin;
-        private ProfilData m_ProfilData = new ProfilData(); 
+        private ProfilData m_ProfilData = new ProfilData();
+        List<Profil> listProfil = new List<Profil>();
 
         public U_Profils(User UserLogged)
         {
-            List<Profil> listProfil = m_ProfilData.readByUserID(UserLogged.getId());
+            listProfil = m_ProfilData.readByUserID(UserLogged.getId());
             m_UserLogin = UserLogged;
             InitializeComponent();
 
@@ -38,6 +40,14 @@ namespace BAJunior.View.Forms.user
         {
             U_PreConfAddProfil preConfAddProfilForm = new U_PreConfAddProfil(m_UserLogin);
             preConfAddProfilForm.ShowDialog();
+        }
+
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+            FileTools test = new FileTools();
+            Profil actualProfil = m_ProfilData.read(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
+
+            test.objectToTxt(actualProfil);
         }
     }
 }

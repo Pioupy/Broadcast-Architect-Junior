@@ -126,6 +126,7 @@
             this.btn_Load.TabIndex = 5;
             this.btn_Load.Text = "Charger dans la console";
             this.btn_Load.UseVisualStyleBackColor = true;
+            this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
             // 
             // intellipad
             // 

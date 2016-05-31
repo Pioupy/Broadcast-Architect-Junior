@@ -110,7 +110,6 @@ namespace BAJunior.ServiceMétier
                     }
                 }
             }
-
             return result;
         }
 

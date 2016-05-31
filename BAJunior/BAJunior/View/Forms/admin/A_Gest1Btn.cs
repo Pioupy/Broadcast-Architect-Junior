@@ -33,9 +33,7 @@ namespace BAJunior.View.Forms.admin
                 Directory.CreateDirectory(pathImage);
             else
             {
-                ////////////////////////////////////mettre l'image de l'exe plutot !!!!!!!!
-                //  pb_btn.Image = Properties.Resources._default;
-                pb_btn.Image = Image.FromFile(pathImage + "\\default.bmp");
+                pb_btn.Image = Properties.Resources.default1;
                 getAllImages();
             }
 

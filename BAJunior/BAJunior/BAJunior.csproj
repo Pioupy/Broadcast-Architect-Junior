@@ -296,6 +296,7 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\default1.bmp" />
     <None Include="bin\Debug\Image\default.bmp" />
     <Content Include="Image\1.bmp" />
     <Content Include="Image\2.bmp" />
