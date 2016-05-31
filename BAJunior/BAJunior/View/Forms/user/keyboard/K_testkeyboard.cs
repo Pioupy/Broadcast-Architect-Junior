@@ -92,6 +92,7 @@ namespace BAJunior.View.Forms.user
                 m_listCommandUser[id] = commandUser;
                 //tester necessaire
                 m_addProfil.setListCommandUser(m_listCommandUser);
+                // joint pac ?
                 //Charger image
                 pictureBox.Image = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + command.getPicture(), true);
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;// mettre l'image a la taille de la box
@@ -155,22 +156,26 @@ namespace BAJunior.View.Forms.user
         {
             m_addProfil.setBank(1);
             //charger clavier
-            loadKeyboard();
+            //loadKeyboard();
+            m_addProfil.setLispictureBox(m_pictureBox);
+            m_addProfil.loadKeyboard();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             //charger clavier
             m_addProfil.setBank(2);
-            loadKeyboard();
+            //loadKeyboard();
+            m_addProfil.setLispictureBox(m_pictureBox);
+            m_addProfil.loadKeyboard();
         }
         
         //{ pictureBox3, key1, key6, pictureBox2, pictureBox1 }
-        private void loadKeyboard()
+        public void loadKeyboard()
         {
             //init data 
-            int initFor = ((m_addProfil.getBank() - 1) * m_addProfil.getSizeButtonKeyboardk());
-            int maxFor = (m_addProfil.getBank() * m_addProfil.getSizeButtonKeyboardk());
+            int initFor = ((m_addProfil.getBank() - 1) * m_addProfil.getSizeButtonKeyboard());
+            int maxFor = (m_addProfil.getBank() * m_addProfil.getSizeButtonKeyboard());
             int iForPictureBox = 0;
             //charge data
             for (int i = initFor; i < maxFor; i++)
@@ -189,7 +194,33 @@ namespace BAJunior.View.Forms.user
                 }
                 iForPictureBox++;
             }
-            //afficher visuel
+        }
+        // [Getter/Setter] List<CommandUser> m_listCommandUser
+        public List<CommandUser> getListCommandUser()
+        {
+            return this.m_listCommandUser;
+        }
+        public void setListCommandUser(List<CommandUser> commandUser)
+        {
+            this.m_listCommandUser = commandUser;
+        }
+        // [Getter/Setter] List<List<ParamUser>> m_listParamUser
+        public List<List<ParamUser>> getListParamUser()
+        {
+            return this.m_listParamUser;
+        }
+        public void setListParamUser(List<List<ParamUser>> listParamUser)
+        {
+            this.m_listParamUser = listParamUser;
+        }
+        // [Getter/Setter]List<PictureBox> m_pictureBox
+        public List<PictureBox> getLispictureBox()
+        {
+            return this.m_pictureBox;
+        }
+        public void setLispictureBox(List<PictureBox> pictureBox)
+        {
+            this.m_pictureBox = pictureBox;
         }
     }
 }

@@ -30,6 +30,14 @@ namespace BAJunior.View.Forms.user
         private List<CommandUser> m_listCommandUser = new List<CommandUser>();
         private List<List<ParamUser>> m_listParamUser = new List<List<ParamUser>>();
 
+        
+
+        // clavier
+        K_Intellipad intelipadClass;
+        K_testkeyboard testKeyboardClass;
+        
+
+        private List<PictureBox> m_pictureBox = new List<PictureBox>();
 
         public U_AddProfil()
         {
@@ -69,13 +77,17 @@ namespace BAJunior.View.Forms.user
             Xml xml = new Xml();
             List<String> defaultProfilsList = xml.readNameProfil(nameKeyboard);
             Button button;
+            int i = 0; 
             foreach (String name in defaultProfilsList) {
                 button = new Button();
                 button.Text = name;
+                button.Width = 100; // chure ? 
+                button.Location = new Point(0 + i * 100,0);//prend pas en compte le retourn a la ligne du panel 
                 button.Click += button_Click_Default_Profils; // ajout de l'event onClick
                 panelDefaultProfils.Controls.Add(button);
                 //faire en sorte que le btn sois auto size
                 //je crois que le bouton en faite se crée par dessus le premier !!!
+                i ++;
             }
             // Gestion de l'affichage/génération du clavier  par défaut
             String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + nameKeyboard + ".cs";
@@ -83,8 +95,8 @@ namespace BAJunior.View.Forms.user
             {
                 if (nameKeyboard == "Intellipad")
                 {
-                    var keyboardClass = new K_Intellipad(this);
-                    panel_keyboard.Controls.Add(keyboardClass);
+                    intelipadClass = new K_Intellipad(this);
+                    panel_keyboard.Controls.Add(intelipadClass);
                     // init value 
                     m_sizeButtonKeyboard = 50;
                     m_nbMaxBank = 4;
@@ -92,8 +104,8 @@ namespace BAJunior.View.Forms.user
                 }
                 else if (nameKeyboard == "testkeyboard")
                 {
-                    var keyboardClass = new K_testkeyboard(this);
-                    panel_keyboard.Controls.Add(keyboardClass);
+                    testKeyboardClass = new K_testkeyboard(this);
+                    panel_keyboard.Controls.Add(testKeyboardClass);
                     // init value 
                     m_sizeButtonKeyboard = 5;
                     m_nbMaxBank = 2;
@@ -112,6 +124,9 @@ namespace BAJunior.View.Forms.user
             }
             
         }
+
+        
+
         /*#######################################
           #       INIT KEYBOARD DATA            #
           #######################################*/
@@ -135,20 +150,58 @@ namespace BAJunior.View.Forms.user
                 }
             }
         }
-        public void loadKeyboard()
-        {
-            //init data 
-            
-            //charge data
-
-            //afficher visuel
-        }
         /*#######################################
           #       CODE GESTION XML              #
           #######################################*/
         void button_Click_Default_Profils(object obj, EventArgs e) // envent onClick pour les boutons des profils par défaut
         {
-           
+            //recuperer le nom du profil xml !!!!!!!!!!!!!!!!!!!!!!
+            Xml xml = new Xml(this);
+            //recup data ? 
+            xml.loadProfil(m_nameKeyboard, "ProfilDos_testkeyboard");
+            if (m_nameKeyboard == "Intellipad")
+            {
+                //intelipadClass.
+            }
+            else if (m_nameKeyboard == "testkeyboard")
+            {
+                testKeyboardClass.setListCommandUser(m_listCommandUser);
+                testKeyboardClass.setListParamUser(m_listParamUser);
+                testKeyboardClass.loadKeyboard();
+            }
+            else
+            {
+                //gerer lerreur affichage !
+                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
+            }
+            //fair eles inse dans le clavier 
+
+        }
+        public void loadKeyboard()
+        {
+            //init data 
+            int initFor = ((m_bank - 1) * m_sizeButtonKeyboard);
+            int maxFor = (m_bank * m_sizeButtonKeyboard);
+            int iForPictureBox = 0;
+            //charge data
+            for (int i = initFor; i < maxFor; i++)
+            {
+                
+                if (m_listCommandUser[i] == null)
+                {//init a vide les valeur visuel
+                    m_pictureBox[iForPictureBox].Image = null;
+                    //mettre les autre bontou
+                }
+                else
+                {//récupérer valeur
+                    m_pictureBox[iForPictureBox].Image = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + m_listCommandUser[i].getPicture(), true);
+                    m_pictureBox[iForPictureBox].SizeMode = PictureBoxSizeMode.StretchImage;// mettre l'image a la taille de la box
+                                                                                            // Les mysteère de la vie : 
+                    m_pictureBox[iForPictureBox].Invalidate();
+                }
+                iForPictureBox++;
+                
+            }
         }
         /*#######################################
           #    CODE GESTION APPLICATION         #
@@ -230,11 +283,11 @@ namespace BAJunior.View.Forms.user
             this.m_nbMaxBank = nbMaxBank;
         }
         // [Getter/Setter] int m_bank
-        public int getSizeButtonKeyboardk()
+        public int getSizeButtonKeyboard()
         {
             return this.m_sizeButtonKeyboard;
         }
-        public void setSizeButtonKeyboardk(int sizeButtonKeyboard)
+        public void setSizeButtonKeyboard(int sizeButtonKeyboard)
         {
             this.m_sizeButtonKeyboard = sizeButtonKeyboard;
         }
@@ -273,6 +326,15 @@ namespace BAJunior.View.Forms.user
         public void setListParamUser(List<List<ParamUser>> listParamUser)
         {
             this.m_listParamUser = listParamUser;
+        }
+        // [Getter/Setter]List<PictureBox> m_pictureBox
+        public List<PictureBox> getLispictureBox()
+        {
+            return this.m_pictureBox;
+        }
+        public void setLispictureBox(List<PictureBox> pictureBox)
+        {
+            this.m_pictureBox = pictureBox;
         }
         /*#######################################
           #             SAUVEGARDER             #
