@@ -62,7 +62,7 @@ namespace BAJunior.View.Forms
                         userForm.ShowDialog();
                         this.Close();
                         */
-                        U_Profils userForm = new U_Profils();
+                        U_Profils userForm = new U_Profils(user);
                         this.Hide();
                         userForm.ShowDialog();
                         this.Close();//Note alex : close peut être avant le show ? question

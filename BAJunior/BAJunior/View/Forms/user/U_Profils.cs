@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BAJunior.Model;
 
 namespace BAJunior.View.Forms.user
 {
     public partial class U_Profils : Form
     {
-        public U_Profils()
+        private User m_UserLogin; 
+
+        public U_Profils(User UserLogged)
         {
+            m_UserLogin = UserLogged;
             InitializeComponent();
         }
 
@@ -24,7 +28,7 @@ namespace BAJunior.View.Forms.user
 
         private void btn_AddProfil_Click(object sender, EventArgs e)
         {
-            U_PreConfAddProfil preConfAddProfilForm = new U_PreConfAddProfil();
+            U_PreConfAddProfil preConfAddProfilForm = new U_PreConfAddProfil(m_UserLogin);
             preConfAddProfilForm.ShowDialog();
         }
     }

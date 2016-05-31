@@ -14,8 +14,12 @@ namespace BAJunior.View.Forms.user
 {
     public partial class U_PreConfAddProfil : Form
     {
-        public U_PreConfAddProfil()
+        private User m_UserLogin;
+
+        public U_PreConfAddProfil(User UserLogged)
         {
+            m_UserLogin = UserLogged;
+
             InitializeComponent();
             // Recover Keyboard on database
             KeyboardData keyboardData = new KeyboardData();
