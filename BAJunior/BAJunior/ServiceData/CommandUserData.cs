@@ -127,14 +127,14 @@ namespace BAJunior.ServiceData
         {
 
             List<ParamUser> commandListParam = new List<ParamUser>();
-            string requete = "SELECT p.IDParam, p.Name, p.Value, p.IsUser, p.IDCommandUser  FROM CommandUser c, Param p WHERE c.IDCommandUser=p.IDCommandUser AND c.IDCommandUser=" + id + " order by c.IDCommandUser asc";
+            string requete = "SELECT p.IDParamUser, p.Name, p.Value, p.IsUser, p.IDCommandUser  FROM CommandUser c, ParamUser p WHERE c.IDCommandUser=p.IDCommandUser AND c.IDCommandUser=" + id + " order by c.IDCommandUser asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
 
                 foreach (DataRow r in reader.Rows)
                 {
-                    int idParam = Convert.ToInt32(r["IDParam"]);
+                    int idParam = Convert.ToInt32(r["IDParamUser"]);
                     String name = r["Name"].ToString();
                     String value = r["Value"].ToString();
                     bool isUser = Convert.ToBoolean(r["IsUser"].ToString());

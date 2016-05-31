@@ -48,6 +48,7 @@ namespace BAJunior.View.Forms.user
             Profil actualProfil = m_ProfilData.read(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
 
             test.objectToTxt(actualProfil);
+            MessageBox.Show("Enregistrement fini !");
         }
     }
 }

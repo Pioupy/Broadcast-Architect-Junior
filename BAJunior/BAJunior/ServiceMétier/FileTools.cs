@@ -94,15 +94,19 @@ namespace BAJunior.ServiceMétier
                                 lines.Add(line);
 
                                 //Copier image dans ressource a cote
-                                string pathDest = Path.Combine(Properties.Settings.Default.TextFilePath, appData.read(appli.getIdApplication()).getName(),"Ressources");
+                                string pathDest = Path.Combine(Properties.Settings.Default.TextFilePath, appData.read(appli.getIdApplication()).getName(), "Ressources");
+
                                 string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
                                 path = path.Replace("file:\\", "");
-                                path = path + cmdUserData.read(banks.getIdCommandUser()).getPicture();
+                                path = path + "\\" + cmdUserData.read(banks.getIdCommandUser()).getPicture();
 
                                 if (!Directory.Exists(pathDest))
                                     Directory.CreateDirectory(pathDest);
 
-                                File.Copy(path, pathDest);
+                                pathDest = pathDest + "\\" + cmdUserData.read(banks.getIdCommandUser()).getPicture();
+
+                                if (!File.Exists(pathDest))
+                                    File.Copy(path, pathDest);
                             }
 
                             createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines.ToArray());
