@@ -120,5 +120,26 @@ namespace BAJunior.ServiceData
             }
             return keyboardList;
         }
+        public Keyboard readByName(String nameKeyboard)
+        {
+            Keyboard keyboard = null;
+            string requete = "SELECT * from Keyboard WHERE Name = '" + nameKeyboard + "' order by IDKeyboard asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idKeyboard = Convert.ToInt32(r["IDKeyboard"]);
+                    String name = r["Name"].ToString();
+                    keyboard = new Keyboard(idKeyboard, name);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return keyboard;
+        }
     }
 }
