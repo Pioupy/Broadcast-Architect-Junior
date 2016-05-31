@@ -434,7 +434,6 @@ namespace BAJunior.View.Forms.user
                 m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
             }
             // Insert database list of CommandUser and ParamUser
-
             foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
             {
                 foreach(CommandUser commandUser in listCommandUser)
@@ -459,20 +458,16 @@ namespace BAJunior.View.Forms.user
                 List<CommandUser> listCommandUser = m_listCommandUserFinal[indexApplication];
                 foreach (List<ParamUser> listParamUser in listOfListParamUser)
                 {
-                    foreach (ParamUser paramUser in listParamUser)
+                    if (listParamUser != null)
                     {
-                        if (paramUser != null )
+                        foreach (ParamUser paramUser in listParamUser)
                         {
                             paramUser.setIdCommandUser(listCommandUser[indexList].getId());
                             paramUserData.create(paramUser);
                             int id = paramUserData.readLastID();
                             paramUser.setId(id);
                         }
-                        else
-                        {
-                            //supprimer champs list
-                        }
-
+                        
                     }
                     indexList++;
                 }
@@ -481,40 +476,28 @@ namespace BAJunior.View.Forms.user
             // TESTER ET VALIDER LES IDCOMMANDUSER
             //crée les data jointPAC
             // get idprofil !!!
-            Keyboard keyboard = new Keyboard(m_nameKeyboard);
+            Keyboard keyboard = keyboardData.readByName(m_nameKeyboard);
             Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
+            profilData.create(profil);
             int idProfil = m_user.getId();//modifier
             int indexBtn = 0;
+            int index = 0;
             foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
             {
                 foreach (CommandUser commandUser in listCommandUser)
                 {
                     if (commandUser != null)
                     {
-                        //JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[i].getBank(), idProfil, m_listJointPAC[i].getIdApplication(), m_listCommandUser[i].getId());
-                        //m_listJointPAC[i] = jointPAC;
-                        if (indexBtn >= m_sizeButtonKeyboard)
-                        {
-                            indexBtn = 0;
-                        }
-                        else
-                        {
-                            indexBtn++;
-                        }
+                        JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[index].getIdApplication(), m_listCommandUser[index].getId());
+                        //m_listJointPAC[index] = jointPAC;
+                        // Insert database jointPAC
+                        jointPACData.create(jointPAC);
+
                     }
                     else
                     {
                         //supprimer champs 
                     }
-                }
-            }
-            /*
-            for (int i=0;i<m_listJointPAC.Count;i++)
-            {
-                if ()
-                {
-                    JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[i].getBank(), idProfil, m_listJointPAC[i].getIdApplication(), m_listCommandUser[i].getId());
-                    m_listJointPAC[i] = jointPAC;
                     if (indexBtn >= m_sizeButtonKeyboard)
                     {
                         indexBtn = 0;
@@ -523,20 +506,11 @@ namespace BAJunior.View.Forms.user
                     {
                         indexBtn++;
                     }
+                    index++;
                 }
-                else
-                {
-                    //jointPAC null
-                }
-            }
-            */
-            // Insert database jointPAC
-            foreach (JointPAC jointPAC in m_listJointPAC)
-            {
-                jointPACData.create(jointPAC);
             }
             //close form 
-            //this.Close();
+            this.Close();
             //charger la fenetre dans la fenetre ? 
 
         }

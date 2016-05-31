@@ -37,9 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lv_Image = new System.Windows.Forms.ListView();
             this.Btn_imageBrowse = new System.Windows.Forms.Button();
             this.tb_imagePath = new System.Windows.Forms.TextBox();
-            this.lv_Image = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -271,6 +271,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Images";
             // 
+            // lv_Image
+            // 
+            this.lv_Image.Location = new System.Drawing.Point(6, 38);
+            this.lv_Image.Name = "lv_Image";
+            this.lv_Image.Size = new System.Drawing.Size(632, 322);
+            this.lv_Image.TabIndex = 0;
+            this.lv_Image.UseCompatibleStateImageBehavior = false;
+            this.lv_Image.Click += new System.EventHandler(this.lv_Image_Click);
+            // 
             // Btn_imageBrowse
             // 
             this.Btn_imageBrowse.Location = new System.Drawing.Point(548, 590);
@@ -288,15 +297,6 @@
             this.tb_imagePath.ReadOnly = true;
             this.tb_imagePath.Size = new System.Drawing.Size(514, 22);
             this.tb_imagePath.TabIndex = 1;
-            // 
-            // lv_Image
-            // 
-            this.lv_Image.Location = new System.Drawing.Point(6, 38);
-            this.lv_Image.Name = "lv_Image";
-            this.lv_Image.Size = new System.Drawing.Size(632, 322);
-            this.lv_Image.TabIndex = 0;
-            this.lv_Image.UseCompatibleStateImageBehavior = false;
-            this.lv_Image.Click += new System.EventHandler(this.lv_Image_Click);
             // 
             // groupBox3
             // 
@@ -1602,7 +1602,7 @@
             // 
             this.btn_save.Location = new System.Drawing.Point(215, 664);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(226, 23);
+            this.btn_save.Size = new System.Drawing.Size(226, 30);
             this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Sauvegarder le bouton";
             this.btn_save.UseVisualStyleBackColor = true;
