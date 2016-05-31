@@ -72,32 +72,43 @@ namespace BAJunior.ServiceMétier
                     foreach (JointPAC appli in m_JointPac.Where(item => item.getIdApplication() == listJoin.getIdApplication()).OrderBy(item => item.getIdApplication()))
                     {
                         string folder = appData.read(appli.getIdApplication()).getName();
-                         int tempbank = -1;
+                        int tempbank = -1;
 
                         if (appli.getBank() == tempbank)
                             continue;
                         else
                         {
-                            string[] lines;
+                            List<string> lines = new List<string>();
                             tempbank = appli.getBank();
+
                             foreach (JointPAC banks in m_JointPac.Where(item => item.getIdApplication() == tempIdAppli && item.getBank() == appli.getBank()).OrderBy(item => item.getBtnKeyboard()))
                             {
                                 CommandUserData cmdUserData = new CommandUserData();
-                                List<ParamUser> ParamU =  cmdUserData.readParamByCommand(banks.getIdCommandUser());
+                                List<ParamUser> ParamU = cmdUserData.readParamByCommand(banks.getIdCommandUser());
                                 string line = "";
 
                                 foreach (ParamUser param in ParamU)
                                 {
                                     line = line + param.getValue() + ",";
                                 }
-                           //     lines.a
+                                lines.Add(line);
+
+                                //Copier image dans ressource a cote
+                                string pathDest = Path.Combine(Properties.Settings.Default.TextFilePath, appData.read(appli.getIdApplication()).getName(),"Ressources");
+                                string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+                                path = path.Replace("file:\\", "");
+                                path = path + cmdUserData.read(banks.getIdCommandUser()).getPicture();
+
+                                if (!Directory.Exists(pathDest))
+                                    Directory.CreateDirectory(pathDest);
+
+                                File.Copy(path, pathDest);
                             }
 
-                         //   createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines );
+                            createTextFile(appData.read(appli.getIdApplication()).getName(), tempbank.ToString(), lines.ToArray());
                         }
                     }
                 }
-                
             }
 
             return result;
