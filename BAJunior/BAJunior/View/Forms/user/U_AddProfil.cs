@@ -215,7 +215,8 @@ namespace BAJunior.View.Forms.user
             {
                 m_testKeyboardClass.setListCommandUser(m_listCommandUser);
                 m_testKeyboardClass.setListParamUser(m_listParamUser);
-                m_testKeyboardClass.loadKeyboard();
+                //m_testKeyboardClass.loadKeyboard();
+                loadKeyboard();
             }
             // else if other keyboard
             else
