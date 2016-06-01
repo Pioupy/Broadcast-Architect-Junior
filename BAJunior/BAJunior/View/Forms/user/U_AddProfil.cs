@@ -147,13 +147,15 @@ namespace BAJunior.View.Forms.user
         {
             CommandData commandData = new CommandData();
             List<Command> listBtns;
+            string pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            pathImage = pathImage.Replace("file:\\", "");
 
             // Gestion de l'affichage de la liste des boutons
             listBtns = commandData.readAll();
             var imageList = new ImageList();
             foreach (Command cmd in listBtns)
             {
-                Bitmap img = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + cmd.getPicture(), true);
+                Bitmap img = (Bitmap)Image.FromFile(pathImage + "//" +cmd.getPicture(), true);
                 imageList.Images.Add(cmd.getPicture(), img);
             }
             listViewBtns.LargeImageList = imageList;
@@ -233,6 +235,8 @@ namespace BAJunior.View.Forms.user
         public void loadKeyboard()
         {
             //init data 
+            string pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            pathImage = pathImage.Replace("file:\\", "");
             int initFor = ((m_bank - 1) * m_sizeButtonKeyboard);
             int maxFor = (m_bank * m_sizeButtonKeyboard);
             int iForPictureBox = 0;
@@ -247,7 +251,7 @@ namespace BAJunior.View.Forms.user
                 }
                 else
                 {//récupérer valeur
-                    m_pictureBox[iForPictureBox].Image = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + m_listCommandUser[i].getPicture(), true);
+                    m_pictureBox[iForPictureBox].Image = Image.FromFile(pathImage + "//" + m_listCommandUser[i].getPicture(), true);
                     m_pictureBox[iForPictureBox].SizeMode = PictureBoxSizeMode.StretchImage;// mettre l'image a la taille de la box
                                                                                             // Les mysteère de la vie : 
                     m_pictureBox[iForPictureBox].Invalidate();
