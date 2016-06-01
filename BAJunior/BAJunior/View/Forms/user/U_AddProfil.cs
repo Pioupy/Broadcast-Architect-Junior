@@ -20,6 +20,7 @@ namespace BAJunior.View.Forms.user
         private String m_applicationSelected; // 
         private int m_focusApplication; // focus on application current
         private Command m_commandDragAndDrop;
+        private Profil m_profil = null;
         private int m_countListBtn;
         private int m_sizeButtonKeyboard;
         private int m_bank = 1;
@@ -43,6 +44,48 @@ namespace BAJunior.View.Forms.user
             InitializeComponent();
         }
         //faire constructeur pour edit
+        public U_AddProfil(int idProfil)
+        {
+            InitializeComponent();
+            // init service data
+            JointPACData jointPACData = new JointPACData();
+            CommandUserData commandUserData = new CommandUserData();
+            ParamUserData paramUserData = new ParamUserData();
+            ProfilData profilData = new ProfilData();
+            KeyboardData keyboardData = new KeyboardData();
+            UserData userData = new UserData();
+            //recuperer dans les list 
+            // ==> profil
+            m_profil = profilData.read(idProfil);
+            m_nameProfile = m_profil.getName();
+            labelNameProfile.Text = m_nameProfile;
+            // ==> user 
+            User user = userData.read(m_profil.getIdUser());
+            m_user = user;
+            //keyboard
+            Keyboard keyboard = keyboardData.read(m_profil.getIdKeyboard());
+            m_nameKeyboard = keyboard.getName();
+            labelKeyboard.Text = m_nameKeyboard;
+            // ==> application
+            //m_nameApplication.Add(nameApplication);
+            //m_applicationSelected = nameApplication;
+            //m_focusApplication = 0;
+            //lv_application.Items.Add(nameApplication);
+            //lv_application.Items[0].BackColor = Color.Green;
+            // ==> jointPAC
+            // ==> command
+            // ==> param
+
+            /////////////////////////////////////////////////
+            initForm();
+            initKeyboard();
+            //chargement des data
+
+            // init data on form
+
+            //init donner form ( nom )
+            this.Name = "Edit";
+        }
         public U_AddProfil(User user, String nameProfile, String nameKeyboard, String nameApplication)
         { // call by U_PreConfAddProfil
             InitializeComponent();
@@ -58,61 +101,36 @@ namespace BAJunior.View.Forms.user
             labelKeyboard.Text = nameKeyboard;
             lv_application.Items.Add(nameApplication);
             lv_application.Items[0].BackColor = Color.Green;
-
-            CommandData commandData = new CommandData();
-            List<Command> listBtns;
-
-            // Gestion de l'affichage de la liste des boutons
-            listBtns = commandData.readAll();
-            var imageList = new ImageList();
-            foreach (Command cmd in listBtns) {
-                Bitmap img = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + cmd.getPicture(), true);
-                imageList.Images.Add(cmd.getPicture(), img);                
-            }
-            listViewBtns.LargeImageList = imageList;
-            foreach (Command cmd in listBtns)
-            {
-                var listViewItem = listViewBtns.Items.Add(cmd.getName());
-                listViewItem.ImageKey = cmd.getPicture();
-            }
-
-            // Gestion de l'affichage/génération des boutons de profil par défaut
-            Xml xml = new Xml();
-            List<String> defaultProfilsList = xml.readNameProfil(nameKeyboard);
-            Button button;
-            int i = 0; 
-            foreach (String name in defaultProfilsList) {
-                button = new Button();
-                button.Text = name;
-                button.Width = 100; // chure ? 
-                button.Location = new Point(0 + i * 100,0);//prend pas en compte le retourn a la ligne du panel 
-                button.Click += button_Click_Default_Profils; // ajout de l'event onClick
-                panelDefaultProfils.Controls.Add(button);
-                //faire en sorte que le btn sois auto size
-                //je crois que le bouton en faite se crée par dessus le premier !!!
-                i ++;
-            }
+            initForm();
+            initKeyboard();
+            initData();
+        }
+        /*#######################################
+          #       INIT KEYBOARD DATA            #
+          #######################################*/
+        private void initKeyboard()
+        {
             // Gestion de l'affichage/génération du clavier  par défaut
-            String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + nameKeyboard + ".cs";
+            String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + m_nameKeyboard + ".cs";
             if (File.Exists(fileKeyboard))
             {
-                if (nameKeyboard == "Intellipad")
+                if (m_nameKeyboard == "Intellipad")
                 {
                     m_intelipadClass = new K_Intellipad(this);
                     panel_keyboard.Controls.Add(m_intelipadClass);
                     // init values
                     m_sizeButtonKeyboard = 50;
                     m_nbMaxBank = 4;
-                    initData();
+                    //initData();
                 }
-                else if (nameKeyboard == "testkeyboard")
+                else if (m_nameKeyboard == "testkeyboard")
                 {
                     m_testKeyboardClass = new K_testkeyboard(this);
                     panel_keyboard.Controls.Add(m_testKeyboardClass);
                     // init values
                     m_sizeButtonKeyboard = 5;
                     m_nbMaxBank = 2;
-                    initData();
+                    //initData();
                 }
                 else
                 {
@@ -125,9 +143,44 @@ namespace BAJunior.View.Forms.user
                 MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum");
             }
         }
-        /*#######################################
-          #       INIT KEYBOARD DATA            #
-          #######################################*/
+        private void initForm()
+        {
+            CommandData commandData = new CommandData();
+            List<Command> listBtns;
+
+            // Gestion de l'affichage de la liste des boutons
+            listBtns = commandData.readAll();
+            var imageList = new ImageList();
+            foreach (Command cmd in listBtns)
+            {
+                Bitmap img = (Bitmap)Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + cmd.getPicture(), true);
+                imageList.Images.Add(cmd.getPicture(), img);
+            }
+            listViewBtns.LargeImageList = imageList;
+            foreach (Command cmd in listBtns)
+            {
+                var listViewItem = listViewBtns.Items.Add(cmd.getName());
+                listViewItem.ImageKey = cmd.getPicture();
+            }
+
+            // Gestion de l'affichage/génération des boutons de profil par défaut
+            Xml xml = new Xml();
+            List<String> defaultProfilsList = xml.readNameProfil(m_nameKeyboard);
+            Button button;
+            int i = 0;
+            foreach (String name in defaultProfilsList)
+            {
+                button = new Button();
+                button.Text = name;
+                button.Width = 100; // chure ? 
+                button.Location = new Point(0 + i * 100, 0);//prend pas en compte le retourn a la ligne du panel 
+                button.Click += button_Click_Default_Profils; // ajout de l'event onClick
+                panelDefaultProfils.Controls.Add(button);
+                //faire en sorte que le btn sois auto size
+                //je crois que le bouton en faite se crée par dessus le premier !!!
+                i++;
+            }
+        }
         private void initData()
         {
             int bank = 0;
@@ -252,6 +305,7 @@ namespace BAJunior.View.Forms.user
                 // visuel ! 
                 loadKeyboard();
                 //affichage vert fond
+                //LE FAIRE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             else
             {
@@ -477,6 +531,7 @@ namespace BAJunior.View.Forms.user
                 int index = 0;
                 foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
                 {
+                    index = 0;
                     foreach (CommandUser commandUser in listCommandUser)
                     {
                         if (commandUser != null)
