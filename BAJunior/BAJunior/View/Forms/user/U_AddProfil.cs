@@ -112,36 +112,28 @@ namespace BAJunior.View.Forms.user
         private void initKeyboard()
         {
             // Gestion de l'affichage/génération du clavier  par défaut
-            String fileKeyboard = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\View\\Forms\\user\\keyboard/K_" + m_nameKeyboard + ".cs";
-            if (File.Exists(fileKeyboard))
+            if (m_nameKeyboard == "Intellipad")
             {
-                if (m_nameKeyboard == "Intellipad")
-                {
-                    m_intelipadClass = new K_Intellipad(this);
-                    panel_keyboard.Controls.Add(m_intelipadClass);
-                    // init values
-                    m_sizeButtonKeyboard = 50;
-                    m_nbMaxBank = 4;
-                    //initData();
-                }
-                else if (m_nameKeyboard == "testkeyboard")
-                {
-                    m_testKeyboardClass = new K_testkeyboard(this);
-                    panel_keyboard.Controls.Add(m_testKeyboardClass);
-                    // init values
-                    m_sizeButtonKeyboard = 5;
-                    m_nbMaxBank = 2;
-                    //initData();
-                }
-                else
-                {
-                    //gerer lerreur affichage !
-                    MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
-                }
+                m_intelipadClass = new K_Intellipad(this);
+                panel_keyboard.Controls.Add(m_intelipadClass);
+                // init values
+                m_sizeButtonKeyboard = 50;
+                m_nbMaxBank = 4;
+                //initData();
+            }
+            else if (m_nameKeyboard == "testkeyboard")
+            {
+                m_testKeyboardClass = new K_testkeyboard(this);
+                panel_keyboard.Controls.Add(m_testKeyboardClass);
+                // init values
+                m_sizeButtonKeyboard = 5;
+                m_nbMaxBank = 2;
+                //initData();
             }
             else
             {
-                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum");
+                //gerer lerreur affichage !
+                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
             }
         }
         private void initForm()
@@ -507,7 +499,6 @@ namespace BAJunior.View.Forms.user
                         if (commandUser != null)
                         {
                             JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
-                            //m_listJointPAC[index] = jointPAC;
                             // Insert database jointPAC
                             jointPACData.create(jointPAC);
 
