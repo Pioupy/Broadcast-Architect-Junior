@@ -102,7 +102,7 @@ namespace BAJunior.View.Forms.user
             }
             else
             {
-                MessageBox.Show("Bouton annuler");
+                //MessageBox.Show("Bouton annuler");
             }
         }
 

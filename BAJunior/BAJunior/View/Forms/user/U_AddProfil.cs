@@ -67,6 +67,7 @@ namespace BAJunior.View.Forms.user
             m_nameKeyboard = keyboard.getName();
             labelKeyboard.Text = m_nameKeyboard;
             // ==> application
+            List<Model.Application> listApplication = jointPACData.readAllApplicationByProfil(m_profil.getId());
             //m_nameApplication.Add(nameApplication);
             //m_applicationSelected = nameApplication;
             //m_focusApplication = 0;
@@ -189,7 +190,7 @@ namespace BAJunior.View.Forms.user
             int idPositionCommand = 0;
             // Récupérer valeur ID Apllication
             ApplicationData applicationData = new ApplicationData();
-            Model.Application application = applicationData.readByName(m_nameApplication[0]);//modifier siil est appeler autre par que le constructeur et detecter quelel application est charger
+            Model.Application application = applicationData.readByName(m_nameApplication[m_focusApplication]);
             //ID pofil sera modifier dans JointPAC lors de la sauvegarde
             // init list JointPAC
             for (int y=0; y<m_nbMaxBank;y++)
@@ -230,7 +231,6 @@ namespace BAJunior.View.Forms.user
                 //gerer lerreur affichage !
                 MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
             }
-
         }
         public void loadKeyboard()
         {
@@ -290,9 +290,6 @@ namespace BAJunior.View.Forms.user
                     // Nettoyer list
                     m_listCommandUser.Clear();
                     m_listParamUser.Clear();
-                    //init data tableau
-                    //m_listCommandUser = m_listCommandUserFinal[m_nameApplication.IndexOf(m_applicationSelected)];
-                    //m_listParamUser = m_listParamUserFinal[m_nameApplication.IndexOf(m_applicationSelected)];
                 }
                 m_focusApplication = m_nameApplication.IndexOf(m_applicationSelected);//editer valeur
                                                                                       //m_listCommandUserFinal[m_nameApplication.IndexOf(m_applicationSelected)] != null
@@ -305,48 +302,24 @@ namespace BAJunior.View.Forms.user
                 {
                     initData();
                 }
-
                 // visuel ! 
                 loadKeyboard();
                 //affichage vert fond
-                //LE FAIRE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                for (int i=0;i<m_nameApplication.Count;i++)
+                {
+                    lv_application.Items[i].BackColor = Color.White;
+                }
+                lv_application.Items[m_focusApplication].BackColor = Color.Green;
             }
             else
             {
                 //message l'appication est deja celle en cours
             }
-
-
         }
-        
         public void addApplication(String application)
         {
             lv_application.Items.Add(application);
             m_nameApplication.Add(application);
-            // ajouter les champs
-            /*
-            //init list 
-            int bank = 0;
-            int size = m_listCommandUser.Count;
-            int idPositionCommand = 0;
-            // Récupérer valeur ID Apllication
-            ApplicationData applicationData = new ApplicationData();
-            Model.Application applicationSelected = applicationData.readByName(application);//modifier siil est appeler autre par que le constructeur et detecter quelel application est charger
-            //ID pofil sera modifier dans JointPAC lors de la sauvegarde
-            // init list JointPAC
-            for (int y = 1; y <= m_nbMaxBank; y++)
-            {
-                bank = y;
-                for (int i = (size + (m_sizeButtonKeyboard * (y-1))); i < (size + (m_sizeButtonKeyboard * y )); i++)
-                {
-                    JointPAC jointPAC = new JointPAC(idPositionCommand, bank, 1, applicationSelected.getId(), 0); // do it
-                    m_listJointPAC.Add(jointPAC);
-                    m_listCommandUser.Add(null);
-                    m_listParamUser.Add(null);
-                    idPositionCommand++;
-                }
-            }
-            */
         }
         private void lv_application_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -357,15 +330,6 @@ namespace BAJunior.View.Forms.user
                 m_applicationSelected = lv_application.Items[count].Text;
             }
         }
-
-        /*#######################################
-         #    CODE GESTION DES BOUTONS         #
-         #######################################*/
-
-        /*#######################################
-          #    CODE GESTION DES KEYBOARD        #
-          #######################################*/
-
         /*#######################################
           #    CODE GESTION DRAG AND DROP       #
           #######################################*/
@@ -530,17 +494,19 @@ namespace BAJunior.View.Forms.user
                 Keyboard keyboard = keyboardData.readByName(m_nameKeyboard);
                 Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
                 profilData.create(profil);
-                int idProfil = profil.getId();//modifier
+                int idProfil = profilData.readLastID();
                 int indexBtn = 0;
+                int indexJoint = 0;
                 int index = 0;
                 foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
                 {
                     index = 0;
+                    indexBtn = 0;
                     foreach (CommandUser commandUser in listCommandUser)
                     {
                         if (commandUser != null)
                         {
-                            JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[index].getIdApplication(), m_listCommandUser[index].getId());
+                            JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
                             //m_listJointPAC[index] = jointPAC;
                             // Insert database jointPAC
                             jointPACData.create(jointPAC);
@@ -559,6 +525,7 @@ namespace BAJunior.View.Forms.user
                             indexBtn++;
                         }
                         index++;
+                        indexJoint++;
                     }
                 }
                 //close form 
