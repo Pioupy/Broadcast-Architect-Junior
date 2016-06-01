@@ -70,7 +70,7 @@
             // déconexionToolStripMenuItem
             // 
             this.déconexionToolStripMenuItem.Name = "déconexionToolStripMenuItem";
-            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.déconexionToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.déconexionToolStripMenuItem.Text = "Déconexion";
             // 
             // cb_Profils
@@ -104,6 +104,7 @@
             this.btn_EditProfil.TabIndex = 3;
             this.btn_EditProfil.Text = "Editer";
             this.btn_EditProfil.UseVisualStyleBackColor = true;
+            this.btn_EditProfil.Click += new System.EventHandler(this.btn_EditProfil_Click);
             // 
             // btn_DeleteProfil
             // 
@@ -115,6 +116,7 @@
             this.btn_DeleteProfil.TabIndex = 4;
             this.btn_DeleteProfil.Text = "Supprimer";
             this.btn_DeleteProfil.UseVisualStyleBackColor = true;
+            this.btn_DeleteProfil.Click += new System.EventHandler(this.btn_DeleteProfil_Click);
             // 
             // btn_Load
             // 
