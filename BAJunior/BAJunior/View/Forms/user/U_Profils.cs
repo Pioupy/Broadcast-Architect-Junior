@@ -50,6 +50,7 @@ namespace BAJunior.View.Forms.user
         {
             U_PreConfAddProfil preConfAddProfilForm = new U_PreConfAddProfil(m_UserLogin);
             preConfAddProfilForm.ShowDialog();
+            refreshView(false);
         }
 
         private void btn_Load_Click(object sender, EventArgs e)
@@ -89,10 +90,33 @@ namespace BAJunior.View.Forms.user
             intellipad.setPicture1(image.ToArray());
         }
 
+        private void refreshView(bool viewKeyboard)
+        {
+            cb_Profils.Items.Clear();
+            intellipad.setPictureToZero();
+
+            listProfil = m_ProfilData.readByUserID(m_UserLogin.getId());
+            if (listProfil.Count > 0)
+            {
+                foreach (Profil item in listProfil)
+                {
+                    cb_Profils.Items.Add(item.getName());
+
+                    if (item.getStatus() == "actif" || viewKeyboard)
+                    {
+                        cb_Profils.SelectedIndex = cb_Profils.FindString(listProfil.Where(item2 => item2.getId() == item.getId()).FirstOrDefault().getName());
+                        //charger clavier
+                        loadActifKeybord(item);
+                    }
+                }
+            }
+        }
+
         private void btn_EditProfil_Click(object sender, EventArgs e)
         {
-            U_AddProfil SelectedProfil = new U_AddProfil(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
-            SelectedProfil.Show();
+            //U_AddProfil SelectedProfil = new U_AddProfil(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
+            //SelectedProfil.ShowDialog();
+            //refreshView();
         }
 
         private void btn_DeleteProfil_Click(object sender, EventArgs e)
@@ -101,27 +125,14 @@ namespace BAJunior.View.Forms.user
             if (resultat == DialogResult.Yes)
             {
                 m_ProfilData.delete(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault());
-                                
-                cb_Profils.Items.Clear();
                 cb_Profils.Text = "";
-                intellipad.setPictureToZero();
-
-                listProfil = m_ProfilData.readByUserID(m_UserLogin.getId());
-                if (listProfil.Count > 0)
-                {
-                    foreach (Profil item in listProfil)
-                    {
-                        cb_Profils.Items.Add(item.getName());
-
-                        if (item.getStatus() == "actif")
-                        {
-                            cb_Profils.SelectedIndex = cb_Profils.FindString(listProfil.Where(item2 => item2.getId() == item.getId()).FirstOrDefault().getName());
-                            //charger clavier
-                            loadActifKeybord(item);
-                        }
-                    }
-                }
+                refreshView(false);
             }
+        }
+
+        private void cb_Profils_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadActifKeybord(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault());
         }
     }
 }

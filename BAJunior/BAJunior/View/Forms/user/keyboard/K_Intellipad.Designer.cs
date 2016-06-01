@@ -100,7 +100,7 @@
             // 
             // key2
             // 
-            this.key2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.key2.BackColor = System.Drawing.SystemColors.Control;
             this.key2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.key2.Location = new System.Drawing.Point(79, 2);
             this.key2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

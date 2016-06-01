@@ -81,6 +81,7 @@
             this.cb_Profils.Name = "cb_Profils";
             this.cb_Profils.Size = new System.Drawing.Size(228, 24);
             this.cb_Profils.TabIndex = 1;
+            this.cb_Profils.SelectedIndexChanged += new System.EventHandler(this.cb_Profils_SelectedIndexChanged);
             // 
             // btn_AddProfil
             // 
