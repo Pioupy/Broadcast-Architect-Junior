@@ -153,5 +153,31 @@ namespace BAJunior.ServiceData
             }
             return jointPACList;
         }
+        public List<Model.Application> readAllApplicationByProfil(int id)
+        {
+            List<Model.Application> jointPACList = new List<Model.Application>();
+            string requete = "SELECT * from JointPAC order by IDJointPAC asc";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idJointPAC = Convert.ToInt32(r["IDJointPAC"]);
+                    int btnKeyboard = Convert.ToInt32(r["BtnKeyboard"]);
+                    int bank = Convert.ToInt32(r["Bank"]);
+                    int idProfil = Convert.ToInt32(r["IDProfil"]);
+                    int idApplication = Convert.ToInt32(r["IDApplication"]);
+                    int idCommandUser = Convert.ToInt32(r["IDCommandUser"]);
+                    JointPAC jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommandUser);
+                    //jointPACList.Add(jointPAC);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return jointPACList;
+        }
     }
 }

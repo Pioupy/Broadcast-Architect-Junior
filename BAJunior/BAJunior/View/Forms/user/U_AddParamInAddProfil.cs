@@ -36,7 +36,16 @@ namespace BAJunior.View.Forms.user
                 TextBox textbox = new TextBox();
                 textbox.Name = "Tb_param" + param.getId();
                 label.Name = "Label" + param.getId();
-                label.Text = " Veuillez saisir une valeur pour le paramètre "+param.getName()+" de type "+ param.getValue() +" : ";
+                String typeValue = null;
+                if (param.getValue() == "1")
+                {
+                    typeValue = "numérique";
+                }
+                else
+                {
+                    typeValue = "caractère";
+                }
+                label.Text = " Veuillez saisir une valeur pour le paramètre "+param.getName()+" de type "+ typeValue + " : ";
                 textbox.Visible = true;
                 label.Visible = true;
                 textbox.Location = new Point(500, 0 + i * 50);

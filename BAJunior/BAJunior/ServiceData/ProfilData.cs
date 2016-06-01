@@ -175,5 +175,24 @@ namespace BAJunior.ServiceData
             }
             return profilList;
         }
+        public int readLastID()
+        {
+            int id = 0;
+            String requete = "SELECT * from SQLITE_SEQUENCE WHERE name=\"Profil\";";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    id = Convert.ToInt32(r["seq"]);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return id;
+        }
     }
 }
