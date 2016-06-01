@@ -15,7 +15,7 @@ namespace BAJunior.View.Forms.user
     {
         private List<Param> m_listParam;
         private List<TextBox> m_listTextBox = new List<TextBox>();
-        private bool m_isOK = true;
+        private bool m_isOK = false;
         public U_AddParamInAddProfil()
         {
             InitializeComponent();
