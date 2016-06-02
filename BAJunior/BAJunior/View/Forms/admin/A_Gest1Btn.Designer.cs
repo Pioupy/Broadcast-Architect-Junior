@@ -589,22 +589,22 @@
             // rbtn_custom10
             // 
             this.rbtn_custom10.AutoSize = true;
-            this.rbtn_custom10.Checked = true;
             this.rbtn_custom10.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom10.Name = "rbtn_custom10";
             this.rbtn_custom10.Size = new System.Drawing.Size(81, 21);
             this.rbtn_custom10.TabIndex = 75;
-            this.rbtn_custom10.TabStop = true;
             this.rbtn_custom10.Text = "A définir";
             this.rbtn_custom10.UseVisualStyleBackColor = true;
             // 
             // rbtn_fix10
             // 
             this.rbtn_fix10.AutoSize = true;
+            this.rbtn_fix10.Checked = true;
             this.rbtn_fix10.Location = new System.Drawing.Point(129, 0);
             this.rbtn_fix10.Name = "rbtn_fix10";
             this.rbtn_fix10.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix10.TabIndex = 76;
+            this.rbtn_fix10.TabStop = true;
             this.rbtn_fix10.Text = "Fixe";
             this.rbtn_fix10.UseVisualStyleBackColor = true;
             this.rbtn_fix10.CheckedChanged += new System.EventHandler(this.rbtn_fix10_CheckedChanged);
@@ -897,22 +897,22 @@
             // rbtn_custom3
             // 
             this.rbtn_custom3.AutoSize = true;
-            this.rbtn_custom3.Checked = true;
             this.rbtn_custom3.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom3.Name = "rbtn_custom3";
             this.rbtn_custom3.Size = new System.Drawing.Size(81, 21);
             this.rbtn_custom3.TabIndex = 19;
-            this.rbtn_custom3.TabStop = true;
             this.rbtn_custom3.Text = "A définir";
             this.rbtn_custom3.UseVisualStyleBackColor = true;
             // 
             // rbtn_fix3
             // 
             this.rbtn_fix3.AutoSize = true;
+            this.rbtn_fix3.Checked = true;
             this.rbtn_fix3.Location = new System.Drawing.Point(129, 0);
             this.rbtn_fix3.Name = "rbtn_fix3";
             this.rbtn_fix3.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix3.TabIndex = 20;
+            this.rbtn_fix3.TabStop = true;
             this.rbtn_fix3.Text = "Fixe";
             this.rbtn_fix3.UseVisualStyleBackColor = true;
             this.rbtn_fix3.CheckedChanged += new System.EventHandler(this.rbtn_fix3_CheckedChanged);
@@ -941,12 +941,10 @@
             // rbtn_custom2
             // 
             this.rbtn_custom2.AutoSize = true;
-            this.rbtn_custom2.Checked = true;
             this.rbtn_custom2.Location = new System.Drawing.Point(0, 0);
             this.rbtn_custom2.Name = "rbtn_custom2";
             this.rbtn_custom2.Size = new System.Drawing.Size(81, 21);
             this.rbtn_custom2.TabIndex = 11;
-            this.rbtn_custom2.TabStop = true;
             this.rbtn_custom2.Text = "A définir";
             this.rbtn_custom2.UseVisualStyleBackColor = true;
             // 
@@ -964,10 +962,12 @@
             // rbtn_fix2
             // 
             this.rbtn_fix2.AutoSize = true;
+            this.rbtn_fix2.Checked = true;
             this.rbtn_fix2.Location = new System.Drawing.Point(129, 0);
             this.rbtn_fix2.Name = "rbtn_fix2";
             this.rbtn_fix2.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix2.TabIndex = 12;
+            this.rbtn_fix2.TabStop = true;
             this.rbtn_fix2.Text = "Fixe";
             this.rbtn_fix2.UseVisualStyleBackColor = true;
             this.rbtn_fix2.CheckedChanged += new System.EventHandler(this.rbtn_fix2_CheckedChanged);
@@ -985,22 +985,22 @@
             // rbtn_custom1
             // 
             this.rbtn_custom1.AutoSize = true;
-            this.rbtn_custom1.Checked = true;
             this.rbtn_custom1.Location = new System.Drawing.Point(0, 4);
             this.rbtn_custom1.Name = "rbtn_custom1";
             this.rbtn_custom1.Size = new System.Drawing.Size(81, 21);
             this.rbtn_custom1.TabIndex = 3;
-            this.rbtn_custom1.TabStop = true;
             this.rbtn_custom1.Text = "A définir";
             this.rbtn_custom1.UseVisualStyleBackColor = true;
             // 
             // rbtn_fix1
             // 
             this.rbtn_fix1.AutoSize = true;
+            this.rbtn_fix1.Checked = true;
             this.rbtn_fix1.Location = new System.Drawing.Point(129, 4);
             this.rbtn_fix1.Name = "rbtn_fix1";
             this.rbtn_fix1.Size = new System.Drawing.Size(54, 21);
             this.rbtn_fix1.TabIndex = 4;
+            this.rbtn_fix1.TabStop = true;
             this.rbtn_fix1.Text = "Fixe";
             this.rbtn_fix1.UseVisualStyleBackColor = true;
             this.rbtn_fix1.CheckedChanged += new System.EventHandler(this.rbtn_fix1_CheckedChanged);
@@ -1192,9 +1192,9 @@
             this.lbl_type10.AutoSize = true;
             this.lbl_type10.Location = new System.Drawing.Point(247, 528);
             this.lbl_type10.Name = "lbl_type10";
-            this.lbl_type10.Size = new System.Drawing.Size(56, 17);
+            this.lbl_type10.Size = new System.Drawing.Size(57, 17);
             this.lbl_type10.TabIndex = 79;
-            this.lbl_type10.Text = " Type  :";
+            this.lbl_type10.Text = "Valeur :";
             // 
             // tb_nom10
             // 
@@ -1202,6 +1202,7 @@
             this.tb_nom10.Name = "tb_nom10";
             this.tb_nom10.Size = new System.Drawing.Size(172, 22);
             this.tb_nom10.TabIndex = 78;
+            this.tb_nom10.Text = "Image";
             // 
             // label30
             // 
@@ -1473,6 +1474,7 @@
             this.tb_nom2.Name = "tb_nom2";
             this.tb_nom2.Size = new System.Drawing.Size(172, 22);
             this.tb_nom2.TabIndex = 14;
+            this.tb_nom2.Text = "Id Touche";
             // 
             // tb_valor3
             // 
@@ -1495,9 +1497,9 @@
             this.lbl_type3.AutoSize = true;
             this.lbl_type3.Location = new System.Drawing.Point(247, 143);
             this.lbl_type3.Name = "lbl_type3";
-            this.lbl_type3.Size = new System.Drawing.Size(56, 17);
+            this.lbl_type3.Size = new System.Drawing.Size(57, 17);
             this.lbl_type3.TabIndex = 23;
-            this.lbl_type3.Text = " Type  :";
+            this.lbl_type3.Text = "Valeur :";
             // 
             // label4
             // 
@@ -1514,6 +1516,7 @@
             this.tb_nom3.Name = "tb_nom3";
             this.tb_nom3.Size = new System.Drawing.Size(172, 22);
             this.tb_nom3.TabIndex = 22;
+            this.tb_nom3.Text = "Nom";
             // 
             // tb_nom1
             // 
@@ -1521,6 +1524,7 @@
             this.tb_nom1.Name = "tb_nom1";
             this.tb_nom1.Size = new System.Drawing.Size(172, 22);
             this.tb_nom1.TabIndex = 6;
+            this.tb_nom1.Text = "Bind";
             // 
             // label9
             // 
@@ -1536,9 +1540,9 @@
             this.lbl_type1.AutoSize = true;
             this.lbl_type1.Location = new System.Drawing.Point(247, 33);
             this.lbl_type1.Name = "lbl_type1";
-            this.lbl_type1.Size = new System.Drawing.Size(56, 17);
+            this.lbl_type1.Size = new System.Drawing.Size(57, 17);
             this.lbl_type1.TabIndex = 7;
-            this.lbl_type1.Text = " Type  :";
+            this.lbl_type1.Text = "Valeur :";
             // 
             // label10
             // 
@@ -1555,6 +1559,7 @@
             this.tb_valor1.Name = "tb_valor1";
             this.tb_valor1.Size = new System.Drawing.Size(100, 22);
             this.tb_valor1.TabIndex = 8;
+            this.tb_valor1.Text = "BIND";
             // 
             // tb_valor2
             // 
@@ -1577,9 +1582,9 @@
             this.lbl_type2.AutoSize = true;
             this.lbl_type2.Location = new System.Drawing.Point(247, 88);
             this.lbl_type2.Name = "lbl_type2";
-            this.lbl_type2.Size = new System.Drawing.Size(56, 17);
+            this.lbl_type2.Size = new System.Drawing.Size(57, 17);
             this.lbl_type2.TabIndex = 15;
-            this.lbl_type2.Text = " Type  :";
+            this.lbl_type2.Text = "Valeur :";
             // 
             // label6
             // 
