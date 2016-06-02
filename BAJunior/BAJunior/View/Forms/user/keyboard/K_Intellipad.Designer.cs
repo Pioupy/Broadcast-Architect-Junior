@@ -34,9 +34,9 @@
             this.key4 = new System.Windows.Forms.PictureBox();
             this.key5 = new System.Windows.Forms.PictureBox();
             this.key6 = new System.Windows.Forms.PictureBox();
-            this.key27 = new System.Windows.Forms.PictureBox();
-            this.key26 = new System.Windows.Forms.PictureBox();
-            this.key25 = new System.Windows.Forms.PictureBox();
+            this.bank3 = new System.Windows.Forms.PictureBox();
+            this.bank2 = new System.Windows.Forms.PictureBox();
+            this.bank1 = new System.Windows.Forms.PictureBox();
             this.key11 = new System.Windows.Forms.PictureBox();
             this.key22 = new System.Windows.Forms.PictureBox();
             this.key16 = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.key24 = new System.Windows.Forms.PictureBox();
             this.key23 = new System.Windows.Forms.PictureBox();
             this.key18 = new System.Windows.Forms.PictureBox();
-            this.key28 = new System.Windows.Forms.PictureBox();
+            this.bank4 = new System.Windows.Forms.PictureBox();
             this.key12 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.key1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key2)).BeginInit();
@@ -62,9 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.key4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key16)).BeginInit();
@@ -82,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.key24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key12)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             this.key2.Size = new System.Drawing.Size(70, 70);
             this.key2.TabIndex = 1;
             this.key2.TabStop = false;
+            this.key2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key2_MouseUp);
             // 
             // key3
             // 
@@ -118,6 +119,7 @@
             this.key3.Size = new System.Drawing.Size(70, 70);
             this.key3.TabIndex = 2;
             this.key3.TabStop = false;
+            this.key3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key3_MouseUp);
             // 
             // key4
             // 
@@ -128,6 +130,7 @@
             this.key4.Size = new System.Drawing.Size(70, 70);
             this.key4.TabIndex = 3;
             this.key4.TabStop = false;
+            this.key4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key4_MouseUp);
             // 
             // key5
             // 
@@ -138,6 +141,7 @@
             this.key5.Size = new System.Drawing.Size(70, 70);
             this.key5.TabIndex = 4;
             this.key5.TabStop = false;
+            this.key5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key5_MouseUp);
             // 
             // key6
             // 
@@ -148,36 +152,40 @@
             this.key6.Size = new System.Drawing.Size(70, 70);
             this.key6.TabIndex = 5;
             this.key6.TabStop = false;
+            this.key6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key6_MouseUp);
             // 
-            // key27
+            // bank3
             // 
-            this.key27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.key27.Location = new System.Drawing.Point(218, 298);
-            this.key27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.key27.Name = "key27";
-            this.key27.Size = new System.Drawing.Size(70, 70);
-            this.key27.TabIndex = 6;
-            this.key27.TabStop = false;
+            this.bank3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bank3.Location = new System.Drawing.Point(218, 298);
+            this.bank3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bank3.Name = "bank3";
+            this.bank3.Size = new System.Drawing.Size(70, 70);
+            this.bank3.TabIndex = 6;
+            this.bank3.TabStop = false;
+            this.bank3.Click += new System.EventHandler(this.bank3_Click);
             // 
-            // key26
+            // bank2
             // 
-            this.key26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.key26.Location = new System.Drawing.Point(124, 298);
-            this.key26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.key26.Name = "key26";
-            this.key26.Size = new System.Drawing.Size(70, 70);
-            this.key26.TabIndex = 7;
-            this.key26.TabStop = false;
+            this.bank2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bank2.Location = new System.Drawing.Point(124, 298);
+            this.bank2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bank2.Name = "bank2";
+            this.bank2.Size = new System.Drawing.Size(70, 70);
+            this.bank2.TabIndex = 7;
+            this.bank2.TabStop = false;
+            this.bank2.Click += new System.EventHandler(this.bank2_Click);
             // 
-            // key25
+            // bank1
             // 
-            this.key25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.key25.Location = new System.Drawing.Point(34, 298);
-            this.key25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.key25.Name = "key25";
-            this.key25.Size = new System.Drawing.Size(70, 70);
-            this.key25.TabIndex = 8;
-            this.key25.TabStop = false;
+            this.bank1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bank1.Location = new System.Drawing.Point(34, 298);
+            this.bank1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bank1.Name = "bank1";
+            this.bank1.Size = new System.Drawing.Size(70, 70);
+            this.bank1.TabIndex = 8;
+            this.bank1.TabStop = false;
+            this.bank1.Click += new System.EventHandler(this.bank1_Click);
             // 
             // key11
             // 
@@ -188,6 +196,7 @@
             this.key11.Size = new System.Drawing.Size(70, 70);
             this.key11.TabIndex = 9;
             this.key11.TabStop = false;
+            this.key11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key11_MouseUp);
             // 
             // key22
             // 
@@ -198,6 +207,7 @@
             this.key22.Size = new System.Drawing.Size(70, 70);
             this.key22.TabIndex = 10;
             this.key22.TabStop = false;
+            this.key22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key22_MouseUp);
             // 
             // key16
             // 
@@ -208,6 +218,7 @@
             this.key16.Size = new System.Drawing.Size(70, 70);
             this.key16.TabIndex = 11;
             this.key16.TabStop = false;
+            this.key16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key16_MouseUp);
             // 
             // key10
             // 
@@ -218,6 +229,7 @@
             this.key10.Size = new System.Drawing.Size(70, 70);
             this.key10.TabIndex = 12;
             this.key10.TabStop = false;
+            this.key10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key10_MouseUp);
             // 
             // key21
             // 
@@ -228,6 +240,7 @@
             this.key21.Size = new System.Drawing.Size(70, 70);
             this.key21.TabIndex = 13;
             this.key21.TabStop = false;
+            this.key21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key21_MouseUp);
             // 
             // key15
             // 
@@ -238,6 +251,7 @@
             this.key15.Size = new System.Drawing.Size(70, 70);
             this.key15.TabIndex = 14;
             this.key15.TabStop = false;
+            this.key15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key15_MouseUp);
             // 
             // key9
             // 
@@ -248,6 +262,7 @@
             this.key9.Size = new System.Drawing.Size(70, 70);
             this.key9.TabIndex = 15;
             this.key9.TabStop = false;
+            this.key9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key9_MouseUp);
             // 
             // key20
             // 
@@ -258,6 +273,7 @@
             this.key20.Size = new System.Drawing.Size(70, 70);
             this.key20.TabIndex = 16;
             this.key20.TabStop = false;
+            this.key20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key20_MouseUp);
             // 
             // key14
             // 
@@ -268,6 +284,7 @@
             this.key14.Size = new System.Drawing.Size(70, 70);
             this.key14.TabIndex = 17;
             this.key14.TabStop = false;
+            this.key14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key14_MouseUp);
             // 
             // key8
             // 
@@ -278,6 +295,7 @@
             this.key8.Size = new System.Drawing.Size(70, 70);
             this.key8.TabIndex = 18;
             this.key8.TabStop = false;
+            this.key8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key8_MouseUp);
             // 
             // key19
             // 
@@ -288,6 +306,7 @@
             this.key19.Size = new System.Drawing.Size(70, 70);
             this.key19.TabIndex = 19;
             this.key19.TabStop = false;
+            this.key19.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key19_MouseUp);
             // 
             // key13
             // 
@@ -298,6 +317,7 @@
             this.key13.Size = new System.Drawing.Size(70, 70);
             this.key13.TabIndex = 20;
             this.key13.TabStop = false;
+            this.key13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key13_MouseUp);
             // 
             // key7
             // 
@@ -308,6 +328,7 @@
             this.key7.Size = new System.Drawing.Size(70, 70);
             this.key7.TabIndex = 21;
             this.key7.TabStop = false;
+            this.key7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key7_MouseUp);
             // 
             // key17
             // 
@@ -318,6 +339,7 @@
             this.key17.Size = new System.Drawing.Size(70, 70);
             this.key17.TabIndex = 22;
             this.key17.TabStop = false;
+            this.key17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key17_MouseUp);
             // 
             // key24
             // 
@@ -328,6 +350,7 @@
             this.key24.Size = new System.Drawing.Size(70, 70);
             this.key24.TabIndex = 23;
             this.key24.TabStop = false;
+            this.key24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key24_MouseUp);
             // 
             // key23
             // 
@@ -338,6 +361,7 @@
             this.key23.Size = new System.Drawing.Size(70, 70);
             this.key23.TabIndex = 24;
             this.key23.TabStop = false;
+            this.key23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key23_MouseUp);
             // 
             // key18
             // 
@@ -348,16 +372,18 @@
             this.key18.Size = new System.Drawing.Size(70, 70);
             this.key18.TabIndex = 25;
             this.key18.TabStop = false;
+            this.key18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key18_MouseUp);
             // 
-            // key28
+            // bank4
             // 
-            this.key28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.key28.Location = new System.Drawing.Point(318, 298);
-            this.key28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.key28.Name = "key28";
-            this.key28.Size = new System.Drawing.Size(70, 70);
-            this.key28.TabIndex = 26;
-            this.key28.TabStop = false;
+            this.bank4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bank4.Location = new System.Drawing.Point(318, 298);
+            this.bank4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bank4.Name = "bank4";
+            this.bank4.Size = new System.Drawing.Size(70, 70);
+            this.bank4.TabIndex = 26;
+            this.bank4.TabStop = false;
+            this.bank4.Click += new System.EventHandler(this.bank4_Click);
             // 
             // key12
             // 
@@ -368,13 +394,14 @@
             this.key12.Size = new System.Drawing.Size(70, 70);
             this.key12.TabIndex = 27;
             this.key12.TabStop = false;
+            this.key12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.key12_MouseUp);
             // 
             // K_Intellipad
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.key12);
-            this.Controls.Add(this.key28);
+            this.Controls.Add(this.bank4);
             this.Controls.Add(this.key18);
             this.Controls.Add(this.key23);
             this.Controls.Add(this.key24);
@@ -392,9 +419,9 @@
             this.Controls.Add(this.key16);
             this.Controls.Add(this.key22);
             this.Controls.Add(this.key11);
-            this.Controls.Add(this.key25);
-            this.Controls.Add(this.key26);
-            this.Controls.Add(this.key27);
+            this.Controls.Add(this.bank1);
+            this.Controls.Add(this.bank2);
+            this.Controls.Add(this.bank3);
             this.Controls.Add(this.key6);
             this.Controls.Add(this.key5);
             this.Controls.Add(this.key4);
@@ -410,9 +437,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.key4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key16)).EndInit();
@@ -430,7 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.key24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.key28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bank4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key12)).EndInit();
             this.ResumeLayout(false);
 
@@ -443,9 +470,9 @@
         private System.Windows.Forms.PictureBox key4;
         private System.Windows.Forms.PictureBox key5;
         private System.Windows.Forms.PictureBox key6;
-        private System.Windows.Forms.PictureBox key27;
-        private System.Windows.Forms.PictureBox key26;
-        private System.Windows.Forms.PictureBox key25;
+        private System.Windows.Forms.PictureBox bank3;
+        private System.Windows.Forms.PictureBox bank2;
+        private System.Windows.Forms.PictureBox bank1;
         private System.Windows.Forms.PictureBox key11;
         private System.Windows.Forms.PictureBox key22;
         private System.Windows.Forms.PictureBox key16;
@@ -463,7 +490,7 @@
         private System.Windows.Forms.PictureBox key24;
         private System.Windows.Forms.PictureBox key23;
         private System.Windows.Forms.PictureBox key18;
-        private System.Windows.Forms.PictureBox key28;
+        private System.Windows.Forms.PictureBox bank4;
         private System.Windows.Forms.PictureBox key12;
     }
 }

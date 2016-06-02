@@ -117,7 +117,7 @@ namespace BAJunior.View.Forms.user
                 m_intelipadClass = new K_Intellipad(this);
                 panel_keyboard.Controls.Add(m_intelipadClass);
                 // init values
-                m_sizeButtonKeyboard = 50;
+                m_sizeButtonKeyboard = 24;
                 m_nbMaxBank = 4;
                 //initData();
             }
