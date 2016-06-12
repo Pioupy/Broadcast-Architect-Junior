@@ -153,10 +153,10 @@ namespace BAJunior.ServiceData
             }
             return jointPACList;
         }
-        public List<Model.Application> readAllApplicationByProfil(int id)
+        public List<JointPAC> readAllApplicationByProfil(int id)
         {
-            List<Model.Application> jointPACList = new List<Model.Application>();
-            string requete = "SELECT * from JointPAC order by IDJointPAC asc";
+            List<JointPAC> jointPACList = new List<JointPAC>();
+            string requete = "SELECT * from JointPAC WHERE IDProfil=" + id + " order by IDJointPAC asc";
             try
             {
                 DataTable reader = m_dbUtils.executeReader(requete);
@@ -170,7 +170,7 @@ namespace BAJunior.ServiceData
                     int idApplication = Convert.ToInt32(r["IDApplication"]);
                     int idCommandUser = Convert.ToInt32(r["IDCommandUser"]);
                     JointPAC jointPAC = new JointPAC(idJointPAC, btnKeyboard, bank, idProfil, idApplication, idCommandUser);
-                    //jointPACList.Add(jointPAC);
+                    jointPACList.Add(jointPAC);
                 }
             }
             catch (Exception fail)

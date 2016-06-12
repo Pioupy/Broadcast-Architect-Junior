@@ -127,6 +127,31 @@ namespace BAJunior.ServiceData
             }
             return paramUserList;
         }
+        public List<ParamUser> readbyCommand(int id)
+        {
+            List<ParamUser> paramUserList = new List<ParamUser>();
+            string requete = "SELECT * from ParamUser WHERE IDCommandUser=" + id + " order by IDParamUser asc";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    int idParamUser = Convert.ToInt32(r["IDParamUser"]);
+                    String name = r["Name"].ToString();
+                    String value = r["Value"].ToString();
+                    bool isUser = Convert.ToBoolean(r["IsUser"].ToString());
+                    int idCommandUser = Convert.ToInt32(r["IDCommandUser"]);
+                    ParamUser paramUser = new ParamUser(idParamUser, name, value, isUser, idCommandUser);
+                    paramUserList.Add(paramUser);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return paramUserList;
+        }
         public int readLastID()
         {
             int id = 0;

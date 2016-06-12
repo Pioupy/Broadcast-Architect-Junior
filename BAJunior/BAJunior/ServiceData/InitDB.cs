@@ -29,35 +29,6 @@ namespace BAJunior.ServiceData
             CommandData commandData = new CommandData();
             List<Param> listParam = commandData.readParamByCommand(3);
         }
-        public void testCreatedByAlex()
-        {
-            // TODO : Méthode destinée à disparaître après les test.
-            TestUnitaireTable testUnitaireTable = new TestUnitaireTable();
-            testUnitaireTable.testUser();
-            testUnitaireTable.testKeyboard();
-            testUnitaireTable.testApplication();
-            testUnitaireTable.testCategory();
-            testUnitaireTable.testParam();
-            testUnitaireTable.testParamUser();
-            testUnitaireTable.testProfil();
-            testUnitaireTable.testCommand();
-            testUnitaireTable.testCommandUser();
-            testUnitaireTable.testJointPAC();
-        }
-        public void createDatabaseByAlexForTest()
-        {
-            // TODO : Méthode destinée à disparaître après les test.
-            TestUnitaireTable testUnitaireTable = new TestUnitaireTable();
-            testUnitaireTable.testUserV2();
-            testUnitaireTable.testKeyboardV2();
-            testUnitaireTable.testApplicationV2();
-            testUnitaireTable.testCategoryV2();
-            //testUnitaireTable.testParam();
-            //testUnitaireTable.testProfil();
-            //testUnitaireTable.testCommand();
-            //testUnitaireTable.testJointPAC();
-            
-        }
         public void createDatabaseICAN()
         {
             //Create Database

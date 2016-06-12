@@ -114,7 +114,7 @@
             this.gb_boutons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_boutons.Name = "gb_boutons";
             this.gb_boutons.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_boutons.Size = new System.Drawing.Size(431, 327);
+            this.gb_boutons.Size = new System.Drawing.Size(431, 357);
             this.gb_boutons.TabIndex = 1;
             this.gb_boutons.TabStop = false;
             this.gb_boutons.Text = "Boutons";
@@ -124,7 +124,7 @@
             this.listViewBtns.Location = new System.Drawing.Point(11, 50);
             this.listViewBtns.Margin = new System.Windows.Forms.Padding(4);
             this.listViewBtns.Name = "listViewBtns";
-            this.listViewBtns.Size = new System.Drawing.Size(409, 270);
+            this.listViewBtns.Size = new System.Drawing.Size(409, 288);
             this.listViewBtns.TabIndex = 1;
             this.listViewBtns.UseCompatibleStateImageBehavior = false;
             this.listViewBtns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewBtns_MouseDown);
@@ -176,7 +176,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(1101, 613);
+            this.btn_save.Location = new System.Drawing.Point(1103, 640);
             this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(109, 34);
@@ -187,7 +187,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(987, 613);
+            this.btn_cancel.Location = new System.Drawing.Point(988, 640);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(109, 34);
@@ -223,14 +223,14 @@
             // 
             this.panel_keyboard.Location = new System.Drawing.Point(12, 156);
             this.panel_keyboard.Name = "panel_keyboard";
-            this.panel_keyboard.Size = new System.Drawing.Size(763, 450);
+            this.panel_keyboard.Size = new System.Drawing.Size(763, 517);
             this.panel_keyboard.TabIndex = 10;
             // 
             // U_AddProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 660);
+            this.ClientSize = new System.Drawing.Size(1241, 685);
             this.Controls.Add(this.panel_keyboard);
             this.Controls.Add(this.panelDefaultProfils);
             this.Controls.Add(this.gb_property);

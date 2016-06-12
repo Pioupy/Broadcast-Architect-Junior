@@ -13,6 +13,7 @@ namespace BAJunior.View.Forms.user
     public partial class U_AddProfil : Form
     {
         // 
+        private int m_status; // <=0 = addProfil, >= 1 = EditProfil
         private User m_user; // information user current
         private String m_nameProfile;
         private String m_nameKeyboard;
@@ -48,12 +49,16 @@ namespace BAJunior.View.Forms.user
         {
             InitializeComponent();
             // init service data
+            ApplicationData applicationData = new ApplicationData();
             JointPACData jointPACData = new JointPACData();
             CommandUserData commandUserData = new CommandUserData();
             ParamUserData paramUserData = new ParamUserData();
             ProfilData profilData = new ProfilData();
             KeyboardData keyboardData = new KeyboardData();
             UserData userData = new UserData();
+            //
+            m_status = 1;
+            initForm();
             //recuperer dans les list 
             // ==> profil
             m_profil = profilData.read(idProfil);
@@ -66,31 +71,66 @@ namespace BAJunior.View.Forms.user
             Keyboard keyboard = keyboardData.read(m_profil.getIdKeyboard());
             m_nameKeyboard = keyboard.getName();
             labelKeyboard.Text = m_nameKeyboard;
-            // ==> application
-            List<Model.Application> listApplication = jointPACData.readAllApplicationByProfil(m_profil.getId());
-            //m_nameApplication.Add(nameApplication);
-            //m_applicationSelected = nameApplication;
-            //m_focusApplication = 0;
-            //lv_application.Items.Add(nameApplication);
-            //lv_application.Items[0].BackColor = Color.Green;
-            // ==> jointPAC
-            // ==> command
-            // ==> param
-
-            /////////////////////////////////////////////////
-            initForm();
             initKeyboard();
+            // ==> jointPAC
+            List<JointPAC> listJointPAC = jointPACData.readAllApplicationByProfil(m_profil.getId());
+            // ==> application
+            List<Model.Application> listApplication = new List<Model.Application>();
+            foreach (JointPAC jointPAC in listJointPAC)
+            {
+                Model.Application application = applicationData.read(jointPAC.getIdApplication());
+                if (!listApplication.Exists(x => x.getId() == application.getId()))
+                {
+                    listApplication.Add(application);
+                }
+            }
+            foreach (Model.Application application in listApplication)
+            {
+                m_nameApplication.Add(application.getName());
+            }
+            m_applicationSelected = m_nameApplication[0];
+            m_focusApplication = 0;
+            foreach (Model.Application application in listApplication)
+            {
+                lv_application.Items.Add(application.getName());
+            }
+            lv_application.Items[0].BackColor = Color.Green;
             //chargement des data
+            initData();
+            foreach (Model.Application applicationList in listApplication)
+            {
+                foreach (JointPAC joint in listJointPAC)
+                {
+                    if (applicationList.getId()==joint.getIdApplication())
+                    {
+                        int i = (joint.getBtnKeyboard() + ((joint.getBank()) - 1) * m_sizeButtonKeyboard);
+                        CommandUser commandUser = commandUserData.read(joint.getIdCommandUser());
+                        m_listCommandUser[i] = commandUser;
+                        List<ParamUser> listParamUser = paramUserData.readbyCommand(joint.getIdCommandUser());
+                        m_listParamUser[i] = listParamUser;
+                    }
+                }
 
+                m_listCommandUserFinal.Add(m_listCommandUser.ToList());
+                m_listParamUserFinal.Add(m_listParamUser.ToList());
+                // Nettoyer list
+                m_listCommandUser.Clear();
+                m_listParamUser.Clear();
+                initData();
+            }
+            m_listCommandUser = m_listCommandUserFinal[0];
+            m_listParamUser = m_listParamUserFinal[0];
             // init data on form
 
             //init donner form ( nom )
-            this.Name = "Edit";
+            this.Name = "U_AddProfil";
+            this.Text = "Edit";
         }
         public U_AddProfil(User user, String nameProfile, String nameKeyboard, String nameApplication)
         { // call by U_PreConfAddProfil
             InitializeComponent();
             // init values 
+            m_status = 0;
             m_user = user;
             m_nameProfile = nameProfile;
             m_nameKeyboard = nameKeyboard;
@@ -133,7 +173,7 @@ namespace BAJunior.View.Forms.user
             else
             {
                 //gerer lerreur affichage !
-                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
+                MessageBox.Show("Le clavier n'est pas identifié.");
             }
         }
         private void initForm()
@@ -206,10 +246,14 @@ namespace BAJunior.View.Forms.user
             //recuperer le nom du profil xml !!!!!!!!!!!!!!!!!!!!!!
             Xml xml = new Xml(this);
             //recup data ? 
-            xml.loadProfil(m_nameKeyboard, "ProfilDos_testkeyboard");
+            xml.loadProfil(m_nameKeyboard, "Firefox");
             if (m_nameKeyboard == "Intellipad")
             {
                 //intelipadClass.
+                m_intelipadClass.setListCommandUser(m_listCommandUser);
+                m_intelipadClass.setListParamUser(m_listParamUser);
+                //m_testKeyboardClass.loadKeyboard();
+                loadKeyboard();
             }
             else if (m_nameKeyboard == "testkeyboard")
             {
@@ -222,7 +266,7 @@ namespace BAJunior.View.Forms.user
             else
             {
                 //gerer lerreur affichage !
-                MessageBox.Show("Le clavier n'existe pas !!! #hashtag tu as le seum ENCORE PLUS");
+                MessageBox.Show("Le clavier n'est pas identifé.");
             }
         }
         public void loadKeyboard()
@@ -421,108 +465,116 @@ namespace BAJunior.View.Forms.user
           #######################################*/
         private void btn_save_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Sauvegarder le profil ?", "Message de confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            //add
+            if (m_status==0)
             {
-                // Init variable
-                JointPACData jointPACData = new JointPACData();
-                CommandUserData commandUserData = new CommandUserData();
-                ParamUserData paramUserData = new ParamUserData();
-                ProfilData profilData = new ProfilData();
-                KeyboardData keyboardData = new KeyboardData();
-                // Update Data of actuel keyboard
-                if (m_listCommandUserFinal.Count != m_nameApplication.Count)
-                {//Insert new field
-                    m_listCommandUserFinal.Add(m_listCommandUser.ToList());
-                    m_listParamUserFinal.Add(m_listParamUser.ToList());
-                }
-                else
-                {//Update field existant
-                    m_listCommandUserFinal[m_focusApplication] = m_listCommandUser.ToList();
-                    m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
-                }
-                // Insert database list of CommandUser and ParamUser
-                foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
+                DialogResult result = MessageBox.Show("Sauvegarder le profil ?", "Message de confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    foreach (CommandUser commandUser in listCommandUser)
-                    {
-                        if (commandUser != null)
-                        {
-                            commandUserData.create(commandUser);
-                            int id = commandUserData.readLastID();
-                            commandUser.setId(id);
-                        }
-                        else
-                        {
-                            //supprimer champs list
-                        }
+                    // Init variable
+                    JointPACData jointPACData = new JointPACData();
+                    CommandUserData commandUserData = new CommandUserData();
+                    ParamUserData paramUserData = new ParamUserData();
+                    ProfilData profilData = new ProfilData();
+                    KeyboardData keyboardData = new KeyboardData();
+                    // Update Data of actuel keyboard
+                    if (m_listCommandUserFinal.Count != m_nameApplication.Count)
+                    {//Insert new field
+                        m_listCommandUserFinal.Add(m_listCommandUser.ToList());
+                        m_listParamUserFinal.Add(m_listParamUser.ToList());
                     }
-                }
-                //AJOUTER ID COMMAND DANS LES LIST PARAM !
-                int indexApplication = 0;
-                foreach (List<List<ParamUser>> listOfListParamUser in m_listParamUserFinal)
-                {
-                    int indexList = 0;
-                    List<CommandUser> listCommandUser = m_listCommandUserFinal[indexApplication];
-                    foreach (List<ParamUser> listParamUser in listOfListParamUser)
+                    else
+                    {//Update field existant
+                        m_listCommandUserFinal[m_focusApplication] = m_listCommandUser.ToList();
+                        m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
+                    }
+                    // Insert database list of CommandUser and ParamUser
+                    foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
                     {
-                        if (listParamUser != null)
+                        foreach (CommandUser commandUser in listCommandUser)
                         {
-                            foreach (ParamUser paramUser in listParamUser)
+                            if (commandUser != null)
                             {
-                                paramUser.setIdCommandUser(listCommandUser[indexList].getId());
-                                paramUserData.create(paramUser);
-                                int id = paramUserData.readLastID();
-                                paramUser.setId(id);
+                                commandUserData.create(commandUser);
+                                int id = commandUserData.readLastID();
+                                commandUser.setId(id);
                             }
-
+                            else
+                            {
+                                //supprimer champs list
+                            }
                         }
-                        indexList++;
                     }
-                    indexApplication++;
-                }
-                // TESTER ET VALIDER LES IDCOMMANDUSER
-                //crée les data jointPAC
-                // get idprofil !!!
-                Keyboard keyboard = keyboardData.readByName(m_nameKeyboard);
-                Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
-                profilData.create(profil);
-                int idProfil = profilData.readLastID();
-                int indexBtn = 0;
-                int indexJoint = 0;
-                int index = 0;
-                foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
-                {
-                    index = 0;
-                    indexBtn = 0;
-                    foreach (CommandUser commandUser in listCommandUser)
+                    //AJOUTER ID COMMAND DANS LES LIST PARAM !
+                    int indexApplication = 0;
+                    foreach (List<List<ParamUser>> listOfListParamUser in m_listParamUserFinal)
                     {
-                        if (commandUser != null)
+                        int indexList = 0;
+                        List<CommandUser> listCommandUser = m_listCommandUserFinal[indexApplication];
+                        foreach (List<ParamUser> listParamUser in listOfListParamUser)
                         {
-                            JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
-                            // Insert database jointPAC
-                            jointPACData.create(jointPAC);
+                            if (listParamUser != null)
+                            {
+                                foreach (ParamUser paramUser in listParamUser)
+                                {
+                                    paramUser.setIdCommandUser(listCommandUser[indexList].getId());
+                                    paramUserData.create(paramUser);
+                                    int id = paramUserData.readLastID();
+                                    paramUser.setId(id);
+                                }
 
+                            }
+                            indexList++;
                         }
-                        else
-                        {
-                            //supprimer champs 
-                        }
-                        if (indexBtn >= m_sizeButtonKeyboard)
-                        {
-                            indexBtn = 0;
-                        }
-                        else
-                        {
-                            indexBtn++;
-                        }
-                        index++;
-                        indexJoint++;
+                        indexApplication++;
                     }
+                    // TESTER ET VALIDER LES IDCOMMANDUSER
+                    //crée les data jointPAC
+                    // get idprofil !!!
+                    Keyboard keyboard = keyboardData.readByName(m_nameKeyboard);
+                    Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
+                    profilData.create(profil);
+                    int idProfil = profilData.readLastID();
+                    int indexBtn = 0;
+                    int indexJoint = 0;
+                    int index = 0;
+                    foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
+                    {
+                        index = 0;
+                        indexBtn = 0;
+                        foreach (CommandUser commandUser in listCommandUser)
+                        {
+                            if (commandUser != null)
+                            {
+                                JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
+                                // Insert database jointPAC
+                                jointPACData.create(jointPAC);
+
+                            }
+                            else
+                            {
+                                //supprimer champs 
+                            }
+                            if (indexBtn >= m_sizeButtonKeyboard)
+                            {
+                                indexBtn = 0;
+                            }
+                            else
+                            {
+                                indexBtn++;
+                            }
+                            index++;
+                            indexJoint++;
+                        }
+                    }
+                    //close form 
+                    this.Close();
+                    //charger la fenetre dans la fenetre ? 
                 }
-                //close form 
-                this.Close();
-                //charger la fenetre dans la fenetre ? 
+            }
+            else
+            {//edit
+
             }
 
         }

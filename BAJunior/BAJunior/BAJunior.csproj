@@ -113,7 +113,6 @@
     <Compile Include="ServiceData\ParamData.cs" />
     <Compile Include="ServiceData\ParamUserData.cs" />
     <Compile Include="ServiceData\ProfilData.cs" />
-    <Compile Include="ServiceData\TestUnitaireTable.cs" />
     <Compile Include="ServiceData\UserData.cs" />
     <Compile Include="ServiceData\Xml.cs" />
     <Compile Include="ServiceMétier\FileTools.cs" />

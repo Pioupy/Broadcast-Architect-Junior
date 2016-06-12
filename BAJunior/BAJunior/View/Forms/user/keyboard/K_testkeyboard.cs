@@ -49,6 +49,8 @@ namespace BAJunior.View.Forms.user
             CommandData commandData = new CommandData();
             Command command = m_addProfil.getCommand();
             List<Param> listParam = commandData.readParamByCommand(command.getId());
+            string pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
+            pathImage = pathImage.Replace("file:\\", "");
 
             // Search getVlaue == true
             foreach (Param param in listParam)
@@ -95,7 +97,7 @@ namespace BAJunior.View.Forms.user
                 m_addProfil.setListCommandUser(m_listCommandUser);
                 // joint pac ?
                 //Charger image
-                pictureBox.Image = Image.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\bin\\Debug\\Image\\" + command.getPicture(), true);
+                pictureBox.Image = Image.FromFile(pathImage + "\\" + command.getPicture(), true);
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;// mettre l'image a la taille de la box
                                                                        // Les mysteère de la vie : 
                 pictureBox.Invalidate();
