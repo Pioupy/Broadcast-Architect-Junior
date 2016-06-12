@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAJunior.ServiceData;
 
@@ -14,10 +8,18 @@ namespace BAJunior.View.Forms.user
     public partial class U_AddApplicationInAddProfil : Form
     {
         private U_AddProfil m_addProfil;
+        /// <summary>
+        ///  Constructor by default
+        /// </summary>
         public U_AddApplicationInAddProfil()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Custom constructor  
+        /// </summary>
+        /// <param name="addProfil"></param>
+        /// <param name="applicationName"></param>
         public U_AddApplicationInAddProfil(U_AddProfil addProfil, List<String> applicationName)
         {
             InitializeComponent();
@@ -35,7 +37,11 @@ namespace BAJunior.View.Forms.user
                 }
             }
         }
-
+        /// <summary>
+        /// Event : doubleclick on item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lv_application_DoubleClick(object sender, EventArgs e)
         {
             if (lv_application.SelectedItems.Count > 0)

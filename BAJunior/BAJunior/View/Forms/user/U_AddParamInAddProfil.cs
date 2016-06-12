@@ -16,20 +16,22 @@ namespace BAJunior.View.Forms.user
         private List<Param> m_listParam;
         private List<TextBox> m_listTextBox = new List<TextBox>();
         private bool m_isOK = false;
+        /// <summary>
+        /// Constructor by default
+        /// </summary>
         public U_AddParamInAddProfil()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Custom constructor 
+        /// </summary>
+        /// <param name="listParam"></param>
         public U_AddParamInAddProfil(List<Param> listParam)
         {
             InitializeComponent();
             m_listParam = listParam;
-            //Label label = new Label();
-            //label.Text = "test";
-            //panel_Param.Controls.Add(label);
             int i = 0;
-            //List<Label> listPanel;
-            //List<TextBox> listTextBox;
             foreach (Param param in listParam)
             {
                 Label label = new Label();
@@ -61,9 +63,12 @@ namespace BAJunior.View.Forms.user
             }
             btn_cancel.Location = new Point(0+ btn_cancel.Location.X, 25 + panel_Param.Height);
             btn_save.Location = new Point(0 + btn_save.Location.X, 25 + panel_Param.Height);
-
         }
-
+        /// <summary>
+        /// Event : save data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_save_Click(object sender, EventArgs e)
         {
             int i = 0;
@@ -96,8 +101,6 @@ namespace BAJunior.View.Forms.user
                     }
                     else
                     {
-                        //(param.getValue() > 3 anormal !
-                        //text message erreur
                         MessageBox.Show("Problèmes sur la valeur de getValues > 2");
                         isOk = false;
                     }
@@ -123,17 +126,19 @@ namespace BAJunior.View.Forms.user
             }
             else
             {
-                //
+                // show error
             }
         }
-
+        /// <summary>
+        /// Event : Cancel new command
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            //appelle méthode qui annule dans u_addprofil
             setIsOK(false);
             this.Close();
         }
-
         // [Getter/Setter] List<Param> m_listParam
         public List<Param> getListParam()
         {

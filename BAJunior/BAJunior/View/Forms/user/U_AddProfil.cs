@@ -26,6 +26,15 @@ namespace BAJunior.View.Forms.user
         private int m_sizeButtonKeyboard;
         private int m_bank = 1;
         private int m_nbMaxBank;
+        //init data
+        JointPACData m_jointPACData = new JointPACData();
+        CommandData m_commandData = new CommandData();
+        CommandUserData m_commandUserData = new CommandUserData();
+        ParamUserData m_paramUserData = new ParamUserData();
+        ProfilData m_profilData = new ProfilData();
+        KeyboardData m_keyboardData = new KeyboardData();
+        ApplicationData m_applicationData = new ApplicationData();
+        UserData m_userData = new UserData();
         //Init list
         private List<PictureBox> m_pictureBox = new List<PictureBox>();
         private List<JointPAC> m_listJointPAC = new List<JointPAC>();
@@ -36,49 +45,42 @@ namespace BAJunior.View.Forms.user
         // Init Keyboard 
         K_Intellipad m_intelipadClass;
         K_testkeyboard m_testKeyboardClass;
-        
-
-        
-
+        /// <summary>
+        /// Custom constructor 
+        /// </summary>
         public U_AddProfil()
         {
             InitializeComponent();
         }
-        //faire constructeur pour edit
+        /// <summary>
+        ///     Constructor for Edit
+        /// </summary>
+        /// <param name="idProfil"></param>
         public U_AddProfil(int idProfil)
         {
             InitializeComponent();
-            // init service data
-            ApplicationData applicationData = new ApplicationData();
-            JointPACData jointPACData = new JointPACData();
-            CommandUserData commandUserData = new CommandUserData();
-            ParamUserData paramUserData = new ParamUserData();
-            ProfilData profilData = new ProfilData();
-            KeyboardData keyboardData = new KeyboardData();
-            UserData userData = new UserData();
-            //
             m_status = 1;
             initForm();
-            //recuperer dans les list 
+            // Recover list
             // ==> profil
-            m_profil = profilData.read(idProfil);
+            m_profil = m_profilData.read(idProfil);
             m_nameProfile = m_profil.getName();
             labelNameProfile.Text = m_nameProfile;
             // ==> user 
-            User user = userData.read(m_profil.getIdUser());
+            User user = m_userData.read(m_profil.getIdUser());
             m_user = user;
-            //keyboard
-            Keyboard keyboard = keyboardData.read(m_profil.getIdKeyboard());
+            // ==> keyboard
+            Keyboard keyboard = m_keyboardData.read(m_profil.getIdKeyboard());
             m_nameKeyboard = keyboard.getName();
             labelKeyboard.Text = m_nameKeyboard;
             initKeyboard();
             // ==> jointPAC
-            List<JointPAC> listJointPAC = jointPACData.readAllApplicationByProfil(m_profil.getId());
+            List<JointPAC> listJointPAC = m_jointPACData.readAllApplicationByProfil(m_profil.getId());
             // ==> application
             List<Model.Application> listApplication = new List<Model.Application>();
             foreach (JointPAC jointPAC in listJointPAC)
             {
-                Model.Application application = applicationData.read(jointPAC.getIdApplication());
+                Model.Application application = m_applicationData.read(jointPAC.getIdApplication());
                 if (!listApplication.Exists(x => x.getId() == application.getId()))
                 {
                     listApplication.Add(application);
@@ -95,7 +97,7 @@ namespace BAJunior.View.Forms.user
                 lv_application.Items.Add(application.getName());
             }
             lv_application.Items[0].BackColor = Color.Green;
-            //chargement des data
+            // Load Data
             initData();
             foreach (Model.Application applicationList in listApplication)
             {
@@ -104,28 +106,35 @@ namespace BAJunior.View.Forms.user
                     if (applicationList.getId()==joint.getIdApplication())
                     {
                         int i = (joint.getBtnKeyboard() + ((joint.getBank()) - 1) * m_sizeButtonKeyboard);
-                        CommandUser commandUser = commandUserData.read(joint.getIdCommandUser());
+                        CommandUser commandUser = m_commandUserData.read(joint.getIdCommandUser());
                         m_listCommandUser[i] = commandUser;
-                        List<ParamUser> listParamUser = paramUserData.readbyCommand(joint.getIdCommandUser());
+                        List<ParamUser> listParamUser = m_paramUserData.readbyCommand(joint.getIdCommandUser());
                         m_listParamUser[i] = listParamUser;
                     }
                 }
 
                 m_listCommandUserFinal.Add(m_listCommandUser.ToList());
                 m_listParamUserFinal.Add(m_listParamUser.ToList());
-                // Nettoyer list
+                // Clean list
                 m_listCommandUser.Clear();
                 m_listParamUser.Clear();
                 initData();
             }
             m_listCommandUser = m_listCommandUserFinal[0];
             m_listParamUser = m_listParamUserFinal[0];
-            // init data on form
-
-            //init donner form ( nom )
+            // Show picture
+            loadKeyboard();
+            //init data form ( name, etc )
             this.Name = "U_AddProfil";
             this.Text = "Edit";
         }
+        /// <summary>
+        /// Second constructor for Add profil
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="nameProfile"></param>
+        /// <param name="nameKeyboard"></param>
+        /// <param name="nameApplication"></param>
         public U_AddProfil(User user, String nameProfile, String nameKeyboard, String nameApplication)
         { // call by U_PreConfAddProfil
             InitializeComponent();
@@ -149,6 +158,9 @@ namespace BAJunior.View.Forms.user
         /*#######################################
           #       INIT KEYBOARD DATA            #
           #######################################*/
+        /// <summary>
+        /// Initionaliza keyboard
+        /// </summary>
         private void initKeyboard()
         {
             // Gestion de l'affichage/génération du clavier  par défaut
@@ -159,7 +171,6 @@ namespace BAJunior.View.Forms.user
                 // init values
                 m_sizeButtonKeyboard = 24;
                 m_nbMaxBank = 4;
-                //initData();
             }
             else if (m_nameKeyboard == "testkeyboard")
             {
@@ -168,23 +179,24 @@ namespace BAJunior.View.Forms.user
                 // init values
                 m_sizeButtonKeyboard = 5;
                 m_nbMaxBank = 2;
-                //initData();
             }
             else
             {
-                //gerer lerreur affichage !
+                //Manage futur error !
                 MessageBox.Show("Le clavier n'est pas identifié.");
             }
         }
+        /// <summary>
+        /// Initialize visual
+        /// </summary>
         private void initForm()
         {
-            CommandData commandData = new CommandData();
             List<Command> listBtns;
             string pathImage = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + Properties.Settings.Default.DefaultImagePath;
             pathImage = pathImage.Replace("file:\\", "");
 
             // Gestion de l'affichage de la liste des boutons
-            listBtns = commandData.readAll();
+            listBtns = m_commandData.readAll();
             var imageList = new ImageList();
             foreach (Command cmd in listBtns)
             {
@@ -216,13 +228,15 @@ namespace BAJunior.View.Forms.user
                 i++;
             }
         }
+        /// <summary>
+        /// Initialize Data
+        /// </summary>
         private void initData()
         {
             int bank = 0;
             int idPositionCommand = 0;
             // Récupérer valeur ID Apllication
-            ApplicationData applicationData = new ApplicationData();
-            Model.Application application = applicationData.readByName(m_nameApplication[m_focusApplication]);
+            Model.Application application = m_applicationData.readByName(m_nameApplication[m_focusApplication]);
             //ID pofil sera modifier dans JointPAC lors de la sauvegarde
             // init list JointPAC
             for (int y=0; y<m_nbMaxBank;y++)
@@ -377,8 +391,7 @@ namespace BAJunior.View.Forms.user
             ListViewHitTestInfo info = listViewBtns.HitTest(e.X, e.Y);
             if (info.Item != null) { m_countListBtn = info.Item.Index;}
             // Set données
-            CommandData commandData = new CommandData();
-            Command command = commandData.readByName(listViewBtns.Items[m_countListBtn].Text);
+            Command command = m_commandData.readByName(listViewBtns.Items[m_countListBtn].Text);
             setCommand(command);
             //Les mystères de la vie
             listViewBtns.Focus();
@@ -471,12 +484,6 @@ namespace BAJunior.View.Forms.user
                 DialogResult result = MessageBox.Show("Sauvegarder le profil ?", "Message de confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    // Init variable
-                    JointPACData jointPACData = new JointPACData();
-                    CommandUserData commandUserData = new CommandUserData();
-                    ParamUserData paramUserData = new ParamUserData();
-                    ProfilData profilData = new ProfilData();
-                    KeyboardData keyboardData = new KeyboardData();
                     // Update Data of actuel keyboard
                     if (m_listCommandUserFinal.Count != m_nameApplication.Count)
                     {//Insert new field
@@ -495,8 +502,8 @@ namespace BAJunior.View.Forms.user
                         {
                             if (commandUser != null)
                             {
-                                commandUserData.create(commandUser);
-                                int id = commandUserData.readLastID();
+                                m_commandUserData.create(commandUser);
+                                int id = m_commandUserData.readLastID();
                                 commandUser.setId(id);
                             }
                             else
@@ -518,8 +525,8 @@ namespace BAJunior.View.Forms.user
                                 foreach (ParamUser paramUser in listParamUser)
                                 {
                                     paramUser.setIdCommandUser(listCommandUser[indexList].getId());
-                                    paramUserData.create(paramUser);
-                                    int id = paramUserData.readLastID();
+                                    m_paramUserData.create(paramUser);
+                                    int id = m_paramUserData.readLastID();
                                     paramUser.setId(id);
                                 }
 
@@ -531,10 +538,10 @@ namespace BAJunior.View.Forms.user
                     // TESTER ET VALIDER LES IDCOMMANDUSER
                     //crée les data jointPAC
                     // get idprofil !!!
-                    Keyboard keyboard = keyboardData.readByName(m_nameKeyboard);
+                    Keyboard keyboard = m_keyboardData.readByName(m_nameKeyboard);
                     Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
-                    profilData.create(profil);
-                    int idProfil = profilData.readLastID();
+                    m_profilData.create(profil);
+                    int idProfil = m_profilData.readLastID();
                     int indexBtn = 0;
                     int indexJoint = 0;
                     int index = 0;
@@ -548,14 +555,14 @@ namespace BAJunior.View.Forms.user
                             {
                                 JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
                                 // Insert database jointPAC
-                                jointPACData.create(jointPAC);
+                                m_jointPACData.create(jointPAC);
 
                             }
                             else
                             {
                                 //supprimer champs 
                             }
-                            if (indexBtn >= m_sizeButtonKeyboard)
+                            if (indexBtn >= (m_sizeButtonKeyboard-1))
                             {
                                 indexBtn = 0;
                             }
@@ -574,7 +581,7 @@ namespace BAJunior.View.Forms.user
             }
             else
             {//edit
-
+                
             }
 
         }

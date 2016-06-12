@@ -15,11 +15,14 @@ namespace BAJunior.View.Forms.user
     public partial class U_PreConfAddProfil : Form
     {
         private User m_UserLogin;
+        /// <summary>
+        /// Custom constructor 
+        /// </summary>
+        /// <param name="UserLogged"></param>
         public U_PreConfAddProfil(User UserLogged)
         {
             //init value userlogged
             m_UserLogin = UserLogged;
-
             InitializeComponent();
             // Recover Keyboard on database
             KeyboardData keyboardData = new KeyboardData();
@@ -42,24 +45,30 @@ namespace BAJunior.View.Forms.user
                 });
             }
         }
+        /// <summary>
+        /// Open U_AddProfil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_next_Click(object sender, EventArgs e)
         {
-            //TODO : Faire les test si les champs son rempli !!!!!!!!
             if ((tb_nameProfile.Text != "") && (cb_keyboard.Text != "") && (cb_application.Text != ""))
             {
-                //U_AddProfil userForm = new U_AddProfil();
-                //Constructeur avec les informations récupérées ici 
                 U_AddProfil profilForm = new U_AddProfil(m_UserLogin, tb_nameProfile.Text, cb_keyboard.Text, cb_application.Text);
                 this.Hide();
                 profilForm.ShowDialog();
-                this.Close();// note Alex : avant le show ? 
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Vous n'avez pas remplis tous les champs.");
             }
         }
-
+        /// <summary>
+        /// Close the popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Close();

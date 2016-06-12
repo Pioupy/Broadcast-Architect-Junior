@@ -114,9 +114,12 @@ namespace BAJunior.View.Forms.user
 
         private void btn_EditProfil_Click(object sender, EventArgs e)
         {
-            U_AddProfil SelectedProfil = new U_AddProfil(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
-            SelectedProfil.ShowDialog();
-            refreshView(false);
+            if (cb_Profils.Text != "")
+            { 
+                U_AddProfil SelectedProfil = new U_AddProfil(listProfil.Where(item => item.getName() == cb_Profils.Text).FirstOrDefault().getId());
+                SelectedProfil.ShowDialog();
+                refreshView(false); 
+            }
         }
 
         private void btn_DeleteProfil_Click(object sender, EventArgs e)
