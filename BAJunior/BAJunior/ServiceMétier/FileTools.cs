@@ -90,7 +90,7 @@ namespace BAJunior.ServiceMétier
                                 foreach (ParamUser param in ParamU)
                                 {
                                     if(param.getValue() == "vide")
-                                        line = line + " " + ",";
+                                        line = line + ",";
                                     else
                                     line = line + param.getValue() + ",";
                                 }
