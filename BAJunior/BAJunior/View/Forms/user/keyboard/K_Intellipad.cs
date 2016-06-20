@@ -121,11 +121,13 @@ namespace BAJunior.View.Forms.user
                     }
                     i++;
                 }
+                this.m_listParamUser = m_addProfil.getListParamUser();
                 m_listParamUser[id] = listParamUser;
                 // tester necessaire
                 m_addProfil.setListParamUser(m_listParamUser);
                 // Init commandUser
-                CommandUser commandUser = new CommandUser(command.getId(), command.getName(), command.getPicture(), command.getIdCategory());
+                this.m_listCommandUser = m_addProfil.getListCommandUser();
+                CommandUser commandUser = new CommandUser(0, command.getName(), command.getPicture(), command.getIdCategory());
                 m_listCommandUser[id] = commandUser;
                 //tester necessaire
                 m_addProfil.setListCommandUser(m_listCommandUser);

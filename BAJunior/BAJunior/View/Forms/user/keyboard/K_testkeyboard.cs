@@ -91,7 +91,7 @@ namespace BAJunior.View.Forms.user
                 // tester necessaire
                 m_addProfil.setListParamUser(m_listParamUser);
                 // Init commandUser
-                CommandUser commandUser = new CommandUser(command.getId(), command.getName(), command.getPicture(), command.getIdCategory());
+                CommandUser commandUser = new CommandUser(0, command.getName(), command.getPicture(), command.getIdCategory());
                 m_listCommandUser[id] = commandUser;
                 //tester necessaire
                 m_addProfil.setListCommandUser(m_listCommandUser);

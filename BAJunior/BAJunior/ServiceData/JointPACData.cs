@@ -179,5 +179,24 @@ namespace BAJunior.ServiceData
             }
             return jointPACList;
         }
+        public int countIDCommandUser(int id)
+        {
+            int count = 0;
+            string requete = "SELECT count(IDCommandUser) as count FROM JointPAC WHERE IDCommandUser= '" + id + "' order by IDJointPAC asc;";
+            try
+            {
+                DataTable reader = m_dbUtils.executeReader(requete);
+
+                foreach (DataRow r in reader.Rows)
+                {
+                    count = Convert.ToInt32(r["count"]);
+                }
+            }
+            catch (Exception fail)
+            {
+                _log.Error("error :" + fail.Message);
+            }
+            return count;
+        }
     }
 }

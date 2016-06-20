@@ -581,7 +581,132 @@ namespace BAJunior.View.Forms.user
             }
             else
             {//edit
-                
+                DialogResult result = MessageBox.Show("Sauvegarder le profil ?", "Message de confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    // Update Data of actuel keyboard
+                    if (m_listCommandUserFinal.Count != m_nameApplication.Count)
+                    {//Insert new field
+                        m_listCommandUserFinal.Add(m_listCommandUser.ToList());
+                        m_listParamUserFinal.Add(m_listParamUser.ToList());
+                    }
+                    else
+                    {//Update field existant
+                        m_listCommandUserFinal[m_focusApplication] = m_listCommandUser.ToList();
+                        m_listParamUserFinal[m_focusApplication] = m_listParamUser.ToList();
+                    }
+                    // Insert database list of CommandUser and ParamUser
+                    foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
+                    {
+                        foreach (CommandUser commandUser in listCommandUser)
+                        {
+                            if (commandUser != null)
+                            {
+                                if (commandUser.getId() == 0)
+                                { //add
+                                    m_commandUserData.create(commandUser);
+                                    int id = m_commandUserData.readLastID();
+                                    commandUser.setId(id);
+                                }
+                                else
+                                { //update
+                                    m_commandUserData.update(commandUser);
+                                    //int id = m_commandUserData.readLastID();
+                                    //commandUser.setId(id);
+                                }
+                            }
+                            else
+                            {
+                                //supprimer champs list
+                            }
+                        }
+                    }
+                    //AJOUTER ID COMMAND DANS LES LIST PARAM !
+                    int indexApplication = 0;
+                    foreach (List<List<ParamUser>> listOfListParamUser in m_listParamUserFinal)
+                    {
+                        int indexList = 0;
+                        List<CommandUser> listCommandUser = m_listCommandUserFinal[indexApplication];
+                        foreach (List<ParamUser> listParamUser in listOfListParamUser)
+                        {
+                            if (listParamUser != null)
+                            {
+                                foreach (ParamUser paramUser in listParamUser)
+                                {
+                                    if (paramUser.getId() == 0)
+                                    { //add
+                                        paramUser.setIdCommandUser(listCommandUser[indexList].getId());
+                                        m_paramUserData.create(paramUser);
+                                        int id = m_paramUserData.readLastID();
+                                        paramUser.setId(id);
+                                    }
+                                    else
+                                    { //update
+                                        paramUser.setIdCommandUser(listCommandUser[indexList].getId());
+                                        m_paramUserData.update(paramUser);
+                                        //int id = m_paramUserData.readLastID();
+                                        //paramUser.setId(id);
+                                    }
+                                }
+
+                            }
+                            indexList++;
+                        }
+                        indexApplication++;
+                    }
+                    // TESTER ET VALIDER LES IDCOMMANDUSER
+                    //crée les data jointPAC
+                    // get idprofil !!!
+                    Keyboard keyboard = m_keyboardData.readByName(m_nameKeyboard);
+                    //Profil profil = new Profil(m_nameProfile, "passif ", m_user.getId(), keyboard.getId());
+                    //m_profilData.create(profil);
+                    int idProfil = m_profil.getId();
+                    int indexBtn = 0;
+                    int indexJoint = 0;
+                    int index = 0;
+                    foreach (List<CommandUser> listCommandUser in m_listCommandUserFinal)
+                    {
+                        index = 0;
+                        indexBtn = 0;
+                        foreach (CommandUser commandUser in listCommandUser)
+                        {
+                            if (commandUser != null)
+                            {
+                                int count = m_jointPACData.countIDCommandUser(commandUser.getId());
+                                if (count == 0)
+                                {//add
+                                    JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
+                                    // Insert database jointPAC
+                                    m_jointPACData.create(jointPAC);
+                                }
+                                else
+                                {//update
+                                    JointPAC jointPAC = new JointPAC(indexBtn, m_listJointPAC[index].getBank(), idProfil, m_listJointPAC[indexJoint].getIdApplication(), listCommandUser[index].getId());
+                                    // Insert database jointPAC
+                                    m_jointPACData.update(jointPAC);
+                                }
+
+                            }
+                            else
+                            {
+                                //supprimer champs 
+                            }
+                            if (indexBtn >= (m_sizeButtonKeyboard - 1))
+                            {
+                                indexBtn = 0;
+                            }
+                            else
+                            {
+                                indexBtn++;
+                            }
+                            index++;
+                            indexJoint++;
+                        }
+                    }
+                    //close form 
+                    this.Close();
+                    //charger la fenetre dans la fenetre ? 
+                }
             }
 
         }
